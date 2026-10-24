@@ -1,0 +1,186 @@
+{
+  "fileIntegrityHash": "41639a7df66960a98f7a344f3611291932fc83c12d1ebb1fdca0a658481aac3f",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "singapore",
+        "center": {
+          "lat": 1.3,
+          "lon": 103.85
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "pharmacy",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 5041208474,
+        "sourceUrl": "https://www.openstreetmap.org/node/5041208474",
+        "name": "Renxin Traditional Chinese Medicine",
+        "coordinates": {
+          "lat": 1.300019,
+          "lon": 103.8512057
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 134.04986452000006
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6267447285,
+        "sourceUrl": "https://www.openstreetmap.org/node/6267447285",
+        "name": "Guardian",
+        "coordinates": {
+          "lat": 1.3010042,
+          "lon": 103.8448923
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 578.6793629531527
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6267447185,
+        "sourceUrl": "https://www.openstreetmap.org/node/6267447185",
+        "name": "Watsons",
+        "coordinates": {
+          "lat": 1.3003992,
+          "lon": 103.8446332
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 598.2563300788532
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6743835944,
+        "sourceUrl": "https://www.openstreetmap.org/node/6743835944",
+        "name": "Guardian",
+        "coordinates": {
+          "lat": 1.2996703,
+          "lon": 103.8558609
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 652.5652622245938
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12349654281,
+        "sourceUrl": "https://www.openstreetmap.org/node/12349654281",
+        "name": "Watsons",
+        "coordinates": {
+          "lat": 1.2995747,
+          "lon": 103.8569914
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 778.6456252484618
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12538608717,
+        "sourceUrl": "https://www.openstreetmap.org/node/12538608717",
+        "name": "Guardian",
+        "coordinates": {
+          "lat": 1.2938658,
+          "lon": 103.8536633
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 794.4120873309789
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4560997469,
+        "sourceUrl": "https://www.openstreetmap.org/node/4560997469",
+        "name": "Guardian",
+        "coordinates": {
+          "lat": 1.2928333,
+          "lon": 103.8532762
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 876.1820210375698
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6583281565,
+        "sourceUrl": "https://www.openstreetmap.org/node/6583281565",
+        "name": "Guardian",
+        "coordinates": {
+          "lat": 1.2911849,
+          "lon": 103.8499574
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 980.2058377667432
+      }
+    ],
+    "directMappedCount": 8,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 2.5464790894703255,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T16:44:16.582Z",
+      "osmBaseTimestamp": "2026-10-24T16:42:36Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "24468fd928367b03a9a33da4e54d5ff3fd72599623faf26ebeb18501187f7549",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

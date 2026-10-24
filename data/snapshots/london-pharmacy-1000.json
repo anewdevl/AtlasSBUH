@@ -1,0 +1,438 @@
+{
+  "fileIntegrityHash": "cee7b715a2bb1e8b36bc9452175e9316d812161de460ed88a6786a6dd8fe84c3",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "london",
+        "center": {
+          "lat": 51.5137,
+          "lon": -0.1365
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "pharmacy",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "way",
+        "sourceId": 807588025,
+        "sourceUrl": "https://www.openstreetmap.org/way/807588025",
+        "name": "Boots",
+        "coordinates": {
+          "lat": 51.5153316,
+          "lon": -0.1390027
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 250.81382693603035
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 272006371,
+        "sourceUrl": "https://www.openstreetmap.org/way/272006371",
+        "name": "The Organic Pharmacy",
+        "coordinates": {
+          "lat": 51.5140846,
+          "lon": -0.1404754
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 278.3994320154291
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 499319984,
+        "sourceUrl": "https://www.openstreetmap.org/node/499319984",
+        "name": "Watsons",
+        "coordinates": {
+          "lat": 51.5146648,
+          "lon": -0.1321017
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 322.7115687642194
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 290405997,
+        "sourceUrl": "https://www.openstreetmap.org/way/290405997",
+        "name": "Boots",
+        "coordinates": {
+          "lat": 51.5103364,
+          "lon": -0.1346886
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 394.462619819594
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5643562567,
+        "sourceUrl": "https://www.openstreetmap.org/node/5643562567",
+        "name": "C. W. Andrew",
+        "coordinates": {
+          "lat": 51.5125199,
+          "lon": -0.1433545
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 492.15127468470826
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 425013544,
+        "sourceUrl": "https://www.openstreetmap.org/way/425013544",
+        "name": "Boots",
+        "coordinates": {
+          "lat": 51.5170942,
+          "lon": -0.1312727
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 522.7630043289038
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 344376766,
+        "sourceUrl": "https://www.openstreetmap.org/way/344376766",
+        "name": "Church Pharmacy",
+        "coordinates": {
+          "lat": 51.5171451,
+          "lon": -0.1418723
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 533.8019428027217
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 1351563631,
+        "sourceUrl": "https://www.openstreetmap.org/way/1351563631",
+        "name": "My London Pharmacy",
+        "coordinates": {
+          "lat": 51.5187979,
+          "lon": -0.1364999
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 566.8606165838241
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 333722505,
+        "sourceUrl": "https://www.openstreetmap.org/node/333722505",
+        "name": "Shiv",
+        "coordinates": {
+          "lat": 51.5169739,
+          "lon": -0.1430477
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 581.2138131751101
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 431783120,
+        "sourceUrl": "https://www.openstreetmap.org/way/431783120",
+        "name": "Shiv Pharmacy",
+        "coordinates": {
+          "lat": 51.5186353,
+          "lon": -0.1404411
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 612.8046152597419
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 345692388,
+        "sourceUrl": "https://www.openstreetmap.org/way/345692388",
+        "name": "Healthxchange Pharmacy",
+        "coordinates": {
+          "lat": 51.5183106,
+          "lon": -0.1421522
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 644.8282189864965
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 294646433,
+        "sourceUrl": "https://www.openstreetmap.org/way/294646433",
+        "name": "Boots",
+        "coordinates": {
+          "lat": 51.520215,
+          "lon": -0.1335209
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 753.1924403485096
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6219012586,
+        "sourceUrl": "https://www.openstreetmap.org/node/6219012586",
+        "name": "Wigmore Medical",
+        "coordinates": {
+          "lat": 51.5165129,
+          "lon": -0.1473129
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 810.9706831281675
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 802152481,
+        "sourceUrl": "https://www.openstreetmap.org/way/802152481",
+        "name": "Boots",
+        "coordinates": {
+          "lat": 51.5142872,
+          "lon": -0.1482245
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 813.949279235007
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 7177934790,
+        "sourceUrl": "https://www.openstreetmap.org/node/7177934790",
+        "name": "Boots",
+        "coordinates": {
+          "lat": 51.5131445,
+          "lon": -0.1244975
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 832.8676444783313
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6180238208,
+        "sourceUrl": "https://www.openstreetmap.org/node/6180238208",
+        "name": "Boots",
+        "coordinates": {
+          "lat": 51.5203566,
+          "lon": -0.1426807
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 854.8504010279875
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13260552152,
+        "sourceUrl": "https://www.openstreetmap.org/node/13260552152",
+        "name": "Kerrs",
+        "coordinates": {
+          "lat": 51.5173794,
+          "lon": -0.1250005
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 894.7474777759793
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 1489149910,
+        "sourceUrl": "https://www.openstreetmap.org/node/1489149910",
+        "name": "John Bell & Croyden",
+        "coordinates": {
+          "lat": 51.5164535,
+          "lon": -0.1490397
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 920.1497799136839
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 278113360,
+        "sourceUrl": "https://www.openstreetmap.org/way/278113360",
+        "name": "Essentials",
+        "coordinates": {
+          "lat": 51.5153669,
+          "lon": -0.1228812
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 960.4535132792886
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 157748194,
+        "sourceUrl": "https://www.openstreetmap.org/way/157748194",
+        "name": "Chinese Medicine Centre",
+        "coordinates": {
+          "lat": 51.5171394,
+          "lon": -0.1235125
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 976.6877428046896
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5793318141,
+        "sourceUrl": "https://www.openstreetmap.org/node/5793318141",
+        "name": "Nelsons Homeopathic Pharmacy",
+        "coordinates": {
+          "lat": 51.512734,
+          "lon": -0.1505401
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 977.5000677992667
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2536635239,
+        "sourceUrl": "https://www.openstreetmap.org/node/2536635239",
+        "name": "Boots",
+        "coordinates": {
+          "lat": 51.5096681,
+          "lon": -0.1236492
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 995.9266122180964
+      }
+    ],
+    "directMappedCount": 22,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 7.002817496043395,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T16:43:41.458Z",
+      "osmBaseTimestamp": "2026-10-24T16:42:36Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "4f67aa2120d2731091066fde9f606e78d5d261a41e5151780549e84b4a9f0537",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 1
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

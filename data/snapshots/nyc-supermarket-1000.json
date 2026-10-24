@@ -1,0 +1,433 @@
+{
+  "fileIntegrityHash": "ad945c49250f17c01551976cf97ce9a429b7e9005ec77c1a6022c8c52233f672",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "nyc",
+        "center": {
+          "lat": 40.7308,
+          "lon": -73.9973
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "supermarket",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 3502137815,
+        "sourceUrl": "https://www.openstreetmap.org/node/3502137815",
+        "name": "Gristedes",
+        "coordinates": {
+          "lat": 40.7318147,
+          "lon": -73.9943928
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 269.6993380411815
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2358048503,
+        "sourceUrl": "https://www.openstreetmap.org/node/2358048503",
+        "name": "Tashkent Supermarket",
+        "coordinates": {
+          "lat": 40.732989,
+          "lon": -73.9997923
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 321.47653891275075
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5019124323,
+        "sourceUrl": "https://www.openstreetmap.org/node/5019124323",
+        "name": "Morton Williams",
+        "coordinates": {
+          "lat": 40.7277598,
+          "lon": -73.9987159
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 358.49081523849895
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3497534429,
+        "sourceUrl": "https://www.openstreetmap.org/node/3497534429",
+        "name": "Agata & Valentina",
+        "coordinates": {
+          "lat": 40.7330833,
+          "lon": -73.9937129
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 394.735190201572
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3041500233,
+        "sourceUrl": "https://www.openstreetmap.org/node/3041500233",
+        "name": "Citarella",
+        "coordinates": {
+          "lat": 40.7343134,
+          "lon": -73.9988298
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 411.3879664836092
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5243570939,
+        "sourceUrl": "https://www.openstreetmap.org/node/5243570939",
+        "name": "Gristedes",
+        "coordinates": {
+          "lat": 40.7330516,
+          "lon": -74.0024047
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 497.6841831035791
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3421054403,
+        "sourceUrl": "https://www.openstreetmap.org/node/3421054403",
+        "name": "Wegmans",
+        "coordinates": {
+          "lat": 40.7304151,
+          "lon": -73.9910411
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 529.1208624296916
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5213993821,
+        "sourceUrl": "https://www.openstreetmap.org/node/5213993821",
+        "name": "Dainobu",
+        "coordinates": {
+          "lat": 40.736327,
+          "lon": -73.9973226
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 614.5773096579991
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 584125647,
+        "sourceUrl": "https://www.openstreetmap.org/node/584125647",
+        "name": "Whole Foods Market",
+        "coordinates": {
+          "lat": 40.7347925,
+          "lon": -73.9913589
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 669.089192937241
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 7732048438,
+        "sourceUrl": "https://www.openstreetmap.org/node/7732048438",
+        "name": "H Mart",
+        "coordinates": {
+          "lat": 40.7302306,
+          "lon": -73.9890875
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 694.8926037053093
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3938658657,
+        "sourceUrl": "https://www.openstreetmap.org/node/3938658657",
+        "name": "4th Street Food Co-Op",
+        "coordinates": {
+          "lat": 40.72665,
+          "lon": -73.9907961
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 716.4493123826144
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 752186044,
+        "sourceUrl": "https://www.openstreetmap.org/node/752186044",
+        "name": "Westside Market",
+        "coordinates": {
+          "lat": 40.7317446,
+          "lon": -73.9885326
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 746.1802934126234
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5385441221,
+        "sourceUrl": "https://www.openstreetmap.org/node/5385441221",
+        "name": "Health and Harmony",
+        "coordinates": {
+          "lat": 40.7319233,
+          "lon": -74.0063654
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 774.0043786428022
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2279562480,
+        "sourceUrl": "https://www.openstreetmap.org/node/2279562480",
+        "name": "Trader Joe's Pronto",
+        "coordinates": {
+          "lat": 40.7335574,
+          "lon": -73.988259
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 821.181769201699
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2279562464,
+        "sourceUrl": "https://www.openstreetmap.org/node/2279562464",
+        "name": "Trader Joe's",
+        "coordinates": {
+          "lat": 40.7334209,
+          "lon": -73.987875
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 845.9358962003332
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6540025385,
+        "sourceUrl": "https://www.openstreetmap.org/node/6540025385",
+        "name": "Trader Joe's",
+        "coordinates": {
+          "lat": 40.7257088,
+          "lon": -74.0048369
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 850.7844655049317
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12488376017,
+        "sourceUrl": "https://www.openstreetmap.org/node/12488376017",
+        "name": "Mulberry Market",
+        "coordinates": {
+          "lat": 40.7232089,
+          "lon": -73.9958812
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 852.5168224703394
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2486570146,
+        "sourceUrl": "https://www.openstreetmap.org/node/2486570146",
+        "name": "Whole Foods Market",
+        "coordinates": {
+          "lat": 40.7238482,
+          "lon": -73.9923711
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 877.5210574158885
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6149267163,
+        "sourceUrl": "https://www.openstreetmap.org/node/6149267163",
+        "name": "Bulletin Nolita",
+        "coordinates": {
+          "lat": 40.7229886,
+          "lon": -73.994558
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 898.7955991715643
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2358048502,
+        "sourceUrl": "https://www.openstreetmap.org/node/2358048502",
+        "name": "Brooklyn Fare",
+        "coordinates": {
+          "lat": 40.7320918,
+          "lon": -74.0079219
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 906.4640195575136
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2359580602,
+        "sourceUrl": "https://www.openstreetmap.org/node/2359580602",
+        "name": "Westside Market",
+        "coordinates": {
+          "lat": 40.7388292,
+          "lon": -73.9992011
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 907.0616363629595
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2184803604,
+        "sourceUrl": "https://www.openstreetmap.org/node/2184803604",
+        "name": "Sunrise Mart",
+        "coordinates": {
+          "lat": 40.7232585,
+          "lon": -74.0025757
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 949.1303054938054
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12365495490,
+        "sourceUrl": "https://www.openstreetmap.org/node/12365495490",
+        "name": "Genkiya Mart",
+        "coordinates": {
+          "lat": 40.7220123,
+          "lon": -73.9966638
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 978.6172207937659
+      }
+    ],
+    "directMappedCount": 23,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 7.321127382227186,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T16:43:28.443Z",
+      "osmBaseTimestamp": "2026-10-24T16:42:36Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "45a3447f051f344e1edb8df2c7f5cd9e8cba554d4cc7daca9f476fa654c03f53",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

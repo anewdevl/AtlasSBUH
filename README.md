@@ -28,12 +28,12 @@ Playwright uses installed Microsoft Edge by default on this Windows workspace. U
 ## Current scope
 
 - New York, London, Dubai, and Singapore search presets, with documented rectangular request guardrails.
-- Café, bakery, and bubble tea. Other categories are intentionally unsupported pending reviewed qualifier rules.
+- Café, bakery, bubble tea, pharmacy, and supermarket, using explicit OSM tag evidence. Pharmacy excludes chemists and deprecated pharmacy tags; supermarket excludes convenience and grocery shops.
 - Exact runtime and bundled snapshot cache lookup, bounded live retrieval, exact stale fallback, and explicit unavailable state.
 - Direct/adjacent evidence, source links, representative-center disclosure, dates, cache state, density, and comparison compatibility checks.
 - Responsive map/list interface, keyboard-accessible form, and list operation independent of tiles.
 
-Genuine café snapshots for the four exact city presets at 1,000 m are bundled in `data/snapshots/`. They include validated source records, original retrieval metadata, and file integrity hashes. Exact stale fallback remains age-limited; recapture snapshots before they exceed 30 days.
+Genuine café, pharmacy, and supermarket snapshots for the four exact city presets at 1,000 m are bundled in `data/snapshots/`. They include validated source records, original retrieval metadata, and file integrity hashes. Exact stale fallback remains age-limited; recapture snapshots before they exceed 30 days.
 
 ## Documents
 

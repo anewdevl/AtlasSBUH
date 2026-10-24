@@ -1,9 +1,9 @@
 {
-  "fileIntegrityHash": "11cb9220f9d4610c9e646fb05d1b89637b8fe0ebd846a0d83f1a12ff0c40888f",
+  "fileIntegrityHash": "3783caf38be183075211e68ac8d35b9b42b2223aff7956f520eddca81287a84f",
   "response": {
     "request": {
       "schemaVersion": "1",
-      "registryVersion": "1",
+      "registryVersion": "2",
       "scope": {
         "cityId": "dubai",
         "center": {
@@ -459,8 +459,8 @@
     "directMappedDensity": 7.957747154594767,
     "provenance": {
       "provider": "OpenStreetMap / Overpass",
-      "fetchedAt": "2026-10-24T06:32:25.618Z",
-      "osmBaseTimestamp": "2026-10-24T06:31:06Z",
+      "fetchedAt": "2026-10-24T16:43:53.128Z",
+      "osmBaseTimestamp": "2026-10-24T16:42:36Z",
       "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
       "queryHash": "da8c77b66889acc1e9c95b272c6d0caddae39274151b8c0d1d8af0120bf3ac09",
       "cacheState": "live",

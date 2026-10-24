@@ -1,0 +1,297 @@
+{
+  "fileIntegrityHash": "807a50222c9d20034a4f812e0546099714909cae310daf026dad3512ef8a5979",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "london",
+        "center": {
+          "lat": 51.5137,
+          "lon": -0.1365
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "supermarket",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 5601093318,
+        "sourceUrl": "https://www.openstreetmap.org/node/5601093318",
+        "name": "Soho Express",
+        "coordinates": {
+          "lat": 51.5153686,
+          "lon": -0.1373997
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 195.70659284070237
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12168431706,
+        "sourceUrl": "https://www.openstreetmap.org/node/12168431706",
+        "name": "M&S Food",
+        "coordinates": {
+          "lat": 51.5151363,
+          "lon": -0.1381359
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 195.75936953969028
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4365108690,
+        "sourceUrl": "https://www.openstreetmap.org/node/4365108690",
+        "name": "Rice Wine Shop",
+        "coordinates": {
+          "lat": 51.5107731,
+          "lon": -0.1370793
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 327.91612990592887
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13892619446,
+        "sourceUrl": "https://www.openstreetmap.org/node/13892619446",
+        "name": "Whole Foods Market",
+        "coordinates": {
+          "lat": 51.5106887,
+          "lon": -0.1356891
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 339.51093372744134
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11348048679,
+        "sourceUrl": "https://www.openstreetmap.org/node/11348048679",
+        "name": "England Pharmacy",
+        "coordinates": {
+          "lat": 51.510552,
+          "lon": -0.136228
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 350.54735175918734
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3041707059,
+        "sourceUrl": "https://www.openstreetmap.org/node/3041707059",
+        "name": "Whole Foods Market",
+        "coordinates": {
+          "lat": 51.5105264,
+          "lon": -0.1360939
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 354.00546838239467
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5634050684,
+        "sourceUrl": "https://www.openstreetmap.org/node/5634050684",
+        "name": "Vital Ingredient",
+        "coordinates": {
+          "lat": 51.5132986,
+          "lon": -0.1419871
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 382.3214127162633
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4878468498,
+        "sourceUrl": "https://www.openstreetmap.org/node/4878468498",
+        "name": "陽城海鮮舫 Young Cheng Fresh Seafood Shop",
+        "coordinates": {
+          "lat": 51.5117382,
+          "lon": -0.1318603
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 388.1670002662992
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13808848002,
+        "sourceUrl": "https://www.openstreetmap.org/node/13808848002",
+        "name": "M&S Food",
+        "coordinates": {
+          "lat": 51.5125421,
+          "lon": -0.1309687
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 403.8431574993025
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13550924175,
+        "sourceUrl": "https://www.openstreetmap.org/node/13550924175",
+        "name": "唐人街兴隆门行 Xing Long Men Supermarket",
+        "coordinates": {
+          "lat": 51.5120165,
+          "lon": -0.1307022
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 442.73538436770315
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 993439439,
+        "sourceUrl": "https://www.openstreetmap.org/way/993439439",
+        "name": "Loon Fung Supermarket",
+        "coordinates": {
+          "lat": 51.5118965,
+          "lon": -0.130337
+        },
+        "positionKind": "representative-center",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 471.2818392373222
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 995869087,
+        "sourceUrl": "https://www.openstreetmap.org/way/995869087",
+        "name": "泗和 SeeWoo",
+        "coordinates": {
+          "lat": 51.5116612,
+          "lon": -0.1304815
+        },
+        "positionKind": "representative-center",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 474.19048385573086
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5486109122,
+        "sourceUrl": "https://www.openstreetmap.org/node/5486109122",
+        "name": "Japan Centre",
+        "coordinates": {
+          "lat": 51.509714,
+          "lon": -0.1315194
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 561.4665075314855
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3357928801,
+        "sourceUrl": "https://www.openstreetmap.org/node/3357928801",
+        "name": "M&S Simply Food",
+        "coordinates": {
+          "lat": 51.5069399,
+          "lon": -0.1428187
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 869.6284686154121
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3357928802,
+        "sourceUrl": "https://www.openstreetmap.org/node/3357928802",
+        "name": "M&S Simply Food",
+        "coordinates": {
+          "lat": 51.5139709,
+          "lon": -0.149711
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 914.6901195607346
+      }
+    ],
+    "directMappedCount": 15,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 4.7746482927568605,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T16:43:47.437Z",
+      "osmBaseTimestamp": "2026-10-24T16:42:36Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "d78d5f3a559183a50a9be2400bf74165344ffe6ef3fc85b9e62c29e2cf806a4b",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

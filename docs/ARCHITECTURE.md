@@ -8,7 +8,7 @@ No business description enters server query construction. The classifier propose
 
 ## Contracts
 
-`src/lib/contracts.ts` is authoritative. Schema and registry versions are both `1`. Strict object validation rejects extra fields. WGS84 coordinates use `lat`/`lon`, are rounded to four decimals for requests, and are validated against city guardrails before and after rounding. Source coordinates remain unmodified to preserve the source position. Allowed radii are 500, 1000, and 2000 meters.
+`src/lib/contracts.ts` is authoritative. The schema version is `1`; the category registry version is `2`. Strict object validation rejects extra fields. WGS84 coordinates use `lat`/`lon`, are rounded to four decimals for requests, and are validated against city guardrails before and after rounding. Source coordinates remain unmodified to preserve the source position. Allowed radii are 500, 1000, and 2000 meters.
 
 Responses validate canonical scope, derived source URLs, unique source IDs, category/relation membership, exact matching evidence, distances, counts, density, dates, and partial semantics. `validateResponse` additionally checks the response against the expected request. Server cache compatibility checks the exact generated query hash. Invalid positions and the 5,000-record cap make a response partial. Partial aggregates are null and cannot be compared.
 

@@ -1,9 +1,9 @@
 {
-  "fileIntegrityHash": "9d1fec8cc8a7ad32c2a0d8c34a3a7eadf1dd890621ab67df4352fce58493f4f5",
+  "fileIntegrityHash": "eb612fdac6446ff64900b4200605163f53bcac2653e5d26167f6b7555ac68650",
   "response": {
     "request": {
       "schemaVersion": "1",
-      "registryVersion": "1",
+      "registryVersion": "2",
       "scope": {
         "cityId": "london",
         "center": {
@@ -6180,8 +6180,8 @@
     "directMappedDensity": 112.3633898228781,
     "provenance": {
       "provider": "OpenStreetMap / Overpass",
-      "fetchedAt": "2026-10-24T06:32:19.689Z",
-      "osmBaseTimestamp": "2026-10-24T06:31:06Z",
+      "fetchedAt": "2026-10-24T16:43:35.116Z",
+      "osmBaseTimestamp": "2026-10-24T16:42:36Z",
       "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
       "queryHash": "730432a12f66af0f856f7f0460caafac64368c50960e24a0d08c6b509a083996",
       "cacheState": "live",

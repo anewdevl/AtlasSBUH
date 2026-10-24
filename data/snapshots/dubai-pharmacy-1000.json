@@ -1,0 +1,186 @@
+{
+  "fileIntegrityHash": "1f0da3ee9de4e34c560f4bc235278ec8af4376de57b68ef6a711daa5a82c88e2",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "dubai",
+        "center": {
+          "lat": 25.2048,
+          "lon": 55.2708
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "pharmacy",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 4584884494,
+        "sourceUrl": "https://www.openstreetmap.org/node/4584884494",
+        "name": null,
+        "coordinates": {
+          "lat": 25.2015166,
+          "lon": 55.2697983
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 378.7517099769941
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4725421663,
+        "sourceUrl": "https://www.openstreetmap.org/node/4725421663",
+        "name": "Life Pharmacy",
+        "coordinates": {
+          "lat": 25.2073571,
+          "lon": 55.2738188
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 416.0394018271097
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5038415044,
+        "sourceUrl": "https://www.openstreetmap.org/node/5038415044",
+        "name": "Life Pharmacy",
+        "coordinates": {
+          "lat": 25.2032727,
+          "lon": 55.2752919
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 482.78114176454625
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4725334612,
+        "sourceUrl": "https://www.openstreetmap.org/node/4725334612",
+        "name": "Swiss Pharmacy",
+        "coordinates": {
+          "lat": 25.2093264,
+          "lon": 55.2729209
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 546.6744937298898
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4963641006,
+        "sourceUrl": "https://www.openstreetmap.org/node/4963641006",
+        "name": "Community Pharmacy",
+        "coordinates": {
+          "lat": 25.2102073,
+          "lon": 55.2706249
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 601.5223337032828
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4925022348,
+        "sourceUrl": "https://www.openstreetmap.org/node/4925022348",
+        "name": "Marina Pharmacy",
+        "coordinates": {
+          "lat": 25.2030348,
+          "lon": 55.2630038
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 808.5533962951635
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4386222289,
+        "sourceUrl": "https://www.openstreetmap.org/node/4386222289",
+        "name": "Life Pharmacy",
+        "coordinates": {
+          "lat": 25.211405,
+          "lon": 55.2743716
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 817.6297803164942
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4426395693,
+        "sourceUrl": "https://www.openstreetmap.org/node/4426395693",
+        "name": "Super Care Pharmacy",
+        "coordinates": {
+          "lat": 25.2114227,
+          "lon": 55.2763602
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 924.777785075357
+      }
+    ],
+    "directMappedCount": 8,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 2.5464790894703255,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T16:43:58.871Z",
+      "osmBaseTimestamp": "2026-10-24T16:42:36Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "6de05bd604e6ef8738d96d639218d2be11526e255eb520a2a3e05d956e068476",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

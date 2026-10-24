@@ -1,0 +1,417 @@
+{
+  "fileIntegrityHash": "56f292f0c05eef7feb546a521a39312d88a8ceae6e6234f80afd8d17096ea836",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "nyc",
+        "center": {
+          "lat": 40.7308,
+          "lon": -73.9973
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "pharmacy",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 5651930690,
+        "sourceUrl": "https://www.openstreetmap.org/node/5651930690",
+        "name": "C.O. Bigelow Chemists",
+        "coordinates": {
+          "lat": 40.7339069,
+          "lon": -73.9990967
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 377.18608038448315
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4844172522,
+        "sourceUrl": "https://www.openstreetmap.org/node/4844172522",
+        "name": "Broadway Apothecary",
+        "coordinates": {
+          "lat": 40.7314756,
+          "lon": -73.9918751
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 463.2408987463078
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13307068140,
+        "sourceUrl": "https://www.openstreetmap.org/node/13307068140",
+        "name": "Ansonia Pharmacy",
+        "coordinates": {
+          "lat": 40.734929,
+          "lon": -73.9983834
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy"
+        },
+        "distanceMeters": 468.11099019911467
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4881021906,
+        "sourceUrl": "https://www.openstreetmap.org/node/4881021906",
+        "name": "CVS Pharmacy",
+        "coordinates": {
+          "lat": 40.7299609,
+          "lon": -73.9905041
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 580.1892060431384
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5579110906,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579110906",
+        "name": "CVS Pharmacy",
+        "coordinates": {
+          "lat": 40.7360128,
+          "lon": -73.9981157
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 583.6974442320419
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2569069201,
+        "sourceUrl": "https://www.openstreetmap.org/node/2569069201",
+        "name": "CVS Pharmacy",
+        "coordinates": {
+          "lat": 40.7336502,
+          "lon": -74.0031579
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 586.5751474925681
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9140832116,
+        "sourceUrl": "https://www.openstreetmap.org/node/9140832116",
+        "name": "CVS Pharmacy",
+        "coordinates": {
+          "lat": 40.7356855,
+          "lon": -73.993496
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 630.7500781046009
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2020725434,
+        "sourceUrl": "https://www.openstreetmap.org/node/2020725434",
+        "name": "Rite Aid",
+        "coordinates": {
+          "lat": 40.7366071,
+          "lon": -73.9976191
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 646.2795761249338
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5287636021,
+        "sourceUrl": "https://www.openstreetmap.org/node/5287636021",
+        "name": "CVS Pharmacy",
+        "coordinates": {
+          "lat": 40.7250466,
+          "lon": -73.9944794
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 682.473346760904
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 377371385,
+        "sourceUrl": "https://www.openstreetmap.org/way/377371385",
+        "name": "Duane Reade",
+        "coordinates": {
+          "lat": 40.7343857,
+          "lon": -73.9903145
+        },
+        "positionKind": "representative-center",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 710.9248717673798
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11612203898,
+        "sourceUrl": "https://www.openstreetmap.org/node/11612203898",
+        "name": "CVS Pharmacy",
+        "coordinates": {
+          "lat": 40.7345214,
+          "lon": -73.9896526
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 765.7919059541066
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2494160597,
+        "sourceUrl": "https://www.openstreetmap.org/node/2494160597",
+        "name": "Block Drug Stores",
+        "coordinates": {
+          "lat": 40.7273908,
+          "lon": -73.9887795
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 811.9034621865937
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9251587009,
+        "sourceUrl": "https://www.openstreetmap.org/node/9251587009",
+        "name": "CVS Pharmacy",
+        "coordinates": {
+          "lat": 40.7256759,
+          "lon": -74.0042932
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 819.6921047591804
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5653502896,
+        "sourceUrl": "https://www.openstreetmap.org/node/5653502896",
+        "name": "Rite Aid",
+        "coordinates": {
+          "lat": 40.73435,
+          "lon": -74.0059799
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 831.0920498822221
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2384821713,
+        "sourceUrl": "https://www.openstreetmap.org/node/2384821713",
+        "name": "Duane Reade",
+        "coordinates": {
+          "lat": 40.7386298,
+          "lon": -73.9993543
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 887.6729683391331
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2550007707,
+        "sourceUrl": "https://www.openstreetmap.org/node/2550007707",
+        "name": "Avalon Chemists",
+        "coordinates": {
+          "lat": 40.7240081,
+          "lon": -73.9912484
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 911.267003015974
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2286085264,
+        "sourceUrl": "https://www.openstreetmap.org/node/2286085264",
+        "name": "Duane Reade",
+        "coordinates": {
+          "lat": 40.7333888,
+          "lon": -73.9868305
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 927.9395093524553
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547121455,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547121455",
+        "name": "Abacus Pharmacy",
+        "coordinates": {
+          "lat": 40.7300928,
+          "lon": -73.9863067
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 929.6509159507597
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5152323299,
+        "sourceUrl": "https://www.openstreetmap.org/node/5152323299",
+        "name": "Duane Reade",
+        "coordinates": {
+          "lat": 40.722136,
+          "lon": -73.9969948
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 963.7360665758204
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14190357801,
+        "sourceUrl": "https://www.openstreetmap.org/node/14190357801",
+        "name": "CVS",
+        "coordinates": {
+          "lat": 40.7386765,
+          "lon": -73.9919096
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "pharmacy"
+        },
+        "distanceMeters": 986.5848943307361
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2478897610,
+        "sourceUrl": "https://www.openstreetmap.org/node/2478897610",
+        "name": "Go Green",
+        "coordinates": {
+          "lat": 40.7396267,
+          "lon": -73.9954353
+        },
+        "positionKind": "node",
+        "categoryId": "pharmacy",
+        "relation": "direct",
+        "evidence": {
+          "healthcare": "pharmacy"
+        },
+        "distanceMeters": 993.979702032858
+      }
+    ],
+    "directMappedCount": 21,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 6.684507609859605,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T16:43:22.509Z",
+      "osmBaseTimestamp": "2026-10-24T16:42:36Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "49d2b4cbe9ac6738112142f494258d46c66bef7686b087fe0b8efc95d0b543e0",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "fileIntegrityHash": "3ed15ff965c12fee416e6cc65c9c6ff64f6a4397ece07e0c3055f44967418f78",
+  "fileIntegrityHash": "b9d421389c2658c3157eb4af1e79b95c0137b2d092ee34a9ad6d237271082e62",
   "response": {
     "request": {
       "schemaVersion": "1",
-      "registryVersion": "1",
+      "registryVersion": "2",
       "scope": {
         "cityId": "nyc",
         "center": {
@@ -3233,8 +3233,8 @@
     "directMappedDensity": 57.932399285449904,
     "provenance": {
       "provider": "OpenStreetMap / Overpass",
-      "fetchedAt": "2026-10-24T06:32:13.747Z",
-      "osmBaseTimestamp": "2026-10-24T06:31:06Z",
+      "fetchedAt": "2026-10-24T16:43:16.587Z",
+      "osmBaseTimestamp": "2026-10-24T16:41:35Z",
       "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
       "queryHash": "0549226c7579ccdb8d83aaf8a0b9ef673eac809a907e7d896bc997c0ba099bf5",
       "cacheState": "live",

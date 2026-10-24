@@ -1,8 +1,8 @@
 # Demo runbook
 
-1. Before the event, run `npm run snapshots` from a network with access to the provider. Confirm four complete JSON captures and inspect several source links and tags per city. Do not overwrite successful captures with test fixtures.
+1. Before the event, run `npm run snapshots` from a network with access to the provider. Confirm complete café, pharmacy, and supermarket captures for all four presets; inspect source links and exact evidence tags. Do not overwrite successful captures with test fixtures.
 2. Run typecheck, tests, production build, and browser smoke. Start the application.
-3. Show NYC → Café → 1 km → no adjacent categories. Analyze, inspect a source feature, show its tags and retrieval date, and explain unknown coverage.
+3. Show NYC → Café → 1 km → no adjacent categories. Analyze, inspect a source feature, show its tags and retrieval date, and explain unknown coverage. Select Pharmacy and Supermarket to demonstrate the newly reviewed business categories.
 4. Pin NYC, switch to London, keep the same category/radius/adjacent settings, and analyze. Show independent dates and counts. Explain that density is mapped features per circular km², not demand or a winner.
 5. Show Dubai and Singapore with the same exact presets. Saving and restoring keeps original retrieval metadata.
 6. With genuine snapshots present, rehearse fresh snapshot retrieval without upstream access. Separately use mocked tests to demonstrate partial and expired behavior.

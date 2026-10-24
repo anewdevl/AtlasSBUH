@@ -1,0 +1,212 @@
+{
+  "fileIntegrityHash": "8ae857e0a87ca7890d870c31e216616fca80ea001f2a960c35ed52ef57c05d2a",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "dubai",
+        "center": {
+          "lat": 25.2048,
+          "lon": 55.2708
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "supermarket",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 5038529819,
+        "sourceUrl": "https://www.openstreetmap.org/node/5038529819",
+        "name": "Silver Life Mini Market",
+        "coordinates": {
+          "lat": 25.2047656,
+          "lon": 55.2693332
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 147.62171031943947
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4963640999,
+        "sourceUrl": "https://www.openstreetmap.org/node/4963640999",
+        "name": "Shaheen",
+        "coordinates": {
+          "lat": 25.2065059,
+          "lon": 55.27035
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 195.01537906855017
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11807144819,
+        "sourceUrl": "https://www.openstreetmap.org/node/11807144819",
+        "name": "Spinneys",
+        "coordinates": {
+          "lat": 25.2047232,
+          "lon": 55.2755609
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 479.06190418482254
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4386221989,
+        "sourceUrl": "https://www.openstreetmap.org/node/4386221989",
+        "name": "Al Maya Supermarket",
+        "coordinates": {
+          "lat": 25.2035198,
+          "lon": 55.2755378
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 497.4662528410248
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6621881170,
+        "sourceUrl": "https://www.openstreetmap.org/node/6621881170",
+        "name": "Zoom",
+        "coordinates": {
+          "lat": 25.1999029,
+          "lon": 55.2685958
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 587.9588290804326
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4576671291,
+        "sourceUrl": "https://www.openstreetmap.org/node/4576671291",
+        "name": "Union COOP",
+        "coordinates": {
+          "lat": 25.2103009,
+          "lon": 55.2708073
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 611.672612883226
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5106990334,
+        "sourceUrl": "https://www.openstreetmap.org/node/5106990334",
+        "name": "Union Coop Hypermarket",
+        "coordinates": {
+          "lat": 25.210305,
+          "lon": 55.2712481
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 613.7858901639074
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10094634825,
+        "sourceUrl": "https://www.openstreetmap.org/node/10094634825",
+        "name": "Buymode",
+        "coordinates": {
+          "lat": 25.2099226,
+          "lon": 55.2752937
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 727.2144879849484
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11355905446,
+        "sourceUrl": "https://www.openstreetmap.org/node/11355905446",
+        "name": "Géant",
+        "coordinates": {
+          "lat": 25.1978973,
+          "lon": 55.2705237
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 768.0484622072205
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4247062289,
+        "sourceUrl": "https://www.openstreetmap.org/node/4247062289",
+        "name": "almaya supermarkets",
+        "coordinates": {
+          "lat": 25.2096032,
+          "lon": 55.2769886
+        },
+        "positionKind": "node",
+        "categoryId": "supermarket",
+        "relation": "direct",
+        "evidence": {
+          "shop": "supermarket"
+        },
+        "distanceMeters": 820.3042224719012
+      }
+    ],
+    "directMappedCount": 10,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 3.183098861837907,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T16:44:04.796Z",
+      "osmBaseTimestamp": "2026-10-24T16:42:36Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "d63e7a8cbeb0995eced09e46133a2c490adb7f4b0f8db41fda7f373c49f0a836",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}
