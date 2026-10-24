@@ -4,16 +4,22 @@ import { categories,categoryIds,type CategoryId } from '../lib/categories';
 import { cities, type CityId } from '../lib/cities';
 import { classify } from '../lib/classify';
 import { type AnalysisRequest } from '../lib/contracts';
+import { type CategorySuggestion } from '../server/ai-category';
 type Props={request:AnalysisRequest;onChange:(r:AnalysisRequest)=>void;onAnalyze:()=>void;busy:boolean};
 export default function SearchPanel({request:r,onChange,onAnalyze,busy}:Props){
- const [description,setDescription]=useState(''),[suggested,setSuggested]=useState<ReturnType<typeof classify>|null>(null);
+ const [description,setDescription]=useState(''),[suggested,setSuggested]=useState<ReturnType<typeof classify>|null>(null),[aiSuggestion,setAiSuggestion]=useState<CategorySuggestion|null>(null),[aiBusy,setAiBusy]=useState(false),[aiError,setAiError]=useState('');
  function category(categoryId:CategoryId){onChange({...r,categoryId,adjacentCategoryIds:[]});}
+ async function suggestWithAi(){setAiBusy(true);setAiError('');setAiSuggestion(null);try{const response=await fetch('/api/suggest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({description})});const data=await response.json();if(!response.ok)throw new Error(data.error??'AI suggestion unavailable.');setAiSuggestion(data as CategorySuggestion);}catch(error){setAiError(error instanceof Error?error.message:'AI suggestion unavailable.');}finally{setAiBusy(false);}}
  return <section className="search-panel" aria-label="Analysis settings">
   <div className="eyebrow">01 / DEFINE YOUR MARKET</div><h1>A better view of <br/>your next move<span>.</span></h1>
   <p className="muted intro">Explore the businesses mapped around a location. Start with a category, then choose your area.</p>
   <label htmlFor="business">What are you opening? <span className="optional">optional</span></label>
-  <div className="input-action"><input id="business" value={description} onChange={e=>{setDescription(e.target.value);setSuggested(null);}} placeholder="A neighborhood coffee shop…" maxLength={200}/><button onClick={()=>setSuggested(classify(description))} aria-label="Suggest category">↗</button></div>
+  <div className="input-action"><input id="business" value={description} onChange={e=>{setDescription(e.target.value);setSuggested(null);setAiSuggestion(null);setAiError('');}} placeholder="A neighborhood coffee shop…" maxLength={200}/><button type="button" onClick={()=>setSuggested(classify(description))} aria-label="Suggest category">↗</button></div>
   {suggested&&<div className="suggestion" role="status">{suggested.status==='unsupported'?'No supported match. Choose a category below.':suggested.status==='ambiguous'?'Several categories match. Confirm one below.':'Suggested category — select to confirm:'}{suggested.matches.map(id=><button className="chip" key={id} onClick={()=>category(id)}>{categories[id].label}</button>)}</div>}
+  <button type="button" className="ai-suggest" disabled={aiBusy||description.trim().length<3} onClick={suggestWithAi}>{aiBusy?'Asking NVIDIA AI…':'Ask NVIDIA AI for a category'}</button>
+  <p className="micro ai-privacy">AI suggestions send this description to NVIDIA. ATLAS only accepts mapped categories and never uses AI to create map counts.</p>
+  {aiError&&<p className="ai-error" role="alert">{aiError}</p>}
+  {aiSuggestion&&<div className="suggestion" role="status"><strong>{aiSuggestion.categoryId?`AI suggestion: ${categories[aiSuggestion.categoryId].label}`:'Outside current mapped categories'}</strong><p>{aiSuggestion.explanation}</p>{aiSuggestion.categoryId&&<button className="chip" onClick={()=>category(aiSuggestion.categoryId!)}>Use {categories[aiSuggestion.categoryId].label}</button>}</div>}
   <label htmlFor="category">Confirmed category</label><select id="category" value={r.categoryId} onChange={e=>category(e.target.value as CategoryId)}>{categoryIds.map(id=><option value={id} key={id}>{categories[id].label}</option>)}</select>
   <label htmlFor="city">City preset</label><select id="city" value={r.scope.cityId} onChange={e=>{const cityId=e.target.value as CityId;onChange({...r,scope:{...r.scope,cityId,center:cities[cityId].center}});}}>{Object.entries(cities).map(([id,c])=><option key={id} value={id}>{c.label}</option>)}</select>
   <fieldset><legend>Search radius</legend><div className="segmented">{([500,1000,2000] as const).map(radiusMeters=><button key={radiusMeters} aria-pressed={r.scope.radiusMeters===radiusMeters} onClick={()=>onChange({...r,scope:{...r.scope,radiusMeters}})}>{radiusMeters===500?'500 m':`${radiusMeters/1000} km`}</button>)}</div></fieldset>

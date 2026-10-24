@@ -4,7 +4,7 @@
 
 Confirmed category and area → strict shape validation (400) → semantic validation (422) → canonical scope → exact fresh memory cache → exact fresh bundled snapshot → fixed allowlisted Overpass request → normalization and final radius filtering → semantic response validation → map/list/comparison. If live retrieval fails, use an exact compatible stale entry no older than 30 days; otherwise 503. Local rate limits return 429 and Retry-After.
 
-No business description enters server query construction. The classifier proposes categories locally; the user confirms a registry category. Query predicates are constants owned by the registry. All geometries are queried with `nwr`; ways and relations use returned centers. HTTP errors, invalid JSON, missing element arrays, runtime remarks, oversized payloads, and invalid timestamps fail retrieval. Invalid individual records make the usable response partial. A valid empty array yields a complete zero result.
+No business description enters server query construction. The instant classifier proposes categories locally; an optional explicit NVIDIA NIM request can interpret free-form descriptions and return only a supported registry category or null. The user confirms a registry category. Query predicates are constants owned by the registry. AI suggestions never create map evidence or metrics. All geometries are queried with `nwr`; ways and relations use returned centers. HTTP errors, invalid JSON, missing element arrays, runtime remarks, oversized payloads, and invalid timestamps fail retrieval. Invalid individual records make the usable response partial. A valid empty array yields a complete zero result.
 
 ## Contracts
 

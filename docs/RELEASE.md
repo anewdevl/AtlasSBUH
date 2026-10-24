@@ -5,9 +5,9 @@ Implementation date: October 24, 2026 (America/New_York).
 ## Automated verification
 
 - TypeScript: passed.
-- Vitest: 36 unit/integration tests passed with mocked transport. The release check loads all 12 genuine bundled city/category snapshots, simulates an offline provider, and confirms no upstream request is made. A regression test confirms stale registry results are hidden safely.
+- Vitest: 40 unit/integration tests passed with mocked transport. The release check loads all 12 genuine bundled city/category snapshots, simulates an offline provider, and confirms no upstream request is made. Tests cover stale registry state and the NVIDIA NIM suggestion contract.
 - Next.js production build: passed.
-- Playwright: 4 existing browser tests passed using installed Edge, with mocked competitor transport and blocked tiles. A fifth test now covers pharmacy and supermarket; the runner could not be rerun while the local Next.js dev server held its lock. The updated flows were checked in the open app.
+- Playwright: 4 existing browser tests passed using installed Edge, with mocked competitor transport and blocked tiles. Additional tests now cover pharmacy/supermarket and the optional NVIDIA suggestion flow; rerunning is blocked while the local Next.js dev server owns port 3000 and its `.next` directory.
 - Desktop and mobile screenshots inspected. List/results remain usable with tile failures.
 - `npm audit --omit=dev`: no known production dependency vulnerabilities reported.
 - In-app browser smoke with genuine exact 1 km snapshots: the four-city café flow and NYC-to-London comparison passed; NYC pharmacy returned 21 features and supermarket returned 23. All showed complete `snapshot-fresh` results.
@@ -18,7 +18,7 @@ Overpass.ch health check returned HTTP 200. A live 500 m NYC analysis returned 3
 
 ## Implemented
 
-Four-city UI; café/bakery/bubble-tea/pharmacy/supermarket registry; category suggestions; strict semantic API contracts; inspectable evidence; mapped-feature density; exact fresh/stale cache logic; partial handling; compatibility-gated comparison; local browser save; bounded upstream retrieval; separate tile/list behavior; responsive controls; visible attribution and dates. Pharmacy and supermarket use reviewed exact OSM tags. Upstream failures report timeout, HTTP status, or connection guidance; `ATLAS_OVERPASS_ENDPOINT` explicitly selects among four allowlisted global endpoints, including optional Overpass.ch API-key support.
+Four-city UI; café/bakery/bubble-tea/pharmacy/supermarket registry; local and optional NVIDIA NIM category suggestions; strict semantic API contracts; inspectable evidence; mapped-feature density; exact fresh/stale cache logic; partial handling; compatibility-gated comparison; local browser save; bounded upstream retrieval; separate tile/list behavior; responsive controls; visible attribution and dates. Pharmacy and supermarket use reviewed exact OSM tags. Upstream failures report timeout, HTTP status, or connection guidance; `ATLAS_OVERPASS_ENDPOINT` explicitly selects among four allowlisted global endpoints, including optional Overpass.ch API-key support.
 
 ## Local release status
 

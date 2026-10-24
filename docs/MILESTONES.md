@@ -12,9 +12,9 @@ Capture exact 1 km/no-adjacent snapshots for all four centers. Local verificatio
 
 Pharmacy and supermarket are now supported using reviewed, exact OSM tags and genuine four-city snapshots. Continue adding business categories only with specific evidence rules and negative cases. Consider heatmaps only after a justified spatial model and independently sourced metrics exist. Competitor density is not a demand score. Do not invent population, footfall, rents, reviews, or expansion rankings.
 
-## M4 — Optional research and reports
+## M4 — Optional research and reports (in progress)
 
-Provider adapters for geocoding, AI-assisted research, and additional evidence. Visible citations and separable facts/inferences. Add durable PostgreSQL storage only when shared analysis/history needs it; PostGIS only for justified spatial operations. Reports and audio are later presentation features, not dependencies for the first build.
+An optional NVIDIA NIM helper now interprets free-form business descriptions and maps them only to current registry categories, with an explicit unsupported state. It does not produce market research, counts, or expansion claims. Next: broaden the reviewed taxonomy for business and technology companies, then add cited external research only when source retrieval and verification are implemented. Add durable PostgreSQL storage only when shared analysis/history needs it; PostGIS only for justified spatial operations. Reports and audio are later presentation features.
 
 ## Under a 20-hour budget
 
