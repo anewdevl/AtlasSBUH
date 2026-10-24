@@ -33,7 +33,7 @@ Playwright uses installed Microsoft Edge by default on this Windows workspace. U
 - Direct/adjacent evidence, source links, representative-center disclosure, dates, cache state, density, and comparison compatibility checks.
 - Responsive map/list interface, keyboard-accessible form, and list operation independent of tiles.
 
-**Genuine demo data is not fabricated.** See [release status](docs/RELEASE.md) for capture and verification outcomes. Until genuine snapshots are captured, offline fallback is unavailable. Run the capture script on a network that can reach the configured provider before demoing offline.
+Genuine café snapshots for the four exact city presets at 1,000 m are bundled in `data/snapshots/`. They include validated source records, original retrieval metadata, and file integrity hashes. Exact stale fallback remains age-limited; recapture snapshots before they exceed 30 days.
 
 ## Documents
 

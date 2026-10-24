@@ -1,0 +1,477 @@
+{
+  "fileIntegrityHash": "11cb9220f9d4610c9e646fb05d1b89637b8fe0ebd846a0d83f1a12ff0c40888f",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "1",
+      "scope": {
+        "cityId": "dubai",
+        "center": {
+          "lat": 25.2048,
+          "lon": 55.2708
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "cafe",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 6621881169,
+        "sourceUrl": "https://www.openstreetmap.org/node/6621881169",
+        "name": "Nahawand",
+        "coordinates": {
+          "lat": 25.2026041,
+          "lon": 55.2682391
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 354.970267604084
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4528342892,
+        "sourceUrl": "https://www.openstreetmap.org/node/4528342892",
+        "name": "Hakoora Cafe Difc",
+        "coordinates": {
+          "lat": 25.2037416,
+          "lon": 55.275427
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 480.1624517288902
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4725334610,
+        "sourceUrl": "https://www.openstreetmap.org/node/4725334610",
+        "name": "Cafe b",
+        "coordinates": {
+          "lat": 25.209017,
+          "lon": 55.2725688
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 501.54045357544425
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4725334613,
+        "sourceUrl": "https://www.openstreetmap.org/node/4725334613",
+        "name": "كاريبو كوفي",
+        "coordinates": {
+          "lat": 25.2097328,
+          "lon": 55.2732159
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 599.941894927445
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4913027857,
+        "sourceUrl": "https://www.openstreetmap.org/node/4913027857",
+        "name": "Kriskos",
+        "coordinates": {
+          "lat": 25.1996603,
+          "lon": 55.2734789
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 631.8748126188688
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4926994433,
+        "sourceUrl": "https://www.openstreetmap.org/node/4926994433",
+        "name": "Café Bazza",
+        "coordinates": {
+          "lat": 25.2051196,
+          "lon": 55.2641092
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 674.085967876221
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5038415048,
+        "sourceUrl": "https://www.openstreetmap.org/node/5038415048",
+        "name": "ستاربكس",
+        "coordinates": {
+          "lat": 25.1998593,
+          "lon": 55.2747086
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 675.6190112100127
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4708896645,
+        "sourceUrl": "https://www.openstreetmap.org/node/4708896645",
+        "name": "ستاربكس",
+        "coordinates": {
+          "lat": 25.2103601,
+          "lon": 55.2735736
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 678.3087574551698
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4583025519,
+        "sourceUrl": "https://www.openstreetmap.org/node/4583025519",
+        "name": "تيم هورتونز",
+        "coordinates": {
+          "lat": 25.2105183,
+          "lon": 55.2736891
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 699.1305406783348
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11301258092,
+        "sourceUrl": "https://www.openstreetmap.org/node/11301258092",
+        "name": "THE SIX - Board Game Cafe",
+        "coordinates": {
+          "lat": 25.19828,
+          "lon": 55.2707373
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 725.0183661645934
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5534067230,
+        "sourceUrl": "https://www.openstreetmap.org/node/5534067230",
+        "name": "The Victorian cafe",
+        "coordinates": {
+          "lat": 25.2047606,
+          "lon": 55.2634931
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 735.1473107362023
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6577407912,
+        "sourceUrl": "https://www.openstreetmap.org/node/6577407912",
+        "name": "Mousse Au Chocolat",
+        "coordinates": {
+          "lat": 25.2018312,
+          "lon": 55.264054
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 754.7352029444025
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 1125557938,
+        "sourceUrl": "https://www.openstreetmap.org/way/1125557938",
+        "name": "The Barn",
+        "coordinates": {
+          "lat": 25.2090608,
+          "lon": 55.2647398
+        },
+        "positionKind": "representative-center",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 772.1367204089735
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4924997882,
+        "sourceUrl": "https://www.openstreetmap.org/node/4924997882",
+        "name": "% Arabica",
+        "coordinates": {
+          "lat": 25.2039119,
+          "lon": 55.2629014
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 800.7793108050157
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12678187806,
+        "sourceUrl": "https://www.openstreetmap.org/node/12678187806",
+        "name": "Urth Caffe",
+        "coordinates": {
+          "lat": 25.2082536,
+          "lon": 55.2632123
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 854.5253166050095
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6000790867,
+        "sourceUrl": "https://www.openstreetmap.org/node/6000790867",
+        "name": "Le Pain Quotidien",
+        "coordinates": {
+          "lat": 25.2108639,
+          "lon": 55.2760265
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 855.060717425931
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4925022351,
+        "sourceUrl": "https://www.openstreetmap.org/node/4925022351",
+        "name": "Caffe Concerto",
+        "coordinates": {
+          "lat": 25.2032749,
+          "lon": 55.2624487
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 857.1575843062615
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4911651278,
+        "sourceUrl": "https://www.openstreetmap.org/node/4911651278",
+        "name": "Grand Cafe",
+        "coordinates": {
+          "lat": 25.1991586,
+          "lon": 55.2766577
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 860.7137954701458
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2567664995,
+        "sourceUrl": "https://www.openstreetmap.org/node/2567664995",
+        "name": "ستاربكس",
+        "coordinates": {
+          "lat": 25.2109689,
+          "lon": 55.2760488
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 865.6640410428356
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4478708789,
+        "sourceUrl": "https://www.openstreetmap.org/node/4478708789",
+        "name": "% Arabica",
+        "coordinates": {
+          "lat": 25.2119093,
+          "lon": 55.2744926
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 873.4571608022158
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 7162287705,
+        "sourceUrl": "https://www.openstreetmap.org/node/7162287705",
+        "name": "At.Mosphere Burj Khalifa",
+        "coordinates": {
+          "lat": 25.1971482,
+          "lon": 55.2740955
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 913.1627389276099
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8059735317,
+        "sourceUrl": "https://www.openstreetmap.org/node/8059735317",
+        "name": "Farzi",
+        "coordinates": {
+          "lat": 25.2078848,
+          "lon": 55.2622535
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 925.7314170460934
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4386218193,
+        "sourceUrl": "https://www.openstreetmap.org/node/4386218193",
+        "name": "All the Perks",
+        "coordinates": {
+          "lat": 25.2115075,
+          "lon": 55.2764152
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 935.6342688946291
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4926994424,
+        "sourceUrl": "https://www.openstreetmap.org/node/4926994424",
+        "name": "Sikka Cafe",
+        "coordinates": {
+          "lat": 25.2032121,
+          "lon": 55.2615818
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 944.090588860991
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4911651277,
+        "sourceUrl": "https://www.openstreetmap.org/node/4911651277",
+        "name": "كاريبو كوفي",
+        "coordinates": {
+          "lat": 25.1963059,
+          "lon": 55.2705437
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 944.8527765326116
+      }
+    ],
+    "directMappedCount": 25,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 7.957747154594767,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T06:32:25.618Z",
+      "osmBaseTimestamp": "2026-10-24T06:31:06Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "da8c77b66889acc1e9c95b272c6d0caddae39274151b8c0d1d8af0120bf3ac09",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

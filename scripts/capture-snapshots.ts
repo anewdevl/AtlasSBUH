@@ -1,11 +1,12 @@
 import { mkdir,writeFile } from 'node:fs/promises';
-import { cities,type CityId } from '../src/lib/cities';
-import { SCHEMA_VERSION,type AnalysisRequest } from '../src/lib/contracts';
-import { REGISTRY_VERSION } from '../src/lib/categories';
-import { fetchOverpass } from '../src/server/overpass';
-import { normalize } from '../src/server/normalize';
-import { integrityHash } from '../src/server/cache';
+import { loadEnvConfig } from '@next/env';
+import type { CityId } from '../src/lib/cities';
+import type { AnalysisRequest } from '../src/lib/contracts';
+loadEnvConfig(process.cwd());
 async function main(){
+ const [{cities},{SCHEMA_VERSION},{REGISTRY_VERSION},{fetchOverpass},{normalize},{integrityHash}]=await Promise.all([
+  import('../src/lib/cities'),import('../src/lib/contracts'),import('../src/lib/categories'),import('../src/server/overpass'),import('../src/server/normalize'),import('../src/server/cache'),
+ ]);
  await mkdir('data/snapshots',{recursive:true});let failures=0;
  for(const cityId of Object.keys(cities) as CityId[]){
   const request:AnalysisRequest={schemaVersion:SCHEMA_VERSION,registryVersion:REGISTRY_VERSION,scope:{cityId,center:cities[cityId].center,radiusMeters:1000},categoryId:'cafe',adjacentCategoryIds:[]};

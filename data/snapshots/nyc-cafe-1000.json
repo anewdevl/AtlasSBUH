@@ -1,0 +1,3251 @@
+{
+  "fileIntegrityHash": "3ed15ff965c12fee416e6cc65c9c6ff64f6a4397ece07e0c3055f44967418f78",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "1",
+      "scope": {
+        "cityId": "nyc",
+        "center": {
+          "lat": 40.7308,
+          "lon": -73.9973
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "cafe",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 10769253446,
+        "sourceUrl": "https://www.openstreetmap.org/node/10769253446",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.7296098,
+          "lon": -73.9963468
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 154.80996401134234
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5849929497,
+        "sourceUrl": "https://www.openstreetmap.org/node/5849929497",
+        "name": "Irving Farm Coffee Roasters",
+        "coordinates": {
+          "lat": 40.7296596,
+          "lon": -73.9987543
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 176.34252426172648
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13507277200,
+        "sourceUrl": "https://www.openstreetmap.org/node/13507277200",
+        "name": "La Colombe Coffee Roasters",
+        "coordinates": {
+          "lat": 40.7306339,
+          "lon": -73.9951375
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 183.14979972261673
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2550551529,
+        "sourceUrl": "https://www.openstreetmap.org/node/2550551529",
+        "name": "Tartinery",
+        "coordinates": {
+          "lat": 40.7295546,
+          "lon": -73.9988437
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;breakfast;sandwich"
+        },
+        "distanceMeters": 189.99230574992785
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10717839773,
+        "sourceUrl": "https://www.openstreetmap.org/node/10717839773",
+        "name": "Carmela Coffee",
+        "coordinates": {
+          "lat": 40.7324116,
+          "lon": -73.9964639
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 192.5526356926093
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3233791134,
+        "sourceUrl": "https://www.openstreetmap.org/node/3233791134",
+        "name": "The Uncommons",
+        "coordinates": {
+          "lat": 40.729416,
+          "lon": -73.9987086
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 194.34801051416974
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 7024106348,
+        "sourceUrl": "https://www.openstreetmap.org/node/7024106348",
+        "name": "Mille-Feuille",
+        "coordinates": {
+          "lat": 40.7291839,
+          "lon": -73.9982031
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;sandwich;pastry;french"
+        },
+        "distanceMeters": 195.1504729732463
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10717839775,
+        "sourceUrl": "https://www.openstreetmap.org/node/10717839775",
+        "name": "Marlton Esprsso Bar",
+        "coordinates": {
+          "lat": 40.7325497,
+          "lon": -73.9967931
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 199.19089353625236
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4664765789,
+        "sourceUrl": "https://www.openstreetmap.org/node/4664765789",
+        "name": "Joe Coffee Company",
+        "coordinates": {
+          "lat": 40.7290876,
+          "lon": -73.9982833
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 207.65618529041618
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2550046897,
+        "sourceUrl": "https://www.openstreetmap.org/node/2550046897",
+        "name": "Third Rail Coffee",
+        "coordinates": {
+          "lat": 40.7299427,
+          "lon": -73.999592
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 215.37444190053273
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3233781193,
+        "sourceUrl": "https://www.openstreetmap.org/node/3233781193",
+        "name": "Stumptown",
+        "coordinates": {
+          "lat": 40.7327952,
+          "lon": -73.9979676
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 228.87650517560257
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14271862611,
+        "sourceUrl": "https://www.openstreetmap.org/node/14271862611",
+        "name": "Apollo Bagels",
+        "coordinates": {
+          "lat": 40.7303028,
+          "lon": -73.9944896
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bagel"
+        },
+        "distanceMeters": 243.17795228779926
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3506087030,
+        "sourceUrl": "https://www.openstreetmap.org/node/3506087030",
+        "name": "Caffe Reggio",
+        "coordinates": {
+          "lat": 40.730322,
+          "lon": -74.0003624
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 263.46106519196405
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2550067150,
+        "sourceUrl": "https://www.openstreetmap.org/node/2550067150",
+        "name": "Heytea",
+        "coordinates": {
+          "lat": 40.7299454,
+          "lon": -73.9942424
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 274.60636337199026
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547162213,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547162213",
+        "name": "Matto Espresso",
+        "coordinates": {
+          "lat": 40.7302457,
+          "lon": -73.9939666
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 287.56216481380113
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13858299444,
+        "sourceUrl": "https://www.openstreetmap.org/node/13858299444",
+        "name": "Saltwater Coffee",
+        "coordinates": {
+          "lat": 40.7326451,
+          "lon": -73.9998008
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 294.10096284378955
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10717839800,
+        "sourceUrl": "https://www.openstreetmap.org/node/10717839800",
+        "name": "Moshava Coffee",
+        "coordinates": {
+          "lat": 40.7332791,
+          "lon": -73.9985251
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 294.35711298513786
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547083556,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547083556",
+        "name": "Cafe Habibti",
+        "coordinates": {
+          "lat": 40.7278564,
+          "lon": -73.9993209
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 368.960887862873
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6422248286,
+        "sourceUrl": "https://www.openstreetmap.org/node/6422248286",
+        "name": "Porto Rico Importing Co.",
+        "coordinates": {
+          "lat": 40.7295309,
+          "lon": -74.0015887
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 387.95256575135085
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9552593824,
+        "sourceUrl": "https://www.openstreetmap.org/node/9552593824",
+        "name": "The Donut Pub",
+        "coordinates": {
+          "lat": 40.7297984,
+          "lon": -73.9928785
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "donut"
+        },
+        "distanceMeters": 388.8563623438007
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2845882106,
+        "sourceUrl": "https://www.openstreetmap.org/node/2845882106",
+        "name": "Bagel Pub",
+        "coordinates": {
+          "lat": 40.7340466,
+          "lon": -73.9990277
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bagel;sandwich;breakfast"
+        },
+        "distanceMeters": 389.25201103192404
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2358048509,
+        "sourceUrl": "https://www.openstreetmap.org/node/2358048509",
+        "name": "Joe Coffee Company",
+        "coordinates": {
+          "lat": 40.7333179,
+          "lon": -74.0005572
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 392.0604889727944
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12621649169,
+        "sourceUrl": "https://www.openstreetmap.org/node/12621649169",
+        "name": "The Coppola Cafe",
+        "coordinates": {
+          "lat": 40.7322995,
+          "lon": -74.0015137
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 392.2516108894835
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12980284301,
+        "sourceUrl": "https://www.openstreetmap.org/node/12980284301",
+        "name": "Luckin Coffee",
+        "coordinates": {
+          "lat": 40.7305616,
+          "lon": -73.9926382
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 393.7053600379787
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12621634600,
+        "sourceUrl": "https://www.openstreetmap.org/node/12621634600",
+        "name": "amano cafe",
+        "coordinates": {
+          "lat": 40.7321451,
+          "lon": -74.0017362
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 402.61098490382955
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12440279485,
+        "sourceUrl": "https://www.openstreetmap.org/node/12440279485",
+        "name": "Pop Up Grocer",
+        "coordinates": {
+          "lat": 40.7296464,
+          "lon": -74.0018437
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 403.7803569378302
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 886702490,
+        "sourceUrl": "https://www.openstreetmap.org/node/886702490",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.7272065,
+          "lon": -73.9954808
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 427.97441993363486
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6734071958,
+        "sourceUrl": "https://www.openstreetmap.org/node/6734071958",
+        "name": null,
+        "coordinates": {
+          "lat": 40.7276892,
+          "lon": -74.0004432
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 435.66033132928317
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547036417,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547036417",
+        "name": "Grabstein's Bagels",
+        "coordinates": {
+          "lat": 40.726927,
+          "lon": -73.9957148
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bagel;breakfast;sandwich"
+        },
+        "distanceMeters": 450.8976540453549
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6206584785,
+        "sourceUrl": "https://www.openstreetmap.org/node/6206584785",
+        "name": "Banter",
+        "coordinates": {
+          "lat": 40.7278638,
+          "lon": -74.001067
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 455.3592637698531
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5788273495,
+        "sourceUrl": "https://www.openstreetmap.org/node/5788273495",
+        "name": "Gregorys Coffee",
+        "coordinates": {
+          "lat": 40.726876,
+          "lon": -73.995752
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 455.4094267553901
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3581307956,
+        "sourceUrl": "https://www.openstreetmap.org/node/3581307956",
+        "name": "La Colombe Coffee Roasters",
+        "coordinates": {
+          "lat": 40.7280641,
+          "lon": -73.9932516
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 457.07746774580977
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5243567855,
+        "sourceUrl": "https://www.openstreetmap.org/node/5243567855",
+        "name": "Morgenstern's Finest Ice Cream",
+        "coordinates": {
+          "lat": 40.727163,
+          "lon": -73.9999069
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "ice_cream"
+        },
+        "distanceMeters": 460.2240926174648
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13008984463,
+        "sourceUrl": "https://www.openstreetmap.org/node/13008984463",
+        "name": "Arcane Estate Coffee",
+        "coordinates": {
+          "lat": 40.7312645,
+          "lon": -74.0028039
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 466.63364839529834
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5792284140,
+        "sourceUrl": "https://www.openstreetmap.org/node/5792284140",
+        "name": "Lafayette Grand Café & Bakery",
+        "coordinates": {
+          "lat": 40.7275742,
+          "lon": -73.993705
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "french"
+        },
+        "distanceMeters": 469.49531001172454
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14205415766,
+        "sourceUrl": "https://www.openstreetmap.org/node/14205415766",
+        "name": "Semm",
+        "coordinates": {
+          "lat": 40.7286245,
+          "lon": -73.9922988
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;tea;dessert"
+        },
+        "distanceMeters": 485.9111966969547
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14216453501,
+        "sourceUrl": "https://www.openstreetmap.org/node/14216453501",
+        "name": "Kerber's Farm",
+        "coordinates": {
+          "lat": 40.7312364,
+          "lon": -74.0031196
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 492.76291267187196
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5395639744,
+        "sourceUrl": "https://www.openstreetmap.org/node/5395639744",
+        "name": "Honeybrains",
+        "coordinates": {
+          "lat": 40.7270961,
+          "lon": -73.993997
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "sandwich"
+        },
+        "distanceMeters": 497.0802539932926
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11046991906,
+        "sourceUrl": "https://www.openstreetmap.org/node/11046991906",
+        "name": "Jack's Stir Brew Coffee",
+        "coordinates": {
+          "lat": 40.7345114,
+          "lon": -74.0006277
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 498.9294052254446
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547110379,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547110379",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.7268477,
+          "lon": -74.0001615
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 501.27709514012673
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5611937541,
+        "sourceUrl": "https://www.openstreetmap.org/node/5611937541",
+        "name": "Birch Coffee",
+        "coordinates": {
+          "lat": 40.7265689,
+          "lon": -73.9996226
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 509.56043110333945
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2358048512,
+        "sourceUrl": "https://www.openstreetmap.org/node/2358048512",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.7332121,
+          "lon": -74.0026862
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 527.172704562552
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5792264308,
+        "sourceUrl": "https://www.openstreetmap.org/node/5792264308",
+        "name": "Cafe Angelique",
+        "coordinates": {
+          "lat": 40.726208,
+          "lon": -73.9954844
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "breakfast;sandwich"
+        },
+        "distanceMeters": 533.0345258587428
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547109169,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547109169",
+        "name": "Felix Roasting Co.",
+        "coordinates": {
+          "lat": 40.7261039,
+          "lon": -73.9987153
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 535.6280953083615
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4998805616,
+        "sourceUrl": "https://www.openstreetmap.org/node/4998805616",
+        "name": "Hex & Co.",
+        "coordinates": {
+          "lat": 40.73265,
+          "lon": -73.9914016
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 537.8923233861832
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9036389122,
+        "sourceUrl": "https://www.openstreetmap.org/node/9036389122",
+        "name": "Astor Plate",
+        "coordinates": {
+          "lat": 40.7297204,
+          "lon": -73.9909801
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "breakfast;sandwich"
+        },
+        "distanceMeters": 545.8929272656674
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5726008201,
+        "sourceUrl": "https://www.openstreetmap.org/node/5726008201",
+        "name": "Blue Bottle Coffee",
+        "coordinates": {
+          "lat": 40.7340809,
+          "lon": -73.9924617
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 547.0747389378918
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12709183134,
+        "sourceUrl": "https://www.openstreetmap.org/node/12709183134",
+        "name": "NewsBar",
+        "coordinates": {
+          "lat": 40.7341459,
+          "lon": -73.9923988
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "breakfast;sandwich"
+        },
+        "distanceMeters": 555.846922771978
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6621617747,
+        "sourceUrl": "https://www.openstreetmap.org/node/6621617747",
+        "name": "O Café",
+        "coordinates": {
+          "lat": 40.7358148,
+          "lon": -73.9976834
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 558.5552918507001
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2562449499,
+        "sourceUrl": "https://www.openstreetmap.org/node/2562449499",
+        "name": "Daily Provisions",
+        "coordinates": {
+          "lat": 40.7292441,
+          "lon": -74.0037022
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffe_shop;breakfast;american"
+        },
+        "distanceMeters": 566.5297984009568
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4320014581,
+        "sourceUrl": "https://www.openstreetmap.org/node/4320014581",
+        "name": "Bar Pisellino",
+        "coordinates": {
+          "lat": 40.7330154,
+          "lon": -74.0033657
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "italian"
+        },
+        "distanceMeters": 567.3665986896899
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12055618255,
+        "sourceUrl": "https://www.openstreetmap.org/node/12055618255",
+        "name": "Cafe Lyria",
+        "coordinates": {
+          "lat": 40.725889,
+          "lon": -73.9954623
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 567.609973149616
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6621617751,
+        "sourceUrl": "https://www.openstreetmap.org/node/6621617751",
+        "name": "Blue stripes",
+        "coordinates": {
+          "lat": 40.7347019,
+          "lon": -73.9929545
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "cacao"
+        },
+        "distanceMeters": 567.7228009085405
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547193326,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547193326",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.7342526,
+          "lon": -73.9923138
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 569.1233295397467
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4998805612,
+        "sourceUrl": "https://www.openstreetmap.org/node/4998805612",
+        "name": "Outro",
+        "coordinates": {
+          "lat": 40.7327767,
+          "lon": -73.9910309
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 572.1417027329801
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12626586012,
+        "sourceUrl": "https://www.openstreetmap.org/node/12626586012",
+        "name": "St. George Coffee",
+        "coordinates": {
+          "lat": 40.7321479,
+          "lon": -74.0038758
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "french;coffee_shop"
+        },
+        "distanceMeters": 573.9959092320861
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547200402,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547200402",
+        "name": "Joe Coffee Company",
+        "coordinates": {
+          "lat": 40.7350879,
+          "lon": -73.9933063
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "pastry"
+        },
+        "distanceMeters": 583.5811805753129
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12947673801,
+        "sourceUrl": "https://www.openstreetmap.org/node/12947673801",
+        "name": "Joe & The Juice",
+        "coordinates": {
+          "lat": 40.7325403,
+          "lon": -74.0038809
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 587.3066318562288
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11725779437,
+        "sourceUrl": "https://www.openstreetmap.org/node/11725779437",
+        "name": "Panther Coffee",
+        "coordinates": {
+          "lat": 40.7256642,
+          "lon": -73.9989626
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 588.0087167616497
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6221183785,
+        "sourceUrl": "https://www.openstreetmap.org/node/6221183785",
+        "name": "Nutella café",
+        "coordinates": {
+          "lat": 40.7347592,
+          "lon": -73.9925643
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 594.1681740452941
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10301379609,
+        "sourceUrl": "https://www.openstreetmap.org/node/10301379609",
+        "name": "Hungry Ghost Coffee",
+        "coordinates": {
+          "lat": 40.7328798,
+          "lon": -74.0038211
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 596.1546634567118
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3041538637,
+        "sourceUrl": "https://www.openstreetmap.org/node/3041538637",
+        "name": "Cafe Condesa",
+        "coordinates": {
+          "lat": 40.7343889,
+          "lon": -74.002678
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 603.81887923282
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13926596098,
+        "sourceUrl": "https://www.openstreetmap.org/node/13926596098",
+        "name": "Cafe Fred",
+        "coordinates": {
+          "lat": 40.7332341,
+          "lon": -73.9908735
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 605.373106416963
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4300546590,
+        "sourceUrl": "https://www.openstreetmap.org/node/4300546590",
+        "name": "Murray's Bagels",
+        "coordinates": {
+          "lat": 40.7363315,
+          "lon": -73.9971668
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bagel"
+        },
+        "distanceMeters": 615.1771223055606
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2562460591,
+        "sourceUrl": "https://www.openstreetmap.org/node/2562460591",
+        "name": "Bedford Studio",
+        "coordinates": {
+          "lat": 40.7311268,
+          "lon": -74.0046067
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 616.7449193259331
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2109918801,
+        "sourceUrl": "https://www.openstreetmap.org/node/2109918801",
+        "name": "Bite",
+        "coordinates": {
+          "lat": 40.725584,
+          "lon": -73.9947398
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "sandwich"
+        },
+        "distanceMeters": 618.816029767213
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4909655521,
+        "sourceUrl": "https://www.openstreetmap.org/node/4909655521",
+        "name": "Partners Coffee",
+        "coordinates": {
+          "lat": 40.7349281,
+          "lon": -74.0022788
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 621.844634175818
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10830968028,
+        "sourceUrl": "https://www.openstreetmap.org/node/10830968028",
+        "name": "Joe & The Juice",
+        "coordinates": {
+          "lat": 40.7260837,
+          "lon": -74.001279
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 622.4501841174923
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12890222604,
+        "sourceUrl": "https://www.openstreetmap.org/node/12890222604",
+        "name": "Cafe 2by2",
+        "coordinates": {
+          "lat": 40.7309058,
+          "lon": -73.9899035
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;pastry"
+        },
+        "distanceMeters": 623.3522006044338
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6345333428,
+        "sourceUrl": "https://www.openstreetmap.org/node/6345333428",
+        "name": "Irving Farm New York",
+        "coordinates": {
+          "lat": 40.7312029,
+          "lon": -73.9899196
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;breakfast"
+        },
+        "distanceMeters": 623.4947984578846
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11123639305,
+        "sourceUrl": "https://www.openstreetmap.org/node/11123639305",
+        "name": "Blank Street Coffee",
+        "coordinates": {
+          "lat": 40.7264761,
+          "lon": -74.0020131
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 623.6105105885052
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 1149319925,
+        "sourceUrl": "https://www.openstreetmap.org/way/1149319925",
+        "name": "Gasoline Alley Coffee",
+        "coordinates": {
+          "lat": 40.7255061,
+          "lon": -73.9947732
+        },
+        "positionKind": "representative-center",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 625.9790926588335
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11048648635,
+        "sourceUrl": "https://www.openstreetmap.org/node/11048648635",
+        "name": "Blank Slate",
+        "coordinates": {
+          "lat": 40.7264448,
+          "lon": -74.0020207
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 626.7041280247521
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6621617750,
+        "sourceUrl": "https://www.openstreetmap.org/node/6621617750",
+        "name": "Paradis",
+        "coordinates": {
+          "lat": 40.7326818,
+          "lon": -73.9902436
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 630.3210278698566
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4149654227,
+        "sourceUrl": "https://www.openstreetmap.org/node/4149654227",
+        "name": "Bluestone Lane",
+        "coordinates": {
+          "lat": 40.7358239,
+          "lon": -74.0008231
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 632.6061618222294
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 1149319923,
+        "sourceUrl": "https://www.openstreetmap.org/way/1149319923",
+        "name": "Cha Cha Matcha",
+        "coordinates": {
+          "lat": 40.7254173,
+          "lon": -73.9948299
+        },
+        "positionKind": "representative-center",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 633.6880090690026
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14293863554,
+        "sourceUrl": "https://www.openstreetmap.org/node/14293863554",
+        "name": "Bar à Part",
+        "coordinates": {
+          "lat": 40.7314242,
+          "lon": -74.0047833
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 634.3611529680985
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6550407925,
+        "sourceUrl": "https://www.openstreetmap.org/node/6550407925",
+        "name": "Matchaful",
+        "coordinates": {
+          "lat": 40.7335428,
+          "lon": -74.0039268
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "tea;teahouse;donut;cookie"
+        },
+        "distanceMeters": 636.2370388908656
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5642382126,
+        "sourceUrl": "https://www.openstreetmap.org/node/5642382126",
+        "name": "Chobani SoHo",
+        "coordinates": {
+          "lat": 40.7257638,
+          "lon": -74.0011009
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "yogurt;coffee_shop"
+        },
+        "distanceMeters": 645.1206897861181
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5796438080,
+        "sourceUrl": "https://www.openstreetmap.org/node/5796438080",
+        "name": "La Colombe Coffee Roasters",
+        "coordinates": {
+          "lat": 40.7257887,
+          "lon": -74.0011724
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 645.742201975794
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8789178531,
+        "sourceUrl": "https://www.openstreetmap.org/node/8789178531",
+        "name": "Croft Alley",
+        "coordinates": {
+          "lat": 40.7270606,
+          "lon": -74.0031671
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "breakfast;salad"
+        },
+        "distanceMeters": 645.9944252076185
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12350543849,
+        "sourceUrl": "https://www.openstreetmap.org/node/12350543849",
+        "name": "L.A. Burdick Handmade Chocolates",
+        "coordinates": {
+          "lat": 40.7258246,
+          "lon": -74.0012786
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;chocolate"
+        },
+        "distanceMeters": 646.89282874668
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547155234,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547155234",
+        "name": "Hidden Grounds",
+        "coordinates": {
+          "lat": 40.7304731,
+          "lon": -73.9894757
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 660.2917453596427
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11653922817,
+        "sourceUrl": "https://www.openstreetmap.org/node/11653922817",
+        "name": "787 Coffee",
+        "coordinates": {
+          "lat": 40.7340242,
+          "lon": -74.0039038
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 661.9301376425025
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11441007599,
+        "sourceUrl": "https://www.openstreetmap.org/node/11441007599",
+        "name": "Mangia",
+        "coordinates": {
+          "lat": 40.7248407,
+          "lon": -73.9970753
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;pastry;italian"
+        },
+        "distanceMeters": 662.9143885949634
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12739827416,
+        "sourceUrl": "https://www.openstreetmap.org/node/12739827416",
+        "name": "12 Matcha",
+        "coordinates": {
+          "lat": 40.7259999,
+          "lon": -73.9925835
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 665.4621781255764
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11939429373,
+        "sourceUrl": "https://www.openstreetmap.org/node/11939429373",
+        "name": "Do Not Feed Alligators",
+        "coordinates": {
+          "lat": 40.7336811,
+          "lon": -74.0042611
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 668.3290730050829
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12195740993,
+        "sourceUrl": "https://www.openstreetmap.org/node/12195740993",
+        "name": "Starbucks Pickup",
+        "coordinates": {
+          "lat": 40.7293401,
+          "lon": -74.0049942
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 668.3475699904155
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2494245665,
+        "sourceUrl": "https://www.openstreetmap.org/node/2494245665",
+        "name": "The Bean",
+        "coordinates": {
+          "lat": 40.7297726,
+          "lon": -73.98948
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 668.7615407036482
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8587042214,
+        "sourceUrl": "https://www.openstreetmap.org/node/8587042214",
+        "name": "Buddy Buddy",
+        "coordinates": {
+          "lat": 40.7261377,
+          "lon": -73.9921319
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 677.0623941880071
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11062705505,
+        "sourceUrl": "https://www.openstreetmap.org/node/11062705505",
+        "name": "Fellini Coffee",
+        "coordinates": {
+          "lat": 40.735914,
+          "lon": -74.0016986
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "italian"
+        },
+        "distanceMeters": 678.7653805206751
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6612404170,
+        "sourceUrl": "https://www.openstreetmap.org/node/6612404170",
+        "name": "Le Café coffee",
+        "coordinates": {
+          "lat": 40.735804,
+          "lon": -73.9926767
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "cafe"
+        },
+        "distanceMeters": 679.2302208216094
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 1754412984,
+        "sourceUrl": "https://www.openstreetmap.org/node/1754412984",
+        "name": "Think Coffee",
+        "coordinates": {
+          "lat": 40.733002,
+          "lon": -73.9897704
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 680.0546791563338
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12773041767,
+        "sourceUrl": "https://www.openstreetmap.org/node/12773041767",
+        "name": "Capital One Café",
+        "coordinates": {
+          "lat": 40.7346739,
+          "lon": -73.9909928
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;tea"
+        },
+        "distanceMeters": 684.0912780052516
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2702954496,
+        "sourceUrl": "https://www.openstreetmap.org/node/2702954496",
+        "name": "House of Desserts  Mango Mango",
+        "coordinates": {
+          "lat": 40.7369794,
+          "lon": -73.9954955
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 703.738714010479
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13175877701,
+        "sourceUrl": "https://www.openstreetmap.org/node/13175877701",
+        "name": "ansā Micro Coffee Roastery",
+        "coordinates": {
+          "lat": 40.7256156,
+          "lon": -74.0021423
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 706.2730761279494
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9559658875,
+        "sourceUrl": "https://www.openstreetmap.org/node/9559658875",
+        "name": "Beard Papa's",
+        "coordinates": {
+          "lat": 40.7293544,
+          "lon": -73.989023
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "dessert"
+        },
+        "distanceMeters": 715.7257346779193
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3041561933,
+        "sourceUrl": "https://www.openstreetmap.org/node/3041561933",
+        "name": "Sant Ambroeus",
+        "coordinates": {
+          "lat": 40.7354463,
+          "lon": -74.0031986
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 716.8958832663883
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11910381816,
+        "sourceUrl": "https://www.openstreetmap.org/node/11910381816",
+        "name": "Spot Dessert Bar",
+        "coordinates": {
+          "lat": 40.7292945,
+          "lon": -73.989015
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "dessert"
+        },
+        "distanceMeters": 717.9067926664621
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10908635405,
+        "sourceUrl": "https://www.openstreetmap.org/node/10908635405",
+        "name": "Gregory’s coffee",
+        "coordinates": {
+          "lat": 40.7282617,
+          "lon": -74.0051457
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 718.8339115575737
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4781188614,
+        "sourceUrl": "https://www.openstreetmap.org/node/4781188614",
+        "name": "Getting Hungry",
+        "coordinates": {
+          "lat": 40.7289162,
+          "lon": -74.0054734
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "deli"
+        },
+        "distanceMeters": 719.8643624429477
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9978637390,
+        "sourceUrl": "https://www.openstreetmap.org/node/9978637390",
+        "name": "Three Jewels",
+        "coordinates": {
+          "lat": 40.7262473,
+          "lon": -73.9911911
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 721.9819473432213
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11942932648,
+        "sourceUrl": "https://www.openstreetmap.org/node/11942932648",
+        "name": "Duo",
+        "coordinates": {
+          "lat": 40.7273382,
+          "lon": -73.9900277
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "pastry"
+        },
+        "distanceMeters": 723.6636354500018
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14063046604,
+        "sourceUrl": "https://www.openstreetmap.org/node/14063046604",
+        "name": "A-Frame Cafe",
+        "coordinates": {
+          "lat": 40.7242875,
+          "lon": -73.9967926
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 725.4180993786665
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10923174175,
+        "sourceUrl": "https://www.openstreetmap.org/node/10923174175",
+        "name": "Le Café Coffee",
+        "coordinates": {
+          "lat": 40.7338591,
+          "lon": -73.9896639
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 727.7983965650194
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 886175538,
+        "sourceUrl": "https://www.openstreetmap.org/node/886175538",
+        "name": "Think Coffee",
+        "coordinates": {
+          "lat": 40.7254073,
+          "lon": -73.9923897
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 728.5412226648453
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11610991069,
+        "sourceUrl": "https://www.openstreetmap.org/node/11610991069",
+        "name": "La Cabra",
+        "coordinates": {
+          "lat": 40.7242387,
+          "lon": -73.9961964
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 735.4862129752961
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11654745957,
+        "sourceUrl": "https://www.openstreetmap.org/node/11654745957",
+        "name": "Pop’s Bagels",
+        "coordinates": {
+          "lat": 40.7245453,
+          "lon": -73.9943619
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 738.243810668922
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9036389125,
+        "sourceUrl": "https://www.openstreetmap.org/node/9036389125",
+        "name": "Le Petit Parisien",
+        "coordinates": {
+          "lat": 40.7282924,
+          "lon": -73.9891267
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "sandwich;pastry;french"
+        },
+        "distanceMeters": 743.0126399967568
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2569261266,
+        "sourceUrl": "https://www.openstreetmap.org/node/2569261266",
+        "name": "Roasting Plant",
+        "coordinates": {
+          "lat": 40.736735,
+          "lon": -74.0013586
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 743.2807621635455
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6110907588,
+        "sourceUrl": "https://www.openstreetmap.org/node/6110907588",
+        "name": "Mango Mango Dessert",
+        "coordinates": {
+          "lat": 40.7291946,
+          "lon": -73.9886324
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "asian;dessert"
+        },
+        "distanceMeters": 751.8549428252123
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14069288289,
+        "sourceUrl": "https://www.openstreetmap.org/node/14069288289",
+        "name": "ChaHalo",
+        "coordinates": {
+          "lat": 40.7291284,
+          "lon": -73.9886073
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 755.6867995861973
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12055649675,
+        "sourceUrl": "https://www.openstreetmap.org/node/12055649675",
+        "name": "Raf's",
+        "coordinates": {
+          "lat": 40.7246991,
+          "lon": -73.9932247
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "italian;french;breakfast;pastry"
+        },
+        "distanceMeters": 760.3555003970744
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547241611,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547241611",
+        "name": "La Colombe Coffee Roasters",
+        "coordinates": {
+          "lat": 40.7239788,
+          "lon": -73.9964591
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 761.7855661147295
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11738012197,
+        "sourceUrl": "https://www.openstreetmap.org/node/11738012197",
+        "name": "Sui Yoga Studio.Cafe",
+        "coordinates": {
+          "lat": 40.7258776,
+          "lon": -74.0036174
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 763.5231656316507
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9543899218,
+        "sourceUrl": "https://www.openstreetmap.org/node/9543899218",
+        "name": "Oslo Coffee Roasters",
+        "coordinates": {
+          "lat": 40.7337757,
+          "lon": -74.0054727
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 763.999312896848
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 7150082985,
+        "sourceUrl": "https://www.openstreetmap.org/node/7150082985",
+        "name": "T2 tea",
+        "coordinates": {
+          "lat": 40.7238897,
+          "lon": -73.9967151
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 769.9694061581907
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9566829986,
+        "sourceUrl": "https://www.openstreetmap.org/node/9566829986",
+        "name": "N25 Nitro Tea & Coffee",
+        "coordinates": {
+          "lat": 40.7290595,
+          "lon": -73.9884404
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "vietnamese"
+        },
+        "distanceMeters": 771.2132069988556
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9045283641,
+        "sourceUrl": "https://www.openstreetmap.org/node/9045283641",
+        "name": "Oscar's Place",
+        "coordinates": {
+          "lat": 40.7317675,
+          "lon": -74.0064128
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "british"
+        },
+        "distanceMeters": 775.354205117192
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13740004141,
+        "sourceUrl": "https://www.openstreetmap.org/node/13740004141",
+        "name": "Zuri",
+        "coordinates": {
+          "lat": 40.7349577,
+          "lon": -74.0047159
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 777.291031456472
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9579377217,
+        "sourceUrl": "https://www.openstreetmap.org/node/9579377217",
+        "name": "Sammy L Coffee",
+        "coordinates": {
+          "lat": 40.7316535,
+          "lon": -73.9880652
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;sandwich;pastry"
+        },
+        "distanceMeters": 783.9011165884452
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4944843921,
+        "sourceUrl": "https://www.openstreetmap.org/node/4944843921",
+        "name": "Coffee Project NY",
+        "coordinates": {
+          "lat": 40.7270679,
+          "lon": -73.9893826
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 785.6903833360598
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3925063780,
+        "sourceUrl": "https://www.openstreetmap.org/node/3925063780",
+        "name": "Dominique Ansel Bakery",
+        "coordinates": {
+          "lat": 40.725171,
+          "lon": -74.00295
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 786.4102994961299
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5397270880,
+        "sourceUrl": "https://www.openstreetmap.org/node/5397270880",
+        "name": "Cha-An Teahouse",
+        "coordinates": {
+          "lat": 40.7294568,
+          "lon": -73.9881288
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 787.0895219351023
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6693478207,
+        "sourceUrl": "https://www.openstreetmap.org/node/6693478207",
+        "name": "Everyman Espresso",
+        "coordinates": {
+          "lat": 40.7327461,
+          "lon": -73.9883025
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 788.4122842603191
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2020724922,
+        "sourceUrl": "https://www.openstreetmap.org/node/2020724922",
+        "name": "Whole Green",
+        "coordinates": {
+          "lat": 40.7375845,
+          "lon": -74.0001443
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 791.5529478559735
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4922311233,
+        "sourceUrl": "https://www.openstreetmap.org/node/4922311233",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.7351434,
+          "lon": -73.9897998
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 795.3781647239587
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9543899217,
+        "sourceUrl": "https://www.openstreetmap.org/node/9543899217",
+        "name": "Blackstone Coffee Roaster",
+        "coordinates": {
+          "lat": 40.7332768,
+          "lon": -74.0061716
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 796.6421869953309
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4922311227,
+        "sourceUrl": "https://www.openstreetmap.org/node/4922311227",
+        "name": "787 Coffee",
+        "coordinates": {
+          "lat": 40.7273626,
+          "lon": -73.9888015
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 811.7365095901368
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2555137420,
+        "sourceUrl": "https://www.openstreetmap.org/node/2555137420",
+        "name": "Joe Coffee",
+        "coordinates": {
+          "lat": 40.7364478,
+          "lon": -73.9909744
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 823.688964185895
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5896851985,
+        "sourceUrl": "https://www.openstreetmap.org/node/5896851985",
+        "name": "Seven Grams Caffé",
+        "coordinates": {
+          "lat": 40.7273043,
+          "lon": -74.0059691
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;cake"
+        },
+        "distanceMeters": 827.4719824147131
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5399823086,
+        "sourceUrl": "https://www.openstreetmap.org/node/5399823086",
+        "name": "Ground Support Café",
+        "coordinates": {
+          "lat": 40.7242595,
+          "lon": -74.0019929
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;sandwich;pastry"
+        },
+        "distanceMeters": 827.8308332319625
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11105960681,
+        "sourceUrl": "https://www.openstreetmap.org/node/11105960681",
+        "name": "Poetica Coffee",
+        "coordinates": {
+          "lat": 40.728556,
+          "lon": -73.9879209
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 828.7667847440266
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2546985590,
+        "sourceUrl": "https://www.openstreetmap.org/node/2546985590",
+        "name": "Kona Coffee Roasters",
+        "coordinates": {
+          "lat": 40.7258624,
+          "lon": -73.9898947
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;sandwich"
+        },
+        "distanceMeters": 831.1585287424745
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10697603105,
+        "sourceUrl": "https://www.openstreetmap.org/node/10697603105",
+        "name": "Modern Bread and Bagel",
+        "coordinates": {
+          "lat": 40.7382535,
+          "lon": -73.9985079
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bagel;pastry"
+        },
+        "distanceMeters": 835.0168320283084
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10689197471,
+        "sourceUrl": "https://www.openstreetmap.org/node/10689197471",
+        "name": "Matto Espresso",
+        "coordinates": {
+          "lat": 40.7328775,
+          "lon": -73.9877118
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 840.2830654160206
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 1868984359,
+        "sourceUrl": "https://www.openstreetmap.org/node/1868984359",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.7337954,
+          "lon": -74.0064644
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 840.9613905622217
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 247862492,
+        "sourceUrl": "https://www.openstreetmap.org/way/247862492",
+        "name": "Bagel Belly",
+        "coordinates": {
+          "lat": 40.7330728,
+          "lon": -73.9877024
+        },
+        "positionKind": "representative-center",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bagel;sandwich"
+        },
+        "distanceMeters": 847.265616054856
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6412172122,
+        "sourceUrl": "https://www.openstreetmap.org/node/6412172122",
+        "name": "787 Coffee",
+        "coordinates": {
+          "lat": 40.7298631,
+          "lon": -73.9873007
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;latin_american"
+        },
+        "distanceMeters": 848.9800886233496
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5265747921,
+        "sourceUrl": "https://www.openstreetmap.org/node/5265747921",
+        "name": "Think Coffee",
+        "coordinates": {
+          "lat": 40.7384445,
+          "lon": -73.9958164
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 859.1718215231346
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11342362811,
+        "sourceUrl": "https://www.openstreetmap.org/node/11342362811",
+        "name": "Cafe Kitsune",
+        "coordinates": {
+          "lat": 40.7350547,
+          "lon": -74.0058686
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 863.1814542161574
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 1112170141,
+        "sourceUrl": "https://www.openstreetmap.org/way/1112170141",
+        "name": "Springbone",
+        "coordinates": {
+          "lat": 40.7365465,
+          "lon": -73.9903398
+        },
+        "positionKind": "representative-center",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 867.308840683558
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547054885,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547054885",
+        "name": "The Bean",
+        "coordinates": {
+          "lat": 40.7256046,
+          "lon": -73.98962
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 867.4961093434691
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4208955389,
+        "sourceUrl": "https://www.openstreetmap.org/node/4208955389",
+        "name": "Sweet Corner Bakeshop",
+        "coordinates": {
+          "lat": 40.7345574,
+          "lon": -74.0063447
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 869.1126972667889
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2384821679,
+        "sourceUrl": "https://www.openstreetmap.org/node/2384821679",
+        "name": "Bagel and More",
+        "coordinates": {
+          "lat": 40.7384873,
+          "lon": -74.0000074
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bagel"
+        },
+        "distanceMeters": 884.7039995102662
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2550007703,
+        "sourceUrl": "https://www.openstreetmap.org/node/2550007703",
+        "name": "Kollectiv",
+        "coordinates": {
+          "lat": 40.724302,
+          "lon": -73.9912261
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 885.4561787920862
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3863639458,
+        "sourceUrl": "https://www.openstreetmap.org/node/3863639458",
+        "name": "Café Minerva",
+        "coordinates": {
+          "lat": 40.737043,
+          "lon": -74.003887
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 888.7806688800877
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12946798001,
+        "sourceUrl": "https://www.openstreetmap.org/node/12946798001",
+        "name": "Joe & The Juice",
+        "coordinates": {
+          "lat": 40.7350209,
+          "lon": -74.0062596
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 888.9305946537189
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11739055903,
+        "sourceUrl": "https://www.openstreetmap.org/node/11739055903",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.7257767,
+          "lon": -74.0055352
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 890.811735945159
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9543892117,
+        "sourceUrl": "https://www.openstreetmap.org/node/9543892117",
+        "name": "La Cabra",
+        "coordinates": {
+          "lat": 40.7293965,
+          "lon": -73.9868649
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 893.0306414795414
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5265747703,
+        "sourceUrl": "https://www.openstreetmap.org/node/5265747703",
+        "name": "Blank Street Coffee",
+        "coordinates": {
+          "lat": 40.7388326,
+          "lon": -73.9955295
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 905.5561242452221
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2384821767,
+        "sourceUrl": "https://www.openstreetmap.org/node/2384821767",
+        "name": "Vinny’s Gluten-Free Kitchen",
+        "coordinates": {
+          "lat": 40.7388057,
+          "lon": -73.9997449
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "pizza"
+        },
+        "distanceMeters": 913.7174511594241
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4149654489,
+        "sourceUrl": "https://www.openstreetmap.org/node/4149654489",
+        "name": "MUD",
+        "coordinates": {
+          "lat": 40.7290442,
+          "lon": -73.9866462
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "brunch;coffee_shop"
+        },
+        "distanceMeters": 918.7038677745168
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2384821772,
+        "sourceUrl": "https://www.openstreetmap.org/node/2384821772",
+        "name": "The Donut Pub",
+        "coordinates": {
+          "lat": 40.7388452,
+          "lon": -73.9998143
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "donut"
+        },
+        "distanceMeters": 919.3269124544645
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10064144417,
+        "sourceUrl": "https://www.openstreetmap.org/node/10064144417",
+        "name": "Joe & The Juice",
+        "coordinates": {
+          "lat": 40.7225249,
+          "lon": -73.9974462
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 920.2316085242106
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2065455029,
+        "sourceUrl": "https://www.openstreetmap.org/node/2065455029",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.722517,
+          "lon": -73.997904
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 922.4328305325308
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6206442504,
+        "sourceUrl": "https://www.openstreetmap.org/node/6206442504",
+        "name": "Cabin on 9th",
+        "coordinates": {
+          "lat": 40.7288312,
+          "lon": -73.9866503
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 923.6927577025434
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12365598708,
+        "sourceUrl": "https://www.openstreetmap.org/node/12365598708",
+        "name": "The Green Room by Blank Street Coffee",
+        "coordinates": {
+          "lat": 40.7224732,
+          "lon": -73.9972411
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 925.9112181704122
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11386500757,
+        "sourceUrl": "https://www.openstreetmap.org/node/11386500757",
+        "name": "Hokkaido Baked Cheese Tart",
+        "coordinates": {
+          "lat": 40.7300314,
+          "lon": -73.986353
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;pastry"
+        },
+        "distanceMeters": 926.3689575924126
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547141627,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547141627",
+        "name": "Prince Tea House",
+        "coordinates": {
+          "lat": 40.7294911,
+          "lon": -73.9863927
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "asian;tea_house;sandwich;brunch"
+        },
+        "distanceMeters": 930.5292800337652
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4212376889,
+        "sourceUrl": "https://www.openstreetmap.org/node/4212376889",
+        "name": "The Elk",
+        "coordinates": {
+          "lat": 40.7341718,
+          "lon": -74.0074226
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 931.6935433921614
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5403602691,
+        "sourceUrl": "https://www.openstreetmap.org/node/5403602691",
+        "name": "Matcha House",
+        "coordinates": {
+          "lat": 40.7296787,
+          "lon": -73.9863187
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "matcha"
+        },
+        "distanceMeters": 933.6733483070963
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10923249690,
+        "sourceUrl": "https://www.openstreetmap.org/node/10923249690",
+        "name": "Butterdose",
+        "coordinates": {
+          "lat": 40.7319019,
+          "lon": -73.9863128
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 933.8652423492343
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10695864090,
+        "sourceUrl": "https://www.openstreetmap.org/node/10695864090",
+        "name": "Venchi",
+        "coordinates": {
+          "lat": 40.7374343,
+          "lon": -73.9903996
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "dessert;chocolate;ice_cream"
+        },
+        "distanceMeters": 939.2763953805745
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13506841657,
+        "sourceUrl": "https://www.openstreetmap.org/node/13506841657",
+        "name": "Little Uluh",
+        "coordinates": {
+          "lat": 40.7327805,
+          "lon": -73.9863779
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "pastry;sandwich,ececltic"
+        },
+        "distanceMeters": 946.2829998377167
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3869752135,
+        "sourceUrl": "https://www.openstreetmap.org/node/3869752135",
+        "name": "Starbucks",
+        "coordinates": {
+          "lat": 40.7370022,
+          "lon": -73.9896034
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 946.6634311991573
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10224616957,
+        "sourceUrl": "https://www.openstreetmap.org/node/10224616957",
+        "name": "Plantshed",
+        "coordinates": {
+          "lat": 40.7312238,
+          "lon": -73.9860512
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 949.0107397492093
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 1919602938,
+        "sourceUrl": "https://www.openstreetmap.org/node/1919602938",
+        "name": "La Colombe Coffee Roasters",
+        "coordinates": {
+          "lat": 40.7235092,
+          "lon": -73.9913293
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 954.1347558871877
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3863634562,
+        "sourceUrl": "https://www.openstreetmap.org/node/3863634562",
+        "name": "Grounded",
+        "coordinates": {
+          "lat": 40.738035,
+          "lon": -74.003421
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 955.6140372494419
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12496752009,
+        "sourceUrl": "https://www.openstreetmap.org/node/12496752009",
+        "name": "The Elk",
+        "coordinates": {
+          "lat": 40.7223663,
+          "lon": -73.9950617
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 956.5644996491932
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9088344065,
+        "sourceUrl": "https://www.openstreetmap.org/node/9088344065",
+        "name": "Tompkins Square Bagels",
+        "coordinates": {
+          "lat": 40.7306929,
+          "lon": -73.9858959
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bagel"
+        },
+        "distanceMeters": 961.0034306930089
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3676784853,
+        "sourceUrl": "https://www.openstreetmap.org/node/3676784853",
+        "name": "ViVi Bubble Tea",
+        "coordinates": {
+          "lat": 40.7326688,
+          "lon": -73.986116
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 965.0087096485522
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6371590885,
+        "sourceUrl": "https://www.openstreetmap.org/node/6371590885",
+        "name": "MeMe",
+        "coordinates": {
+          "lat": 40.7363825,
+          "lon": -74.0060719
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 965.1943989115085
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14130239277,
+        "sourceUrl": "https://www.openstreetmap.org/node/14130239277",
+        "name": "Casa Next Door",
+        "coordinates": {
+          "lat": 40.7376392,
+          "lon": -74.0044549
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 970.4474466175096
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14182055901,
+        "sourceUrl": "https://www.openstreetmap.org/node/14182055901",
+        "name": "Casa Next Door",
+        "coordinates": {
+          "lat": 40.7376845,
+          "lon": -74.0044553
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 974.4205078283914
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12365555328,
+        "sourceUrl": "https://www.openstreetmap.org/node/12365555328",
+        "name": "Spring Lemon Tree",
+        "coordinates": {
+          "lat": 40.7220431,
+          "lon": -73.9967564
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop;breakfast;sandwich;juice"
+        },
+        "distanceMeters": 974.7997423862508
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5784718253,
+        "sourceUrl": "https://www.openstreetmap.org/node/5784718253",
+        "name": "Crispy Heaven Bakery",
+        "coordinates": {
+          "lat": 40.722027,
+          "lon": -73.9975629
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "breakfast;sandwich"
+        },
+        "distanceMeters": 975.7646156595833
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547041086,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547041086",
+        "name": "PlantShed",
+        "coordinates": {
+          "lat": 40.7225241,
+          "lon": -73.9934347
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 976.1811903687789
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6916463756,
+        "sourceUrl": "https://www.openstreetmap.org/node/6916463756",
+        "name": "Setsugekka",
+        "coordinates": {
+          "lat": 40.7272465,
+          "lon": -73.9866334
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "pastry;japanese"
+        },
+        "distanceMeters": 981.8288067569229
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11865385960,
+        "sourceUrl": "https://www.openstreetmap.org/node/11865385960",
+        "name": "Elsewhere Espresso",
+        "coordinates": {
+          "lat": 40.7268048,
+          "lon": -73.9868664
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "coffee_shop"
+        },
+        "distanceMeters": 985.0434927104855
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3676902928,
+        "sourceUrl": "https://www.openstreetmap.org/node/3676902928",
+        "name": "Luckin Coffee",
+        "coordinates": {
+          "lat": 40.734018,
+          "lon": -73.9863892
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 986.5219615282384
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13946656701,
+        "sourceUrl": "https://www.openstreetmap.org/node/13946656701",
+        "name": "Moon Coffee Lab",
+        "coordinates": {
+          "lat": 40.7237798,
+          "lon": -73.9899214
+        },
+        "positionKind": "node",
+        "categoryId": "cafe",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe"
+        },
+        "distanceMeters": 997.9710077950192
+      }
+    ],
+    "directMappedCount": 182,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 57.932399285449904,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T06:32:13.747Z",
+      "osmBaseTimestamp": "2026-10-24T06:31:06Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "0549226c7579ccdb8d83aaf8a0b9ef673eac809a907e7d896bc997c0ba099bf5",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 12
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}
