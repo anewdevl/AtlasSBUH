@@ -1,0 +1,23 @@
+import { test,expect } from '@playwright/test';
+import { normalize } from '../../src/server/normalize';
+import { buildQuery,hashQuery } from '../../src/server/overpass';
+test.beforeEach(async({page})=>{await page.route('https://tile.openstreetmap.org/**',route=>route.abort());await page.route('https://fonts.googleapis.com/**',route=>route.abort());});
+test('initial desktop layout and keyboard access',async({page})=>{
+ await page.goto('/');await page.keyboard.press('Tab');await expect(page.getByRole('link',{name:'Skip to analysis'})).toBeFocused();await page.keyboard.press('Enter');await expect(page.getByRole('heading',{name:/A better view/})).toBeVisible();await expect(page.locator('.leaflet-container')).toBeVisible();await page.screenshot({path:'test-results/atlas-desktop.png',fullPage:true});
+});
+test('four cities, source evidence, comparison, and browser save',async({page})=>{
+ await page.route('**/api/analyze',async route=>{const request=route.request().postDataJSON();const response=normalize(request,{elements:[{type:'node',id:123,...request.scope.center,tags:{amenity:'cafe',name:'Synthetic browser fixture'}}],fetchedAt:new Date().toISOString(),osmBaseTimestamp:null,queryHash:hashQuery(buildQuery(request))});await route.fulfill({json:response});});
+ await page.goto('/');
+ for(const city of ['nyc','london','dubai','singapore']){await page.getByLabel('City preset').selectOption(city);await page.getByRole('button',{name:'Analyze this area'}).click();await expect(page.getByRole('heading',{name:/Café ·/})).toBeVisible();await expect(page.locator('.feature-name').filter({hasText:'Synthetic browser fixture'})).toBeVisible();}
+ await page.locator('.feature-name').filter({hasText:'Synthetic browser fixture'}).click();await expect(page.getByRole('link',{name:'node/123'})).toHaveAttribute('href','https://www.openstreetmap.org/node/123');
+ await page.getByRole('button',{name:'Pin for comparison'}).click();await page.getByLabel('City preset').selectOption('nyc');await page.getByRole('button',{name:'Analyze this area'}).click();await expect(page.getByLabel('Area comparison')).toContainText('CURRENT AREA');
+ await page.getByRole('button',{name:'Save in this browser'}).click();await page.reload();await page.getByRole('button',{name:'Saved analysis',exact:true}).click();await expect(page.locator('.feature-name').filter({hasText:'Synthetic browser fixture'})).toBeVisible();
+});
+test('unsupported categories, failure and valid empty remain distinct on mobile',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.goto('/');await page.getByLabel('What are you opening?').fill('pharmacy');await page.getByRole('button',{name:'Suggest category'}).click();await expect(page.getByText('No supported match. Choose a category below.')).toBeVisible();
+ await page.route('**/api/analyze',route=>route.fulfill({status:503,json:{code:'UNAVAILABLE',message:'No exact fallback.'}}));await page.getByRole('button',{name:'Analyze this area'}).click();await expect(page.locator('.error[role=alert]')).toContainText('Analysis unavailable');await expect(page.getByLabel('Analysis results')).toHaveCount(0);
+ await page.unroute('**/api/analyze');await page.route('**/api/analyze',async route=>{const request=route.request().postDataJSON();await route.fulfill({json:normalize(request,{elements:[],fetchedAt:new Date().toISOString(),osmBaseTimestamp:null,queryHash:hashQuery(buildQuery(request))})});});await page.getByRole('button',{name:'Analyze this area'}).click();await expect(page.getByText(/This is a valid empty result/)).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'test-results/atlas-mobile.png',fullPage:true});
+});
+test('partial response cannot yield aggregate comparison',async({page})=>{
+ await page.route('**/api/analyze',async route=>{const request=route.request().postDataJSON();await route.fulfill({json:normalize(request,{elements:[{type:'node',id:1,lat:999,lon:0,tags:{amenity:'cafe'}}],fetchedAt:new Date().toISOString(),osmBaseTimestamp:null,queryHash:hashQuery(buildQuery(request))})});});await page.goto('/');await page.getByRole('button',{name:'Analyze this area'}).click();await expect(page.getByText('Partial retrieval',{exact:true})).toBeVisible();await page.getByRole('button',{name:'Pin for comparison'}).click();await expect(page.getByLabel('Area comparison')).toContainText('Partial results cannot be compared.');await expect(page.locator('.metrics strong')).toHaveText(['—','—','—']);
+});

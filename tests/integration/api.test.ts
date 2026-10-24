@@ -1,0 +1,25 @@
+import { describe,it,expect,vi } from 'vitest';
+import { analyze } from '../../src/server/analyze';
+import { fetchOverpass } from '../../src/server/overpass';
+import { FRESH_MS,MemoryCache } from '../../src/server/cache';
+import { POST } from '../../src/app/api/analyze/route';
+import { request,result,upstream } from '../fixtures';
+const noSnapshot=async()=>undefined;
+const failed=vi.fn<typeof fetch>(async()=>{throw new Error('Mock offline');});
+describe('cache and transport',()=>{
+ it('prefers exact runtime then snapshot without resetting fetchedAt',async()=>{const cache=new MemoryCache(),r=result();cache.set(r);const out=await analyze(request,{cache,transport:failed,snapshot:noSnapshot});expect(out.provenance.cacheState).toBe('runtime-fresh');expect(out.provenance.fetchedAt).toBe(r.provenance.fetchedAt);const snap=await analyze(request,{cache:new MemoryCache(),transport:failed,snapshot:async()=>r});expect(snap.provenance.cacheState).toBe('snapshot-fresh');});
+ it('fetches live and preserves valid empty results',async()=>{const transport=vi.fn<typeof fetch>(async()=>upstream([]));const out=await analyze(request,{cache:new MemoryCache(),snapshot:noSnapshot,transport});expect(out.directMappedCount).toBe(0);expect(out.provenance.cacheState).toBe('live');expect(transport).toHaveBeenCalledTimes(1);});
+ it('uses only exact stale fallback and rejects expired data',async()=>{const r=result();r.provenance.fetchedAt=new Date(Date.now()-2*FRESH_MS).toISOString();const out=await analyze(request,{cache:new MemoryCache(),snapshot:async()=>r,transport:failed});expect(out.provenance.cacheState).toBe('snapshot-stale');expect(out.provenance.fetchedAt).toBe(r.provenance.fetchedAt);await expect(analyze({...request,scope:{...request.scope,radiusMeters:500}},{cache:new MemoryCache(),snapshot:async()=>r,transport:failed})).rejects.toThrow();await expect(analyze(request,{cache:new MemoryCache(),snapshot:async()=>r,transport:failed,now:Date.now()+31*FRESH_MS})).rejects.toThrow();});
+ it('rejects tampered query hashes',async()=>{const r=result();r.provenance.queryHash='a'.repeat(64);await expect(analyze(request,{cache:new MemoryCache(),snapshot:async()=>r,transport:failed})).rejects.toThrow();});
+ it('surfaces upstream timeouts with recovery guidance',async()=>{const timeout=vi.fn<typeof fetch>(async()=>{throw new DOMException('aborted','AbortError');});await expect(analyze(request,{cache:new MemoryCache(),snapshot:noSnapshot,transport:timeout})).rejects.toThrow(/did not respond before the 25-second timeout.*No compatible saved data/);});
+ it.each([()=>new Response('not json'),()=>new Response(JSON.stringify({elements:[],remark:'runtime error: timeout'})),()=>new Response('{}',{status:503}),()=>new Response('x',{headers:{'Content-Length':'99999999'}})])('rejects invalid upstream replies',async(factory)=>{await expect(fetchOverpass(request,async()=>factory())).rejects.toThrow();});
+ it('preserves Retry-After and makes no retries',async()=>{const transport=vi.fn<typeof fetch>(async()=>new Response('',{status:429,headers:{'Retry-After':'90'}}));await expect(fetchOverpass(request,transport)).rejects.toMatchObject({retryAfterSeconds:90});expect(transport).toHaveBeenCalledTimes(1);});
+ it('aborts a hanging upstream request',async()=>{vi.useFakeTimers();try{const transport:typeof fetch=async(_url,init)=>new Promise((_resolve,reject)=>init?.signal?.addEventListener('abort',()=>reject(new Error('aborted'))));const pending=expect(fetchOverpass(request,transport)).rejects.toThrow('aborted');await vi.advanceTimersByTimeAsync(25001);await pending;}finally{vi.useRealTimers();}});
+});
+describe('HTTP validation',()=>{
+ const post=(body:unknown,ip=String(Math.random()))=>POST(new Request('http://localhost/api/analyze',{method:'POST',headers:{'x-forwarded-for':ip},body:typeof body==='string'?body:JSON.stringify(body)}));
+ it('returns 400 for malformed JSON or shape',async()=>{expect((await post('{')).status).toBe(400);expect((await post({...request,extra:true})).status).toBe(400);});
+ it('returns 422 for unsupported semantics',async()=>{expect((await post({...request,categoryId:'halal-food'})).status).toBe(422);expect((await post({...request,scope:{...request.scope,radiusMeters:123}})).status).toBe(422);});
+ it('enforces local rate limit with retry metadata',async()=>{const ip='test-rate-limit';for(let i=0;i<12;i++)await post({},ip);const response=await post({},ip);expect(response.status).toBe(429);expect((await response.json()).retryAfterSeconds).toBeGreaterThan(0);});
+ it('returns the upstream timeout cause in the API error body',async()=>{vi.stubGlobal('fetch',vi.fn<typeof fetch>(async()=>{throw new DOMException('aborted','AbortError');}));try{const response=await post(request,'test-upstream-timeout');expect(response.status).toBe(503);expect((await response.json()).message).toMatch(/provider did not respond.*No compatible saved data/);}finally{vi.unstubAllGlobals();}});
+});

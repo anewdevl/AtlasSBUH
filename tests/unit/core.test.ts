@@ -1,0 +1,28 @@
+import { describe,it,expect } from 'vitest';
+import { classify } from '../../src/lib/classify';
+import { matchingEvidence } from '../../src/lib/categories';
+import { canonicalize,cacheKey,requestSchema,responseSchema,validateResponse } from '../../src/lib/contracts';
+import { compare } from '../../src/lib/compare';
+import { normalize } from '../../src/server/normalize';
+import { buildQuery,MAX_RECORDS } from '../../src/server/overpass';
+import { node,raw,request,result } from '../fixtures';
+describe('taxonomy',()=>{
+ it('uses aliases with token boundaries and surfaces ambiguity',()=>{expect(classify('coffeehouse').status).toBe('unsupported');expect(classify('A café').matches).toEqual(['cafe']);expect(classify('coffee and boba').status).toBe('ambiguous');expect(classify('pharmacy').status).toBe('unsupported');});
+ it('requires exact cuisine tokens and excludes bubble tea from cafes',()=>{expect(matchingEvidence('bubble-tea',{amenity:'cafe',cuisine:'tea; bubble_tea;cake'})).toBeTruthy();expect(matchingEvidence('bubble-tea',{amenity:'cafe',cuisine:'not_bubble_tea'})).toBeNull();expect(matchingEvidence('bubble-tea',{shop:'tea',cuisine:'bubble_tea'})).toBeNull();expect(matchingEvidence('cafe',{amenity:'cafe',cuisine:'bubble_tea'})).toBeNull();});
+ it.each(['disused:amenity','abandoned:shop','demolished','construction'])('excludes lifecycle %s',(key)=>{expect(matchingEvidence('cafe',{amenity:'cafe',[key]:'yes'})).toBeNull();});
+});
+describe('scope and contracts',()=>{
+ it('canonicalizes centers and adjacent order consistently',()=>{const r={...request,scope:{...request.scope,center:{lat:40.730812,lon:-73.997312}},adjacentCategoryIds:['bubble-tea','bakery'] as const};const c=canonicalize({...r,adjacentCategoryIds:[...r.adjacentCategoryIds]});expect(c.scope.center).toEqual(request.scope.center);expect(c.adjacentCategoryIds).toEqual(['bakery','bubble-tea']);expect(cacheKey(c)).toBe(cacheKey({...c,adjacentCategoryIds:['bubble-tea','bakery']}));});
+ it('rejects city, radius, field, qualifier, and version errors',()=>{for(const r of [{...request,extra:1},{...request,registryVersion:'99'},{...request,adjacentCategoryIds:['cafe']},{...request,scope:{...request.scope,radiusMeters:999}},{...request,scope:{...request.scope,center:{lat:0,lon:0}}},{...request,scope:{...request.scope,center:{lat:Infinity,lon:0}}}])expect(requestSchema.safeParse(r).success).toBe(false);});
+ it('rejects inconsistent responses',()=>{const r=result();for(const changed of [{...r,directMappedCount:0},{...r,directMappedDensity:88},{...r,truncated:true},{...r,competitors:[...r.competitors,...r.competitors]},{...r,competitors:[{...r.competitors[0],sourceUrl:'https://example.com'}]},{...r,competitors:[{...r.competitors[0],evidence:{amenity:'pharmacy'}}]},{...r,competitors:[{...r.competitors[0],distanceMeters:999}]},{...r,provenance:{...r.provenance,fetchedAt:'bad'}}])expect(responseSchema.safeParse(changed).success).toBe(false);});
+ it('requires expected exact scope',()=>{expect(()=>validateResponse(result(),{...request,scope:{...request.scope,radiusMeters:500}})).toThrow();});
+ it('canonical validation is independent of JSON property order',()=>{const r=result();r.request={adjacentCategoryIds:[],categoryId:'cafe',scope:request.scope,registryVersion:'1',schemaVersion:'1'};expect(responseSchema.safeParse(r).success).toBe(true);});
+ it('builds only allowlisted queries',()=>{const query=buildQuery(request);expect(query).toContain('nwr["amenity"="cafe"]');expect(query).toContain('around:1000,40.7308,-73.9973');expect(()=>buildQuery({...request,categoryId:'cafe];out;' as never})).toThrow();});
+});
+describe('normalization and comparison',()=>{
+ it('deduplicates IDs but never merges names; uses representative centers and radius filter',()=>{const r=result([node,node,{...node,id:124},{type:'way',id:125,center:{lat:40.7308,lon:-73.9973},tags:{amenity:'cafe'}},{...node,id:126,lat:40.9}]);expect(r.directMappedCount).toBe(3);expect(r.provenance.excludedRecordCount).toBe(2);expect(r.competitors[2].positionKind).toBe('representative-center');});
+ it('excludes qualifiers and lifecycle features',()=>{const r=result([{...node,tags:{amenity:'cafe',cuisine:'bubble_tea'}},{...node,id:124,tags:{amenity:'cafe','disused:amenity':'cafe'}}]);expect(r.status).toBe('complete');expect(r.directMappedCount).toBe(0);});
+ it('invalid positions and truncation produce partial null aggregates',()=>{const partial=result([{...node,lat:999}]);expect(partial.status).toBe('partial');expect(partial.directMappedCount).toBeNull();expect(compare(partial,result()).comparable).toBe(false);const capped=normalize(request,raw(Array.from({length:MAX_RECORDS+1},(_,i)=>({...node,id:i+1}))));expect(capped.truncated).toBe(true);expect(capped.directMappedDensity).toBeNull();});
+ it('treats valid empty results as complete and comparable',()=>{const empty=result([]);expect(empty.status).toBe('complete');expect(empty.directMappedDensity).toBe(0);expect(compare(empty,result()).comparable).toBe(true);});
+ it('requires identical comparison settings',()=>{const other=result([],{...request,scope:{...request.scope,radiusMeters:500}});expect(compare(result(),other).comparable).toBe(false);expect(compare(result(),null).comparable).toBe(false);const adjacent=result([],{...request,adjacentCategoryIds:['bakery']});expect(compare(result(),adjacent).comparable).toBe(false);});
+});
