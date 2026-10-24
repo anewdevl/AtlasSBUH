@@ -36,7 +36,7 @@ Playwright uses installed Microsoft Edge by default on this Windows workspace. U
 - Responsive map/list interface, keyboard-accessible form, and list operation independent of tiles.
 - Optional NVIDIA NIM category suggestions; AI never generates competitor records or counts.
 
-Genuine café, pharmacy, and supermarket snapshots for the four exact city presets at 1,000 m are bundled in `data/snapshots/`. They include validated source records, original retrieval metadata, and file integrity hashes. Exact stale fallback remains age-limited; recapture snapshots before they exceed 30 days.
+Genuine café, bakery, bubble-tea, pharmacy, and supermarket snapshots for the four exact city presets at 1,000 m are bundled in `data/snapshots/`. They include validated source records, original retrieval metadata, and file integrity hashes. Use `npm run snapshots -- bakery bubble-tea` to refresh only those categories; without arguments, the script refreshes the original café, pharmacy, and supermarket set. Exact stale fallback remains age-limited; recapture snapshots before they exceed 30 days.
 
 ## Documents
 

@@ -2,14 +2,19 @@ import { mkdir,writeFile } from 'node:fs/promises';
 import { loadEnvConfig } from '@next/env';
 import type { CityId } from '../src/lib/cities';
 import type { AnalysisRequest } from '../src/lib/contracts';
+import type { CategoryId } from '../src/lib/categories';
 loadEnvConfig(process.cwd());
 async function main(){
- const [{cities},{SCHEMA_VERSION},{REGISTRY_VERSION},{fetchOverpass},{normalize},{integrityHash}]=await Promise.all([
+ const [{cities},{SCHEMA_VERSION},{REGISTRY_VERSION,categoryIds},{fetchOverpass},{normalize},{integrityHash}]=await Promise.all([
   import('../src/lib/cities'),import('../src/lib/contracts'),import('../src/lib/categories'),import('../src/server/overpass'),import('../src/server/normalize'),import('../src/server/cache'),
  ]);
+ const requested=process.argv.slice(2);
+ const invalid=requested.filter(id=>!categoryIds.includes(id as CategoryId));
+ if(invalid.length)throw new Error(`Unsupported category ID(s): ${invalid.join(', ')}`);
+ const selected:CategoryId[]=requested.length?requested as CategoryId[]:['cafe','pharmacy','supermarket'];
  await mkdir('data/snapshots',{recursive:true});let failures=0;
  for(const cityId of Object.keys(cities) as CityId[]){
-  for(const categoryId of ['cafe','pharmacy','supermarket'] as const){
+  for(const categoryId of selected){
    const request:AnalysisRequest={schemaVersion:SCHEMA_VERSION,registryVersion:REGISTRY_VERSION,scope:{cityId,center:cities[cityId].center,radiusMeters:1000},categoryId,adjacentCategoryIds:[]};
    try{const response=normalize(request,await fetchOverpass(request));if(response.status!=='complete')throw new Error('Partial capture rejected');
     await writeFile(`data/snapshots/${cityId}-${categoryId}-1000.json`,JSON.stringify({fileIntegrityHash:integrityHash(response),response},null,2)+'\n');

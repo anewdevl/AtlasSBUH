@@ -1,0 +1,41 @@
+{
+  "fileIntegrityHash": "d704d45ea5ebe5c1be158657ab7cb8ac76ba0619669288589e2fbbca06bc9bcc",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "dubai",
+        "center": {
+          "lat": 25.2048,
+          "lon": 55.2708
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "bubble-tea",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [],
+    "directMappedCount": 0,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 0,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T17:34:59.848Z",
+      "osmBaseTimestamp": "2026-10-24T17:34:05Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "7b4c14068bb3099be005cf4af96f79e2825f8c230f1f74ad58f855acadb4e619",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

@@ -1,0 +1,620 @@
+{
+  "fileIntegrityHash": "2c39b249a34ec8f53c1ec8429cf664d53006aa1c8459f3eb315581c7b210b81e",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "nyc",
+        "center": {
+          "lat": 40.7308,
+          "lon": -73.9973
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "bakery",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 9543896717,
+        "sourceUrl": "https://www.openstreetmap.org/node/9543896717",
+        "name": "Brooklyn Bagel & Coffee Company",
+        "coordinates": {
+          "lat": 40.7310464,
+          "lon": -73.9931939
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 347.0694667606079
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11407297861,
+        "sourceUrl": "https://www.openstreetmap.org/node/11407297861",
+        "name": "Marie Blachère Bakery & Café",
+        "coordinates": {
+          "lat": 40.730645,
+          "lon": -74.0019567
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 392.7602630096427
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13034200401,
+        "sourceUrl": "https://www.openstreetmap.org/node/13034200401",
+        "name": "Popup Bagels",
+        "coordinates": {
+          "lat": 40.7279458,
+          "lon": -74.0002357
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 402.3909002029908
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4316479389,
+        "sourceUrl": "https://www.openstreetmap.org/node/4316479389",
+        "name": "Patisserie Claude",
+        "coordinates": {
+          "lat": 40.7326391,
+          "lon": -74.0017782
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 429.1873475047483
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6053556686,
+        "sourceUrl": "https://www.openstreetmap.org/node/6053556686",
+        "name": "Molly's Cupcakes",
+        "coordinates": {
+          "lat": 40.7300211,
+          "lon": -74.0024697
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 444.13685807218417
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5792284140,
+        "sourceUrl": "https://www.openstreetmap.org/node/5792284140",
+        "name": "Lafayette Grand Café & Bakery",
+        "coordinates": {
+          "lat": 40.7275742,
+          "lon": -73.993705
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 469.49531001172454
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13164302601,
+        "sourceUrl": "https://www.openstreetmap.org/node/13164302601",
+        "name": "L’Appartement 4F",
+        "coordinates": {
+          "lat": 40.7348368,
+          "lon": -73.9995459
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 487.13104961971897
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13725212301,
+        "sourceUrl": "https://www.openstreetmap.org/node/13725212301",
+        "name": "L’Appartement 4F",
+        "coordinates": {
+          "lat": 40.7348143,
+          "lon": -73.9997874
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 493.12511801859335
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5172034022,
+        "sourceUrl": "https://www.openstreetmap.org/node/5172034022",
+        "name": "The Doughnut Project",
+        "coordinates": {
+          "lat": 40.7312468,
+          "lon": -74.0035596
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 529.7774719118928
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 7243595520,
+        "sourceUrl": "https://www.openstreetmap.org/node/7243595520",
+        "name": "Levain Bakery NoHo",
+        "coordinates": {
+          "lat": 40.7261773,
+          "lon": -73.9947043
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 558.6217856362794
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5265693441,
+        "sourceUrl": "https://www.openstreetmap.org/node/5265693441",
+        "name": "Hudson Bagels",
+        "coordinates": {
+          "lat": 40.7334048,
+          "lon": -74.0036422
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 607.8393701496746
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14212359383,
+        "sourceUrl": "https://www.openstreetmap.org/node/14212359383",
+        "name": "Librae Bakery",
+        "coordinates": {
+          "lat": 40.728076,
+          "lon": -73.9907473
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 629.7763487612109
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12985661901,
+        "sourceUrl": "https://www.openstreetmap.org/node/12985661901",
+        "name": "Hani’s",
+        "coordinates": {
+          "lat": 40.729127,
+          "lon": -73.9899744
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 644.6980678098118
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5796438081,
+        "sourceUrl": "https://www.openstreetmap.org/node/5796438081",
+        "name": "Vesuvio Bakery",
+        "coordinates": {
+          "lat": 40.7259071,
+          "lon": -74.0014471
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 646.6265689362455
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2547193340,
+        "sourceUrl": "https://www.openstreetmap.org/node/2547193340",
+        "name": "Unregular Bakery",
+        "coordinates": {
+          "lat": 40.7330859,
+          "lon": -73.9901525
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 653.6918059791257
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13035493701,
+        "sourceUrl": "https://www.openstreetmap.org/node/13035493701",
+        "name": "Edith’s",
+        "coordinates": {
+          "lat": 40.7347978,
+          "lon": -74.003233
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 668.9701768785873
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11969362704,
+        "sourceUrl": "https://www.openstreetmap.org/node/11969362704",
+        "name": "Baked by Melissa",
+        "coordinates": {
+          "lat": 40.7357202,
+          "lon": -73.9925371
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 678.5084467929117
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14142670690,
+        "sourceUrl": "https://www.openstreetmap.org/node/14142670690",
+        "name": "Richaud Petite Bakery",
+        "coordinates": {
+          "lat": 40.7356924,
+          "lon": -74.0028207
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 715.7700679425648
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14180574702,
+        "sourceUrl": "https://www.openstreetmap.org/node/14180574702",
+        "name": null,
+        "coordinates": {
+          "lat": 40.72434,
+          "lon": -73.9957609
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 729.933496376761
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6422249385,
+        "sourceUrl": "https://www.openstreetmap.org/node/6422249385",
+        "name": "La Churreria",
+        "coordinates": {
+          "lat": 40.7244372,
+          "lon": -73.9950337
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 732.8315028904154
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13034147201,
+        "sourceUrl": "https://www.openstreetmap.org/node/13034147201",
+        "name": "Sōrate",
+        "coordinates": {
+          "lat": 40.7256521,
+          "lon": -74.0028846
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 741.0238507255472
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14178374673,
+        "sourceUrl": "https://www.openstreetmap.org/node/14178374673",
+        "name": "Rye by Martin Auer",
+        "coordinates": {
+          "lat": 40.7242197,
+          "lon": -73.9958201
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 742.2468270249129
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3925063780,
+        "sourceUrl": "https://www.openstreetmap.org/node/3925063780",
+        "name": "Dominique Ansel Bakery",
+        "coordinates": {
+          "lat": 40.725171,
+          "lon": -74.00295
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 786.4102994961299
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9036389124,
+        "sourceUrl": "https://www.openstreetmap.org/node/9036389124",
+        "name": "Boulangerie Le Fournil",
+        "coordinates": {
+          "lat": 40.7279109,
+          "lon": -73.9884166
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 814.5708923677793
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9426782009,
+        "sourceUrl": "https://www.openstreetmap.org/node/9426782009",
+        "name": "LÀ LÁ Bakeshop",
+        "coordinates": {
+          "lat": 40.7264609,
+          "lon": -73.9894584
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 818.1730435125129
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4527088689,
+        "sourceUrl": "https://www.openstreetmap.org/node/4527088689",
+        "name": "Breads Bakery",
+        "coordinates": {
+          "lat": 40.7368076,
+          "lon": -73.9916791
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 818.8684017546759
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5023333921,
+        "sourceUrl": "https://www.openstreetmap.org/node/5023333921",
+        "name": "Ladurée",
+        "coordinates": {
+          "lat": 40.7243749,
+          "lon": -74.0023047
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 829.6229804365269
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13602784701,
+        "sourceUrl": "https://www.openstreetmap.org/node/13602784701",
+        "name": "noa, a bakery",
+        "coordinates": {
+          "lat": 40.737852,
+          "lon": -74.0016708
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 866.3197115530203
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12986621801,
+        "sourceUrl": "https://www.openstreetmap.org/node/12986621801",
+        "name": "Winson Bakery",
+        "coordinates": {
+          "lat": 40.7245712,
+          "lon": -73.9908364
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 881.1151035211691
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2555135992,
+        "sourceUrl": "https://www.openstreetmap.org/node/2555135992",
+        "name": "Voodoo Doughnut",
+        "coordinates": {
+          "lat": 40.7370624,
+          "lon": -73.9905341
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 899.9387945924501
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12020711369,
+        "sourceUrl": "https://www.openstreetmap.org/node/12020711369",
+        "name": "Pi Bakerie",
+        "coordinates": {
+          "lat": 40.7236477,
+          "lon": -74.003242
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 939.7934304500096
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13173866301,
+        "sourceUrl": "https://www.openstreetmap.org/node/13173866301",
+        "name": "Levain Bakery",
+        "coordinates": {
+          "lat": 40.7386544,
+          "lon": -73.9924987
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 962.511430340274
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5784718253,
+        "sourceUrl": "https://www.openstreetmap.org/node/5784718253",
+        "name": "Crispy Heaven Bakery",
+        "coordinates": {
+          "lat": 40.722027,
+          "lon": -73.9975629
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 975.7646156595833
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4818744421,
+        "sourceUrl": "https://www.openstreetmap.org/node/4818744421",
+        "name": "The City Bakery",
+        "coordinates": {
+          "lat": 40.7389549,
+          "lon": -73.9923463
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 998.2303022776761
+      }
+    ],
+    "directMappedCount": 34,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 10.822536130248883,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T17:34:31.530Z",
+      "osmBaseTimestamp": "2026-10-24T17:33:06Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "e86232acb285de674cad24d291d496ae169d73f5514ebcae65da7f6f3d4624e6",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

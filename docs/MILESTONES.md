@@ -8,13 +8,19 @@ Four city presets; three reviewed categories; explicit category confirmation; ma
 
 Capture exact 1 km/no-adjacent snapshots for all four centers. Local verification is complete for café, pharmacy, and supermarket: genuine snapshots returned complete `snapshot-fresh` responses, and an integration test simulates an offline provider across every city/category scope without making an upstream call. Pinning NYC and comparing London also passed. Deployment is deferred while ATLAS is run locally.
 
-## M3 — Evidence-backed market breadth (current)
+## M3 — Evidence-backed market breadth (complete)
 
-Pharmacy and supermarket are now supported using reviewed, exact OSM tags and genuine four-city snapshots. Continue adding business categories only with specific evidence rules and negative cases. Consider heatmaps only after a justified spatial model and independently sourced metrics exist. Competitor density is not a demand score. Do not invent population, footfall, rents, reviews, or expansion rankings.
+All five reviewed categories are supported using exact OSM tags, qualifier/exclusion tests, and genuine 1 km snapshots for all four city presets. Snapshot fallback passed offline tests across all 20 city/category scopes, including a valid complete empty result for Dubai bubble tea. Consider heatmaps only after a justified spatial model and independently sourced metrics exist. Competitor density is not a demand score. Do not invent population, footfall, rents, reviews, or expansion rankings.
 
-## M4 — Optional research and reports (in progress)
+## M4 — Bounded category assistance (in progress)
 
-An optional NVIDIA NIM helper now interprets free-form business descriptions and maps them only to current registry categories, with an explicit unsupported state. It does not produce market research, counts, or expansion claims. Next: broaden the reviewed taxonomy for business and technology companies, then add cited external research only when source retrieval and verification are implemented. Add durable PostgreSQL storage only when shared analysis/history needs it; PostGIS only for justified spatial operations. Reports and audio are later presentation features.
+The optional NVIDIA NIM helper interprets free-form business descriptions and maps them only to the reviewed categories in the current registry, with an explicit unsupported state. It does not create categories, produce market research, counts, or expansion claims. Keep this phase within the existing evidence-backed OSM workflow: add a category only when its tags, qualifiers, exclusions, and genuine snapshots can be reviewed and tested. Invalid category state must recover to a supported selection. Do not add web-search agents or open-ended business discovery in this phase.
+
+## M5 — Flexible business discovery and sourced insights (future)
+
+After the current phases are complete, broaden support to arbitrary business and technology company types and add richer market insights using web-search agents or other research providers. Treat every claim as sourced research: preserve citations, retrieval dates, scope, and uncertainty, and distinguish external research from mapped OSM features. Design provider adapters and verification before making research an input to rankings or recommendations. This phase is not part of the current implementation scope.
+
+Add durable PostgreSQL storage only when shared analysis/history needs it; PostGIS only for justified spatial operations. Reports and audio are later presentation features.
 
 ## Under a 20-hour budget
 

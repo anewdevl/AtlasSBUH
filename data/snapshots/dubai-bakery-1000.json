@@ -1,0 +1,59 @@
+{
+  "fileIntegrityHash": "85a675dc081132070bfedd1cf44e8bd64188f42663cb18691da3d5c878f9bd1c",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "dubai",
+        "center": {
+          "lat": 25.2048,
+          "lon": 55.2708
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "bakery",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 2390968883,
+        "sourceUrl": "https://www.openstreetmap.org/node/2390968883",
+        "name": "French Bakery",
+        "coordinates": {
+          "lat": 25.2063515,
+          "lon": 55.2689085
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 256.85905338796056
+      }
+    ],
+    "directMappedCount": 1,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 0.3183098861837907,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T17:34:54.261Z",
+      "osmBaseTimestamp": "2026-10-24T17:34:05Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "02aa81426054267707c3ab346422641bb3533d5dac60f2e586aaeff9f3da2aab",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 import { describe,it,expect } from 'vitest';
 import { classify } from '../../src/lib/classify';
+import { sanitizeCategorySelection } from '../../src/lib/category-selection';
 import { matchingEvidence } from '../../src/lib/categories';
 import { REGISTRY_VERSION } from '../../src/lib/categories';
 import { canonicalize,cacheKey,isResponseForRequest,requestSchema,responseSchema,validateResponse } from '../../src/lib/contracts';
@@ -8,6 +9,7 @@ import { normalize } from '../../src/server/normalize';
 import { buildQuery,MAX_RECORDS } from '../../src/server/overpass';
 import { node,raw,request,result } from '../fixtures';
 describe('taxonomy',()=>{
+ it('recovers stale category selections and removes incompatible adjacent categories',()=>{const recovered=sanitizeCategorySelection({...request,categoryId:'retired-category' as never,adjacentCategoryIds:['bakery'] as never});expect(recovered.categoryId).toBe('cafe');expect(recovered.adjacentCategoryIds).toEqual(['bakery']);const cleaned=sanitizeCategorySelection({...request,adjacentCategoryIds:['pharmacy'] as never});expect(cleaned.adjacentCategoryIds).toEqual([]);});
  it('uses aliases with token boundaries and surfaces ambiguity',()=>{expect(classify('coffeehouse').status).toBe('unsupported');expect(classify('A café').matches).toEqual(['cafe']);expect(classify('coffee and boba').status).toBe('ambiguous');expect(classify('pharmacy').matches).toEqual(['pharmacy']);expect(classify('tech company').status).toBe('unsupported');});
  it('uses exact pharmacy and supermarket evidence only',()=>{expect(matchingEvidence('pharmacy',{amenity:'pharmacy'})).toEqual({amenity:'pharmacy'});expect(matchingEvidence('pharmacy',{healthcare:'pharmacy'})).toEqual({healthcare:'pharmacy'});expect(matchingEvidence('pharmacy',{amenity:'pharmacy',healthcare:'pharmacy'})).toEqual({amenity:'pharmacy',healthcare:'pharmacy'});expect(matchingEvidence('pharmacy',{shop:'chemist'})).toBeNull();expect(matchingEvidence('pharmacy',{shop:'pharmacy'})).toBeNull();expect(matchingEvidence('supermarket',{shop:'supermarket'})).toEqual({shop:'supermarket'});expect(matchingEvidence('supermarket',{shop:'convenience'})).toBeNull();expect(matchingEvidence('supermarket',{shop:'grocery'})).toBeNull();});
  it('requires exact cuisine tokens and excludes bubble tea from cafes',()=>{expect(matchingEvidence('bubble-tea',{amenity:'cafe',cuisine:'tea; bubble_tea;cake'})).toBeTruthy();expect(matchingEvidence('bubble-tea',{amenity:'cafe',cuisine:'not_bubble_tea'})).toBeNull();expect(matchingEvidence('bubble-tea',{shop:'tea',cuisine:'bubble_tea'})).toBeNull();expect(matchingEvidence('cafe',{amenity:'cafe',cuisine:'bubble_tea'})).toBeNull();});

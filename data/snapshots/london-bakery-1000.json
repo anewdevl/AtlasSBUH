@@ -1,0 +1,637 @@
+{
+  "fileIntegrityHash": "e1c6dca2c9fd84e61d5c6c444c8d56d4332efd6da090747421e8ad2e7d6d7126",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "london",
+        "center": {
+          "lat": 51.5137,
+          "lon": -0.1365
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "bakery",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "way",
+        "sourceId": 275127242,
+        "sourceUrl": "https://www.openstreetmap.org/way/275127242",
+        "name": "The Hummingbird Bakery",
+        "coordinates": {
+          "lat": 51.5143851,
+          "lon": -0.1349311
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 132.62740857430376
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14178896004,
+        "sourceUrl": "https://www.openstreetmap.org/node/14178896004",
+        "name": "GAIL's",
+        "coordinates": {
+          "lat": 51.5142848,
+          "lon": -0.1344557
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 155.6937206201785
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10073023017,
+        "sourceUrl": "https://www.openstreetmap.org/node/10073023017",
+        "name": "EL&N",
+        "coordinates": {
+          "lat": 51.5139667,
+          "lon": -0.1341755
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 163.56501268467423
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5507577921,
+        "sourceUrl": "https://www.openstreetmap.org/node/5507577921",
+        "name": "Bread Ahead",
+        "coordinates": {
+          "lat": 51.5121661,
+          "lon": -0.1382179
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 207.903435276541
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3686803990,
+        "sourceUrl": "https://www.openstreetmap.org/node/3686803990",
+        "name": "La Maritxu Soho - Basque Cheesecake",
+        "coordinates": {
+          "lat": 51.5125045,
+          "lon": -0.1389883
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 217.5346664501986
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 350073262,
+        "sourceUrl": "https://www.openstreetmap.org/way/350073262",
+        "name": "Onsu",
+        "coordinates": {
+          "lat": 51.5124797,
+          "lon": -0.1319369
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 343.6892176359458
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 1412069426,
+        "sourceUrl": "https://www.openstreetmap.org/node/1412069426",
+        "name": "Ole & Steen",
+        "coordinates": {
+          "lat": 51.5162955,
+          "lon": -0.1393858
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 350.9558997765991
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13462905163,
+        "sourceUrl": "https://www.openstreetmap.org/node/13462905163",
+        "name": "GAIL's",
+        "coordinates": {
+          "lat": 51.5121457,
+          "lon": -0.1318804
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 363.40849543672687
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13253762166,
+        "sourceUrl": "https://www.openstreetmap.org/node/13253762166",
+        "name": "Happy Sky Japanese Bakery",
+        "coordinates": {
+          "lat": 51.5165519,
+          "lon": -0.1326634
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 413.5750836711497
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 993781422,
+        "sourceUrl": "https://www.openstreetmap.org/way/993781422",
+        "name": "唐人餅家 Chinatown Bakery",
+        "coordinates": {
+          "lat": 51.5111324,
+          "lon": -0.1321177
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 416.50997351630485
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 993781414,
+        "sourceUrl": "https://www.openstreetmap.org/way/993781414",
+        "name": "好小食 May's Sweet Bites",
+        "coordinates": {
+          "lat": 51.5112334,
+          "lon": -0.1315243
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 440.21170150771883
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4702441793,
+        "sourceUrl": "https://www.openstreetmap.org/node/4702441793",
+        "name": "Bake",
+        "coordinates": {
+          "lat": 51.5107669,
+          "lon": -0.1318284
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 459.22037587641887
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 344370494,
+        "sourceUrl": "https://www.openstreetmap.org/way/344370494",
+        "name": "Paul",
+        "coordinates": {
+          "lat": 51.5160892,
+          "lon": -0.1425472
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 495.66318995579525
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 670483444,
+        "sourceUrl": "https://www.openstreetmap.org/node/670483444",
+        "name": "唐人餅家 Chinatown Bakery",
+        "coordinates": {
+          "lat": 51.5119972,
+          "lon": -0.1297571
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 503.56759447448763
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 289660522,
+        "sourceUrl": "https://www.openstreetmap.org/way/289660522",
+        "name": "Crosstown",
+        "coordinates": {
+          "lat": 51.5091359,
+          "lon": -0.1370764
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 509.0699295107625
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 349913639,
+        "sourceUrl": "https://www.openstreetmap.org/way/349913639",
+        "name": "Fabrique",
+        "coordinates": {
+          "lat": 51.5134372,
+          "lon": -0.1283796
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 562.6898381377127
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4888948831,
+        "sourceUrl": "https://www.openstreetmap.org/node/4888948831",
+        "name": "Ole & Steen",
+        "coordinates": {
+          "lat": 51.5092389,
+          "lon": -0.1326196
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 564.0732175945865
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13550924197,
+        "sourceUrl": "https://www.openstreetmap.org/node/13550924197",
+        "name": "Mrs. Bakery",
+        "coordinates": {
+          "lat": 51.5118008,
+          "lon": -0.128892
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 567.2573183985544
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6258685166,
+        "sourceUrl": "https://www.openstreetmap.org/node/6258685166",
+        "name": "Ole & Steen",
+        "coordinates": {
+          "lat": 51.5120089,
+          "lon": -0.1285813
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 579.3474232223357
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 522063366,
+        "sourceUrl": "https://www.openstreetmap.org/way/522063366",
+        "name": "Ole & Steen",
+        "coordinates": {
+          "lat": 51.5176441,
+          "lon": -0.130975
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 581.8079040545647
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 345389726,
+        "sourceUrl": "https://www.openstreetmap.org/way/345389726",
+        "name": "Fabrique",
+        "coordinates": {
+          "lat": 51.5190747,
+          "lon": -0.1361246
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 598.2036215536605
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 349295164,
+        "sourceUrl": "https://www.openstreetmap.org/way/349295164",
+        "name": null,
+        "coordinates": {
+          "lat": 51.5194288,
+          "lon": -0.1351407
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 643.9199851544672
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 294646436,
+        "sourceUrl": "https://www.openstreetmap.org/way/294646436",
+        "name": "GAIL's",
+        "coordinates": {
+          "lat": 51.518857,
+          "lon": -0.1319626
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 653.7590634164382
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 290150381,
+        "sourceUrl": "https://www.openstreetmap.org/way/290150381",
+        "name": "Chestnut Bakery",
+        "coordinates": {
+          "lat": 51.5077129,
+          "lon": -0.1401744
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 712.6454970812867
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 565171620,
+        "sourceUrl": "https://www.openstreetmap.org/way/565171620",
+        "name": "Arôme Bakery",
+        "coordinates": {
+          "lat": 51.5129917,
+          "lon": -0.1261413
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 721.1378558929687
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4782807142,
+        "sourceUrl": "https://www.openstreetmap.org/node/4782807142",
+        "name": "Ole & Steen",
+        "coordinates": {
+          "lat": 51.5144462,
+          "lon": -0.1259157
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 737.1088654834791
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 970857084,
+        "sourceUrl": "https://www.openstreetmap.org/node/970857084",
+        "name": "Gail's",
+        "coordinates": {
+          "lat": 51.5177849,
+          "lon": -0.1272854
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 782.8623233851215
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 345400567,
+        "sourceUrl": "https://www.openstreetmap.org/way/345400567",
+        "name": "GAIL's",
+        "coordinates": {
+          "lat": 51.5202754,
+          "lon": -0.1429548
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 856.7772267136131
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 821344049,
+        "sourceUrl": "https://www.openstreetmap.org/node/821344049",
+        "name": "Paul",
+        "coordinates": {
+          "lat": 51.5111492,
+          "lon": -0.1247778
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 859.3524611619625
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 217949474,
+        "sourceUrl": "https://www.openstreetmap.org/way/217949474",
+        "name": "Bread & Co.",
+        "coordinates": {
+          "lat": 51.5141954,
+          "lon": -0.1495681
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 905.9793897234413
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 558503733,
+        "sourceUrl": "https://www.openstreetmap.org/way/558503733",
+        "name": "Brigit's Bakery",
+        "coordinates": {
+          "lat": 51.5100659,
+          "lon": -0.1245194
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 922.3209755855045
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 1231724330,
+        "sourceUrl": "https://www.openstreetmap.org/way/1231724330",
+        "name": "Blondies Kitchen",
+        "coordinates": {
+          "lat": 51.5125522,
+          "lon": -0.1229457
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 946.6082561318606
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 2536623300,
+        "sourceUrl": "https://www.openstreetmap.org/node/2536623300",
+        "name": "GAIL's",
+        "coordinates": {
+          "lat": 51.509175,
+          "lon": -0.1246729
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 960.7618469466954
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12601495501,
+        "sourceUrl": "https://www.openstreetmap.org/node/12601495501",
+        "name": "Floozie Cookies",
+        "coordinates": {
+          "lat": 51.5118298,
+          "lon": -0.1228914
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 964.41747043583
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13546608816,
+        "sourceUrl": "https://www.openstreetmap.org/node/13546608816",
+        "name": "Oliphant's",
+        "coordinates": {
+          "lat": 51.511861,
+          "lon": -0.122827
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 968.0305526759043
+      }
+    ],
+    "directMappedCount": 35,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 11.140846016432674,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T17:34:42.865Z",
+      "osmBaseTimestamp": "2026-10-24T17:33:06Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "b6c37286c307371314b4090359db7523498e0dd26341b3a4e30dd9cf15f4f972",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

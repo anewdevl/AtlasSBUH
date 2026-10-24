@@ -1,0 +1,420 @@
+{
+  "fileIntegrityHash": "4bacb723fea3956fb0e1651cc3308e4c1bbc4f17c3cb71e0f82e8fc8635ba069",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "singapore",
+        "center": {
+          "lat": 1.3,
+          "lon": 103.85
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "bubble-tea",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 12369154386,
+        "sourceUrl": "https://www.openstreetmap.org/node/12369154386",
+        "name": "LiHO Tea",
+        "coordinates": {
+          "lat": 1.3000901,
+          "lon": 103.8494772
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 58.974958669011286
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11898833288,
+        "sourceUrl": "https://www.openstreetmap.org/node/11898833288",
+        "name": "Little",
+        "coordinates": {
+          "lat": 1.2983348,
+          "lon": 103.8501775
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 186.21020918378665
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11898833287,
+        "sourceUrl": "https://www.openstreetmap.org/node/11898833287",
+        "name": null,
+        "coordinates": {
+          "lat": 1.2976263,
+          "lon": 103.8502155
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 265.0283451528082
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6398250290,
+        "sourceUrl": "https://www.openstreetmap.org/node/6398250290",
+        "name": "Chilltea",
+        "coordinates": {
+          "lat": 1.3002714,
+          "lon": 103.8526169
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "dessert;bubble_tea"
+        },
+        "distanceMeters": 292.4722084866566
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8972126506,
+        "sourceUrl": "https://www.openstreetmap.org/node/8972126506",
+        "name": "LiHo Tea",
+        "coordinates": {
+          "lat": 1.3026673,
+          "lon": 103.8523593
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 395.9213191464745
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6743669003,
+        "sourceUrl": "https://www.openstreetmap.org/node/6743669003",
+        "name": "Amps Tea",
+        "coordinates": {
+          "lat": 1.2994949,
+          "lon": 103.8540167
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 450.0401399001559
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 5023357602,
+        "sourceUrl": "https://www.openstreetmap.org/node/5023357602",
+        "name": "KOI Thé",
+        "coordinates": {
+          "lat": 1.2991805,
+          "lon": 103.8541865
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 474.234915117762
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6743669007,
+        "sourceUrl": "https://www.openstreetmap.org/node/6743669007",
+        "name": "LiHO Tea",
+        "coordinates": {
+          "lat": 1.2999038,
+          "lon": 103.8543163
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 479.9463568003589
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6160990985,
+        "sourceUrl": "https://www.openstreetmap.org/node/6160990985",
+        "name": "Hollin",
+        "coordinates": {
+          "lat": 1.2992928,
+          "lon": 103.8456716
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 487.5557144876826
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8539678301,
+        "sourceUrl": "https://www.openstreetmap.org/node/8539678301",
+        "name": "LiHO TEA",
+        "coordinates": {
+          "lat": 1.2998292,
+          "lon": 103.8452066
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 533.2029356520118
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13838376068,
+        "sourceUrl": "https://www.openstreetmap.org/node/13838376068",
+        "name": "Ten Ren’s Tea Brew",
+        "coordinates": {
+          "lat": 1.2969232,
+          "lon": 103.8539867
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 559.8784772365541
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6466108295,
+        "sourceUrl": "https://www.openstreetmap.org/node/6466108295",
+        "name": "CHICHA San Chen 吃茶三千",
+        "coordinates": {
+          "lat": 1.3009435,
+          "lon": 103.8449724
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 568.6610549101869
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 610732291,
+        "sourceUrl": "https://www.openstreetmap.org/node/610732291",
+        "name": "Mixue",
+        "coordinates": {
+          "lat": 1.3003144,
+          "lon": 103.8552471
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "ice_cream;bubble_tea"
+        },
+        "distanceMeters": 584.347390447013
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8582266730,
+        "sourceUrl": "https://www.openstreetmap.org/node/8582266730",
+        "name": "Kung Fu Tea",
+        "coordinates": {
+          "lat": 1.3051639,
+          "lon": 103.8514391
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 596.069132526291
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6267395823,
+        "sourceUrl": "https://www.openstreetmap.org/node/6267395823",
+        "name": "Gong Cha",
+        "coordinates": {
+          "lat": 1.2994706,
+          "lon": 103.8554316
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 606.6736892836885
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 7053710455,
+        "sourceUrl": "https://www.openstreetmap.org/node/7053710455",
+        "name": "Dakotea",
+        "coordinates": {
+          "lat": 1.2974549,
+          "lon": 103.8549938
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 623.1159865586576
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12486727560,
+        "sourceUrl": "https://www.openstreetmap.org/node/12486727560",
+        "name": "Chagee",
+        "coordinates": {
+          "lat": 1.3016244,
+          "lon": 103.8571227
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 812.1446725053535
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 13378103420,
+        "sourceUrl": "https://www.openstreetmap.org/node/13378103420",
+        "name": "Happy Cup",
+        "coordinates": {
+          "lat": 1.2915527,
+          "lon": 103.8495573
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 940.5852608288817
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8527191286,
+        "sourceUrl": "https://www.openstreetmap.org/node/8527191286",
+        "name": "amps tea",
+        "coordinates": {
+          "lat": 1.2913665,
+          "lon": 103.8496567
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 960.7596660791529
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6583281516,
+        "sourceUrl": "https://www.openstreetmap.org/node/6583281516",
+        "name": "LiHO TEA",
+        "coordinates": {
+          "lat": 1.2913306,
+          "lon": 103.8501259
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "bubble_tea"
+        },
+        "distanceMeters": 964.094892068498
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4732862922,
+        "sourceUrl": "https://www.openstreetmap.org/node/4732862922",
+        "name": "Mixue",
+        "coordinates": {
+          "lat": 1.3019685,
+          "lon": 103.8586341
+        },
+        "positionKind": "node",
+        "categoryId": "bubble-tea",
+        "relation": "direct",
+        "evidence": {
+          "amenity": "cafe",
+          "cuisine": "ice_cream;bubble_tea"
+        },
+        "distanceMeters": 984.4629258123559
+      }
+    ],
+    "directMappedCount": 21,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 6.684507609859605,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T17:35:10.975Z",
+      "osmBaseTimestamp": "2026-10-24T17:34:05Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "04693ecd0574515b3234a29af163f6f85244339d2f133e4c9fbb9a21c26ab001",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}

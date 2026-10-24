@@ -4,6 +4,7 @@ import { useEffect,useRef,useState } from 'react';
 import { cities,quantize,inCity,type CityId } from '../lib/cities';
 import { REGISTRY_VERSION } from '../lib/categories';
 import { SCHEMA_VERSION,canonicalize,requestSchema,responseSchema,validateResponse,isResponseForRequest,type AnalysisRequest,type AnalysisResponse } from '../lib/contracts';
+import { sanitizeCategorySelection } from '../lib/category-selection';
 import SearchPanel from '../components/SearchPanel';
 import ResultsPanel from '../components/ResultsPanel';
 import ComparePanel from '../components/ComparePanel';
@@ -12,9 +13,9 @@ const initial:AnalysisRequest={schemaVersion:SCHEMA_VERSION,registryVersion:REGI
 export default function Home(){
  const [request,setRequest]=useState(initial),[result,setResult]=useState<AnalysisResponse|null>(null),[pin,setPin]=useState<AnalysisResponse|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[message,setMessage]=useState('');
  const sequence=useRef(0),controller=useRef<AbortController|null>(null);
- useEffect(()=>{if(request.schemaVersion!==SCHEMA_VERSION||request.registryVersion!==REGISTRY_VERSION){sequence.current++;controller.current?.abort();setBusy(false);setRequest(initial);setResult(null);setPin(null);setError('The analysis schema was updated. Run a new analysis with the current settings.');}},[request.schemaVersion,request.registryVersion,SCHEMA_VERSION,REGISTRY_VERSION]);
+ useEffect(()=>{if(request.schemaVersion!==SCHEMA_VERSION||request.registryVersion!==REGISTRY_VERSION){sequence.current++;controller.current?.abort();setBusy(false);setRequest(initial);setResult(null);setPin(null);setError('The analysis schema was updated. Run a new analysis with the current settings.');return;}const safe=sanitizeCategorySelection(request);if(safe.categoryId!==request.categoryId||safe.adjacentCategoryIds.length!==request.adjacentCategoryIds.length)change(safe);},[request.schemaVersion,request.registryVersion,request.categoryId,request.adjacentCategoryIds,SCHEMA_VERSION,REGISTRY_VERSION]);
  const currentResult=result&&isResponseForRequest(result,request)?result:null;
- function change(next:AnalysisRequest){sequence.current++;controller.current?.abort();setBusy(false);setRequest({...next,schemaVersion:SCHEMA_VERSION,registryVersion:REGISTRY_VERSION,scope:{...next.scope,center:quantize(next.scope.center)}});setResult(null);setError('');setMessage('');}
+ function change(next:AnalysisRequest){const safe=sanitizeCategorySelection(next);sequence.current++;controller.current?.abort();setBusy(false);setRequest({...safe,schemaVersion:SCHEMA_VERSION,registryVersion:REGISTRY_VERSION,scope:{...safe.scope,center:quantize(safe.scope.center)}});setResult(null);setError('');setMessage('');}
  async function run(){
   const parsed=requestSchema.safeParse(request);if(!parsed.success){setError('Choose a center inside the selected city envelope and supported settings.');return;}
   const canonical=canonicalize(parsed.data);setRequest(canonical);const id=++sequence.current;controller.current?.abort();const control=new AbortController();controller.current=control;setBusy(true);setError('');setResult(null);setMessage('');

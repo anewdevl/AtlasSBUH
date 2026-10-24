@@ -1,0 +1,552 @@
+{
+  "fileIntegrityHash": "e4d0efb372f4c19a7f2fc71848a7a9904b5999bb33668a850d0e456f2b6b1ed9",
+  "response": {
+    "request": {
+      "schemaVersion": "1",
+      "registryVersion": "2",
+      "scope": {
+        "cityId": "singapore",
+        "center": {
+          "lat": 1.3,
+          "lon": 103.85
+        },
+        "radiusMeters": 1000
+      },
+      "categoryId": "bakery",
+      "adjacentCategoryIds": []
+    },
+    "status": "complete",
+    "truncated": false,
+    "competitors": [
+      {
+        "sourceType": "node",
+        "sourceId": 3067365791,
+        "sourceUrl": "https://www.openstreetmap.org/node/3067365791",
+        "name": "Kwan Im Cake (觀音蛋糕)",
+        "coordinates": {
+          "lat": 1.3004614,
+          "lon": 103.8520311
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 231.54546071144895
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12442663800,
+        "sourceUrl": "https://www.openstreetmap.org/node/12442663800",
+        "name": "Tsumiki Bakery",
+        "coordinates": {
+          "lat": 1.3003144,
+          "lon": 103.8521288
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 239.21912359140967
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3068308569,
+        "sourceUrl": "https://www.openstreetmap.org/node/3068308569",
+        "name": "MAMA Patisserie",
+        "coordinates": {
+          "lat": 1.300206,
+          "lon": 103.8523857
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 266.1968106481501
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3068308567,
+        "sourceUrl": "https://www.openstreetmap.org/node/3068308567",
+        "name": "Hotcakes",
+        "coordinates": {
+          "lat": 1.3004349,
+          "lon": 103.8524027
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 271.4416629158309
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 14277172323,
+        "sourceUrl": "https://www.openstreetmap.org/node/14277172323",
+        "name": "TripletS by Bakery Cuisine",
+        "coordinates": {
+          "lat": 1.296453,
+          "lon": 103.8504277
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 397.26389066119253
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 10839024935,
+        "sourceUrl": "https://www.openstreetmap.org/node/10839024935",
+        "name": "Barcook",
+        "coordinates": {
+          "lat": 1.3022391,
+          "lon": 103.8534757
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 459.6512413805824
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12257169233,
+        "sourceUrl": "https://www.openstreetmap.org/node/12257169233",
+        "name": "Crust & Crumbs",
+        "coordinates": {
+          "lat": 1.2969392,
+          "lon": 103.8533295
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 502.8221107790955
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6743729250,
+        "sourceUrl": "https://www.openstreetmap.org/node/6743729250",
+        "name": "Bakery 1946",
+        "coordinates": {
+          "lat": 1.2990041,
+          "lon": 103.8548508
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 550.4988421337122
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8733083934,
+        "sourceUrl": "https://www.openstreetmap.org/node/8733083934",
+        "name": "Epid'Or",
+        "coordinates": {
+          "lat": 1.300296,
+          "lon": 103.845012
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 555.4734842036619
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8334263630,
+        "sourceUrl": "https://www.openstreetmap.org/node/8334263630",
+        "name": "BreadTalk",
+        "coordinates": {
+          "lat": 1.3000687,
+          "lon": 103.8449384
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 562.7312201601208
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6743835929,
+        "sourceUrl": "https://www.openstreetmap.org/node/6743835929",
+        "name": "BreadTalk",
+        "coordinates": {
+          "lat": 1.2995352,
+          "lon": 103.8555886
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 623.4101583438503
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 3068565161,
+        "sourceUrl": "https://www.openstreetmap.org/node/3068565161",
+        "name": "Moghul Sweet Shop",
+        "coordinates": {
+          "lat": 1.3053783,
+          "lon": 103.8516349
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 625.046330097587
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6267395815,
+        "sourceUrl": "https://www.openstreetmap.org/node/6267395815",
+        "name": "Paris Baguette",
+        "coordinates": {
+          "lat": 1.2996634,
+          "lon": 103.8556802
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 632.5551763014375
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6743835927,
+        "sourceUrl": "https://www.openstreetmap.org/node/6743835927",
+        "name": "Four Leaves",
+        "coordinates": {
+          "lat": 1.2998609,
+          "lon": 103.8559195
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 658.2307178002486
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9942903948,
+        "sourceUrl": "https://www.openstreetmap.org/node/9942903948",
+        "name": "Tai Cheong Bakery 泰昌餅家",
+        "coordinates": {
+          "lat": 1.2944113,
+          "lon": 103.8532527
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 718.9781982210212
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 11634033669,
+        "sourceUrl": "https://www.openstreetmap.org/node/11634033669",
+        "name": "BreadTalk",
+        "coordinates": {
+          "lat": 1.2941707,
+          "lon": 103.8529644
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 727.1493836305076
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8418723735,
+        "sourceUrl": "https://www.openstreetmap.org/node/8418723735",
+        "name": "Bengawan Solo",
+        "coordinates": {
+          "lat": 1.2939426,
+          "lon": 103.8528438
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 744.0523577171449
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12149827693,
+        "sourceUrl": "https://www.openstreetmap.org/node/12149827693",
+        "name": "50年 Taste of Tradition",
+        "coordinates": {
+          "lat": 1.2931966,
+          "lon": 103.8514902
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 774.4294424882187
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6657451987,
+        "sourceUrl": "https://www.openstreetmap.org/node/6657451987",
+        "name": "Wu Pao Chun",
+        "coordinates": {
+          "lat": 1.2927638,
+          "lon": 103.8513334
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 818.1682802129685
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4560997493,
+        "sourceUrl": "https://www.openstreetmap.org/node/4560997493",
+        "name": "Paris Baguette",
+        "coordinates": {
+          "lat": 1.2933107,
+          "lon": 103.8532182
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 825.3798171567364
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 7056603735,
+        "sourceUrl": "https://www.openstreetmap.org/node/7056603735",
+        "name": "Duke Bakery",
+        "coordinates": {
+          "lat": 1.2933729,
+          "lon": 103.8533544
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 825.8773778310057
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12546605561,
+        "sourceUrl": "https://www.openstreetmap.org/node/12546605561",
+        "name": "Bakery Cuisine",
+        "coordinates": {
+          "lat": 1.2993924,
+          "lon": 103.8574487
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 830.796261871899
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4560997472,
+        "sourceUrl": "https://www.openstreetmap.org/node/4560997472",
+        "name": "BreadTalk",
+        "coordinates": {
+          "lat": 1.2929191,
+          "lon": 103.8533399
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 870.5104632911076
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 4560997470,
+        "sourceUrl": "https://www.openstreetmap.org/node/4560997470",
+        "name": "Duke",
+        "coordinates": {
+          "lat": 1.2927402,
+          "lon": 103.8534029
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 891.4927808321701
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 6780444026,
+        "sourceUrl": "https://www.openstreetmap.org/node/6780444026",
+        "name": "BreadTalk",
+        "coordinates": {
+          "lat": 1.2916447,
+          "lon": 103.8498236
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 929.2738987396557
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9143501217,
+        "sourceUrl": "https://www.openstreetmap.org/node/9143501217",
+        "name": "Pita Bakery",
+        "coordinates": {
+          "lat": 1.301255,
+          "lon": 103.858448
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 949.444241009801
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 8527367906,
+        "sourceUrl": "https://www.openstreetmap.org/node/8527367906",
+        "name": "Tings Bakery",
+        "coordinates": {
+          "lat": 1.2914017,
+          "lon": 103.8512048
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 965.4227836764748
+      },
+      {
+        "sourceType": "way",
+        "sourceId": 191010254,
+        "sourceUrl": "https://www.openstreetmap.org/way/191010254",
+        "name": "Ms Durian",
+        "coordinates": {
+          "lat": 1.3058734,
+          "lon": 103.8564186
+        },
+        "positionKind": "representative-center",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 967.2933022736277
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 9872662918,
+        "sourceUrl": "https://www.openstreetmap.org/node/9872662918",
+        "name": "The French American Bakery",
+        "coordinates": {
+          "lat": 1.3011098,
+          "lon": 103.8587596
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 981.5603906752602
+      },
+      {
+        "sourceType": "node",
+        "sourceId": 12192729074,
+        "sourceUrl": "https://www.openstreetmap.org/node/12192729074",
+        "name": "SL Bakehouse",
+        "coordinates": {
+          "lat": 1.3070277,
+          "lon": 103.8555213
+        },
+        "positionKind": "node",
+        "categoryId": "bakery",
+        "relation": "direct",
+        "evidence": {
+          "shop": "bakery"
+        },
+        "distanceMeters": 993.6717665148602
+      }
+    ],
+    "directMappedCount": 30,
+    "adjacentMappedCount": 0,
+    "directMappedDensity": 9.549296585513721,
+    "provenance": {
+      "provider": "OpenStreetMap / Overpass",
+      "fetchedAt": "2026-10-24T17:35:05.452Z",
+      "osmBaseTimestamp": "2026-10-24T17:34:05Z",
+      "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+      "queryHash": "639fbe0ad40057335a254e56e3312098b27b22c3dc9a4189526e621874cfa6f1",
+      "cacheState": "live",
+      "attribution": "© OpenStreetMap contributors",
+      "licenseLink": "https://www.openstreetmap.org/copyright",
+      "coverage": "unknown",
+      "excludedRecordCount": 0
+    },
+    "warnings": [
+      "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+      "Way and relation centers are representative positions, not guaranteed entrances."
+    ]
+  }
+}
