@@ -7,7 +7,7 @@ describe('POST /api/suggest', () => {
   it('rejects malformed and oversized descriptions before contacting NVIDIA', async () => {
     const malformed = await POST(new Request('http://localhost/api/suggest', { method: 'POST', body: '{' }));
     expect(malformed.status).toBe(400);
-    const oversized = await POST(new Request('http://localhost/api/suggest', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ description: 'x'.repeat(201) }) }));
+    const oversized = await POST(new Request('http://localhost/api/suggest', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ description: 'x'.repeat(501) }) }));
     expect(oversized.status).toBe(400);
   });
 

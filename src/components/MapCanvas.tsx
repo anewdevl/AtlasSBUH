@@ -17,9 +17,9 @@ export default function MapCanvas({center,radius,competitors,selectedId,selectio
   return {paddingTopLeft:L.point(24,Math.min(160,size.y*.3)),paddingBottomRight:L.point(panel&&!mobile?Math.min(panel.width+48,size.x*.65):40,Math.min(coveredBottom+60,size.y*.65))};
  }
  function navigate(kind:'center'|'results'){
-  const m=map.current;if(!m)return;m.closePopup();onNavigate();
-  const bounds=kind==='results'&&competitors.length?L.latLngBounds(competitors.map(c=>[c.coordinates.lat,c.coordinates.lon] as L.LatLngTuple)):L.circle([center.lat,center.lon],{radius}).getBounds();
-  m.fitBounds(bounds,{...padding(),maxZoom:17,animate:false});
+  const m=map.current;if(!m)return;m.stop();m.closePopup();onNavigate();m.invalidateSize({pan:false});
+  const bounds=kind==='results'&&competitors.length?L.latLngBounds(competitors.map(c=>[c.coordinates.lat,c.coordinates.lon] as L.LatLngTuple)):L.latLng(center.lat,center.lon).toBounds(radius*2);
+  m.fitBounds(bounds,{...(kind==='center'?{padding:L.point(64,64)}:padding()),maxZoom:17,animate:false});
  }
  useEffect(()=>{
   if(!host.current)return;
@@ -32,7 +32,7 @@ export default function MapCanvas({center,radius,competitors,selectedId,selectio
  // Initial creation is separate from scope and selection updates.
  // eslint-disable-next-line react-hooks/exhaustive-deps
  },[]);
- useEffect(()=>{map.current?.setView([center.lat,center.lon],map.current.getZoom(),{animate:!matchMedia('(prefers-reduced-motion: reduce)').matches});},[center.lat,center.lon]);
+ useEffect(()=>{const m=map.current;if(m){m.stop();m.invalidateSize({pan:false});m.setView([center.lat,center.lon],m.getZoom(),{animate:false});}},[center.lat,center.lon]);
  useEffect(()=>{
   if(!layer.current||!map.current)return;const group=layer.current,m=map.current;m.closePopup();group.clearLayers();markers.current.clear();
   function focusMarker(marker?:L.CircleMarker){const el=marker?.getElement();if(el instanceof SVGElement||el instanceof HTMLElement)el.focus();}
@@ -51,7 +51,7 @@ export default function MapCanvas({center,radius,competitors,selectedId,selectio
    content.querySelector('button')?.focus();
   }
   L.circle([center.lat,center.lon],{radius,color:'var(--accent)',weight:1.5,fillColor:'var(--accent)',fillOpacity:0.07,dashArray:'5 7',interactive:false}).addTo(group);
-  L.circleMarker([center.lat,center.lon],{radius:4,color:'var(--paper)',weight:2,fillColor:'var(--accent)',fillOpacity:1,interactive:false}).addTo(group);
+  L.circleMarker([center.lat,center.lon],{radius:4,color:'var(--paper)',weight:2,fillColor:'var(--accent)',fillOpacity:1,interactive:false,className:'search-center-marker'}).addTo(group);
   for(const c of competitors){
    const id=`${c.sourceType}/${c.sourceId}`,content=document.createElement('div'),name=document.createElement('strong'),meta=document.createElement('span');
    name.textContent=c.name??'Unnamed mapped feature';meta.textContent=`${categories[c.categoryId].label} · ${c.relation} · ${Math.round(c.distanceMeters)} m`;

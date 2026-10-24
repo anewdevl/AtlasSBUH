@@ -1,2 +1,5 @@
 import { defineConfig,devices } from '@playwright/test';
-export default defineConfig({testDir:'./tests/e2e',fullyParallel:false,use:{baseURL:'http://127.0.0.1:3000',...devices['Desktop Chrome'],channel:'msedge',trace:'retain-on-failure'},webServer:{command:'npm run dev -- --hostname 127.0.0.1',url:'http://127.0.0.1:3000',reuseExistingServer:!process.env.CI,timeout:120000}});
+const production = process.env.ATLAS_E2E_PRODUCTION === '1';
+const port = Number(process.env.ATLAS_E2E_PORT || 3000);
+const url = `http://127.0.0.1:${port}`;
+export default defineConfig({testDir:'./tests/e2e',fullyParallel:false,use:{baseURL:url,...devices['Desktop Chrome'],channel:'msedge',trace:'retain-on-failure'},webServer:{command:`npm run ${production ? 'start' : 'dev'} -- --hostname 127.0.0.1 --port ${port}`,url,reuseExistingServer:!production&&!process.env.CI,timeout:120000}});

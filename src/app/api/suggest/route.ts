@@ -1,13 +1,13 @@
 import { z } from 'zod';
 import { categorySuggestionSchema, suggestCategory } from '../../../server/ai-category';
 
-const bodySchema = z.object({ description: z.string().trim().min(3).max(200) }).strict();
+const bodySchema = z.object({ description: z.string().trim().min(3).max(500) }).strict();
 
 export async function POST(request: Request) {
   let raw: unknown;
   try { raw = await request.json(); } catch { return Response.json({ error: 'Send a valid JSON request.' }, { status: 400 }); }
   const parsed = bodySchema.safeParse(raw);
-  if (!parsed.success) return Response.json({ error: 'Enter a business description between 3 and 200 characters.' }, { status: 400 });
+  if (!parsed.success) return Response.json({ error: 'Enter a business description between 3 and 500 characters.' }, { status: 400 });
 
   const apiKey = process.env.NVIDIA_API_KEY;
   if (!apiKey) return Response.json({ error: 'AI suggestions are not configured. Add NVIDIA_API_KEY to .env.local and restart the dev server.' }, { status: 503 });

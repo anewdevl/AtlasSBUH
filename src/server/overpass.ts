@@ -15,7 +15,11 @@ export function buildQuery(input:AnalysisRequest) {
 export const hashQuery=(query:string)=>createHash('sha256').update(query).digest('hex');
 const envelope=z.object({elements:z.array(z.unknown()),osm3s:z.object({timestamp_osm_base:z.string().optional()}).passthrough().optional(),remark:z.string().optional()}).passthrough();
 export async function fetchOverpass(request:AnalysisRequest, transport:typeof fetch=fetch) {
- const query=buildQuery(request), controller=new AbortController();
+ return fetchOverpassQuery(buildQuery(request), transport);
+}
+/** Internal callers build queries exclusively from reviewed selectors and validated scopes. */
+export async function fetchOverpassQuery(query: string, transport: typeof fetch = fetch) {
+ const controller=new AbortController();
  const apiKey=process.env.ATLAS_OVERPASS_API_KEY;
  if(ENDPOINT==='https://api.overpass.ch/v1/interpreter'&&!apiKey)throw new UpstreamError('Overpass.ch API key is missing.');
  const timer=setTimeout(()=>controller.abort(),25000);

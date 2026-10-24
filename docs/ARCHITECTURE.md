@@ -1,12 +1,16 @@
 # Technical architecture
 
+## Optional research pipeline
+
+M5 runs separately through `POST /api/research` with NDJSON stage/report events. `src/lib/research-contracts.ts` owns strict runtime contracts. `src/server/research.ts` coordinates fixed bounded tasks, with provider adapters in `research-providers.ts`. The existing OSM request/response contract and pipeline remain unchanged. See [RESEARCH.md](RESEARCH.md) for bounds, credential behavior, verification and provider requirements.
+
 ## Request pipeline
 
 Confirmed category and area → strict shape validation (400) → semantic validation (422) → canonical scope → exact fresh memory cache → exact fresh bundled snapshot → fixed allowlisted Overpass request → normalization and final radius filtering → semantic response validation → map/list/comparison. If live retrieval fails, use an exact compatible stale entry no older than 30 days; otherwise 503. Local rate limits return 429 and Retry-After.
 
 No business description enters server query construction. The instant classifier proposes categories locally; an optional explicit NVIDIA NIM request can interpret free-form descriptions and return only a supported registry category or null. NVIDIA NIM is the primary LLM provider for general language-model tasks. The user confirms a registry category. Query predicates are constants owned by the registry. AI suggestions never create map evidence or metrics. All geometries are queried with `nwr`; ways and relations use returned centers. HTTP errors, invalid JSON, missing element arrays, runtime remarks, oversized payloads, and invalid timestamps fail retrieval. Invalid individual records make the usable response partial. A valid empty array yields a complete zero result.
 
-Gemini integration is not implemented yet. It is reserved for a later, explicitly map-related capability, such as Maps Grounding for place questions with provider citations. This is a separate provider adapter from Overpass and must not replace or silently supplement the OSM dataset, alter category classification, or generate competitor counts. Keep Gemini keys server-only and separate from NVIDIA credentials. A future `GEMINI_MAPS_API_KEYS` secret list may hold multiple authorized credentials with project/account tracking. Fail over only for invalid credentials or transient provider outages; do not use the list to pool free-tier quotas or bypass 429/daily caps. Keys in a project share project quotas, so quota exhaustion must honor retry/reset guidance and surface an unavailable/capped state. Verify current model eligibility, quotas, billing, and terms before enabling the integration. References: [Maps Grounding](https://ai.google.dev/gemini-api/docs/maps-grounding), [rate limits](https://ai.google.dev/gemini-api/docs/rate-limits), [billing](https://ai.google.dev/gemini-api/docs/billing).
+The research path defaults to NVIDIA planning, source-backed competitor discovery, bounded Tavily follow-up retrieval, excerpt selection, insights and verification. No Google request is made unless explicitly selected. Research occupies a fourth sidebar tab using the shared map explorer's dark/light theme, while preserving map selection, filters, comparison and mobile controls from main. Gemini is a separate optional Maps-grounding adapter with server-only primary/fallback credentials and per-credential/project cooldowns. It never changes OSM metrics. See [RESEARCH.md](RESEARCH.md) for the implemented fallback behavior and live-check status.
 
 ## Contracts
 

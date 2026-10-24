@@ -9,12 +9,15 @@ import SearchPanel from '../components/SearchPanel';
 import ResultsPanel from '../components/ResultsPanel';
 import ComparePanel from '../components/ComparePanel';
 import CompetitorDetail from '../components/CompetitorDetail';
+import ResearchPanel from '../components/ResearchPanel';
+import LocationAdvisor from '../components/LocationAdvisor';
 import { defaultCompetitorFilters,filterCompetitors,type CompetitorFilters } from '../lib/competitor-view';
 const MapCanvas=dynamic(()=>import('../components/MapCanvas'),{ssr:false,loading:()=> <div className="map-loading">Loading your map…</div>});
 const initial:AnalysisRequest={schemaVersion:SCHEMA_VERSION,registryVersion:REGISTRY_VERSION,scope:{cityId:'nyc',center:cities.nyc.center,radiusMeters:1000},categoryId:'cafe',adjacentCategoryIds:[]};
 export default function Home(){
+ const [description,setDescription]=useState('');
  const [request,setRequest]=useState(initial),[result,setResult]=useState<AnalysisResponse|null>(null),[pin,setPin]=useState<AnalysisResponse|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[message,setMessage]=useState('');
- const [theme,setTheme]=useState<'dark'|'light'>('dark'),[view,setView]=useState<'search'|'results'|'compare'>('search'),[selectedId,setSelectedId]=useState<string|null>(null),[sidebarOpen,setSidebarOpen]=useState(true);
+ const [theme,setTheme]=useState<'dark'|'light'>('dark'),[view,setView]=useState<'search'|'results'|'compare'|'research'|'locations'>('search'),[selectedId,setSelectedId]=useState<string|null>(null),[sidebarOpen,setSidebarOpen]=useState(true);
  const [filters,setFilters]=useState<CompetitorFilters>(defaultCompetitorFilters),[selectionTick,setSelectionTick]=useState(0);
  function selectCompetitor(id:string){setSelectedId(id);setSelectionTick(n=>n+1);setView('results');}
  function changeFilters(next:CompetitorFilters){setFilters(next);setSelectedId(null);}
@@ -42,12 +45,14 @@ export default function Home(){
    <aside className="control-sidebar" aria-label="Explore workspace">
     <div className="sidebar-brand"><a className="brand" href="/" aria-label="ATLAS home"><span className="brand-mark">⌁</span>ATLAS</a><span className="workspace-label">EXPLORE</span><button className="mobile-toggle" onClick={()=>setSidebarOpen(!sidebarOpen)} aria-expanded={sidebarOpen} aria-controls="sidebar-body">{sidebarOpen?'Collapse':'Open controls'}</button></div>
     <div id="sidebar-body" className="sidebar-body">
-     <nav className="workspace-nav" aria-label="Explorer views">{(['search','results','compare'] as const).map(tab=><button key={tab} aria-pressed={view===tab} onClick={()=>setView(tab)}>{tab==='search'?'Search':tab==='results'?`Competitors${currentResult?` (${currentResult.competitors.length})`:''}`:`Compare${pin?' •':''}`}</button>)}</nav>
+     <nav className="workspace-nav" aria-label="Explorer views">{(['search','results','compare','research','locations'] as const).map(tab=><button key={tab} aria-pressed={view===tab} onClick={()=>setView(tab)}>{tab==='search'?'Search':tab==='research'?'Research':tab==='locations'?'Locations':tab==='results'?`Competitors${currentResult?` (${currentResult.competitors.length})`:''}`:`Compare${pin?' •':''}`}</button>)}</nav>
      <div className="sidebar-scroll">
       {error&&<div className="error" role="alert"><strong>Analysis unavailable</strong><p>{error}</p><span>No zero counts or substitute areas are shown.</span></div>}
       {message&&<p className="feedback" role="status">{message}</p>}
       {busy&&<div className="loading-state" role="status"><span className="pulse"/>Retrieving mapped evidence…</div>}
-      <div hidden={view!=='search'}><SearchPanel request={request} onChange={change}/></div>
+      <div hidden={view!=='search'}><SearchPanel request={request} onChange={change} description={description} setDescription={setDescription}/></div>
+      <div hidden={view!=='research'}><ResearchPanel scope={request.scope} osmRequest={request} description={description} setDescription={setDescription}/></div>
+      <div hidden={view!=='locations'}><LocationAdvisor request={request} description={description} onSelect={center=>{change({...request,scope:{...request.scope,center}});setView('search');}}/></div>
       {view==='results'&&(currentResult?<ResultsPanel result={currentResult} onPin={()=>{setPin(currentResult);setView('compare');}} onSave={save} selectedId={selectedId} onSelect={selectCompetitor} competitors={visibleCompetitors} filters={filters} onFilters={changeFilters}/>:<div className="sidebar-empty"><span className="empty-symbol">⌖</span><h2>Your evidence starts here.</h2><p>Choose a business and area, then run an analysis to inspect mapped competitors.</p><button className="secondary" onClick={()=>setView('search')}>Set up a search →</button></div>)}
       {view==='compare'&&(pin?<ComparePanel a={pin} b={currentResult} onClear={()=>setPin(null)}/>:<div className="sidebar-empty"><span className="empty-symbol">⇄</span><h2>Two areas. Equal terms.</h2><p>Pin an analysis from Competitors, then search another area with matching settings.</p><button className="secondary" onClick={()=>setView(currentResult?'results':'search')}>{currentResult?'View competitors':'Set up a search'} →</button></div>)}
      </div>
