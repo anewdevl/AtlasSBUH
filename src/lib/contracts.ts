@@ -65,3 +65,7 @@ export function validateResponse(input:unknown, expected:AnalysisRequest) {
  if (cacheKey(r.request)!==cacheKey(expected)) throw new Error('Response scope mismatch');
  return r;
 }
+export function isResponseForRequest(input:unknown, expected:unknown):input is AnalysisResponse {
+ const response=responseSchema.safeParse(input),request=requestSchema.safeParse(expected);
+ return response.success&&request.success&&cacheKey(response.data.request)===cacheKey(request.data);
+}

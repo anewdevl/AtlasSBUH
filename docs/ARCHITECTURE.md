@@ -33,6 +33,8 @@ Overpass has a 20-second query budget, a 25-second AbortController deadline span
 
 At most two upstream requests run concurrently per process. Client requests have a 35-second deadline. A generation counter and AbortController discard obsolete responses when the scope changes. Results are hidden whenever the input scope changes. Map panning triggers no retrieval. Tile failure messages do not disable list analysis.
 
+Client rendering accepts a result only when its schema, registry, and exact request scope still match the current settings. A registry update during development clears incompatible in-memory results and pins instead of passing stale data into strict cache-key validation.
+
 ## Comparison
 
 The pure function accepts unknown inputs and validates both. Complete results must agree on category, radius, schema/registry versions, and adjacent categories. Density is `direct / (π × radiusKm²)`. Each area's retrieval time and cache state remain visible. Coverage is unknown; no winner or demand estimate is inferred.

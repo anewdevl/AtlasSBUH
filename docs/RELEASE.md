@@ -5,7 +5,7 @@ Implementation date: October 24, 2026 (America/New_York).
 ## Automated verification
 
 - TypeScript: passed.
-- Vitest: 35 unit/integration tests passed with mocked transport. The release check loads all 12 genuine bundled city/category snapshots, simulates an offline provider, and confirms no upstream request is made.
+- Vitest: 36 unit/integration tests passed with mocked transport. The release check loads all 12 genuine bundled city/category snapshots, simulates an offline provider, and confirms no upstream request is made. A regression test confirms stale registry results are hidden safely.
 - Next.js production build: passed.
 - Playwright: 4 existing browser tests passed using installed Edge, with mocked competitor transport and blocked tiles. A fifth test now covers pharmacy and supermarket; the runner could not be rerun while the local Next.js dev server held its lock. The updated flows were checked in the open app.
 - Desktop and mobile screenshots inspected. List/results remain usable with tile failures.
@@ -20,9 +20,8 @@ Overpass.ch health check returned HTTP 200. A live 500 m NYC analysis returned 3
 
 Four-city UI; café/bakery/bubble-tea/pharmacy/supermarket registry; category suggestions; strict semantic API contracts; inspectable evidence; mapped-feature density; exact fresh/stale cache logic; partial handling; compatibility-gated comparison; local browser save; bounded upstream retrieval; separate tile/list behavior; responsive controls; visible attribution and dates. Pharmacy and supermarket use reviewed exact OSM tags. Upstream failures report timeout, HTTP status, or connection guidance; `ATLAS_OVERPASS_ENDPOINT` explicitly selects among four allowlisted global endpoints, including optional Overpass.ch API-key support.
 
-## Remaining release gates
+## Local release status
 
-- Deploy to the intended Vercel account/project and verify snapshot tracing and runtime duration.
-- Add deployed contact information to the upstream User-Agent.
+The app is being run locally; hosted deployment and deployment-specific checks are deferred. All 12 current snapshots are included in the local repository and exact-scope offline fallback is covered by integration tests.
 
 The source and captured snapshots are on https://github.com/anewdevl/AtlasSBUH, branch `main`. No hosted Vercel deployment was created. Halal qualification, independently sourced demographic/transit/footfall metrics, heatmaps, and AI research remain outside the current implementation.

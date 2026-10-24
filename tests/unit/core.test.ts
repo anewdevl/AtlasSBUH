@@ -2,7 +2,7 @@ import { describe,it,expect } from 'vitest';
 import { classify } from '../../src/lib/classify';
 import { matchingEvidence } from '../../src/lib/categories';
 import { REGISTRY_VERSION } from '../../src/lib/categories';
-import { canonicalize,cacheKey,requestSchema,responseSchema,validateResponse } from '../../src/lib/contracts';
+import { canonicalize,cacheKey,isResponseForRequest,requestSchema,responseSchema,validateResponse } from '../../src/lib/contracts';
 import { compare } from '../../src/lib/compare';
 import { normalize } from '../../src/server/normalize';
 import { buildQuery,MAX_RECORDS } from '../../src/server/overpass';
@@ -18,6 +18,7 @@ describe('scope and contracts',()=>{
  it('rejects city, radius, field, qualifier, and version errors',()=>{for(const r of [{...request,extra:1},{...request,registryVersion:'99'},{...request,adjacentCategoryIds:['cafe']},{...request,scope:{...request.scope,radiusMeters:999}},{...request,scope:{...request.scope,center:{lat:0,lon:0}}},{...request,scope:{...request.scope,center:{lat:Infinity,lon:0}}}])expect(requestSchema.safeParse(r).success).toBe(false);});
  it('rejects inconsistent responses',()=>{const r=result();for(const changed of [{...r,directMappedCount:0},{...r,directMappedDensity:88},{...r,truncated:true},{...r,competitors:[...r.competitors,...r.competitors]},{...r,competitors:[{...r.competitors[0],sourceUrl:'https://example.com'}]},{...r,competitors:[{...r.competitors[0],evidence:{amenity:'pharmacy'}}]},{...r,competitors:[{...r.competitors[0],distanceMeters:999}]},{...r,provenance:{...r.provenance,fetchedAt:'bad'}}])expect(responseSchema.safeParse(changed).success).toBe(false);});
  it('requires expected exact scope',()=>{expect(()=>validateResponse(result(),{...request,scope:{...request.scope,radiusMeters:500}})).toThrow();});
+ it('safely hides a saved result from an older registry',()=>{const stale={...result(),request:{...request,registryVersion:'1'}};expect(isResponseForRequest(result(),request)).toBe(true);expect(isResponseForRequest(stale,request)).toBe(false);});
  it('canonical validation is independent of JSON property order',()=>{const r=result();r.request={adjacentCategoryIds:[],categoryId:'cafe',scope:request.scope,registryVersion:REGISTRY_VERSION,schemaVersion:'1'};expect(responseSchema.safeParse(r).success).toBe(true);});
  it('builds only allowlisted queries',()=>{const query=buildQuery(request);expect(query).toContain('nwr["amenity"="cafe"]');expect(query).toContain('around:1000,40.7308,-73.9973');const pharmacy=buildQuery({...request,categoryId:'pharmacy'});expect(pharmacy).toContain('nwr["amenity"="pharmacy"]');expect(pharmacy).toContain('nwr["healthcare"="pharmacy"]');expect(buildQuery({...request,categoryId:'supermarket'})).toContain('nwr["shop"="supermarket"]');expect(()=>buildQuery({...request,categoryId:'cafe];out;' as never})).toThrow();});
  it('normalizes exact pharmacy and supermarket source evidence',()=>{const pharmacy=result([{...node,tags:{amenity:'pharmacy',healthcare:'pharmacy'}}],{...request,categoryId:'pharmacy'});expect(pharmacy.competitors[0].evidence).toEqual({amenity:'pharmacy',healthcare:'pharmacy'});const market=result([{...node,tags:{shop:'supermarket'}}],{...request,categoryId:'supermarket'});expect(market.competitors[0].evidence).toEqual({shop:'supermarket'});});
