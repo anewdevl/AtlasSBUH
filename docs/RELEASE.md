@@ -25,4 +25,4 @@ Four-city UI; café/bakery/bubble-tea registry; category suggestions; strict sem
 - Deploy to the intended Vercel account/project and verify snapshot tracing and runtime duration.
 - Add deployed contact information to the upstream User-Agent.
 
-No hosted deployment was created. No repository remote or Vercel project was supplied. Pharmacy, supermarket, halal food, heatmaps, and AI research remain outside this initial implementation.
+The source was pushed to https://github.com/anewdevl/AtlasSBUH on `main` in commit `e5315eb`. No hosted Vercel deployment was created. Pharmacy, supermarket, halal food, heatmaps, and AI research remain outside this initial implementation.
