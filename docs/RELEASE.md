@@ -5,11 +5,12 @@ Implementation date: October 24, 2026 (America/New_York).
 ## Automated verification
 
 - TypeScript: passed.
-- Vitest: 32 unit/integration tests passed with mocked transport.
+- Vitest: 33 unit/integration tests passed with mocked transport. The added release check loads each genuine bundled city snapshot, simulates an offline provider, and confirms no upstream request is made.
 - Next.js production build: passed.
 - Playwright: 4 browser tests passed using installed Edge, with mocked competitor transport and blocked tiles. Coverage includes four-city flow, source links, comparison, save/restore, unsupported input, failure versus empty, partial aggregates, desktop keyboard entry, and mobile overflow.
 - Desktop and mobile screenshots inspected. List/results remain usable with tile failures.
 - `npm audit --omit=dev`: no known production dependency vulnerabilities reported.
+- In-app browser smoke with the genuine exact café/1 km snapshots: NYC 182, London 353, Dubai 25, Singapore 176; all returned complete `snapshot-fresh` results. Pinned NYC and compared it with London successfully, with each retrieval date and cache state shown.
 
 ## Live source checks
 
@@ -21,8 +22,7 @@ Four-city UI; café/bakery/bubble-tea registry; category suggestions; strict sem
 
 ## Remaining release gates
 
-- Rehearse exact snapshot fallback with the network disconnected before the demo.
 - Deploy to the intended Vercel account/project and verify snapshot tracing and runtime duration.
 - Add deployed contact information to the upstream User-Agent.
 
-The source was pushed to https://github.com/anewdevl/AtlasSBUH on `main`. The newest code and captured snapshots still need to be committed and pushed. No hosted Vercel deployment was created. Pharmacy, supermarket, halal food, heatmaps, and AI research remain outside this initial implementation.
+The source and captured snapshots are on https://github.com/anewdevl/AtlasSBUH, branch `main`. No hosted Vercel deployment was created. Pharmacy, supermarket, halal food, heatmaps, and AI research remain outside this initial implementation.
