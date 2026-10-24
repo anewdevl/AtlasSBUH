@@ -1,6 +1,6 @@
 # ATLAS
 
-Local market exploration using inspectable OpenStreetMap evidence. Next.js App Router, React, TypeScript, client-only Leaflet, Zod, Vitest, and Playwright. No API key, database, authentication, or AI service is required for map analysis; NVIDIA NIM category suggestions are optional.
+Local market exploration using inspectable OpenStreetMap evidence. Next.js App Router, React, TypeScript, client-only Leaflet, Zod, Vitest, and Playwright. No API key, database, authentication, or AI service is required for map analysis; NVIDIA NIM category suggestions and external business research are optional.
 
 ## Run
 
@@ -21,7 +21,7 @@ If public OpenStreetMap query services are unreachable, the free Overpass.ch pla
 
 To enable AI category suggestions, set `NVIDIA_API_KEY=your_key` in `.env.local` and restart the dev server. NVIDIA NIM (`openai/gpt-oss-20b`) is the primary LLM for general ATLAS language-model tasks. The current optional button sends the entered business description to NVIDIA and suggests only a category already supported by ATLAS. An unsupported business, such as a software office, stays unsupported. The key and map analysis remain server-side; AI suggestions are not required for local analysis.
 
-Gemini integration is not implemented yet. It is reserved for a later, explicitly map-related feature such as Maps Grounding: answering a map question using grounded Google Maps places and citations. It does not replace Overpass/OpenStreetMap competitor retrieval, and it must not create or change mapped competitor records, counts, or current category decisions. Keep Gemini credentials server-side and separate from `NVIDIA_API_KEY`. A future `GEMINI_MAPS_API_KEYS` secret list may hold multiple authorized credentials for failover after an invalid credential or transient provider outage. Do not switch keys to combine free quotas or evade a 429/quota limit. Multiple keys in one Google Cloud project share that project's limits; on quota exhaustion, respect the provider's reset/retry guidance. See the [Gemini Maps Grounding docs](https://ai.google.dev/gemini-api/docs/maps-grounding), [rate limits](https://ai.google.dev/gemini-api/docs/rate-limits), and [billing details](https://ai.google.dev/gemini-api/docs/billing).
+Business research uses NVIDIA and Tavily by default and needs no Google credentials. Gemini Maps is an optional adapter under advanced research options. It never changes OSM mapped counts or category decisions; existing primary/fallback key settings remain supported, with exhausted credentials held in cooldown.
 
 ```sh
 npm run typecheck
@@ -33,7 +33,17 @@ npm run snapshots
 
 Playwright uses installed Microsoft Edge by default on this Windows workspace. Update the configured browser channel for other environments. Automated tests mock upstream data and tile requests; synthetic records exist only under `tests/`.
 
-## Current scope
+## Optional business research (M5, in progress)
+
+The **Research** tab builds a shortlist of named mapped businesses inside the selected radius. Ranking weights relevance at 80% and proximity at 20%, using the confirmed category and matching business terms. All available named candidates are shown; NVIDIA and Tavily enrich the top three distinct names. Agents reject news, roundups and unrelated sources, and distinguish official menu prices from reviewer-reported costs. The report groups supported observations by business and retains the shortlist if web retrieval fails. A web-name match does not prove a local branch match; mapped coverage and current operating status remain uncertain. See [research implementation](docs/RESEARCH.md) and [agent roles](docs/AGENTS_RESEARCH.md).
+
+Use **Search → Find a location** for an address, neighborhood or landmark in the selected city envelope. Select a result to move the center, then choose a radius and category. Photon supplies location lookup without an API key. Recenter restores the selected search circle using symmetric padding; it never changes the chosen area or starts retrieval.
+
+Set `NVIDIA_API_KEY` and `TAVILY_API_KEY` server-side to enable the web flow. Research defaults to NVIDIA-hosted `nvidia/nemotron-3.5-lightning-30b-a3b` with thinking disabled; the existing category helper still uses `openai/gpt-oss-20b`. `ATLAS_RESEARCH_MODEL=openai/gpt-oss-20b` remains an optional research alternative, but live checks found it substantially slower. No new key is required for the default model. For optional Maps context, set `GEMINI_MAPS_API_KEY` and optionally `GEMINI_MAPS_API_KEY_FALLBACK`. Exhausted credentials retain their cooldown; tracked credentials in one project share their cooldown. Google is never called by the default web flow. See [.env.example](.env.example) and [research implementation](docs/RESEARCH.md). Restart after changing local environment configuration; preserve existing local secrets.
+
+Provider adapters are implemented and covered with mocked transports. Live credential, billing, regional availability and result-quality checks remain a deployment gate. Missing providers return partial/unavailable reports; map analysis continues without research credentials.
+
+## OSM scope
 
 - New York, London, Dubai, and Singapore search presets, with documented rectangular request guardrails.
 - Café, bakery, bubble tea, pharmacy, and supermarket, using explicit OSM tag evidence. Pharmacy excludes chemists and deprecated pharmacy tags; supermarket excludes convenience and grocery shops.
@@ -50,6 +60,7 @@ Genuine café, bakery, bubble-tea, pharmacy, and supermarket snapshots for the f
 - [Taxonomy and evidence rules](docs/TAXONOMY.md)
 - [Phases and milestones](docs/MILESTONES.md)
 - [Developer ownership](docs/DEVELOPMENT.md)
+- [Testing the research agents](docs/TESTING.md)
 - [Codex continuation prompt](docs/CODEX_PROMPT.md)
 - [Deployment and operations](docs/DEPLOYMENT.md)
 - [Demo runbook](docs/DEMO.md)
