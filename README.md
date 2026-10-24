@@ -13,7 +13,7 @@ npm run dev
 
 Open http://localhost:3000. Choose a city, confirm a category, select a radius, and analyze. Click the map or enter coordinates to change the center. Retrieval is explicit. Pin one analysis, change the area, and analyze again to compare. Optional browser storage retains one analysis with its original retrieval date.
 
-If the default OpenStreetMap query service is unreachable, the error reports whether it timed out, returned an HTTP error, or could not be contacted. Select another allowlisted global Overpass endpoint at server startup with `ATLAS_OVERPASS_ENDPOINT`; see [.env.example](.env.example). These community services have best-effort availability.
+If public OpenStreetMap query services are unreachable, the free Overpass.ch plan is another option. Create an API key at https://overpass.ch/, then set `ATLAS_OVERPASS_ENDPOINT=https://api.overpass.ch/v1/interpreter` and `ATLAS_OVERPASS_API_KEY=your_key` in the ignored `.env.local` file. The key stays on the server and is never sent to the browser. Error messages distinguish provider timeouts, HTTP errors, and connection failures. Other allowlisted public endpoints are listed in [.env.example](.env.example).
 
 ```sh
 npm run typecheck

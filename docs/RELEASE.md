@@ -17,7 +17,7 @@ Four sequential genuine snapshot captures were attempted against Private.coffee 
 
 ## Implemented
 
-Four-city UI; café/bakery/bubble-tea registry; category suggestions; strict semantic API contracts; inspectable evidence; mapped-feature density; exact fresh/stale cache logic; partial handling; compatibility-gated comparison; local browser save; bounded upstream retrieval; separate tile/list behavior; responsive controls; visible attribution and dates. Upstream failures report timeout, HTTP status, or connection guidance; `ATLAS_OVERPASS_ENDPOINT` explicitly selects among three allowlisted global endpoints.
+Four-city UI; café/bakery/bubble-tea registry; category suggestions; strict semantic API contracts; inspectable evidence; mapped-feature density; exact fresh/stale cache logic; partial handling; compatibility-gated comparison; local browser save; bounded upstream retrieval; separate tile/list behavior; responsive controls; visible attribution and dates. Upstream failures report timeout, HTTP status, or connection guidance; `ATLAS_OVERPASS_ENDPOINT` explicitly selects among four allowlisted global endpoints, including optional Overpass.ch API-key support.
 
 ## Remaining release gates
 
@@ -25,4 +25,4 @@ Four-city UI; café/bakery/bubble-tea registry; category suggestions; strict sem
 - Deploy to the intended Vercel account/project and verify snapshot tracing and runtime duration.
 - Add deployed contact information to the upstream User-Agent.
 
-The source was pushed to https://github.com/anewdevl/AtlasSBUH on `main` in commit `e5315eb`. No hosted Vercel deployment was created. Pharmacy, supermarket, halal food, heatmaps, and AI research remain outside this initial implementation.
+The source was pushed to https://github.com/anewdevl/AtlasSBUH on `main`. No hosted Vercel deployment was created. Pharmacy, supermarket, halal food, heatmaps, and AI research remain outside this initial implementation.

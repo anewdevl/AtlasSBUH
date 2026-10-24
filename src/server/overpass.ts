@@ -16,9 +16,11 @@ export const hashQuery=(query:string)=>createHash('sha256').update(query).digest
 const envelope=z.object({elements:z.array(z.unknown()),osm3s:z.object({timestamp_osm_base:z.string().optional()}).passthrough().optional(),remark:z.string().optional()}).passthrough();
 export async function fetchOverpass(request:AnalysisRequest, transport:typeof fetch=fetch) {
  const query=buildQuery(request), controller=new AbortController();
+ const apiKey=process.env.ATLAS_OVERPASS_API_KEY;
+ if(ENDPOINT==='https://api.overpass.ch/v1/interpreter'&&!apiKey)throw new UpstreamError('Overpass.ch API key is missing.');
  const timer=setTimeout(()=>controller.abort(),25000);
  try {
-  const response=await transport(ENDPOINT,{method:'POST',body:new URLSearchParams({data:query}),headers:{'Content-Type':'application/x-www-form-urlencoded','User-Agent':'ATLAS/0.1 (OpenStreetMap neighborhood analysis)'},signal:controller.signal,cache:'no-store'});
+  const response=await transport(ENDPOINT,{method:'POST',body:new URLSearchParams({data:query}),headers:{'Content-Type':'application/x-www-form-urlencoded','User-Agent':'ATLAS/0.1 (OpenStreetMap neighborhood analysis)',...(ENDPOINT==='https://api.overpass.ch/v1/interpreter'&&apiKey?{'X-API-Key':apiKey}:{})},signal:controller.signal,cache:'no-store'});
   if(!response.ok) {
    const retry=response.headers.get('Retry-After');
    const seconds=retry ? (/^\d+$/.test(retry)?Number(retry):Math.ceil((Date.parse(retry)-Date.now())/1000)) : undefined;
