@@ -68,3 +68,32 @@ main{height:100%;display:grid;grid-template-columns:340px minmax(0,1fr);outline:
 .detail-facts a,.detail-source a{color:var(--accent)}
 .detail-source{padding:14px 0 4px}.detail-source summary{cursor:pointer;color:var(--muted);font-size:13px}.detail-source p{margin:8px 0 0}
 .marker-preview em{display:block;margin-top:4px;font-style:normal;font-size:12px;color:var(--accent)}
+
+/* First screen */
+.map-welcome{position:absolute;inset:0;z-index:450;display:grid;place-items:center;pointer-events:none;padding:16px}
+.map-welcome-card{pointer-events:auto;max-width:360px;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);padding:22px 24px}
+.map-welcome-card h2{margin:0 0 12px;font-size:20px;font-weight:600}
+.map-welcome-card ol{margin:0 0 18px;padding-left:20px;color:var(--muted);line-height:1.6}
+.map-welcome-card li{margin:6px 0}.map-welcome-card strong{color:var(--ink)}
+.map-welcome-card .primary{width:100%}
+
+/* Compare */
+.compare-grid{grid-template-columns:1fr 1fr;margin-top:14px}
+.compare-grid h3{margin:8px 0 4px;font-size:16px}.compare-grid p{margin:2px 0}
+.compare-rows{margin-top:16px;border-top:1px solid var(--line)}
+.compare-row{padding:12px 0;border-bottom:1px solid var(--line)}
+.compare-label{font-size:13px;color:var(--muted);margin-bottom:8px}
+.compare-bar{display:grid;grid-template-columns:58px 1fr 52px;align-items:center;gap:8px;margin:5px 0}
+.compare-who{font-size:12px;color:var(--muted)}
+.compare-track{height:10px;background:var(--raised);border-radius:5px;overflow:hidden}
+.compare-track i{display:block;height:100%;border-radius:5px;min-width:2px}
+.compare-track i.pinned{background:var(--violet)}.compare-track i.current{background:var(--accent)}
+.compare-bar strong{font:600 14px ui-monospace,Consolas,monospace;text-align:right}
+.compare-notes{margin:14px 0;padding-left:18px;font-size:13px;line-height:1.6}
+.compare-names h4{margin:12px 0 4px;font-size:13px}.compare-names p{margin:0;font-size:13px}
+.workspace-nav.compact{padding:0 10px;gap:2px}
+.workspace-nav.compact button{font-size:12.5px;padding:0 4px}
+@media (max-width:760px){.map-welcome-card ol{display:none}.map-welcome-card{padding:16px 18px}.map-welcome-card h2{font-size:17px}}
+.map-welcome-card{position:relative}
+.welcome-close{position:absolute;top:10px;right:10px}
+.map-welcome-card h2{padding-right:34px}

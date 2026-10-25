@@ -11,16 +11,16 @@ import ComparePanel from '../components/ComparePanel';
 import CompetitorDetail from '../components/CompetitorDetail';
 import ResearchPanel from '../components/ResearchPanel';
 import LocationAdvisor from '../components/LocationAdvisor';
-import { experimentalTabs } from '../lib/features';
+import { showResearch,showLocations } from '../lib/features';
 import { defaultCompetitorFilters,filterCompetitors,type CompetitorFilters } from '../lib/competitor-view';
 const MapCanvas=dynamic(()=>import('../components/MapCanvas'),{ssr:false,loading:()=> <div className="map-loading">Loading your map…</div>});
 type View='search'|'results'|'compare'|'research'|'locations';
-const tabs:View[]=experimentalTabs?['search','results','compare','research','locations']:['search','results','compare'];
+const tabs:View[]=['search','results','compare',...(showResearch?['research' as const]:[]),...(showLocations?['locations' as const]:[])];
 const initial:AnalysisRequest={schemaVersion:SCHEMA_VERSION,registryVersion:REGISTRY_VERSION,scope:{cityId:'nyc',center:cities.nyc.center,radiusMeters:1000},categoryId:'cafe',adjacentCategoryIds:[]};
 export default function Home(){
  const [description,setDescription]=useState('');
  const [request,setRequest]=useState(initial),[result,setResult]=useState<AnalysisResponse|null>(null),[pin,setPin]=useState<AnalysisResponse|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[message,setMessage]=useState('');
- const [theme,setTheme]=useState<'dark'|'light'>('dark'),[view,setView]=useState<'search'|'results'|'compare'|'research'|'locations'>('search'),[selectedId,setSelectedId]=useState<string|null>(null),[sidebarOpen,setSidebarOpen]=useState(true);
+ const [theme,setTheme]=useState<'dark'|'light'>('dark'),[view,setView]=useState<'search'|'results'|'compare'|'research'|'locations'>('search'),[selectedId,setSelectedId]=useState<string|null>(null),[sidebarOpen,setSidebarOpen]=useState(true),[welcome,setWelcome]=useState(true);
  const [filters,setFilters]=useState<CompetitorFilters>(defaultCompetitorFilters),[selectionTick,setSelectionTick]=useState(0);
  function selectCompetitor(id:string){setSelectedId(id);setSelectionTick(n=>n+1);setView('results');}
  function changeFilters(next:CompetitorFilters){setFilters(next);setSelectedId(null);}
@@ -30,10 +30,10 @@ export default function Home(){
  useEffect(()=>{if(request.schemaVersion!==SCHEMA_VERSION||request.registryVersion!==REGISTRY_VERSION){sequence.current++;controller.current?.abort();setBusy(false);setRequest(initial);setResult(null);setPin(null);setError('The analysis schema was updated. Run a new analysis with the current settings.');return;}const safe=sanitizeCategorySelection(request);if(safe.categoryId!==request.categoryId||safe.adjacentCategoryIds.length!==request.adjacentCategoryIds.length)change(safe);},[request.schemaVersion,request.registryVersion,request.categoryId,request.adjacentCategoryIds,SCHEMA_VERSION,REGISTRY_VERSION]);
  const currentResult=useMemo(()=>result&&isResponseForRequest(result,request)?result:null,[result,request]);
  const visibleCompetitors=useMemo(()=>filterCompetitors(currentResult?.competitors??[],filters),[currentResult,filters]);
- function change(next:AnalysisRequest){setSelectedId(null);setFilters(defaultCompetitorFilters);const safe=sanitizeCategorySelection(next);sequence.current++;controller.current?.abort();setBusy(false);setRequest({...safe,schemaVersion:SCHEMA_VERSION,registryVersion:REGISTRY_VERSION,scope:{...safe.scope,center:quantize(safe.scope.center)}});setResult(null);setError('');setMessage('');}
+ function change(next:AnalysisRequest){setWelcome(false);setSelectedId(null);setFilters(defaultCompetitorFilters);const safe=sanitizeCategorySelection(next);sequence.current++;controller.current?.abort();setBusy(false);setRequest({...safe,schemaVersion:SCHEMA_VERSION,registryVersion:REGISTRY_VERSION,scope:{...safe.scope,center:quantize(safe.scope.center)}});setResult(null);setError('');setMessage('');}
  async function run(){
   const parsed=requestSchema.safeParse(request);if(!parsed.success){setError('Choose a center inside the selected city envelope and supported settings.');return;}
-  const canonical=canonicalize(parsed.data);setRequest(canonical);const id=++sequence.current;controller.current?.abort();const control=new AbortController();controller.current=control;setBusy(true);setSelectedId(null);setFilters(defaultCompetitorFilters);setError('');setResult(null);setMessage('');
+  setWelcome(false);const canonical=canonicalize(parsed.data);setRequest(canonical);const id=++sequence.current;controller.current?.abort();const control=new AbortController();controller.current=control;setBusy(true);setSelectedId(null);setFilters(defaultCompetitorFilters);setError('');setResult(null);setMessage('');
   const timeout=setTimeout(()=>control.abort(),35000);
   try{const response=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(canonical),signal:control.signal});const data=await response.json();if(!response.ok)throw new Error(`${data.message??'Analysis unavailable.'}${data.retryAfterSeconds?` Try again in ${data.retryAfterSeconds} seconds.`:''}`);const valid=validateResponse(data,canonical);if(sequence.current===id){setResult(valid);setView('results');}}
   catch(e){if(sequence.current===id)setError(e instanceof Error&&e.name!=='AbortError'?e.message:'The request timed out. Try again when ready.');}
@@ -48,14 +48,14 @@ export default function Home(){
    <aside className="control-sidebar" aria-label="Explore workspace">
     <div className="sidebar-brand"><a className="brand" href="/" aria-label="ATLAS home"><span className="brand-mark">⌁</span>ATLAS</a><span className="workspace-label">EXPLORE</span><button className="mobile-toggle" onClick={()=>setSidebarOpen(!sidebarOpen)} aria-expanded={sidebarOpen} aria-controls="sidebar-body">{sidebarOpen?'Collapse':'Open controls'}</button></div>
     <div id="sidebar-body" className="sidebar-body">
-     <nav className={tabs.length<5?'workspace-nav compact':'workspace-nav'} aria-label="Explorer views">{tabs.map(tab=><button key={tab} aria-pressed={view===tab} onClick={()=>setView(tab)}>{tab==='search'?'Search':tab==='research'?'Research':tab==='locations'?'Locations':tab==='results'?`Competitors${currentResult?` (${currentResult.competitors.length})`:''}`:`Compare${pin?' •':''}`}</button>)}</nav>
+     <nav className={tabs.length<5?'workspace-nav compact':'workspace-nav'} aria-label="Explorer views">{tabs.map(tab=><button key={tab} aria-pressed={view===tab} onClick={()=>{setView(tab);setWelcome(false);}}>{tab==='search'?'Search':tab==='research'?'Research':tab==='locations'?'Locations':tab==='results'?`Competitors${currentResult?` (${currentResult.competitors.length})`:''}`:`Compare${pin?' •':''}`}</button>)}</nav>
      <div className="sidebar-scroll">
       {error&&<div className="error" role="alert"><strong>Analysis unavailable</strong><p>{error}</p><span>No zero counts or substitute areas are shown.</span></div>}
       {message&&<p className="feedback" role="status">{message}</p>}
       {busy&&<div className="loading-state" role="status"><span className="pulse"/>Retrieving mapped evidence…</div>}
       <div hidden={view!=='search'}><SearchPanel request={request} onChange={change} description={description} setDescription={setDescription}/></div>
-      {experimentalTabs&&<div hidden={view!=='research'}><ResearchPanel scope={request.scope} osmRequest={request} description={description} setDescription={setDescription}/></div>}
-      {experimentalTabs&&<div hidden={view!=='locations'}><LocationAdvisor request={request} description={description} onSelect={center=>{change({...request,scope:{...request.scope,center}});setView('search');}}/></div>}
+      {showResearch&&<div hidden={view!=='research'}><ResearchPanel scope={request.scope} osmRequest={request} description={description} setDescription={setDescription}/></div>}
+      {showLocations&&<div hidden={view!=='locations'}><LocationAdvisor request={request} description={description} onSelect={center=>{change({...request,scope:{...request.scope,center}});setView('search');}}/></div>}
       {view==='results'&&(currentResult?<ResultsPanel result={currentResult} onPin={()=>{setPin(currentResult);setView('compare');}} onSave={save} selectedId={selectedId} onSelect={selectCompetitor} competitors={visibleCompetitors} filters={filters} onFilters={changeFilters}/>:<div className="sidebar-empty"><span className="empty-symbol">⌖</span><h2>Your evidence starts here.</h2><p>Choose a business and area, then run an analysis to inspect mapped competitors.</p><button className="secondary" onClick={()=>setView('search')}>Set up a search →</button></div>)}
       {view==='compare'&&(pin?<ComparePanel a={pin} b={currentResult} onClear={()=>setPin(null)}/>:<div className="sidebar-empty"><span className="empty-symbol">⇄</span><h2>Two areas. Equal terms.</h2><p>Pin an analysis from Competitors, then search another area with matching settings.</p><button className="secondary" onClick={()=>setView(currentResult?'results':'search')}>{currentResult?'View competitors':'Set up a search'} →</button></div>)}
      </div>
@@ -68,6 +68,7 @@ export default function Home(){
     <div className="map-caption"><span className="eyebrow"><i className="status-dot"/> AREA EXPLORER</span><strong>{cities[request.scope.cityId].label}</strong><span>{request.scope.center.lat.toFixed(4)}, {request.scope.center.lon.toFixed(4)} · {request.scope.radiusMeters/1000} km radius</span></div>
     <button className="theme-toggle" onClick={toggleTheme} aria-label={`Switch to ${theme==='dark'?'light':'dark'} theme`} title={`Switch to ${theme==='dark'?'light':'dark'} theme`}><span aria-hidden="true">{theme==='dark'?'☀':'☾'}</span><span>{theme==='dark'?'Light':'Dark'}</span></button>
     <div className="map-bottom"><div className="map-legend"><span><i className="direct-dot"/>Direct</span><span><i className="adjacent-dot"/>Adjacent</span><span>◌ Search radius</span></div><p>Click map to set center · Select a point to inspect</p></div>
+    {welcome&&!currentResult&&!busy&&<div className="map-welcome"><div className="map-welcome-card"><button className="icon-button welcome-close" aria-label="Dismiss tips" onClick={()=>setWelcome(false)}>×</button><h2>See who you are up against</h2><ol><li>Pick a business type in <strong>Search</strong>.</li><li>Choose a city and radius, or click the map to move the center.</li><li>Press the button below to map every competitor nearby.</li></ol><button className="primary" onClick={run}>Show competitors <span aria-hidden="true">→</span></button></div></div>}
     {selected&&currentResult&&<CompetitorDetail competitor={selected} all={currentResult.competitors} provenance={currentResult.provenance} onClose={()=>setSelectedId(null)}/>}
    </section>
   </main>
