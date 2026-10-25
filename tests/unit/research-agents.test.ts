@@ -1,21 +1,19 @@
 import { describe, expect, it, vi } from 'vitest';
-import { orderVerified, researchAgents } from '../../src/server/research-agents';
+import { researchAgents } from '../../src/server/research-agents';
 import { readDiscoveredPages, researchConfig, webSearch } from '../../src/server/research-providers';
 import { research } from '../../src/server/research';
 import type { Evidence, ResearchRequest } from '../../src/lib/research-contracts';
 
 const config = researchConfig({ NVIDIA_API_KEY: 'agent-test-nvidia', TAVILY_API_KEY: 'agent-test-tavily' });
-const request: ResearchRequest = { description: 'A coffee shop', scope: { cityId: 'nyc', center: { lat: 40.7308, lon: -73.9973 }, radiusMeters: 1000 }, includeMaps: false };
+const request: ResearchRequest = { description: 'A coffee shop', scope: { cityId: 'nyc', center: { lat: 40.7308, lon: -73.9973 }, radiusMeters: 1000 } };
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status });
 const signal = () => new AbortController().signal;
 const source: Evidence = { id: 'web-fixture', url: 'https://fixture.example/menu', title: 'Menu', provider: 'tavily', excerpt: 'A search excerpt.', contentKind: 'search-excerpt', retrievedAt: new Date().toISOString(), coordinates: null, placeId: null };
 
-describe('five-agent permissions and handoffs', () => {
-  it('defines five distinct roles and restricts the writer to verified record ordering', () => {
-    expect(Object.keys(researchAgents)).toHaveLength(5);
-    expect(researchAgents.writer.tools).toEqual(['order_verified_records']);
-    expect(orderVerified([{ id: 'a' }, { id: 'b' }], ['b', 'a'])).toEqual([{ id: 'b' }, { id: 'a' }]);
-    for (const ids of [['a'], ['a', 'a'], ['a', 'invented']]) expect(() => orderVerified([{ id: 'a' }, { id: 'b' }], ids)).toThrow();
+describe('research agent permissions and handoffs', () => {
+  it('keeps four evidence/impact roles without a free-writing report agent', () => {
+    expect(Object.keys(researchAgents)).toEqual(['researcher','extractor','analyst','verifier']);
+    expect(researchAgents.analyst.tools).toEqual(['compare_sourced_offerings','assess_competitive_position']);
   });
   it('distinguishes empty results from results rejected as unusable', async () => {
     const transport = vi.fn<typeof fetch>().mockResolvedValueOnce(json({ results: [] })).mockResolvedValueOnce(json({ results: [{ url: 'http://fixture.example', title: 'Unsafe', content: 'Content' }] }));

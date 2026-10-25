@@ -1,0 +1,2 @@
+import MapPreviewExplorer from '../../components/MapPreviewExplorer';
+export default function MapPreviewPage(){return <div className="app-shell" data-theme="dark"><main className="places-page"><a className="brand" href="/">ATLAS</a><p className="eyebrow">BUSINESS / MAP PREVIEW</p><MapPreviewExplorer/><footer className="places-footer"><a href="/">Back to explorer</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer></main></div>;}

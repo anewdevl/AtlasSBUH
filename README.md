@@ -24,9 +24,9 @@ Copy-Item .env.example .env.local
 1. Describe your business or select a supported type in Advanced settings. Choose a city, address or map pin and a radius of 500 m, 1 km or 2 km.
 2. Analyze the area. Inspect marker clusters, filter competitors and open business cards for source evidence, distance and available address, hours or website details.
 3. Pin an analysis, choose another location and compare results with matching business types, radius and adjacent categories. You can also save an analysis in your browser.
-4. Generate Research insights on demand for cited web observations about shortlisted businesses. Optional location assessment examines competition, complements and transit around your selected pin.
+4. Generate Research insights on demand for cited web observations about shortlisted businesses. Download the report as PDF or editable PowerPoint. Open a business mini map from competitor details or research cards. Optional location assessment examines competition, complements and transit around your selected pin.
 
-There are 30 supported business types. Search, Competitors, Compare and Research share the selected business and location. Light/dark themes and mobile controls are included.
+There are 30 supported business types. Search and Compare use the selected category; Research interprets the shared business description for its own shortlist. All views use the selected location. Light/dark themes and mobile controls are included.
 
 ## Configuration
 
@@ -36,7 +36,6 @@ Provider settings and research limits are documented in [`.env.example`](.env.ex
 | --- | --- |
 | `NVIDIA_API_KEY` | Optional business interpretation and AI research |
 | `TAVILY_API_KEY` | Web search and extraction for research, alongside NVIDIA |
-| `GEMINI_MAPS_API_KEY`, `GEMINI_MAPS_API_KEY_FALLBACK` | Optional, explicitly requested Google Maps context |
 | `ATLAS_OVERPASS_ENDPOINT` | Select an allowlisted competitor-data endpoint |
 | `ATLAS_OVERPASS_API_KEY` | Optional Overpass.ch credentials |
 | `ATLAS_GEOCODER_ENDPOINT` | Override the Photon-compatible address service |
@@ -97,7 +96,7 @@ npx tsx scripts/check-location-assessment.ts
 npx tsx scripts/rehearse-demo.ts
 ```
 
-The rehearsal requires a running app on port 3000 and exercises address lookup, supermarket analysis, evidence inspection, browser save and comparison. For a snapshot demonstration, use an exact city preset and matching snapshot settings. Research diagnostics save sanitized reports under ignored `.atlas-local/` and exit unsuccessfully for partial or unavailable reports. `check-research.ts --maps` includes optional Maps context; `--maps --simulate-primary-quota` simulates only the primary 429 while remaining requests are live. `--broad` exercises the broader research path instead of the default local shortlist. Inspect sources and stage outcomes before presenting results.
+The rehearsal requires a running app on port 3000 and exercises address lookup, supermarket analysis, evidence inspection, browser save and comparison. For a snapshot demonstration, use an exact city preset and matching snapshot settings. Research diagnostics save sanitized reports under ignored `.atlas-local/` and exit unsuccessfully for partial or unavailable reports. `--broad` exercises the broader research path instead of the default local shortlist. Inspect sources and stage outcomes before presenting results.
 
 ## Project structure
 

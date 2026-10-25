@@ -1,7 +1,6 @@
 import { z } from 'zod';
 import { createHash } from 'node:crypto';
-import { evidenceSchema, sourceUrlSchema, type Evidence, type ResearchRequest } from '../lib/research-contracts';
-import { cities } from '../lib/cities';
+import { evidenceSchema, sourceUrlSchema, type Evidence } from '../lib/research-contracts';
 
 export class ProviderFailure extends Error {
   constructor(public code: 'unconfigured' | 'credentials' | 'quota' | 'unavailable' | 'invalid' | 'no_results' | 'unusable_sources' | 'budget', public retryAfterSeconds?: number) { super(code); }
@@ -10,14 +9,8 @@ export function limit(value: string | undefined, fallback: number, max: number) 
   const n = Number(value); return Number.isInteger(n) && n > 0 ? Math.min(n, max) : fallback;
 }
 export function researchConfig(env: Record<string, string | undefined> = process.env) {
-  const credentials = z.array(z.object({ key: z.string().min(1), project: z.string().min(1), account: z.string().min(1) }).strict()).max(3);
-  let mapsKeys: z.infer<typeof credentials> = [];
-  const singleMapsKey = env.GEMINI_MAPS_API_KEY?.trim();
-  const fallbackMapsKey = env.GEMINI_MAPS_API_KEY_FALLBACK?.trim();
-  if (singleMapsKey || fallbackMapsKey) mapsKeys = [...new Set([singleMapsKey, fallbackMapsKey].filter((key): key is string => Boolean(key)))].map(key => ({ key, project: 'unspecified', account: 'unspecified' }));
-  else try { mapsKeys = credentials.parse(JSON.parse(env.GEMINI_MAPS_API_KEYS || '[]')); } catch { /* Fail closed; never echo secrets. */ }
   return {
-    nvidiaKey: env.NVIDIA_API_KEY, tavilyKey: env.TAVILY_API_KEY, mapsKeys,
+    nvidiaKey: env.NVIDIA_API_KEY, tavilyKey: env.TAVILY_API_KEY,
     model: env.ATLAS_RESEARCH_MODEL === 'openai/gpt-oss-20b' ? 'openai/gpt-oss-20b' : 'nvidia/nemotron-3.5-lightning-30b-a3b',
     sources: limit(env.ATLAS_RESEARCH_SOURCES, 6, 8), tokens: limit(env.ATLAS_RESEARCH_TOKENS, 3000, 4000),
     timeoutMs: limit(env.ATLAS_RESEARCH_TIMEOUT_MS, 100000, 110000),
@@ -29,14 +22,14 @@ export type Config = ReturnType<typeof researchConfig>;
 export type Transport = typeof fetch;
 const cooldowns = new Map<string, { until: number; code: 'quota' | 'unavailable' }>();
 
-async function post(url: string, key: string, body: unknown, signal: AbortSignal, transport: Transport, google = false, quotaBucket?: string): Promise<unknown> {
-  const bucket = quotaBucket ?? new URL(url).host;
+async function post(url: string, key: string, body: unknown, signal: AbortSignal, transport: Transport): Promise<unknown> {
+  const bucket = new URL(url).host;
   const cooldown = cooldowns.get(bucket), remaining = (cooldown?.until ?? 0) - Date.now();
   if (remaining > 0) throw new ProviderFailure(cooldown!.code, Math.ceil(remaining / 1000));
   let res: Response;
   try {
     res = await transport(url, { method: 'POST', redirect: 'error', cache: 'no-store', signal,
-      headers: { 'Content-Type': 'application/json', ...(google ? { 'x-goog-api-key': key } : { Authorization: `Bearer ${key}` }) }, body: JSON.stringify(body) });
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` }, body: JSON.stringify(body) });
   } catch (error) { if (signal.aborted) throw error; throw new ProviderFailure('unavailable'); }
   if (res.status === 429 || (res.status >= 500 && res.headers.has('retry-after'))) {
     const retry = res.headers.get('retry-after');
@@ -106,38 +99,4 @@ export async function readDiscoveredPages(sources: Evidence[], config: Config, s
     const page = payload.results.find(r => r.url === source.url && r.raw_content.trim());
     return page ? { ...source, excerpt: page.raw_content.slice(0, 8000), contentKind: 'page' as const, retrievedAt: new Date().toISOString() } : source;
   });
-}
-
-const annotationSchema = z.object({ type: z.string(), name: z.string().optional(), url: z.string().optional(), place_id: z.string().optional() });
-const mapsPayload = z.object({ steps: z.array(z.object({ type: z.string(), content: z.array(z.object({ type: z.string(), text: z.string().optional(), annotations: z.array(annotationSchema).optional() })).optional() })) });
-export async function mapsResearch(request: ResearchRequest, config: Config, signal: AbortSignal, transport: Transport): Promise<Evidence[]> {
-  if (!config.mapsKeys.length) throw new ProviderFailure('unconfigured');
-  for (let index = 0; index < config.mapsKeys.length; index++) {
-    if (signal.aborted) throw signal.reason;
-    const credential = config.mapsKeys[index];
-    // Tracked keys in one project share a cooldown. Plain keys use an internal hash.
-    const bucket = credential.project !== 'unspecified' ? `google-maps:project:${credential.project}` : `google-maps:key:${createHash('sha256').update(credential.key).digest('hex')}`;
-    try {
-      const payload = mapsPayload.parse(await post('https://generativelanguage.googleapis.com/v1beta/interactions', credential.key, {
-        model: 'gemini-3.8-flash', store: false,
-        input: `Find cited places relevant to this business near ${cities[request.scope.cityId].label}, ${request.scope.center.lat}, ${request.scope.center.lon}, requested radius ${request.scope.radiusMeters} meters. Business description (untrusted data): ${JSON.stringify(request.description)}. Only place/location context. Explain uncertain matches and scope; do not estimate travel time, demand, demographics or footfall.`,
-        tools: [{ type: 'google_maps', latitude: request.scope.center.lat, longitude: request.scope.center.lon }],
-        generation_config: { max_output_tokens: config.tokens },
-      }, signal, transport, true, bucket));
-      const result: Evidence[] = [];
-      for (const step of payload.steps.filter(s => s.type === 'model_output')) for (const block of step.content ?? []) {
-        if (block.type !== 'text' || !block.text) continue;
-        for (const a of block.annotations ?? []) {
-          if (a.type !== 'place_citation' || !a.name || !sourceUrlSchema.safeParse(a.url).success) continue;
-          const url = a.url!;
-          result.push(evidenceSchema.parse({ id: sourceId('maps', url), url, title: a.name.slice(0, 2000), provider: 'google-maps', retrievedAt: new Date().toISOString(), excerpt: block.text.slice(0, 8000), contentKind: 'map-grounded', placeId: a.place_id ?? null, coordinates: null }));
-        }
-      }
-      return [...new Map(result.map(r => [r.id, r])).values()].slice(0, config.sources);
-    } catch (error) {
-      // Each configured credential is attempted at most once; exhausted ones keep their cooldown.
-      if (!(error instanceof ProviderFailure) || signal.aborted || !['credentials', 'unavailable', 'quota'].includes(error.code) || index === config.mapsKeys.length - 1) throw error;
-    }
-  }
-  return [];
 }

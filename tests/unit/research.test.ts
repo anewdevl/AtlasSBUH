@@ -1,39 +1,40 @@
 import { createHash } from 'node:crypto';
 import { describe, expect, it, vi } from 'vitest';
 import { research, groundedFindings, isContactOnly, supportsObservationKind } from '../../src/server/research';
-import { mapsResearch, nim, researchConfig, type Config } from '../../src/server/research-providers';
+import { nim, researchConfig, type Config } from '../../src/server/research-providers';
 import { z } from 'zod';
 import { evidenceSchema, reportSchema, researchRequestSchema, type Finding, type ResearchRequest } from '../../src/lib/research-contracts';
 import { normalize } from '../../src/server/normalize';
 import { buildQuery, hashQuery } from '../../src/server/overpass';
 import type { AnalysisRequest } from '../../src/lib/contracts';
 
-const request: ResearchRequest = { description: 'Specialty coffee shop', scope: { cityId: 'nyc', center: { lat: 40.7308, lon: -73.9973 }, radiusMeters: 1000 }, includeMaps: false };
+const request: ResearchRequest = { description: 'Specialty coffee shop', scope: { cityId: 'nyc', center: { lat: 40.7308, lon: -73.9973 }, radiusMeters: 1000 } };
 const url = 'https://fixture.example/menu';
 const sourceId = `web-${createHash('sha256').update(url).digest('hex').slice(0, 16)}`;
 const quote = 'Synthetic Coffee lists espresso at $4 on its New York menu.';
 const finding: Finding = { id: 'f1', claim: 'The retrieved menu lists espresso at $4.', kind: 'price', business: 'Synthetic Coffee', relation: 'direct', evidence: [{ sourceId, quote }], geographicRelevance: 'New York address; exact radius membership unverified.', limitations: ['Menu date unknown; confirm price locally.'], reviewSampleSize: null, reviewDates: null };
-const insight = { id: 'i1', kind: 'experiment', recommendation: 'Test a pickup espresso offering.', findingIds: ['f1'], reasoning: 'The retrieved competitor menu provides a price to investigate.', uncertainty: 'One menu does not establish demand or price tolerance.', validation: 'Interview local customers and check current prices.' };
+const impact={id:'impact1',business:'Synthetic Coffee',effect:'competition',yourOffering:'coffee',competitorOffering:'espresso',findingIds:['f1']};
+const assessment={verdict:'recommended',reasoning:'Worth investigating with a differentiated coffee offering, given the sourced competitor offering.',findingIds:['f1'],risks:['Rent and demand are unknown.']};
 const config = (): Config => researchConfig({ NVIDIA_API_KEY: 'synthetic-nvidia-secret', TAVILY_API_KEY: 'synthetic-tavily-secret' });
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status });
-function transport(options: { findings?: Finding[]; reject?: boolean; verifyFails?: boolean; mapsFail?: boolean; truncated?: boolean; echoSecret?: boolean; targetedFail?: boolean; excerpt?: string; writerInvalid?: boolean; pageFails?: boolean } = {}) {
+function transport(options: { findings?: Finding[]; reject?: boolean; verifyFails?: boolean; truncated?: boolean; echoSecret?: boolean; targetedFail?: boolean; excerpt?: string; writerInvalid?: boolean; pageFails?: boolean; qualificationBusiness?: string; sourceTitle?: string; impacts?:unknown[]; assessment?:unknown; assessmentRejected?:boolean } = {}) {
   let searches = 0;
   return vi.fn<typeof fetch>(async (input, init) => {
     const endpoint = String(input), body = JSON.parse(String(init?.body));
     if (endpoint.endsWith('/extract')) return json({ results: options.pageFails ? [] : [{ url, raw_content: options.excerpt ?? quote }] });
-    if (endpoint.includes('tavily')) { searches++; return options.targetedFail && searches > 1 ? json({}, 503) : json({ results: [{ url, title: 'Synthetic menu', content: options.excerpt ?? quote, raw_content: options.excerpt ?? quote }] }); }
-    if (endpoint.includes('googleapis')) return json({}, options.mapsFail ? 503 : 200);
+    if (endpoint.includes('tavily')) { searches++; return options.targetedFail && searches > 1 ? json({}, 503) : json({ results: [{ url, title: options.sourceTitle ?? 'Synthetic menu', content: options.excerpt ?? quote, raw_content: options.excerpt ?? quote }] }); }
+    if (endpoint.includes('googleapis')) throw new Error('Google must not be called by research');
     const system = body.messages[0].content as string;
     let result: unknown;
     if (system.includes('planning agent')) result = { queries: ['coffee menus New York'] };
-    else if (system.includes('source qualification agent')) result = { sources: [{ sourceId, business: 'Synthetic Coffee', kind: 'official-business' }] };
+    else if (system.includes('source qualification agent')) result = { sources: [{ sourceId, business: options.qualificationBusiness ?? 'Synthetic Coffee', kind: 'official-business' }] };
     else if (system.includes('competitor discovery agent')) result = { businesses: [{ name: 'Synthetic Coffee', sourceId, quoteId: `${sourceId}-q0` }] };
     else if (system.includes('extraction agent')) result = { findings: (options.findings ?? [finding]).map(f => ({ sourceId: f.evidence[0].sourceId, quoteId: f.evidence[0].quote === quote ? `${f.evidence[0].sourceId}-q0` : 'invented-quote-id', business: f.business, kind: f.kind, relation: f.relation })), unknowns: [options.echoSecret ? config().nvidiaKey! : 'Sample and dates are unknown.'] };
-    else if (system.includes('business insights agent')) result = { insights: [insight] };
+    else if (system.includes('business impact assessment agent')) result = { impacts: options.impacts??[impact], assessment:options.assessment??assessment };
     else if (system.includes('report preparation agent')) result = { findingIds: [options.writerInvalid ? 'invented' : 'f1'], insightIds: ['i1'] };
     else {
       if (options.verifyFails) return json({}, 503);
-      result = { findings: (options.findings ?? [finding]).map(f => ({ id: f.id, supported: !options.reject, reason: options.reject ? 'Contradicts retrieved menu.' : 'Matches source with scope caveat.' })), insights: [{ id: 'i1', supported: !options.reject, reason: 'Explicit hypothesis with validation.' }] };
+      result = { findings: (options.findings ?? [finding]).map(f => ({ id: f.id, supported: !options.reject, reason: options.reject ? 'Contradicts retrieved menu.' : 'Matches source with scope caveat.' })), insights: [{ id: 'i1', supported: !options.reject, reason: 'Explicit hypothesis with validation.' }],assessmentSupported:!options.reject&&!options.assessmentRejected };
     }
     return json({ choices: [{ finish_reason: options.truncated && system.includes('extraction agent') ? 'length' : 'stop', message: { content: JSON.stringify(result) } }] });
   });
@@ -45,9 +46,63 @@ describe('bounded evidence research', () => {
     const fetch = transport();
     const report = await research({ ...request, osmRequest, localOnly: true }, { config: config(), transport: fetch, osmLookup: async () => cached });
     expect(report.shortlist).toHaveLength(1); expect(report.shortlist[0]).toMatchObject({ name: 'Synthetic Coffee', distanceMeters: 0 });
-    expect(report.findings).toHaveLength(1); expect(report.agentRuns.map(r => r.role)).toEqual(['researcher', 'extractor', 'analyst', 'verifier', 'writer']);
+    expect(report.findings).toHaveLength(1); expect(report.agentRuns.map(r => r.role)).toEqual(['researcher', 'extractor', 'analyst', 'verifier']);
     const searches = fetch.mock.calls.filter(([url]) => String(url).endsWith('/search'));
     expect(searches).toHaveLength(1); expect(JSON.parse(String(searches[0][1]?.body)).query.toLowerCase()).toContain('"synthetic coffee"');
+  });
+  it('rejects a qualifier decision assigning a source to an unlisted business', async () => {
+    const osmRequest: AnalysisRequest = {schemaVersion:'1',registryVersion:'2',scope:request.scope,categoryId:'cafe',adjacentCategoryIds:[]};
+    const cached = normalize(osmRequest,{elements:[{type:'node',id:1,lat:40.7308,lon:-73.9973,tags:{amenity:'cafe',name:'Synthetic Coffee'}}],fetchedAt:new Date().toISOString(),osmBaseTimestamp:null,queryHash:hashQuery(buildQuery(osmRequest))});
+    const report = await research({...request,osmRequest,localOnly:true},{config:config(),transport:transport({qualificationBusiness:'Unrelated Restaurant'}),osmLookup:async()=>cached});
+    expect(report.evidence).toEqual([]); expect(report.findings).toEqual([]); expect(report.insights).toEqual([]);
+  });
+  it('rejects a same-name restaurant before extraction for a clothing request and keeps the specialty', async () => {
+    const osmRequest: AnalysisRequest = {schemaVersion:'1',registryVersion:'2',scope:request.scope,categoryId:'clothing',adjacentCategoryIds:[]};
+    const cached = normalize(osmRequest,{elements:[{type:'node',id:1,lat:40.7308,lon:-73.9973,tags:{shop:'clothes',name:'Synthetic Coffee'}}],fetchedAt:new Date().toISOString(),osmBaseTimestamp:null,queryHash:hashQuery(buildQuery(osmRequest))});
+    const upstream = transport({sourceTitle:'Synthetic Coffee Restaurant | Menu + Delivery'});
+    const report = await research({...request,description:'desi clothing store',osmRequest,localOnly:true},{config:config(),transport:upstream,osmLookup:async()=>cached});
+    expect(report.evidence).toEqual([]); expect(report.findings).toEqual([]);
+    expect(report.unknowns.join(' ')).toContain('desi');
+    const query=JSON.parse(String(upstream.mock.calls.find(([url])=>String(url).endsWith('/search'))![1]?.body)).query;
+    expect(query).toContain('Clothing shop'); expect(query).not.toContain('menu');
+  });
+  it('does not turn identity-only observations into business opportunity insights', async () => {
+    const report=await research(request,{config:config(),transport:transport({findings:[{...finding,kind:'competitor'}]})});
+    expect(report.findings).toHaveLength(1); expect(report.insights).toEqual([]);
+    expect(report.agentRuns.some(r=>r.role==='analyst')).toBe(false);
+  });
+  it('rechecks category evidence after reading a page instead of trusting its search excerpt', async () => {
+    const osmRequest: AnalysisRequest={schemaVersion:'1',registryVersion:'2',scope:request.scope,categoryId:'cafe',adjacentCategoryIds:[]};
+    const cached=normalize(osmRequest,{elements:[{type:'node',id:1,lat:40.7308,lon:-73.9973,tags:{amenity:'cafe',name:'Synthetic Coffee'}}],fetchedAt:new Date().toISOString(),osmBaseTimestamp:null,queryHash:hashQuery(buildQuery(osmRequest))});
+    const upstream=transport();const intercepted:typeof fetch=(input,init)=>String(input).endsWith('/extract')?Promise.resolve(json({results:[{url,raw_content:'Synthetic Coffee is a software company building cloud services.'}]})):upstream(input,init);
+    const report=await research({...request,osmRequest,localOnly:true},{config:config(),transport:intercepted,osmLookup:async()=>cached});
+    expect(report.evidence).toEqual([]);expect(report.findings).toEqual([]);expect(report.agentRuns.some(r=>r.role==='extractor')).toBe(false);
+  });
+  it('ignores retired Gemini credentials and never calls Google during research', async () => {
+    const cfg=researchConfig({NVIDIA_API_KEY:'synthetic-nvidia-secret',TAVILY_API_KEY:'synthetic-tavily-secret',GEMINI_MAPS_API_KEY:'retired-primary',GEMINI_MAPS_API_KEY_FALLBACK:'retired-fallback'});
+    expect(cfg).not.toHaveProperty('mapsKeys');
+    const upstream=transport();const report=await research(request,{config:cfg,transport:upstream});
+    expect(report.findings).toHaveLength(1);expect(report.stages.map(s=>s.stage)).not.toContain('maps');
+    expect(upstream.mock.calls.every(([url])=>['api.tavily.com','integrate.api.nvidia.com'].includes(new URL(String(url)).hostname))).toBe(true);
+    expect(researchRequestSchema.safeParse({...request,includeMaps:true}).success).toBe(false);
+  });
+  it('allows the LLM to recommend against opening rather than forcing one verdict',async()=>{
+    const report=await research(request,{config:config(),transport:transport({assessment:{...assessment,verdict:'not-recommended',reasoning:'The sourced overlap makes differentiation uncertain for this proposal.'}})});
+    expect(report.assessment?.verdict).toBe('not-recommended');expect(report.impacts[0].competitorOffering).toBe('espresso');
+  });
+  it('rejects invented competitor offerings even when the cited finding ID exists',async()=>{
+    const report=await research(request,{config:config(),transport:transport({impacts:[{...impact,competitorOffering:'desi bridal clothing'}]})});
+    expect(report.findings).toHaveLength(1);expect(report.impacts).toEqual([]);expect(report.assessment).toBeNull();
+  });
+  it('withholds an opening judgment that invents sales or demand even with real citations',async()=>{
+    for(const reasoning of ['You will gain 500 customers.','This has high demand.']){
+      const report=await research(request,{config:config(),transport:transport({assessment:{...assessment,reasoning}})});
+      expect(report.assessment).toBeNull();expect(report.impacts).toHaveLength(1);
+    }
+  });
+  it('withholds a verdict rejected by evidence review while preserving supported business comparisons',async()=>{
+    const report=await research(request,{config:config(),transport:transport({assessmentRejected:true})});
+    expect(report.assessment).toBeNull();expect(report.impacts).toHaveLength(1);expect(report.findings).toHaveLength(1);expect(report.status).toBe('partial');
   });
   it('does not substitute city-wide web results when local candidates are unavailable', async () => {
     const osmRequest: AnalysisRequest = { schemaVersion: '1', registryVersion: '2', scope: request.scope, categoryId: 'cafe', adjacentCategoryIds: [] };
@@ -57,7 +112,7 @@ describe('bounded evidence research', () => {
   });
   it('requires a quoted monetary amount for prices and excludes review headings and pricing disclaimers from feedback', () => {
     expect(supportsObservationKind('price', 'Signature coffee')).toBe(false);
-    expect(supportsObservationKind('price', 'Espresso $4.50')).toBe(true);
+    expect(supportsObservationKind('price', 'Espresso $4.50')).toBe(true);expect(supportsObservationKind('price','Free Shipping on US Orders $50+')).toBe(false);expect(supportsObservationKind('offering','Subscribe to our newsletter')).toBe(false);
     expect(supportsObservationKind('location', 'IRVING FARM COFFEE')).toBe(false);
     expect(supportsObservationKind('location', 'Located at 123 Broadway, New York.')).toBe(true);
     expect(supportsObservationKind('price', 'Reviewers note coffee costs around $6.')).toBe(false);
@@ -88,8 +143,8 @@ describe('bounded evidence research', () => {
     const report = await research(request, { config: config(), transport: fetch, onStage: s => progress.push(`${s.stage}:${s.status}`) });
     expect(report.status).toBe('complete'); expect(report.findings).toHaveLength(1); expect(report.findings[0]).toMatchObject({ claim: quote, evidence: finding.evidence, business: finding.business }); expect(report.insights).toHaveLength(1);
     expect(report.evidence[0].excerpt).toBe(quote); expect(report.evidence[0].retrievedAt).toMatch(/^\d{4}-/);
-    expect(progress).toContain('verification:running'); expect(fetch).toHaveBeenCalledTimes(10);
-    expect(report.agentRuns.map(r => r.role)).toEqual(['researcher', 'researcher', 'extractor', 'analyst', 'verifier', 'writer']);
+    expect(progress).toContain('verification:running'); expect(fetch).toHaveBeenCalledTimes(9);
+    expect(report.agentRuns.map(r => r.role)).toEqual(['researcher', 'researcher', 'extractor', 'analyst', 'verifier']);
     expect(fetch.mock.calls.filter(([url]) => String(url).includes('googleapis'))).toHaveLength(0);
     expect(fetch.mock.calls.filter(([url]) => String(url).includes('tavily')).map(([, init]) => JSON.parse(String(init?.body)).query)).toEqual(expect.arrayContaining(['"Synthetic Coffee" New York official website menu offerings prices', '"Synthetic Coffee" New York customer reviews experience complaints service']));
     expect(JSON.parse(String(fetch.mock.calls.find(([url]) => String(url).includes('nvidia.com'))![1]?.body))).toMatchObject({ model: 'nvidia/nemotron-3.5-lightning-30b-a3b', chat_template_kwargs: { enable_thinking: false } });
@@ -104,11 +159,9 @@ describe('bounded evidence research', () => {
     expect(report.status).toBe('partial'); expect(report.findings).toEqual([]); expect(report.insights).toEqual([]);
     expect(groundedFindings([{ ...finding, evidence: [{ sourceId: 'missing', quote }] }], report.evidence)).toEqual([]);
   });
-  it('preserves verified records when the writer invents an ID', async () => {
-    const report = await research(request, { config: config(), transport: transport({ writerInvalid: true }) });
-    expect(report.findings.map(f => f.id)).toEqual(['f1']); expect(report.insights.map(i => i.id)).toEqual(['i1']);
-    expect(report.stages.find(s => s.stage === 'reporting')?.status).toBe('unavailable');
-    expect(report.status).toBe('partial'); expect(report.warnings.join(' ')).toContain('original order');
+  it('does not send a separate free-writing report request', async () => {
+    const upstream=transport();const report=await research(request,{config:config(),transport:upstream});
+    expect(report.agentRuns.some(r=>String(r.role)==='writer')).toBe(false);expect(report.assessment?.verdict).toBe('recommended');expect(report.impacts).toHaveLength(1);
   });
   it('reports failed page reads while retaining supported search excerpts', async () => {
     const report = await research(request, { config: config(), transport: transport({ pageFails: true }) });
@@ -117,12 +170,6 @@ describe('bounded evidence research', () => {
   it('deduplicates repeated excerpt selections and marks omitted duplicate findings partial', async () => {
     const report = await research(request, { config: config(), transport: transport({ findings: [finding, { ...finding, id: 'f2' }] }) });
     expect(report.findings).toHaveLength(1); expect(report.status).toBe('partial'); expect(report.warnings.join(' ')).toContain('rejected');
-  });
-  it('does not call Google when Maps is off even when both credentials exist', async () => {
-    const fetch = transport();
-    await research(request, { config: { ...config(), mapsKeys: [{ key: 'unused-primary', project: 'unused-a', account: 'a' }, { key: 'unused-fallback', project: 'unused-b', account: 'b' }] }, transport: fetch });
-    expect(fetch.mock.calls.some(([url]) => String(url).includes('googleapis'))).toBe(false);
-    expect(fetch.mock.calls.filter(([url]) => String(url).endsWith('/search')).length).toBeLessThanOrEqual(3);
   });
   it('retains discovery findings when the individual-business search fails', async () => {
     const report = await research(request, { config: config(), transport: transport({ targetedFail: true }) });
@@ -186,12 +233,6 @@ describe('bounded evidence research', () => {
     expect(report.request.description).toContain('Software'); expect(fetch.mock.calls.some(([url]) => /overpass|analyze/.test(String(url)))).toBe(false);
     expect(researchRequestSchema.safeParse({ ...request, categoryId: 'software' }).success).toBe(false);
   });
-  it('keeps verified web findings when Maps fails', async () => {
-    const cfg = { ...config(), mapsKeys: [{ key: 'synthetic-map-secret', project: 'project-a', account: 'account-a' }] };
-    const report = await research({ ...request, includeMaps: true }, { config: cfg, transport: transport({ mapsFail: true }) });
-    expect(report.status).toBe('partial'); expect(report.findings).toHaveLength(1); expect(report.stages.find(s => s.stage === 'maps')?.status).toBe('unavailable');
-    expect(JSON.stringify(report)).not.toContain('synthetic-map-secret');
-  });
   it('returns unavailable with missing optional credentials and performs no network calls', async () => {
     const fetch = vi.fn<typeof globalThis.fetch>();
     const report = await research(request, { config: researchConfig({}), transport: fetch });
@@ -199,49 +240,9 @@ describe('bounded evidence research', () => {
   });
   it('rejects malformed scope, credentials and report evidence references', () => {
     expect(researchRequestSchema.safeParse({ ...request, scope: { ...request.scope, center: { lat: 0, lon: 0 } } }).success).toBe(false);
-    expect(researchConfig({ GEMINI_MAPS_API_KEYS: '[{"key":"bad"}]' }).mapsKeys).toEqual([]);
     expect(evidenceSchema.safeParse({ id: 'x', url: 'javascript:alert(1)' }).success).toBe(false);
     expect(config().tokens).toBeLessThanOrEqual(4000);
     expect(researchConfig({ ATLAS_RESEARCH_MODEL: 'openai/gpt-oss-20b' }).model).toBe('openai/gpt-oss-20b');
   });
-  it('accepts a plain Gemini key and uses it exclusively when a list is also configured', () => {
-    const cfg = researchConfig({ GEMINI_MAPS_API_KEY: ' single-key ', GEMINI_MAPS_API_KEYS: '[{"key":"other-key","project":"p","account":"a"}]' });
-    expect(cfg.mapsKeys).toEqual([{ key: 'single-key', project: 'unspecified', account: 'unspecified' }]);
-    expect(researchConfig({ GEMINI_MAPS_API_KEY: ' ' }).mapsKeys).toEqual([]);
-  });
-  it('loads a plain fallback key in order and deduplicates identical keys', () => {
-    expect(researchConfig({ GEMINI_MAPS_API_KEY: 'primary', GEMINI_MAPS_API_KEY_FALLBACK: ' teammate ' }).mapsKeys.map(k => k.key)).toEqual(['primary', 'teammate']);
-    expect(researchConfig({ GEMINI_MAPS_API_KEY: 'same', GEMINI_MAPS_API_KEY_FALLBACK: 'same' }).mapsKeys).toHaveLength(1);
-  });
-  it('uses the fallback on primary quota exhaustion and skips the primary during Retry-After', async () => {
-    const cfg = researchConfig({ GEMINI_MAPS_API_KEY: 'quota-primary-fixture', GEMINI_MAPS_API_KEY_FALLBACK: 'quota-teammate-fixture' });
-    const success = { steps: [{ type: 'model_output', content: [{ type: 'text', text: 'Synthetic fallback location.', annotations: [{ type: 'place_citation', name: 'Fallback fixture', url: 'https://maps.google.com/?cid=456' }] }] }] };
-    const fetch = vi.fn<typeof globalThis.fetch>()
-      .mockResolvedValueOnce(new Response('{}', { status: 429, headers: { 'Retry-After': '90' } }))
-      .mockResolvedValueOnce(json(success)).mockResolvedValueOnce(json(success));
-    expect(await mapsResearch(request, cfg, new AbortController().signal, fetch)).toHaveLength(1);
-    expect(await mapsResearch(request, cfg, new AbortController().signal, fetch)).toHaveLength(1);
-    expect(fetch.mock.calls.map(([, init]) => new Headers(init?.headers).get('x-goog-api-key'))).toEqual(['quota-primary-fixture', 'quota-teammate-fixture', 'quota-teammate-fixture']);
-  });
-  it('returns capped state after both keys exhaust quota without repeatedly requesting either key', async () => {
-    const cfg = researchConfig({ GEMINI_MAPS_API_KEY: 'exhausted-primary-fixture', GEMINI_MAPS_API_KEY_FALLBACK: 'exhausted-fallback-fixture' });
-    const fetch = vi.fn<typeof globalThis.fetch>().mockImplementation(async () => new Response('{}', { status: 429, headers: { 'Retry-After': '120' } }));
-    await expect(mapsResearch(request, cfg, new AbortController().signal, fetch)).rejects.toMatchObject({ code: 'quota', retryAfterSeconds: 120 });
-    await expect(mapsResearch(request, cfg, new AbortController().signal, fetch)).rejects.toMatchObject({ code: 'quota' });
-    expect(fetch).toHaveBeenCalledTimes(2);
-  });
-  it('preserves cited Maps metadata without inventing coordinates and falls back after invalid credentials', async () => {
-    const cfg = { ...config(), mapsKeys: [{ key: 'invalid-key', project: 'a', account: 'a' }, { key: 'valid-key', project: 'b', account: 'b' }] };
-    const fetch = vi.fn<typeof globalThis.fetch>().mockResolvedValueOnce(json({}, 401)).mockResolvedValueOnce(json({ steps: [{ type: 'model_output', content: [{ type: 'text', text: 'Synthetic cited location context.', annotations: [{ type: 'place_citation', name: 'Synthetic place', url: 'https://maps.google.com/?cid=123', place_id: 'synthetic-place' }] }] }] }));
-    const evidence = await mapsResearch(request, cfg, new AbortController().signal, fetch);
-    expect(fetch).toHaveBeenCalledTimes(2); expect(evidence[0]).toMatchObject({ placeId: 'synthetic-place', coordinates: null, provider: 'google-maps' });
-    expect(JSON.parse(String(fetch.mock.calls[1][1]?.body))).toMatchObject({ store: false, tools: [{ type: 'google_maps', latitude: 40.7308, longitude: -73.9973 }] });
-  });
-  it('respects the shared project cooldown when two tracked keys have the same quota', async () => {
-    const cfg = { ...config(), mapsKeys: [{ key: 'key-a', project: 'same-project', account: 'a' }, { key: 'key-b', project: 'same-project', account: 'b' }] };
-    const fetch = vi.fn<typeof globalThis.fetch>().mockResolvedValue(new Response('{}', { status: 429, headers: { 'Retry-After': '90' } }));
-    await expect(mapsResearch(request, cfg, new AbortController().signal, fetch)).rejects.toMatchObject({ code: 'quota', retryAfterSeconds: 90 });
-    await expect(mapsResearch(request, cfg, new AbortController().signal, fetch)).rejects.toMatchObject({ code: 'quota' });
-    expect(fetch).toHaveBeenCalledTimes(1);
-  });
+
 });

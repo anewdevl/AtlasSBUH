@@ -28,6 +28,7 @@ function Bars({ row }: { row: Row }) {
 
 export default function ComparePanel({ a, b, onClear }: { a: AnalysisResponse; b: AnalysisResponse | null; onClear: () => void }) {
   const comparison = compare(a, b);
+  const sameArea = b && a.request.scope.cityId === b.request.scope.cityId && a.request.scope.center.lat === b.request.scope.center.lat && a.request.scope.center.lon === b.request.scope.center.lon;
   const place = (r: AnalysisResponse) => `${cities[r.request.scope.cityId].label} · ${r.request.scope.center.lat}, ${r.request.scope.center.lon}`;
   return (
     <section className="comparison" aria-label="Area comparison">
@@ -39,7 +40,7 @@ export default function ComparePanel({ a, b, onClear }: { a: AnalysisResponse; b
         <button className="text-button" onClick={onClear}>Clear pin</button>
       </div>
       <p className="muted">Pinned: {place(a)} · {categories[a.request.categoryId].label}, {a.request.scope.radiusMeters / 1000} km. Analyze another area with the same settings to compare.</p>
-      {!comparison.comparable ? <p role="status" className="notice">{comparison.reason}</p> : (() => {
+      {!comparison.comparable ? <p role="status" className="notice">{comparison.reason}</p> : sameArea ? <p role="status">Your first area is pinned. Choose another location in Search and analyze it, then select Compare with pinned area. Clear pin to replace your first area.</p> : (() => {
         const sa = areaStats(comparison.a), sb = areaStats(comparison.b);
         const rows: Row[] = [
           { label: 'Direct competitors', a: sa.direct, b: sb.direct },

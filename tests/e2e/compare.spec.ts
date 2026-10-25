@@ -31,8 +31,9 @@ test('compare shows bars, neutral wording, and repeated names', async ({ page })
   await page.getByRole('button', { name: 'Analyze this area' }).click();
   await page.getByRole('button', { name: 'Pin for comparison' }).click();
   await page.getByRole('button', { name: 'Search', exact: true }).click();
+  await page.getByLabel('City preset').selectOption('london');
   await page.getByRole('button', { name: 'Analyze this area' }).click();
-  await page.getByRole('button', { name: /^Compare/ }).click();
+  await page.getByRole('navigation', { name: 'Explorer views' }).getByRole('button', { name: /^Compare/ }).click();
   const panel = page.getByLabel('Area comparison');
   await expect(panel).toContainText('CURRENT AREA');
   await expect(panel).toContainText('PINNED AREA');
