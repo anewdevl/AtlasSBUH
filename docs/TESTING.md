@@ -55,3 +55,9 @@ npx tsx scripts/check-research.ts --maps --simulate-primary-quota
 Only the primary HTTP 429 is simulated; remaining provider requests are live. Provider cooldowns remain enforced. Both exhausted keys can leave Maps unavailable while independent web results survive. See [RESEARCH.md](RESEARCH.md) for agent roles and provider boundaries.
 
 Research has no automatic offline-report fallback. Keep a verified report open or use genuine saved diagnostic artifacts as clearly identified backups; do not substitute synthetic test data.
+
+## Export checks
+
+`tests/unit/report-export.test.ts` checks validation, source/date/uncertainty preservation, text wrapping, real PDF structure and editable PPTX contents/notes. `tests/e2e/exports.spec.ts` downloads both files through the production UI, retries a failed font load, verifies no extra research calls, and clears downloads after scope changes.
+
+After a real `check-research.ts` run, `npx tsx scripts/check-exports.ts` writes samples from that existing report to ignored `.atlas-local/exports/`. This diagnostic makes no provider calls. Render the PDF and presentation for visual review; inspect dense pages and long URLs as well as the overview. Presentation details can span appendix slides; body text and source notes remain editable.

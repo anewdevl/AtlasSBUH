@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { reportSchema, stageSchema, type ResearchReport, type Stage, type ResearchRequest } from '../lib/research-contracts';
 import BusinessShortlist from './BusinessShortlist';
+import ReportDownloads from './ReportDownloads';
 import { categories } from '../lib/categories';
 import { cities } from '../lib/cities';
 import type { AnalysisRequest } from '../lib/contracts';
@@ -68,7 +69,7 @@ export default function ResearchPanel({ scope, osmRequest, description, setDescr
     </form>
     <ol className="research-stages" aria-live="polite">{progress.map(s => <li key={s.stage}>{s.message} <small>({s.status})</small></li>)}</ol>
     {error && <p role="alert">{error}</p>}
-    {report && <div aria-label="Research report"><h3>Research report · {report.status}</h3><div className="research-summary"><strong>{report.findings.length} supported observations</strong><span>{report.insights.length} next steps · {report.evidence.length} retrieved sources</span><span>{report.insights[0]?.recommendation ?? (report.findings.length ? 'Source observations are ready to inspect below.' : 'Evidence was limited. Explore the mapped shortlist and unknowns below.')}</span></div><p>Started {new Date(report.startedAt).toLocaleString()}. “Complete” describes this bounded run, not exhaustive market coverage.</p>
+    {report && <div aria-label="Research report"><h3>Research report · {report.status}</h3><ReportDownloads report={report} locationLabel={locationLabel}/><div className="research-summary"><strong>{report.findings.length} supported observations</strong><span>{report.insights.length} next steps · {report.evidence.length} retrieved sources</span><span>{report.insights[0]?.recommendation ?? (report.findings.length ? 'Source observations are ready to inspect below.' : 'Evidence was limited. Explore the mapped shortlist and unknowns below.')}</span></div><p>Started {new Date(report.startedAt).toLocaleString()}. “Complete” describes this bounded run, not exhaustive market coverage.</p>
       <h3>Business insights and experiments</h3>{!report.insights.length && <p>Insufficient verified evidence for insights.</p>}{report.insights.map(i => <article key={i.id}><h4>{i.kind}: {i.recommendation}</h4><details><summary>Reasoning & evidence</summary><p>{i.reasoning}</p><p>Uncertainty: {i.uncertainty}</p><p>Validate next: {i.validation}</p>{citations([...new Set(report.findings.filter(f => i.findingIds.includes(f.id)).flatMap(f => f.evidence.map(e => e.sourceId)))])}</details></article>)}
       {!!report.shortlist.length && <BusinessShortlist report={report}/>}
       {report.osmContext && <div><h3>Mapped area context</h3><p>{report.osmContext.directMappedCount ?? 'Unknown'} direct mapped features · {report.osmContext.adjacentMappedCount ?? 'Unknown'} adjacent mapped features · {report.osmContext.status}. Retrieved {report.osmContext.fetchedAt}. Coverage unknown. External sources are excluded from these counts.</p><a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors · ODbL</a></div>}

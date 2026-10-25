@@ -56,3 +56,5 @@ main{height:100%;display:grid;grid-template-columns:340px minmax(0,1fr);outline:
  button:not(:disabled),a[href],summary,select:not(:disabled),input:is([type=checkbox],[type=radio]):not(:disabled),label[for],label.check:not(:has(input:disabled)),label.research-check:not(:has(input:disabled)),[role=button]:not([aria-disabled=true]){cursor:pointer}
  button:disabled,select:disabled,input:is([type=checkbox],[type=radio]):disabled,[role=button][aria-disabled=true]{cursor:not-allowed}
 }
+
+.report-downloads{margin:18px 0;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.report-downloads>div{display:flex;flex-wrap:wrap;gap:8px}.report-downloads p{margin:9px 0 0}.report-downloads .secondary{font-size:11px;color:var(--accent)}

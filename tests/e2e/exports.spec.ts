@@ -1,0 +1,19 @@
+import {test,expect} from '@playwright/test';
+import {readFile} from 'node:fs/promises';
+import {PDFDocument} from 'pdf-lib';
+import JSZip from 'jszip';
+import {stages} from '../../src/lib/research-contracts';
+import {result} from '../fixtures';
+import {shortlistBusinesses} from '../../src/lib/business-shortlist';
+test('research report downloads real PDF and editable PowerPoint without new research calls',async({page},testInfo)=>{
+ let calls=0;
+ await page.route('https://tile.openstreetmap.org/**',r=>r.abort());
+ await page.route('**/api/suggest',r=>r.fulfill({json:{categoryId:'cafe',explanation:'Synthetic mapping.'}}));
+ await page.route('**/api/research',r=>{calls++;const request=r.request().postDataJSON();return r.fulfill({contentType:'application/x-ndjson',body:JSON.stringify({type:'report',report:{request,status:'partial',startedAt:'2026-10-24T20:00:00.000Z',evidence:[],findings:[],insights:[],shortlist:shortlistBusinesses(result(undefined,request.osmRequest),'coffee'),stages:stages.map(stage=>({stage,status:'partial',message:'Synthetic stage.'})),warnings:['Source evidence unavailable.'],unknowns:['Rent unknown.']}})+'\n'});});
+ await page.goto('/');await page.getByLabel('What are you opening?').fill('Coffee shop');await page.getByRole('button',{name:'Research',exact:true}).click();await expect(page.getByRole('button',{name:'Download PDF',exact:true})).toHaveCount(0);await page.getByRole('button',{name:'Generate insights'}).click();
+ await expect(page.getByRole('button',{name:'Download PDF',exact:true})).toBeVisible();
+ await page.route('**/fonts/NotoSans-Regular.ttf',r=>r.fulfill({status:503,body:'unavailable'}));await page.getByRole('button',{name:'Download PDF',exact:true}).click();await expect(page.getByRole('region',{name:'Business research'}).getByRole('alert')).toContainText('Could not prepare this download');await page.unroute('**/fonts/NotoSans-Regular.ttf');
+ const pdfDownload=page.waitForEvent('download');await page.getByRole('button',{name:'Download PDF',exact:true}).click();const pdf=await pdfDownload;expect(pdf.suggestedFilename()).toBe('atlas-nyc-research-2026-10-24.pdf');const pdfPath=testInfo.outputPath('report.pdf');await pdf.saveAs(pdfPath);const parsed=await PDFDocument.load(await readFile(pdfPath));expect(parsed.getPageCount()).toBeGreaterThan(1);
+ const pptDownload=page.waitForEvent('download');await page.getByRole('button',{name:'Download slides (.pptx)',exact:true}).click();const ppt=await pptDownload;expect(ppt.suggestedFilename()).toMatch(/\.pptx$/);const pptPath=testInfo.outputPath('slides.pptx');await ppt.saveAs(pptPath);const zip=await JSZip.loadAsync(await readFile(pptPath));expect(Object.keys(zip.files).some(p=>p==='ppt/slides/slide6.xml')).toBe(true);expect(calls).toBe(1);
+ await page.getByRole('button',{name:'Search',exact:true}).click();await page.getByLabel('City preset').selectOption('london');await page.getByRole('button',{name:'Research',exact:true}).click();await expect(page.getByRole('button',{name:'Download PDF',exact:true})).toHaveCount(0);
+});

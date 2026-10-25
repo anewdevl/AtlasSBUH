@@ -45,3 +45,11 @@ Set server-only `NVIDIA_API_KEY` and `TAVILY_API_KEY` in ignored `.env` or `.env
 Optional Maps context uses separate `GEMINI_MAPS_API_KEY` and `GEMINI_MAPS_API_KEY_FALLBACK` credentials. Exhausted keys retain cooldowns; tracked keys in one project share project-level cooldowns. Do not combine accounts to bypass quotas. Google context is requested explicitly and never changes OSM counts. The web flow works independently of Google.
 
 There is no automatic saved-research fallback or final Recommended/Not Recommended verdict in the current UI. Research remains evidence and investigation advice; rent, demand, footfall, zoning and profitability are unverified.
+
+## Report exports
+
+Each generated report offers PDF and editable PowerPoint downloads. Both revalidate the current report and use its existing observations, insights, source references, original dates and limitations; exports do not call AI or data providers. The PDF puts insights ahead of competition details. The deck starts with six briefing sections, with continuation slides if needed, followed by an evidence appendix and source notes. The mapped shortlist is limited to the top ten with the total explicitly stated; complete findings, insights and source references are retained.
+
+Libraries load only when exporting. PDF fonts are bundled under `public/fonts/` with their SIL Open Font License; unsupported glyphs are preserved as labeled Unicode code points. The export is canceled if the report/location changes. Failures leave research available and permit retry. A report's partial/unavailable state stays visible, and exporting does not introduce a Recommended/Not Recommended verdict.
+
+Google's [Maps Demo Key documentation](https://developers.google.com/maps/demo-key) currently lists Places API (New) support, excludes user-generated reviews/photos, and pauses usage until the next day on reaching daily limits. No fixed numeric allowance is stated on that page. Demo-key Places integration is not implemented by the export feature.
