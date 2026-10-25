@@ -1,7 +1,7 @@
 'use client';
 import dynamic from 'next/dynamic';
 import { useEffect,useMemo,useRef,useState } from 'react';
-import { cities,quantize,inCity,type CityId } from '../lib/cities';
+import { cities,quantize,inCity } from '../lib/cities';
 import { REGISTRY_VERSION } from '../lib/categories';
 import { SCHEMA_VERSION,canonicalize,requestSchema,responseSchema,validateResponse,isResponseForRequest,type AnalysisRequest,type AnalysisResponse } from '../lib/contracts';
 import { sanitizeCategorySelection } from '../lib/category-selection';

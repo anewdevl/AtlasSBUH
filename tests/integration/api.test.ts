@@ -4,7 +4,7 @@ import { fetchOverpass } from '../../src/server/overpass';
 import { FRESH_MS,MemoryCache,readSnapshot } from '../../src/server/cache';
 import { POST } from '../../src/app/api/analyze/route';
 import { cities,type CityId } from '../../src/lib/cities';
-import { categoryIds,type CategoryId } from '../../src/lib/categories';
+import { type CategoryId } from '../../src/lib/categories';
 import { request,result,upstream } from '../fixtures';
 const noSnapshot=async()=>undefined;
 const failed=vi.fn<typeof fetch>(async()=>{throw new Error('Mock offline');});
