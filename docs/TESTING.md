@@ -40,20 +40,6 @@ The rehearsal uses a running localhost:3000 app for real address lookup, retail 
 
 The research diagnostic saves its dated report and sanitized NVIDIA diagnostics under ignored `.atlas-local/`. It exits with code 1 for partial/unavailable reports, even when individual provider calls succeed. Inspect sources, findings and stage outcomes before presenting a result. The default research budget is 12 shared requests; configuration is in [`.env.example`](../.env.example).
 
-To explicitly include optional Google Maps context:
-
-```powershell
-npx tsx scripts/check-research.ts --maps
-```
-
-To test configured primary/fallback behavior without exhausting the primary key:
-
-```powershell
-npx tsx scripts/check-research.ts --maps --simulate-primary-quota
-```
-
-Only the primary HTTP 429 is simulated; remaining provider requests are live. Provider cooldowns remain enforced. Both exhausted keys can leave Maps unavailable while independent web results survive. See [RESEARCH.md](RESEARCH.md) for agent roles and provider boundaries.
-
 Research has no automatic offline-report fallback. Keep a verified report open or use genuine saved diagnostic artifacts as clearly identified backups; do not substitute synthetic test data.
 
 ## Export checks

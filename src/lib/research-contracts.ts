@@ -12,7 +12,6 @@ export const researchRequestSchema = z.object({
   description: z.string().trim().min(3).max(500),
   scope: requestSchema.shape.scope,
   goals: z.string().trim().max(500).optional(),
-  includeMaps: z.boolean(),
   osmRequest: requestSchema.optional(),
   localOnly: z.boolean().optional(),
 }).strict().superRefine((r, ctx) => {
@@ -41,7 +40,18 @@ export const insightSchema = z.object({
   id: text, kind: z.enum(['interpretation', 'hypothesis', 'experiment']), recommendation: text,
   findingIds: z.array(text).min(1).max(8), reasoning: text, uncertainty: text, validation: text,
 }).strict();
-export const stages = ['planning', 'web', 'maps', 'insights', 'verification', 'reporting'] as const;
+export const impactSchema = z.object({
+ id:text, business:text, effect:z.enum(['competition','complement','limited-overlap','unclear']),
+ yourOffering:text, competitorOffering:text, findingIds:z.array(text).min(1).max(4),
+}).strict();
+export const assessmentSchema = z.object({
+ verdict:z.enum(['recommended','not-recommended','insufficient-evidence']),
+ reasoning:z.string().trim().min(1).max(600), findingIds:z.array(text).max(8),
+ risks:z.array(z.string().trim().min(1).max(300)).min(1).max(3),
+}).strict();
+export type BusinessImpact=z.infer<typeof impactSchema>;
+export type BusinessAssessment=z.infer<typeof assessmentSchema>;
+export const stages = ['planning', 'web', 'insights', 'verification', 'reporting'] as const;
 export const stageSchema = z.object({ stage: z.enum(stages), status: z.enum(['running', 'complete', 'partial', 'unavailable', 'skipped']), message: text }).strict();
 export type Stage = z.infer<typeof stageSchema>;
 export const osmContextSchema = z.object({
@@ -51,6 +61,7 @@ export const osmContextSchema = z.object({
 }).strict();
 export const reportSchema = z.object({
   request: researchRequestSchema, status: z.enum(['complete', 'partial', 'unavailable']), startedAt: z.iso.datetime(),
+  impacts:z.array(impactSchema).max(3).default([]), assessment:assessmentSchema.nullable().default(null),
   evidence: z.array(evidenceSchema).max(16), findings: z.array(findingSchema).max(24), insights: z.array(insightSchema).max(8),
   stages: z.array(stageSchema).min(5).max(6), warnings: z.array(text).max(50), unknowns: z.array(text).max(20),
   agentRuns: z.array(z.object({ role: z.enum(['researcher', 'extractor', 'analyst', 'verifier', 'writer']), task: text, model: text, status: z.enum(['complete', 'unavailable']), durationMs: z.number().nonnegative(), tools: z.array(text).max(8) }).strict()).max(10).default([]),
@@ -69,6 +80,14 @@ export const reportSchema = z.object({
     if (!source || !source.excerpt.includes(ref.quote)) issue('Evidence quote missing from retrieved source');
   }
   for (const i of r.insights) if (i.findingIds.some(id => !r.findings.some(f => f.id === id))) issue('Unknown finding');
+  for(const impact of r.impacts){
+    if(impact.findingIds.some(id=>!r.findings.some(f=>f.id===id&&f.business===impact.business&&['offering','price'].includes(f.kind))))issue('Impact requires business-specific offering evidence');
+    if(!r.request.description.toLowerCase().includes(impact.yourOffering.toLowerCase())||!impact.findingIds.some(id=>r.findings.find(f=>f.id===id)?.evidence.some(e=>e.quote.includes(impact.competitorOffering))))issue('Impact offering text must occur in the request and evidence');
+  }
+  if(r.assessment){
+    if(r.assessment.findingIds.some(id=>!r.findings.some(f=>f.id===id)))issue('Assessment cites an unknown finding');
+    if(r.assessment.verdict!=='insufficient-evidence'&&(!r.impacts.length||!r.assessment.findingIds.some(id=>r.impacts.some(i=>i.findingIds.includes(id)))))issue('An opening judgment requires supported business impacts');
+  }
   if (r.osmContext) {
     if (!r.request.osmRequest || JSON.stringify(r.osmContext.request) !== JSON.stringify(r.request.osmRequest)) issue('OSM context scope mismatch');
     if (r.osmContext.status === 'partial' && (r.osmContext.directMappedCount !== null || r.osmContext.adjacentMappedCount !== null)) issue('Partial OSM context must not have counts');

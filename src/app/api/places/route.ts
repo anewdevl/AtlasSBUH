@@ -14,7 +14,7 @@ export async function POST(request:Request){
  const parsed=placesRequestSchema.safeParse(raw);if(!parsed.success)return error(422,'INVALID_REQUEST');
  if(active||Date.now()<cooldownUntil)return error(429,'LOOKUP_PAUSED',Math.max(1,Math.ceil((cooldownUntil-Date.now())/1000)));
  active=true;
- try{const data=await lookupPlaces(parsed.data,{signal:request.signal});cooldownUntil=Date.now()+5000;return Response.json(data,{headers:{'Cache-Control':'no-store'}});}
+ try{const data=await lookupPlaces(parsed.data,{signal:request.signal});return Response.json(data,{headers:{'Cache-Control':'no-store'}});}
  catch(e){if(e instanceof PlacesUnavailable){if(e.code==='DEMO_QUOTA')cooldownUntil=Date.now()+(e.retryAfterSeconds??3600)*1000;else if(e.code==='ACCESS_UNAVAILABLE')cooldownUntil=Date.now()+600000;return error(e.status,e.code,e.retryAfterSeconds);}return error(503,'UNAVAILABLE');}
  finally{active=false;}
 }

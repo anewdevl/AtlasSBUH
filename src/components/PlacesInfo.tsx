@@ -1,10 +1,13 @@
 'use client';
+import BusinessMapPreview from './BusinessMapPreview';
+import {buildMapPreview} from '../lib/map-preview';
 import {useEffect,useRef,useState} from 'react';
 import {placesResponseSchema,type PlacesRequest,type PlacesResponse} from '../lib/places';
-export default function PlacesInfo({input}:{input:PlacesRequest}){
+export default function PlacesInfo({input,autoLoad=false}:{input:PlacesRequest;autoLoad?:boolean}){
  const [result,setResult]=useState<PlacesResponse|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState('');
  const control=useRef<AbortController|null>(null),generation=useRef(0);
  useEffect(()=>()=>{generation.current++;control.current?.abort();},[]);
+ useEffect(()=>{if(!autoLoad)return;const timer=setTimeout(()=>{void lookup();},0);return()=>clearTimeout(timer);},[autoLoad]);
  async function lookup(){
   if(busy||result)return;const id=++generation.current,controller=new AbortController();control.current=controller;setBusy(true);setError('');
   const timer=setTimeout(()=>controller.abort(),12000);
@@ -17,13 +20,13 @@ export default function PlacesInfo({input}:{input:PlacesRequest}){
   finally{clearTimeout(timer);if(id===generation.current)setBusy(false);}
  }
  return <section aria-label="Optional Google place information">
-  <h1>{input.name}</h1><p className="muted">Optional nearby listing information. Your mapped competitors, comparison, research and exports are independent of this lookup.</p>
-  <button className="primary" disabled={busy||result!==null} onClick={lookup}>{busy?'Looking up optional info…':result?'Lookup complete':'Get Google place info'}</button>
-  <p className="micro">One request per click. Limited demo key; no automatic lookup, retries or additional pages. Reviews and photos are unavailable.</p>
+  <h1>{input.name}</h1><p className="muted">Optional nearby listing information. Use this alongside the mapped and web research. Research continues independently if Google is unavailable.</p>
+  <button className="primary" disabled={busy||result!==null||(autoLoad&&!error)} onClick={lookup}>{busy?'Looking up optional info…':result?'Lookup complete':'Get Google place info'}</button>
+  <p className="micro">Limited demo key. One lookup when opened; no automatic retries or additional pages. Reviews and photos are unavailable.</p>
   {busy&&<p role="status">Requesting nearby listings…</p>}{error&&<p role="alert">{error}</p>}
   {result&&<div className="google-place-results"><span className="google-maps-attribution" translate="no">Google Maps</span><p className="micro">Possible matches within 500 m of the mapped feature. Confirm the name and address; branch identity is unverified.</p>
    {!result.matches.length&&<p>No nearby candidate returned. This does not change your mapped analysis.</p>}
-   {result.matches.map(p=><article key={p.id}><h2>{p.name}</h2><p>{p.address??'Address unavailable.'}</p><p>Google listing status: {p.businessStatus?.replace(/_/g,' ').toLowerCase()??'unavailable'}</p>{p.primaryType&&<p>Listing type: {p.primaryType.replace(/_/g,' ')}</p>}<a href={p.mapsUrl} target="_blank" rel="noreferrer">View listing on Google Maps ↗</a>{p.attributions.map((a,i)=><p className="micro" key={i}>{a.uri?<a href={a.uri} target="_blank" rel="noreferrer">{a.name}</a>:a.name}</p>)}</article>)}
+   {result.matches.map(p=><article key={p.id}><h2>{p.name}</h2><p>{p.address??'Address unavailable.'}</p><p>Google listing status: {p.businessStatus?.replace(/_/g,' ').toLowerCase()??'unavailable'}</p>{p.primaryType&&<p>Listing type: {p.primaryType.replace(/_/g,' ')}</p>}<a href={p.mapsUrl} target="_blank" rel="noreferrer">View listing on Google Maps ↗</a>{(()=>{const preview=buildMapPreview({name:p.name,address:p.address,placeId:p.id});return <BusinessMapPreview {...preview}/>;})()}{p.attributions.map((a,i)=><p className="micro" key={i}>{a.uri?<a href={a.uri} target="_blank" rel="noreferrer">{a.name}</a>:a.name}</p>)}</article>)}
    <p className="micro">Retrieved {new Date(result.fetchedAt).toLocaleString()}. Listing status is not a live open-now check.</p><p className="micro">{result.remainingRequests} optional requests remaining in ATLAS’s daily budget. This is separate from Google’s quota.</p>
   </div>}
  </section>;

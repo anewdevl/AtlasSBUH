@@ -23,7 +23,7 @@ test('selected-location assessment stays at the chosen pin and never displays a 
   return r.fulfill({json:{request,candidates:[{id:'current',label:'Selected location',center:request.analysis.scope.center,competition:4,complements:7,transit:2,score:null,sources:[]}],status:'provisional',recommendation:{recommendedId:null,priorities:['transit'],checks:['rent','footfall','permits']},model:'fixture',fetchedAt:new Date().toISOString(),osmBaseTimestamp:null,query:'fixture',queryHash:'a'.repeat(64),complementCategories:['Café'],warnings:['Zoning is unverified.']}});
  });
  await page.goto('/');await page.getByLabel('What are you opening?').fill('Grocery supermarket');await page.getByRole('button',{name:'Research',exact:true}).click();await page.getByRole('button',{name:'Assess this location'}).click();
- const panel=page.getByRole('region',{name:'Location assessment'});await expect(panel).toContainText('Location evidence reviewed');await expect(panel).toContainText('Mapped competitors');await expect(panel).not.toContainText('/100');await expect(panel).not.toContainText('Nearby north');
+ const panel=page.getByRole('region',{name:'Location assessment'});await expect(panel).toContainText('Location evidence reviewed');await expect(panel).toContainText('Mapped category features');await expect(panel).not.toContainText('/100');await expect(panel).not.toContainText('Nearby north');
  await panel.getByText('Limitations & retrieval details').click();await expect(panel).toContainText('Zoning is unverified.');
  await page.screenshot({path:'test-results/selected-location-assessment.png',animations:'disabled'});
 });

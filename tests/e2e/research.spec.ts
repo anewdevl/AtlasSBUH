@@ -11,11 +11,13 @@ test('research-only software flow exposes sources and clears when scope changes'
     const report = { request, status: 'partial', startedAt: new Date().toISOString(),
       evidence: [{ id: 'web-test', provider: 'tavily', url: 'https://fixture.example/software', title: 'Synthetic software source', retrievedAt: new Date().toISOString(), excerpt: 'Synthetic software company offers analytics in New York.', contentKind: 'page', placeId: null, coordinates: null }],
       findings: [{ id: 'f-test', claim: 'The source describes analytics software.', kind: 'offering', business: 'Synthetic software company', relation: 'direct', evidence: [{ sourceId: 'web-test', quote: 'Synthetic software company offers analytics in New York.' }], geographicRelevance: 'New York; precise location unverified.', limitations: ['One source only.'], reviewSampleSize: null, reviewDates: null }],
-      insights: [], agentRuns: [{ role: 'writer', task: 'report preparation', model: 'nvidia/nemotron-3.5-lightning-30b-a3b', status: 'complete', durationMs: 1200, tools: ['order_verified_records'] }], stages: stages.map(stage => ({ stage, status: stage === 'maps' ? 'unavailable' : 'complete', message: stage === 'maps' ? 'Maps unavailable.' : `${stage} processed.` })), warnings: ['Maps unavailable.'], unknowns: ['No representative review sample.'] };
+      insights: [], agentRuns: [{ role: 'writer', task: 'report preparation', model: 'nvidia/nemotron-3.5-lightning-30b-a3b', status: 'complete', durationMs: 1200, tools: ['order_verified_records'] }], stages: stages.map(stage => ({ stage, status: 'complete', message: `${stage} processed.` })), warnings: [], unknowns: ['No representative review sample.'] };
     await route.fulfill({ contentType: 'application/x-ndjson', body: [{ type: 'stage', stage: { stage: 'web', status: 'running', message: 'Researching competitors and customer feedback.' } }, { type: 'report', report }].map(e => JSON.stringify(e)).join('\n') + '\n' });
   });
   await page.goto('/');
   await page.getByRole('button', { name: 'Research', exact: true }).click();
+  await expect(page.getByText('Optional Google Maps context', {exact:true})).toHaveCount(0);
+  await expect(page.getByRole('checkbox', {name:/Google Maps/})).toHaveCount(0);
   await page.getByLabel('Business description', { exact: true }).fill('Software company offering analytics');
   await page.getByRole('button', { name: 'Generate insights' }).click();
   const report = page.getByLabel('Research report', { exact: true });
@@ -34,6 +36,8 @@ test('research-only software flow exposes sources and clears when scope changes'
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   await page.getByLabel('City preset').selectOption('london');
   await page.getByRole('button', { name: 'Research', exact: true }).click();
+  await expect(page.getByText('Optional Google Maps context', {exact:true})).toHaveCount(0);
+  await expect(page.getByRole('checkbox', {name:/Google Maps/})).toHaveCount(0);
   await expect(report).toHaveCount(0);
   await page.setViewportSize({ width: 390, height: 844 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

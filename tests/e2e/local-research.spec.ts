@@ -33,7 +33,36 @@ test('research presents the local shortlist when web evidence is unavailable', a
   await page.goto('/'); await page.getByRole('button', { name: 'Research', exact: true }).click();
   await page.getByLabel('Business description', { exact: true }).fill('Coffee shop'); await page.getByRole('button', { name: 'Generate insights' }).click();
   const shortlist = page.getByRole('region', { name: 'Ranked local shortlist' });
-  await expect(shortlist).toContainText('Synthetic test café'); await expect(shortlist).toContainText('80% relevance / 20% proximity');
+  await expect(shortlist).toContainText('Synthetic test café'); await expect(shortlist).toContainText('Category, specialty text and distance ordering');
   await expect(shortlist.getByRole('link', { name: 'Map evidence' })).toHaveAttribute('href', 'https://www.openstreetmap.org/node/123');
   await page.screenshot({ path: 'test-results/local-shortlist.png' });
+});
+
+// Synthetic upstream data only; no paid provider calls.
+test('specialty research does not present broad clothing shops as confident desi competitors', async ({page})=>{
+  await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+  await page.route('**/api/research',async route=>{
+    const request=route.request().postDataJSON(); expect(request.description).toBe('desi clothing store'); expect(request.osmRequest.categoryId).toBe('clothing');
+    const mapped=result([{type:'node',id:12,lat:40.7308,lon:-73.9973,tags:{shop:'clothes',name:'Synthetic Generic Boutique'}}],request.osmRequest);
+    await route.fulfill({contentType:'application/x-ndjson',body:JSON.stringify({type:'report',report:{request,status:'partial',startedAt:new Date().toISOString(),evidence:[],findings:[],insights:[],shortlist:shortlistBusinesses(mapped,request.description),stages:stages.map(stage=>({stage,status:'partial',message:'Synthetic bounded result.'})),warnings:[],unknowns:[]}})+'\n'});
+  });
+  await page.goto('/');await page.getByRole('button',{name:'Research',exact:true}).click();
+  await page.getByLabel('Business description',{exact:true}).fill('desi clothing store');await page.getByRole('button',{name:'Generate insights'}).click();
+  const report=page.getByLabel('Research report',{exact:true});await expect(report).toContainText('Insufficient evidence');
+  const shortlist=page.getByRole('region',{name:'Ranked local shortlist'});await expect(shortlist).toContainText('specialty requirements (desi) remain unverified');await expect(shortlist).not.toContainText('/100');await expect(shortlist).toContainText('No specialty evidence');
+});
+
+test('Research offers optional Google context without replacing its report or opening a browser tab',async({page,context})=>{
+ let lookups=0;
+ await page.route('https://tile.openstreetmap.org/**',r=>r.abort());
+ await page.route('**/api/places',r=>{lookups++;return r.fulfill({status:429,json:{code:'DEMO_QUOTA',message:'Google demo quota unavailable. Research remains available.'}});});
+ await page.route('**/api/research',async route=>{
+  const request=route.request().postDataJSON(),mapped=result(undefined,request.osmRequest);
+  await route.fulfill({contentType:'application/x-ndjson',body:JSON.stringify({type:'report',report:{request,status:'partial',startedAt:new Date().toISOString(),evidence:[],findings:[],insights:[],shortlist:shortlistBusinesses(mapped,request.description),stages:stages.map(stage=>({stage,status:'partial',message:'Synthetic bounded report.'})),warnings:[],unknowns:[]}})+'\n'});
+ });
+ await page.goto('/');await page.getByRole('button',{name:'Research',exact:true}).click();await page.getByLabel('Business description',{exact:true}).fill('coffee shop');await page.getByRole('button',{name:'Generate insights'}).click();
+ const report=page.getByLabel('Research report',{exact:true});await expect(report).toBeVisible();expect(lookups).toBe(0);
+ await report.getByRole('button',{name:'Google details for Synthetic test café'}).click();
+ const sheet=page.getByRole('dialog',{name:'Google listing context'});await expect(sheet.getByRole('alert')).toContainText('Research remains available');expect(lookups).toBe(1);expect(context.pages()).toHaveLength(1);
+ await page.keyboard.press('Escape');await expect(sheet).toHaveCount(0);await expect(report).toBeVisible();await expect(report.getByRole('button',{name:'Download PDF'})).toBeEnabled();expect(lookups).toBe(1);
 });

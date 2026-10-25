@@ -1,13 +1,17 @@
 'use client';
-import { useEffect,useRef } from 'react';
+import { useEffect,useRef,useState } from 'react';
+import PlacesDrawer from './PlacesDrawer';
+import MapPreviewDrawer from './MapPreviewDrawer';
+import {cities} from '../lib/cities';
 import { categories } from '../lib/categories';
 import { normalizedName } from '../lib/business-shortlist';
 import type { ResearchReport } from '../lib/research-contracts';
 import type { AnalysisResponse,AnalysisRequest } from '../lib/contracts';
 type Props={competitor:AnalysisResponse['competitors'][number];provenance:AnalysisResponse['provenance'];onClose:()=>void;research:ResearchReport|null;analysis:AnalysisRequest;onResearch:()=>void};
 export default function CompetitorDetail({competitor:c,provenance:p,onClose,research,onResearch,analysis}:Props){
+ const [placesOpen,setPlacesOpen]=useState(false),[mapOpen,setMapOpen]=useState(false);
  const close=useRef<HTMLButtonElement>(null),dismiss=useRef(onClose);dismiss.current=onClose;
- useEffect(()=>{const trigger=document.activeElement as HTMLElement|null;close.current?.focus();const escape=(e:KeyboardEvent)=>{if(e.key==='Escape')dismiss.current();};document.addEventListener('keydown',escape);return()=>{document.removeEventListener('keydown',escape);if(trigger?.isConnected)trigger.focus();};},[]);
+ useEffect(()=>{const trigger=document.activeElement as HTMLElement|null;close.current?.focus();const escape=(e:KeyboardEvent)=>{if(e.key==='Escape'&&!document.querySelector('dialog[open]'))dismiss.current();};document.addEventListener('keydown',escape);return()=>{document.removeEventListener('keydown',escape);if(trigger?.isConnected)trigger.focus();};},[]);
  const matched=research?.shortlist.some(b=>b.id===`${c.sourceType}/${c.sourceId}`&&b.name===c.name);
  const observations=matched&&c.name?research?.findings.filter(f=>f.business&&normalizedName(f.business)===normalizedName(c.name!))??[]:[];
  return <section className="competitor-detail" aria-label="Competitor details">
@@ -18,7 +22,8 @@ export default function CompetitorDetail({competitor:c,provenance:p,onClose,rese
   <div className="detail-section"><h3>Location</h3><p className="mono">{c.coordinates.lat.toFixed(5)}, {c.coordinates.lon.toFixed(5)}</p><p className="micro">{c.positionKind==='representative-center'?'Representative center of a mapped area. This may not be the business entrance.':'Mapped point location. Entrance accuracy is not verified.'}</p></div>
   <div className="detail-section"><h3>Matching source evidence</h3><div className="evidence-tags">{Object.entries(c.evidence).map(([key,value])=><code key={key}>{key}={value}</code>)}</div><a className="source-link" href={c.sourceUrl} target="_blank" rel="noreferrer">{c.sourceType}/{c.sourceId} ↗</a></div>
   <div className="detail-section"><h3>Research context</h3>{observations.length?<><p className="micro">Name-matched web observations. Exact branch identity is unconfirmed.</p>{observations.map(f=><details key={f.id}><summary>{f.kind}: {f.claim}</summary>{f.evidence.map((ref,i)=>{const source=research?.evidence.find(e=>e.id===ref.sourceId);return source&&<div key={i}><blockquote>{ref.quote}</blockquote><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a><p className="micro">Retrieved {new Date(source.retrievedAt).toLocaleString()}</p></div>;})}<p className="micro">{f.limitations.join(' ')}</p></details>)}</>:<p className="micro">No supported web observations for this business in the current research. Reviews and offerings remain unverified.</p>}<button className="secondary" onClick={onResearch}>{research?'Open research':'Research this area'}</button></div>
-  {c.name&&<div className="detail-section"><h3>Optional place information</h3><p className="micro">Open a separate Google listing view. No request is sent until you ask; demo access is limited.</p><a className="source-link" href={`/places-info?${new URLSearchParams({context:JSON.stringify({analysis,sourceId:`${c.sourceType}/${c.sourceId}`,name:c.name,coordinates:c.coordinates})})}`} target="_blank" rel="noreferrer">Extra info (Google) ↗</a></div>}
+  <div className="detail-section"><button className="secondary" onClick={()=>setMapOpen(true)}>Open mini map</button>{mapOpen&&<MapPreviewDrawer input={{name:c.name,coordinates:c.coordinates,city:cities[analysis.scope.cityId].label}} onClose={()=>setMapOpen(false)}/>}</div>
+  {c.name&&<div className="detail-section"><h3>Google listing context</h3><p className="micro">Optional address, business type and listing status.</p><button className="secondary" onClick={()=>setPlacesOpen(true)}>Extra info (Google)</button>{placesOpen&&<PlacesDrawer key={`${c.sourceType}/${c.sourceId}`} input={{analysis,sourceId:`${c.sourceType}/${c.sourceId}`,name:c.name,coordinates:c.coordinates}} onClose={()=>setPlacesOpen(false)}/>}</div>}
   <div className="detail-provenance"><span className="eyebrow">OPENSTREETMAP / OVERPASS</span><p>Retrieved {new Date(p.fetchedAt).toLocaleString()}</p><p>{p.cacheState} · Coverage unknown</p><a href={p.licenseLink}>{p.attribution} · ODbL</a></div>
  </section>;
 }

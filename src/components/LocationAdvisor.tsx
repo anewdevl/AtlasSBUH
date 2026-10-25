@@ -29,10 +29,10 @@ export default function LocationAdvisor({request,description,prepare,revision}:{
   {error&&<p role="alert">{error}</p>}
   {report&&area&&<div aria-live="polite"><h3>{report.status==='provisional'?'Location evidence reviewed':report.status==='insufficient'?'Limited mapped evidence':'AI assessment unavailable'}</h3>
    <p>{categories[request.categoryId].label} · {request.scope.radiusMeters} m radius</p>
-   <dl className="assessment-metrics"><div><dt>Mapped competitors</dt><dd>{area.competition??'Unavailable'}</dd></div><div><dt>Potential complements</dt><dd>{area.complements??'Unavailable'}</dd></div><div><dt>Transit features</dt><dd>{area.transit??'Unavailable'}</dd></div></dl>
+   <dl className="assessment-metrics"><div><dt>Mapped category features</dt><dd>{area.competition??'Unavailable'}</dd></div><div><dt>Potential complements</dt><dd>{area.complements??'Unavailable'}</dd></div><div><dt>Transit features</dt><dd>{area.transit??'Unavailable'}</dd></div></dl>
    {report.recommendation&&<p>Investigate these signals first: {report.recommendation.priorities.map(p=>p==='complements'?'complementary businesses':p==='competition'?'nearby competitors':'transit access').join(', ')}.</p>}
    <details><summary>Inspect supporting evidence</summary><p>Potential complementary types: {report.complementCategories.join(', ')}.</p><ul>{area.sources.map(s=><li key={s.id}><a href={`https://www.openstreetmap.org/${s.id}`} target="_blank" rel="noreferrer">{s.name}</a> · {s.metric}</li>)}</ul><p className="micro">Up to four examples per metric. Representative centers may differ from entrances.</p></details>
-   <h3>Before committing to premises</h3><ul>{(report.recommendation?.checks??['rent','footfall','access','permits'] as const).map(c=><li key={c}>{checks[c]}</li>)}</ul>
+   <p>Category counts do not confirm specialty competitors. Transit features are not measured footfall, and potential complements do not establish demand.</p><h3>Before committing to premises</h3><ul>{(report.recommendation?.checks??['rent','footfall','access','permits'] as const).map(c=><li key={c}>{checks[c]}</li>)}</ul>
    <details><summary>Limitations & retrieval details</summary><ul>{report.warnings.map(w=><li key={w}>{w}</li>)}</ul><p>Retrieved {new Date(report.fetchedAt).toLocaleString()} · Coverage unknown</p><p>OSM base: {report.osmBaseTimestamp??'Unknown'}</p><p>Query hash: {report.queryHash}</p></details>
    <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors · ODbL</a>
   </div>}
