@@ -24,6 +24,7 @@ Copy the names and examples from [`.env.example`](.env.example) into ignored `.e
 - Mapped analysis: no API key is required with a public Overpass endpoint. `ATLAS_OVERPASS_ENDPOINT` selects an allowlisted provider; `ATLAS_OVERPASS_API_KEY` supports the optional Overpass.ch endpoint.
 - Business interpretation and research: `NVIDIA_API_KEY`; web search/extraction also requires `TAVILY_API_KEY`. The default NVIDIA model is `nvidia/nemotron-3.5-lightning-30b-a3b`; `ATLAS_RESEARCH_MODEL=openai/gpt-oss-20b` selects the supported alternative. An unambiguous exact local alias can provide classification fallback; manual selection needs no AI key.
 - Optional Google Maps context: `GEMINI_MAPS_API_KEY` and `GEMINI_MAPS_API_KEY_FALLBACK`. Google is only called when explicitly requested. Provider cooldowns apply.
+- Optional Google Places demo lookup: `GOOGLE_PLACES_API_KEY` and optional `ATLAS_PLACES_DAILY_LIMIT=5` (allowed 1–20). Competitor details → Extra info (Google) opens a separate view; only Get Google place info sends one request. No reviews/photos, automatic requests, pagination, key rotation or dependency on this feature. The local UTC-day attempt counter persists across restarts in ignored `.atlas-local/places-budget.json`.
 - Address lookup uses Photon without a key. `ATLAS_GEOCODER_ENDPOINT` can select a compatible service.
 
 No database, authentication, or paid service is mandatory for mapped analysis. Research requires the relevant provider credentials and available quota.

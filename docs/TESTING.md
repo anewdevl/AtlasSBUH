@@ -61,3 +61,7 @@ Research has no automatic offline-report fallback. Keep a verified report open o
 `tests/unit/report-export.test.ts` checks validation, source/date/uncertainty preservation, text wrapping, real PDF structure and editable PPTX contents/notes. `tests/e2e/exports.spec.ts` downloads both files through the production UI, retries a failed font load, verifies no extra research calls, and clears downloads after scope changes.
 
 After a real `check-research.ts` run, `npx tsx scripts/check-exports.ts` writes samples from that existing report to ignored `.atlas-local/exports/`. This diagnostic makes no provider calls. Render the PDF and presentation for visual review; inspect dense pages and long URLs as well as the overview. Presentation details can span appendix slides; body text and source notes remain editable.
+
+## Optional Places checks
+
+`places.test.ts` mocks Google transport and checks the single request/field mask, missing configuration, no retries, response validation, source links and nearby filtering. It exercises the persistent budget using isolated temporary files, including concurrent reservations and a UTC-day reset. `places-route.test.ts` covers validation, bounded request bodies, sanitized failures and quota cooldown. The browser test opens the independent info view, verifies no lookup occurs until clicked, and confirms a provider failure leaves comparison functional. These tests consume no real demo quota. A live check should be a deliberate single UI lookup only after the demo key has been added and the app restarted.
