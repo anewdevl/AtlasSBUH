@@ -17,3 +17,9 @@ Location search uses the [Photon API](https://github.com/komoot/photon), with ex
 ## Verification
 
 Unit tests cover relevance weighting, radius exclusion, distinct branch preservation, source rejection, price classification, provider failures, location-search caching and limits, and local-only failure behavior. Browser tests exercise selecting a location, actual center-marker positioning after recenter, and the shortlist surviving failed web enrichment. Live reports remain under ignored `.atlas-local/` and describe the provider evidence available at that moment.
+
+## Current UI
+
+Generate insights is explicit; opening Research makes no research request. The business is interpreted automatically before research, using the same type as map analysis. The overview and suggested next steps appear first; the top three mapped candidates are visible with additional candidates and supporting evidence expandable. Current research can be opened from competitor details; name-matched observations are clearly marked as branch-unconfirmed. User business/location edits cancel old work and invalidate the report.
+
+The separate selected-location assessment uses `/api/location-advice` on demand. It no longer generates offset candidate areas or scores. Users select a second real location themselves through Search and use Compare for compatible mapped results.

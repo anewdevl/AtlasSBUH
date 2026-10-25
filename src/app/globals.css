@@ -41,3 +41,13 @@ main{height:100%;display:grid;grid-template-columns:340px minmax(0,1fr);outline:
 .area-card details { margin-top: 12px; }
 .location-advisor pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 11px; }
 .location-advisor details p { overflow-wrap: anywhere; }
+
+/* Shared business and selected-location flow. */
+.search-panel textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:11px;font:inherit;font-size:12px;line-height:1.6;resize:vertical;min-height:90px}
+.selected-location{display:grid;gap:8px;margin:18px 0;padding:14px;border:1px solid var(--line);background:var(--bg);border-radius:5px;font-size:11px;line-height:1.5}
+.selected-location strong{font-weight:500}.selected-location>span:last-of-type,.selected-location p{color:var(--muted);font-size:10px;margin:0}
+.map-location-label{font-size:10px;color:var(--muted);max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.workspace-nav{flex-wrap:nowrap;padding:0 8px;gap:0}.workspace-nav button{min-width:0;font-size:10px;padding:0 6px}
+.assessment-metrics{border:1px solid var(--line);padding:12px;background:var(--bg)}.assessment-metrics>div{display:flex;justify-content:space-between;gap:12px;margin:10px 0;font-size:12px}.assessment-metrics dd{margin:0;color:var(--accent)}
+.research-panel+.location-advisor{border-top:1px solid var(--line);margin-top:10px;padding-top:25px}.research-panel>form>label{margin:8px 0 0}.research-panel summary,.competitor-detail summary{line-height:1.6}
+.competitor-detail details{font-size:11px;margin:12px 0;line-height:1.6}.competitor-detail blockquote{margin:10px 0;padding-left:10px;border-left:2px solid var(--accent)}

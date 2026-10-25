@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { request } from '../fixtures';
 import { categories, categoryIds, matchingEvidence } from '../../src/lib/categories';
-import { areaCenters, scoreAreas, type AreaCandidate } from '../../src/lib/location-advisor';
+import { locationAdviceSchema, areaCenters, scoreAreas, type AreaCandidate } from '../../src/lib/location-advisor';
 import { adviseLocation, buildAreaQuery, measureAreas } from '../../src/server/location-advisor';
 import { researchConfig } from '../../src/server/research-providers';
 import { buildQuery, MAX_RECORDS } from '../../src/server/overpass';
@@ -33,10 +33,10 @@ describe('Expanded mapped business types', () => {
  });
 });
 describe('Location screening evidence and decisions', () => {
- it('builds three equal-radius queries and substitutes alternatives at the city edge', () => {
-  expect(areaCenters(request).map(a => a.id)).toEqual(['current', 'north', 'east']);
+ it('queries only the selected location, including at the city edge', () => {
+  expect(areaCenters(request).map(a => a.id)).toEqual(['current']);
   const edge = { ...request, scope: { ...request.scope, center: { lat: 40.93, lon: -73.68 } } };
-  expect(areaCenters(edge).map(a => a.id)).toEqual(['current', 'south', 'west']);
+  expect(areaCenters(edge).map(a => a.id)).toEqual(['current']);
   expect(buildAreaQuery(input)).toContain('["highway"="bus_stop"]');
   expect(buildAreaQuery(input)).not.toContain(input.description);
  });
@@ -44,13 +44,13 @@ describe('Location screening evidence and decisions', () => {
   const records = elements();
   const measured = measureAreas(input, [...records, records[0], { ...records[0], id: 500, tags: { highway: 'bus_stop', disused: 'yes' } }, { ...records[0], id: 501, lat: 40.9 }]);
   expect(measured.complete).toBe(true);
-  expect(measured.areas.map(a => a.transit)).toEqual([1, 1, 1]);
-  expect(measured.areas.map(a => a.complements)).toEqual([1, 2, 3]);
-  expect(measured.areas.map(a => a.score)).toEqual([27.5, 50, 72.5]);
+  expect(measured.areas.map(a => a.transit)).toEqual([1]);
+  expect(measured.areas.map(a => a.complements)).toEqual([1]);
+  expect(measured.areas.map(a => a.score)).toEqual([null]);
  });
- it('withholds rankings for truncation, invalid positions and empty activity', () => {
+ it('withholds counts and assessment for truncation, invalid positions and empty activity', () => {
   const truncated = measureAreas(input, Array.from({ length: MAX_RECORDS + 1 }, () => elements()[0]));
-  expect(truncated.areas.every(a => a.score === null)).toBe(true);
+  expect(truncated.areas.every(a => a.score === null && a.competition===null && a.transit===null)).toBe(true);
   expect(measureAreas(input, [...elements(), { type: 'node', id: 999, lat: 999, lon: 0 }]).complete).toBe(false);
   const areas = measureAreas(input, elements()).areas;
   expect(scoreAreas(areas.map((a, i) => i ? a : { ...a, complements: 0, transit: 0 }), true).every(a => a.score === null)).toBe(true);
@@ -58,21 +58,21 @@ describe('Location screening evidence and decisions', () => {
  });
  it('scores identical areas equally rather than inventing differences', () => {
   const a = measureAreas(input, elements()).areas[0];
-  expect(scoreAreas([a, { ...a, id: 'north' }] as AreaCandidate[], true).map(c => c.score)).toEqual([50, 50]);
+  expect(scoreAreas([a, { ...a, id: 'north' }] as AreaCandidate[], true).map(c => c.score)).toEqual([null, null]);
  });
  it('makes one map call and one bounded NVIDIA decision with validated source IDs', async () => {
-  const transport = vi.fn<typeof fetch>(async url => String(url).includes('nvidia') ? json({ choices: [{ message: { content: JSON.stringify({ recommendedId: 'east', priorities: ['complements', 'transit'], checks: ['rent', 'footfall', 'permits'] }) } }] }) : json({ elements: elements() }));
+  const transport = vi.fn<typeof fetch>(async url => String(url).includes('nvidia') ? json({ choices: [{ message: { content: JSON.stringify({ recommendedId: null, priorities: ['complements', 'transit'], checks: ['rent', 'footfall', 'permits'] }) } }] }) : json({ elements: elements() }));
   const report = await adviseLocation(input, { config, transport });
-  expect(report.status).toBe('provisional'); expect(report.recommendation?.recommendedId).toBe('east');
+  expect(report.status).toBe('provisional'); expect(report.recommendation?.recommendedId).toBeNull();
   expect(transport).toHaveBeenCalledTimes(2);
   expect(report.queryHash).toMatch(/^[a-f0-9]{64}$/);
   expect(report.candidates[0].sources[0].id).toBe('node/1');
  });
- it('keeps measured areas but rejects a model recommendation against the computed ranking', async () => {
+ it('keeps measured areas but rejects a model recommendation that invents a location recommendation', async () => {
   const transport: typeof fetch = async url => String(url).includes('nvidia') ? json({ choices: [{ message: { content: JSON.stringify({ recommendedId: 'current', priorities: ['competition'], checks: ['rent', 'footfall', 'permits'] }) } }] }) : json({ elements: elements() });
   const report = await adviseLocation(input, { config, transport });
   expect(report.status).toBe('agent-unavailable'); expect(report.recommendation).toBeNull();
-  expect(report.candidates).toHaveLength(3);
+  expect(report.candidates).toHaveLength(1);
  });
  it('does not call NVIDIA for insufficient map evidence; a provider failure never becomes zero counts', async () => {
   const transport = vi.fn<typeof fetch>(async () => json({ elements: [] }));
@@ -80,4 +80,15 @@ describe('Location screening evidence and decisions', () => {
   expect(transport).toHaveBeenCalledTimes(1);
   await expect(adviseLocation(input, { config, transport: async () => new Response('', { status: 503 }) })).rejects.toThrow();
  });
+ it('rejects altered scope, scores, partial aggregates and unsupported recommendations',async()=>{
+  const transport:typeof fetch=async url=>String(url).includes('nvidia')?json({choices:[{message:{content:JSON.stringify({recommendedId:null,priorities:['transit'],checks:['rent','footfall','permits']})}}]}):json({elements:elements()});
+  const report=await adviseLocation(input,{config,transport});
+  const copy=()=>structuredClone(report);
+  let bad=copy();bad.candidates[0].center.lat+=0.01;expect(locationAdviceSchema.safeParse(bad).success).toBe(false);
+  bad=copy();bad.candidates[0].score=99;expect(locationAdviceSchema.safeParse(bad).success).toBe(false);
+  bad=copy();bad.candidates[0].competition=null;expect(locationAdviceSchema.safeParse(bad).success).toBe(false);
+  bad=copy();bad.recommendation!.recommendedId='north';expect(locationAdviceSchema.safeParse(bad).success).toBe(false);
+  bad=copy();bad.candidates[0].sources.push(bad.candidates[0].sources[0]);expect(locationAdviceSchema.safeParse(bad).success).toBe(false);
+ });
+
 });

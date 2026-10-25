@@ -1,6 +1,5 @@
 import { z } from 'zod';
 import { canonicalize, positionSchema, requestSchema, type AnalysisRequest } from './contracts';
-import { inCity, quantize } from './cities';
 import type { CategoryId } from './categories';
 
 export const locationAdviceRequestSchema = z.object({ analysis: requestSchema, description: z.string().trim().max(500).default('') }).strict();
@@ -21,31 +20,35 @@ export const advisorDecisionSchema = z.object({
 }).strict();
 const candidateSchema = z.object({
  id: z.enum(['current', 'north', 'east', 'south', 'west']), label: z.string(), center: positionSchema,
- competition: z.number().int().nonnegative(), complements: z.number().int().nonnegative(), transit: z.number().int().nonnegative(),
+ competition: z.number().int().nonnegative().nullable(), complements: z.number().int().nonnegative().nullable(), transit: z.number().int().nonnegative().nullable(),
  score: z.number().min(0).max(100).nullable(),
  sources: z.array(z.object({ id: z.string().regex(/^(node|way|relation)\/\d+$/), name: z.string(), metric: z.enum(metricIds) }).strict()).max(12),
 }).strict();
 export type AreaCandidate = z.infer<typeof candidateSchema>;
 export const locationAdviceSchema = z.object({
- request: locationAdviceRequestSchema, candidates: z.array(candidateSchema).min(1).max(3),
+ request: locationAdviceRequestSchema, candidates: z.array(candidateSchema).length(1),
  status: z.enum(['provisional', 'insufficient', 'agent-unavailable']),
- recommendation: advisorDecisionSchema.nullable(), model: z.string(), fetchedAt: z.iso.datetime(), osmBaseTimestamp: z.string().nullable(),
- query: z.string(), queryHash: z.string(), complementCategories: z.array(z.string()), warnings: z.array(z.string()),
-}).strict();
+ recommendation: advisorDecisionSchema.nullable(), model: z.string(), fetchedAt: z.iso.datetime(), osmBaseTimestamp: z.iso.datetime({offset:true}).nullable(),
+ query: z.string(), queryHash: z.string().regex(/^[a-f0-9]{64}$/), complementCategories: z.array(z.string()), warnings: z.array(z.string()),
+}).strict().superRefine((r,ctx)=>{
+ const a=r.candidates[0]; if(!a)return;
+ const issue=(message:string)=>ctx.addIssue({code:'custom',message});
+ const metrics=[a.competition,a.complements,a.transit];
+ if(metrics.some(v=>v===null)&&metrics.some(v=>v!==null))issue('Partial counts must all be unavailable.');
+ if(new Set(a.sources.map(s=>s.id)).size!==a.sources.length)issue('Duplicate source example.');
+ for(const metric of metricIds)if(a[metric]!==null&&a.sources.filter(s=>s.metric===metric).length>a[metric]!)issue('Source examples exceed mapped count.');
+ if(r.recommendation&&(new Set(r.recommendation.priorities).size!==r.recommendation.priorities.length||new Set(r.recommendation.checks).size!==r.recommendation.checks.length))issue('Duplicate assessment priorities or checks.');
+ if(r.status==='provisional'&&metrics.reduce<number>((sum,v)=>sum+(v??0),0)<3)issue('Insufficient evidence for assessment.'); const expected=canonicalize(r.request.analysis).scope.center;
+ if(a.id!=='current'||a.center.lat!==expected.lat||a.center.lon!==expected.lon||a.score!==null||r.recommendation?.recommendedId)ctx.addIssue({code:'custom',message:'Assessment must describe the selected location without a ranking.'});
+ if((r.status==='provisional')!==Boolean(r.recommendation))ctx.addIssue({code:'custom',message:'Reviewed assessments require a decision.'});
+ if(r.status==='provisional'&&[a.competition,a.complements,a.transit].some(v=>v===null))ctx.addIssue({code:'custom',message:'Partial evidence cannot support an assessment.'});
+});
 export type LocationAdvice = z.infer<typeof locationAdviceSchema>;
 
-/** Sample alternatives, not an exhaustive city search. Equal radii; centers ~2 radii apart. */
+/** Only the user-selected location is assessed. Never generate shifted pins. */
 export function areaCenters(input: AnalysisRequest) {
- const r = canonicalize(input), { center, radiusMeters } = r.scope;
- const delta = radiusMeters * 2.1 / 111195;
- const options = [
-  { id: 'current' as const, label: 'Selected area', center },
-  { id: 'north' as const, label: 'Nearby north', center: quantize({ lat: center.lat + delta, lon: center.lon }) },
-  { id: 'east' as const, label: 'Nearby east', center: quantize({ lat: center.lat, lon: center.lon + delta / Math.cos(center.lat * Math.PI / 180) }) },
-  { id: 'south' as const, label: 'Nearby south', center: quantize({ lat: center.lat - delta, lon: center.lon }) },
-  { id: 'west' as const, label: 'Nearby west', center: quantize({ lat: center.lat, lon: center.lon - delta / Math.cos(center.lat * Math.PI / 180) }) },
- ];
- return options.filter(a => inCity(r.scope.cityId, a.center)).slice(0, 3);
+ const r=canonicalize(input);
+ return [{id:'current' as const,label:'Selected location',center:r.scope.center}];
 }
 /** These are hypotheses about complementary activity, not measured customer demand. */
 export function complementCategories(id: CategoryId): CategoryId[] {
@@ -56,12 +59,7 @@ export function complementCategories(id: CategoryId): CategoryId[] {
  if (['clinic', 'dentist', 'pharmacy'].includes(id)) return (['clinic', 'dentist', 'pharmacy', 'supermarket'] as CategoryId[]).filter(c => c !== id);
  return (['cafe', 'supermarket', 'gym', 'hairdresser'] as CategoryId[]).filter(c => c !== id);
 }
-/** Relative scores, with equal counts neutral. No ranking when an area has no activity signal. */
+/** A single location has no relative score or inferred suitability rating. */
 export function scoreAreas(areas: AreaCandidate[], complete: boolean): AreaCandidate[] {
- if (!complete || areas.length < 2 || areas.some(a => a.complements + a.transit === 0)) return areas.map(a => ({ ...a, score: null }));
- const normalized = (a: AreaCandidate, key: typeof metricIds[number]) => {
-  const values = areas.map(c => c[key]), lo = Math.min(...values), hi = Math.max(...values);
-  return hi === lo ? 0.5 : (a[key] - lo) / (hi - lo);
- };
- return areas.map(a => ({ ...a, score: Math.round(1000 * (0.45 * normalized(a, 'complements') + 0.35 * normalized(a, 'transit') + 0.2 * (1 - normalized(a, 'competition')))) / 10 }));
+ return areas.map(a=>({...a,score:null,...(!complete?{competition:null,complements:null,transit:null}:{})}));
 }

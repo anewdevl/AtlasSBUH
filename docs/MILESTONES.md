@@ -27,3 +27,7 @@ Add durable PostgreSQL storage only when shared analysis/history needs it; PostG
 ## Under a 20-hour budget
 
 Protect correctness, snapshots, and a rehearsed demo first. Cut speculative metrics before provenance or failure states. Local demo reliability is verified; deployment can be reconsidered later.
+
+## Current local wrap-up — 2026-10-24
+
+The latest teammate research pipeline is integrated with automatic business interpretation, shared context, address selection, expandable insights/evidence and mapped competitor details. The generated candidate-area experience is replaced by a selected-location assessment; a second location is chosen explicitly through Search and Compare. See [WRAP_UP.md](WRAP_UP.md) for the completed checklist, validation and live observations. Broader site discovery, official zoning datasets and additional infrastructure are deferred.

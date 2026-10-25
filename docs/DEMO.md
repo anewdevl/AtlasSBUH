@@ -1,12 +1,17 @@
-# Demo runbook
+# Local demo runbook
 
-1. Before the event, run `npm run snapshots` from a network with access to the provider. Confirm complete café, pharmacy, and supermarket captures for all four presets; inspect source links and exact evidence tags. Do not overwrite successful captures with test fixtures.
-2. Run typecheck, tests, production build, and browser smoke. Start the application.
-3. Show NYC → Café → 1 km → no adjacent categories. Analyze, inspect a source feature, show its tags and retrieval date, and explain unknown coverage. Select Pharmacy and Supermarket to demonstrate the newly reviewed business categories.
-4. Pin NYC, switch to London, keep the same category/radius/adjacent settings, and analyze. Show independent dates and counts. Explain that density is mapped features per circular km², not demand or a winner.
-5. Show Dubai and Singapore with the same exact presets. Saving and restoring keeps original retrieval metadata.
-6. With genuine snapshots present, rehearse fresh snapshot retrieval without upstream access. Separately use mocked tests to demonstrate partial and expired behavior.
+1. Start the verified build with `npm run start -- --hostname 127.0.0.1 --port 3000` (run `npm run build` after edits). Development is also available through `npm run dev`.
+2. Describe a neighborhood supermarket. Keep New York / 1 km / no adjacent categories for the prepared genuine snapshot scope. Show Find a location and choose an address result to demonstrate pin placement; return to the city preset before the fallback demonstration.
+3. Analyze. Business interpretation applies automatically. Inspect a competitor marker, source tags, original retrieval date and OSM link. Explain that mapped counts have unknown coverage. Save the analysis in this browser.
+4. Pin for comparison. Return to Search, select London with the same type, radius and adjacent settings, then analyze. Compare independent counts, dates and cache states without claiming a winner.
+5. Open Research. Nothing is generated until Generate insights is clicked. Show the short overview, practical next steps, three initial candidates, expandable supporting quotes and sources. A partial report may still contain supported findings; missing reviews/prices remain explicitly unknown.
+6. Click Assess this location for evidence around the chosen pin and relevant investigation checks. Explain that this checks mapped context; premises availability, rent, footfall and zoning are unverified.
+7. Demonstrate Light/Dark, map recenter and mobile controls as time permits.
 
 ## Backup
 
-Keep the built local application and genuine snapshots on the demo laptop. Tile outages leave the evidence list usable. If snapshots have expired and live retrieval is unavailable, show the explicit unavailable state and explain the limitation. Do not relabel stale data or show fake competitors. Without genuine snapshots, this backup is not ready.
+Genuine bundled snapshots cover café, bakery, bubble tea, pharmacy and supermarket at the four exact 1 km city presets with no adjacent categories. Fallback must match the exact scope and remain within its age window. Custom addresses/radii and other types may require live map retrieval. A successful research report can be kept open during the demo; research has no automatic offline fallback. Original dates are always preserved.
+
+Ignored `.atlas-local/live-research.json` contains the last real research diagnostic and `.atlas-local/demo-competitor.png` / `demo-comparison.png` provide genuine screenshots from the live browser rehearsal. These are backup artifacts, not automatic in-app substitute results. Synthetic test fixtures never serve as genuine demo data. Tile failures leave the evidence list usable. If providers fail without compatible data, show the unavailable state.
+
+Run `npx tsx scripts/rehearse-demo.ts` to repeat the live address search, supermarket analysis, evidence inspection, save and comparison journey. Live checks make real provider requests; automated Vitest/Playwright tests mock upstream data.

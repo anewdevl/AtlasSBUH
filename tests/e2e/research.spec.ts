@@ -1,5 +1,8 @@
+import { classify } from '../../src/lib/classify';
 import { test, expect } from '@playwright/test';
 import { stages, type ResearchRequest } from '../../src/lib/research-contracts';
+
+test.beforeEach(async({page})=>{await page.route('**/api/suggest',route=>{const matches=classify(route.request().postDataJSON().description).matches;return route.fulfill({json:{categoryId:matches.length===1?matches[0]:null,explanation:'Synthetic classification fixture.'}});});});
 
 test('research-only software flow exposes sources and clears when scope changes', async ({ page }) => {
   await page.route('https://tile.openstreetmap.org/**', route => route.abort());
@@ -13,8 +16,8 @@ test('research-only software flow exposes sources and clears when scope changes'
   });
   await page.goto('/');
   await page.getByRole('button', { name: 'Research', exact: true }).click();
-  await page.getByLabel('Business description', { exact: true }).fill('Software analytics company');
-  await page.getByRole('button', { name: 'Research this business' }).click();
+  await page.getByLabel('Business description', { exact: true }).fill('Software company offering analytics');
+  await page.getByRole('button', { name: 'Generate insights' }).click();
   const report = page.getByLabel('Research report', { exact: true });
   await expect(report.getByRole('heading', { name: 'Research report · partial' })).toBeVisible();
   await expect(report.getByText('The source describes analytics software.', { exact: false })).toBeVisible();
@@ -40,7 +43,7 @@ test('research errors are visible and do not disable OSM analysis controls', asy
   await page.route('https://tile.openstreetmap.org/**', route => route.abort());
   await page.route('**/api/research', route => route.fulfill({ status: 429, json: { error: 'Research capacity reached. Try again shortly.' } }));
   await page.goto('/'); await page.getByRole('button', { name: 'Research', exact: true }).click(); await page.getByLabel('Business description', { exact: true }).fill('Specialty coffee shop');
-  await page.getByRole('button', { name: 'Research this business' }).click();
+  await page.getByRole('button', { name: 'Generate insights' }).click();
   await expect(page.getByRole('region', { name: 'Business research' }).getByRole('alert')).toContainText('Research capacity reached');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Analyze this area' })).toBeEnabled();

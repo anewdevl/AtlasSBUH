@@ -1,7 +1,10 @@
+import { classify } from '../../src/lib/classify';
 import { test, expect } from '@playwright/test';
 import { shortlistBusinesses } from '../../src/lib/business-shortlist';
 import { stages } from '../../src/lib/research-contracts';
 import { result } from '../fixtures';
+
+test.beforeEach(async({page})=>{await page.route('**/api/suggest',route=>{const matches=classify(route.request().postDataJSON().description).matches;return route.fulfill({json:{categoryId:matches.length===1?matches[0]:null,explanation:'Synthetic classification fixture.'}});});});
 
 test('location search moves the center and recenter restores its viewport position', async ({ page }) => {
   await page.route('https://tile.openstreetmap.org/**', route => route.abort());
@@ -28,7 +31,7 @@ test('research presents the local shortlist when web evidence is unavailable', a
     await route.fulfill({ contentType: 'application/x-ndjson', body: JSON.stringify({ type: 'report', report }) + '\n' });
   });
   await page.goto('/'); await page.getByRole('button', { name: 'Research', exact: true }).click();
-  await page.getByLabel('Business description', { exact: true }).fill('Coffee shop'); await page.getByRole('button', { name: 'Research this business' }).click();
+  await page.getByLabel('Business description', { exact: true }).fill('Coffee shop'); await page.getByRole('button', { name: 'Generate insights' }).click();
   const shortlist = page.getByRole('region', { name: 'Ranked local shortlist' });
   await expect(shortlist).toContainText('Synthetic test café'); await expect(shortlist).toContainText('80% relevance / 20% proximity');
   await expect(shortlist.getByRole('link', { name: 'Map evidence' })).toHaveAttribute('href', 'https://www.openstreetmap.org/node/123');
