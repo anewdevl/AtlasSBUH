@@ -51,3 +51,10 @@ main{height:100%;display:grid;grid-template-columns:340px minmax(0,1fr);outline:
 .assessment-metrics{border:1px solid var(--line);padding:12px;background:var(--bg)}.assessment-metrics>div{display:flex;justify-content:space-between;gap:12px;margin:10px 0;font-size:12px}.assessment-metrics dd{margin:0;color:var(--accent)}
 .research-panel+.location-advisor{border-top:1px solid var(--line);margin-top:10px;padding-top:25px}.research-panel>form>label{margin:8px 0 0}.research-panel summary,.competitor-detail summary{line-height:1.6}
 .competitor-detail details{font-size:11px;margin:12px 0;line-height:1.6}.competitor-detail blockquote{margin:10px 0;padding-left:10px;border-left:2px solid var(--accent)}
+
+/* Marker clusters */
+.atlas-cluster{background:transparent;border:0}
+.atlas-cluster span{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;background:var(--accent);color:var(--accent-ink);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--accent),var(--shadow);font:700 13px/1 Arial,Helvetica,sans-serif;transition:transform .12s}
+.atlas-cluster:hover span{transform:scale(1.08)}
+.atlas-cluster.adjacent span{background:var(--violet);box-shadow:0 0 0 2px var(--violet),var(--shadow)}
+.atlas-cluster-large span{font-size:15px}
