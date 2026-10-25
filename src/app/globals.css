@@ -58,3 +58,8 @@ main{height:100%;display:grid;grid-template-columns:340px minmax(0,1fr);outline:
 .atlas-cluster:hover span{transform:scale(1.08)}
 .atlas-cluster.adjacent span{background:var(--violet);box-shadow:0 0 0 2px var(--violet),var(--shadow)}
 .atlas-cluster-large span{font-size:15px}
+
+/* Three-tab navigation fits on one row */
+.workspace-nav.compact{flex-wrap:nowrap}
+.workspace-nav.compact button{font-size:13px}
+.data-notes{margin:10px 0}.data-notes summary{cursor:pointer;color:var(--muted);font-size:12px}.data-notes p{margin:6px 0}

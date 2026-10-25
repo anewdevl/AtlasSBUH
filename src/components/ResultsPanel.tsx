@@ -8,11 +8,11 @@ export default function ResultsPanel({result,onPin,onSave,selectedId,onSelect,co
  const p=result.provenance;
  const selectedRow=useRef<HTMLButtonElement>(null);
  useEffect(()=>{selectedRow.current?.scrollIntoView({block:'nearest'});},[selectedId]);
- return <section className="results" aria-label="Analysis results"><div className="section-heading"><div><div className="eyebrow">02 / MAPPED EVIDENCE</div><h2>{categories[result.request.categoryId].label} · {cities[result.request.scope.cityId].label}</h2></div><span className={`badge ${result.status==='partial'?'warning':''}`}>{result.status==='complete'?'Complete retrieval':'Partial retrieval'}</span></div>
-  <div className="metrics"><div><strong>{result.directMappedCount??'—'}</strong><span>Direct mapped features</span></div><div><strong>{result.adjacentMappedCount??'—'}</strong><span>Adjacent mapped features</span></div><div><strong>{result.directMappedDensity?.toFixed(1)??'—'}</strong><span>Direct features / km²</span></div></div>
+ return <section className="results" aria-label="Analysis results"><div className="section-heading"><div><div className="eyebrow">COMPETITORS</div><h2>{categories[result.request.categoryId].label} · {cities[result.request.scope.cityId].label}</h2></div><span className={`badge ${result.status==='partial'?'warning':''}`}>{result.status==='complete'?'Complete':'Partial data'}</span></div>
+  <div className="metrics"><div><strong>{result.directMappedCount??'—'}</strong><span>Direct competitors</span></div><div><strong>{result.adjacentMappedCount??'—'}</strong><span>Adjacent businesses</span></div><div><strong>{result.directMappedDensity?.toFixed(1)??'—'}</strong><span>Direct per km²</span></div></div>
   <div className="result-actions"><button className="secondary" onClick={onPin}>Pin for comparison</button><button className="secondary" onClick={onSave}>Save in this browser</button></div>
-  <p className="micro">Retrieved {new Date(p.fetchedAt).toLocaleString()} · {p.cacheState} · Coverage unknown</p>
-  {result.warnings.map(w=><p className="notice" key={w}>{w}</p>)}
+  <p className="micro">Source: OpenStreetMap · retrieved {new Date(p.fetchedAt).toLocaleString()}</p>
+  {result.warnings.length>0&&(result.status==='partial'?result.warnings.map(w=><p className="notice" key={w}>{w}</p>):<details className="data-notes"><summary>Data notes ({result.warnings.length})</summary>{result.warnings.map(w=><p className="micro" key={w}>{w}</p>)}</details>)}
   {result.competitors.length===0&&<div className="empty-result">{result.status==='complete'?'No matching mapped features in this exact area. This is a valid empty result, not evidence that no businesses exist.':'No usable features in this partial result. Counts are unavailable.'}</div>}
   {result.competitors.length>0&&<div className="competitor-filters">
    <label htmlFor="competitor-search">Search competitors</label><input id="competitor-search" type="search" value={filters.query} placeholder="Search by business name…" onChange={e=>onFilters({...filters,query:e.target.value})}/>
