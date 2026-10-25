@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { matchingEvidence } from '../lib/categories';
 import { distance } from '../lib/cities';
+import { extractDetails } from '../lib/details';
 import { canonicalize, positionSchema, responseSchema, type AnalysisRequest, type AnalysisResponse } from '../lib/contracts';
 import { ENDPOINT, MAX_RECORDS } from './overpass';
 const elementSchema=z.object({type:z.enum(['node','way','relation']),id:z.number().int().positive().max(Number.MAX_SAFE_INTEGER),lat:z.number().optional(),lon:z.number().optional(),center:positionSchema.optional(),tags:z.record(z.string(),z.string()).optional()}).passthrough();
@@ -16,8 +17,8 @@ export function normalize(input:AnalysisRequest, raw:{elements:unknown[];fetched
   if(!categoryId){excluded++;continue;}
   const p=positionSchema.safeParse(e.type==='node'?{lat:e.lat,lon:e.lon}:e.center);
   if(!p.success){excluded++;invalid++;continue;}
-  const d=distance(request.scope.center,p.data);if(d>request.scope.radiusMeters){excluded++;continue;}
-  competitors.push({sourceType:e.type,sourceId:e.id,sourceUrl:`https://www.openstreetmap.org/${key}`,name:tags.name?.trim().slice(0,500)||null,coordinates:p.data,positionKind:e.type==='node'?'node':'representative-center',categoryId,relation:categoryId===request.categoryId?'direct':'adjacent',evidence:matchingEvidence(categoryId,tags)!,distanceMeters:d});
+  const details=extractDetails(tags);const d=distance(request.scope.center,p.data);if(d>request.scope.radiusMeters){excluded++;continue;}
+  competitors.push({sourceType:e.type,sourceId:e.id,sourceUrl:`https://www.openstreetmap.org/${key}`,name:tags.name?.trim().slice(0,500)||null,coordinates:p.data,positionKind:e.type==='node'?'node':'representative-center',categoryId,relation:categoryId===request.categoryId?'direct':'adjacent',evidence:matchingEvidence(categoryId,tags)!,distanceMeters:d,...(details?{details}:{})});
  }
  competitors.sort((a,b)=>a.distanceMeters-b.distanceMeters || a.sourceId-b.sourceId);
  const partial=truncated||invalid>0,direct=competitors.filter(c=>c.relation==='direct').length;

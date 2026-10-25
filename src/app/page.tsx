@@ -68,7 +68,7 @@ export default function Home(){
     <div className="map-caption"><span className="eyebrow"><i className="status-dot"/> AREA EXPLORER</span><strong>{cities[request.scope.cityId].label}</strong><span>{request.scope.center.lat.toFixed(4)}, {request.scope.center.lon.toFixed(4)} · {request.scope.radiusMeters/1000} km radius</span></div>
     <button className="theme-toggle" onClick={toggleTheme} aria-label={`Switch to ${theme==='dark'?'light':'dark'} theme`} title={`Switch to ${theme==='dark'?'light':'dark'} theme`}><span aria-hidden="true">{theme==='dark'?'☀':'☾'}</span><span>{theme==='dark'?'Light':'Dark'}</span></button>
     <div className="map-bottom"><div className="map-legend"><span><i className="direct-dot"/>Direct</span><span><i className="adjacent-dot"/>Adjacent</span><span>◌ Search radius</span></div><p>Click map to set center · Select a point to inspect</p></div>
-    {selected&&currentResult&&<CompetitorDetail competitor={selected} provenance={currentResult.provenance} onClose={()=>setSelectedId(null)}/>}
+    {selected&&currentResult&&<CompetitorDetail competitor={selected} all={currentResult.competitors} provenance={currentResult.provenance} onClose={()=>setSelectedId(null)}/>}
    </section>
   </main>
  </div>;

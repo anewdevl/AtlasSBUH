@@ -25,7 +25,7 @@ test('bakery and bubble tea categories render and analyze with their reviewed ev
  await page.getByRole('button',{name:'Search',exact:true}).click();await page.getByLabel('Confirmed category').selectOption('bubble-tea');await expect(page.locator('fieldset').nth(1).getByText('Café',{exact:true})).toBeVisible();await page.getByRole('button',{name:'Analyze this area'}).click();await expect(page.getByRole('heading',{name:'Bubble tea · New York'})).toBeVisible();await expect(page.locator('.feature-name').filter({hasText:'Synthetic bubble tea fixture'})).toBeVisible();
 });
 
-test('NVIDIA category helper applies a type automatically and preserves unsupported descriptions',async({page})=>{
+test('AI category helper applies a type automatically and preserves unsupported descriptions',async({page})=>{
  await page.route('**/api/suggest',async route=>{const {description}=route.request().postDataJSON();await route.fulfill({json:description.includes('online-only')?{categoryId:null,explanation:'An online-only venture has no mapped storefront type.'}:{categoryId:'cafe',explanation:'A neighborhood coffee shop maps to café.'}});});
  await page.goto('/');await page.getByLabel('What are you opening?').fill('A neighborhood coffee shop');await page.getByRole('button',{name:'Suggest with AI'}).click();await expect(page.locator('.suggestion[role="status"]')).toContainText('Selected by AI: Café');await expect(page.getByLabel('Confirmed category')).toHaveValue('cafe');
  await page.getByLabel('What are you opening?').fill('An online-only venture');await page.getByRole('button',{name:'Suggest with AI'}).click();await expect(page.locator('.suggestion[role="status"]')).toContainText('Outside current mapped categories');

@@ -191,8 +191,10 @@ export default function MapCanvas({ center, radius, competitors, selectedId, sel
       const meta = document.createElement('span');
       name.textContent = c.name ?? 'Unnamed mapped feature';
       meta.textContent = `${categories[c.categoryId].label} · ${c.relation} · ${Math.round(c.distanceMeters)} m`;
+      const hint = document.createElement('em');
+      hint.textContent = 'Click for details';
       content.className = 'marker-preview';
-      content.append(name, meta);
+      content.append(name, meta, hint);
       const color = c.relation === 'direct' ? 'var(--accent)' : 'var(--violet)';
       const marker = L.circleMarker([c.coordinates.lat, c.coordinates.lon], {
         radius: 6, color: 'var(--paper)', weight: 1.5, fillColor: color, fillOpacity: 1,

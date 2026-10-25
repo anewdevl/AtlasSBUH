@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { categoryIds, categories, matchingEvidence, REGISTRY_VERSION } from './categories';
 import { distance, inCity, quantize } from './cities';
 import { OVERPASS_ENDPOINTS } from './providers';
+import { competitorDetailsSchema } from './details';
 export const SCHEMA_VERSION = '1';
 export const positionSchema = z.object({ lat: z.number().finite().min(-90).max(90), lon: z.number().finite().min(-180).max(180) }).strict();
 export const requestShape = z.object({
@@ -29,6 +30,7 @@ export const competitorSchema = z.object({
  sourceType:z.enum(['node','way','relation']),sourceId:z.number().int().positive().max(Number.MAX_SAFE_INTEGER),sourceUrl:z.url(),
  name:z.string().min(1).max(500).nullable(),coordinates:positionSchema,positionKind:z.enum(['node','representative-center']),
  categoryId:z.enum(categoryIds),relation:z.enum(['direct','adjacent']),evidence:z.record(z.string(),z.string()),distanceMeters:z.number().finite().nonnegative(),
+ details:competitorDetailsSchema.optional(),
 }).strict();
 export const responseSchema = z.object({
  request:requestSchema,status:z.enum(['complete','partial']),truncated:z.boolean(),competitors:z.array(competitorSchema).max(5000),
