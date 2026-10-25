@@ -244,11 +244,16 @@ export default function MapCanvas({ center, radius, competitors, selectedId, sel
     }
     const marker = selectedId ? markers.current.get(selectedId) : undefined;
     if (!marker || !m || !clusters) return;
-    clusters.zoomToShowLayer(marker, () => {
+    // These are CircleMarkers, not icon-based L.Markers. MarkerCluster's
+    // zoomToShowLayer assumes an _icon and can throw after a filter rebuild.
+    if(!marker.getElement()?.isConnected){
+      m.setView(marker.getLatLng(),Math.max(m.getZoom(),UNCLUSTER_ZOOM),{animate:false});
+    }
+    if(marker.getElement()?.isConnected){
       marker.bringToFront();
-      marker.getElement()?.setAttribute('aria-pressed', 'true');
-      m.panInside(marker.getLatLng(), { ...padding(true), animate: false });
-    });
+      marker.getElement()?.setAttribute('aria-pressed','true');
+      m.panInside(marker.getLatLng(),{...padding(true),animate:false});
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedId, selectionTick, competitors]);
 

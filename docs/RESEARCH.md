@@ -55,3 +55,9 @@ Libraries load only when exporting. PDF fonts are bundled under `public/fonts/` 
 Every Competitors detail and every Research shortlist card (including expanded results) offers a mini map in the same workspace. Named source observations also support a name/city preview. Unnamed mapped features use coordinates. `/map-preview` accepts any business or address; there is no fixed sample business or name-based identity assertion.
 
 Previews use Google's public embeddable map search output, which currently redirects to a Google-hosted embed. No API key or Places API request is required. Search previews are explicitly unverified branch matches; the full Google Maps link remains available if embedding is blocked or unavailable. The map covers the OSM workspace while open and does not change counts, research or exports.
+
+## Practical opening judgments
+
+Research treats Recommended / Not recommended as a preliminary competitive-positioning opinion under disclosed unknowns. Missing rent, demand, footfall or branch confirmation does not automatically require abstention. The UI and exports show Recommended or Not recommended with a short reason. When product evidence is missing or judgment review fails, they show Not recommended with an explicit hold-off explanation; this fallback does not assert that the location is unsuitable. The underlying report preserves the missing judgment.
+
+Concrete product descriptions tagged as competitor identity are reclassified as offering evidence after checking their text; address-only brand mentions are not. Judgment and verification use NVIDIA-hosted `openai/gpt-oss-20b` by default, while retrieval/extraction retain their configured model. `ATLAS_RESEARCH_JUDGMENT_MODEL` may select the existing Lightning alternative. Known business names, source quotes and the user description constrain the impact selection. One factual correction and recheck is allowed within the original HTTP-call/time budget; no retry loop is used.

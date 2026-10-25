@@ -13,11 +13,11 @@ const url = 'https://fixture.example/menu';
 const sourceId = `web-${createHash('sha256').update(url).digest('hex').slice(0, 16)}`;
 const quote = 'Synthetic Coffee lists espresso at $4 on its New York menu.';
 const finding: Finding = { id: 'f1', claim: 'The retrieved menu lists espresso at $4.', kind: 'price', business: 'Synthetic Coffee', relation: 'direct', evidence: [{ sourceId, quote }], geographicRelevance: 'New York address; exact radius membership unverified.', limitations: ['Menu date unknown; confirm price locally.'], reviewSampleSize: null, reviewDates: null };
-const impact={id:'impact1',business:'Synthetic Coffee',effect:'competition',yourOffering:'coffee',competitorOffering:'espresso',findingIds:['f1']};
+const impact={id:'impact1',business:'Synthetic Coffee',effect:'competition',yourOffering:request.description,competitorOffering:quote,findingIds:['f1']};
 const assessment={verdict:'recommended',reasoning:'Worth investigating with a differentiated coffee offering, given the sourced competitor offering.',findingIds:['f1'],risks:['Rent and demand are unknown.']};
 const config = (): Config => researchConfig({ NVIDIA_API_KEY: 'synthetic-nvidia-secret', TAVILY_API_KEY: 'synthetic-tavily-secret' });
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status });
-function transport(options: { findings?: Finding[]; reject?: boolean; verifyFails?: boolean; truncated?: boolean; echoSecret?: boolean; targetedFail?: boolean; excerpt?: string; writerInvalid?: boolean; pageFails?: boolean; qualificationBusiness?: string; sourceTitle?: string; impacts?:unknown[]; assessment?:unknown; assessmentRejected?:boolean } = {}) {
+function transport(options: { findings?: Finding[]; reject?: boolean; verifyFails?: boolean; truncated?: boolean; echoSecret?: boolean; targetedFail?: boolean; excerpt?: string; writerInvalid?: boolean; pageFails?: boolean; qualificationBusiness?: string; sourceTitle?: string; impacts?:unknown[]; assessment?:unknown; assessmentRejected?:boolean; repair?:boolean } = {}) {
   let searches = 0;
   return vi.fn<typeof fetch>(async (input, init) => {
     const endpoint = String(input), body = JSON.parse(String(init?.body));
@@ -31,6 +31,8 @@ function transport(options: { findings?: Finding[]; reject?: boolean; verifyFail
     else if (system.includes('competitor discovery agent')) result = { businesses: [{ name: 'Synthetic Coffee', sourceId, quoteId: `${sourceId}-q0` }] };
     else if (system.includes('extraction agent')) result = { findings: (options.findings ?? [finding]).map(f => ({ sourceId: f.evidence[0].sourceId, quoteId: f.evidence[0].quote === quote ? `${f.evidence[0].sourceId}-q0` : 'invented-quote-id', business: f.business, kind: f.kind, relation: f.relation })), unknowns: [options.echoSecret ? config().nvidiaKey! : 'Sample and dates are unknown.'] };
     else if (system.includes('business impact assessment agent')) result = { impacts: options.impacts??[impact], assessment:options.assessment??assessment };
+    else if(system.includes('revise opening judgment agent')) result=options.repair?{...assessment,reasoning:'Worth exploring with differentiation; broad competition remains a risk.'}:{invalid:true};
+    else if(system.includes('opening judgment fact check agent')) result={assessmentSupported:options.repair===true,reason:'Conditional opinion grounded in offering evidence.'};
     else if (system.includes('report preparation agent')) result = { findingIds: [options.writerInvalid ? 'invented' : 'f1'], insightIds: ['i1'] };
     else {
       if (options.verifyFails) return json({}, 503);
@@ -47,6 +49,7 @@ describe('bounded evidence research', () => {
     const report = await research({ ...request, osmRequest, localOnly: true }, { config: config(), transport: fetch, osmLookup: async () => cached });
     expect(report.shortlist).toHaveLength(1); expect(report.shortlist[0]).toMatchObject({ name: 'Synthetic Coffee', distanceMeters: 0 });
     expect(report.findings).toHaveLength(1); expect(report.agentRuns.map(r => r.role)).toEqual(['researcher', 'extractor', 'analyst', 'verifier']);
+    expect(report.agentRuns.find(r=>r.role==='analyst')?.model).toBe('openai/gpt-oss-20b');expect(report.agentRuns.find(r=>r.role==='researcher')?.model).toBe(config().model);
     const searches = fetch.mock.calls.filter(([url]) => String(url).endsWith('/search'));
     expect(searches).toHaveLength(1); expect(JSON.parse(String(searches[0][1]?.body)).query.toLowerCase()).toContain('"synthetic coffee"');
   });
@@ -67,7 +70,7 @@ describe('bounded evidence research', () => {
     expect(query).toContain('Clothing shop'); expect(query).not.toContain('menu');
   });
   it('does not turn identity-only observations into business opportunity insights', async () => {
-    const report=await research(request,{config:config(),transport:transport({findings:[{...finding,kind:'competitor'}]})});
+    const report=await research(request,{config:config(),transport:transport({findings:[{...finding,kind:'competitor'}],excerpt:'Synthetic Coffee is located at 123 Broadway, New York.'})});
     expect(report.findings).toHaveLength(1); expect(report.insights).toEqual([]);
     expect(report.agentRuns.some(r=>r.role==='analyst')).toBe(false);
   });
@@ -88,7 +91,7 @@ describe('bounded evidence research', () => {
   });
   it('allows the LLM to recommend against opening rather than forcing one verdict',async()=>{
     const report=await research(request,{config:config(),transport:transport({assessment:{...assessment,verdict:'not-recommended',reasoning:'The sourced overlap makes differentiation uncertain for this proposal.'}})});
-    expect(report.assessment?.verdict).toBe('not-recommended');expect(report.impacts[0].competitorOffering).toBe('espresso');
+    expect(report.assessment?.verdict).toBe('not-recommended');expect(report.impacts[0].competitorOffering).toBe(quote);
   });
   it('rejects invented competitor offerings even when the cited finding ID exists',async()=>{
     const report=await research(request,{config:config(),transport:transport({impacts:[{...impact,competitorOffering:'desi bridal clothing'}]})});
@@ -103,6 +106,14 @@ describe('bounded evidence research', () => {
   it('withholds a verdict rejected by evidence review while preserving supported business comparisons',async()=>{
     const report=await research(request,{config:config(),transport:transport({assessmentRejected:true})});
     expect(report.assessment).toBeNull();expect(report.impacts).toHaveLength(1);expect(report.findings).toHaveLength(1);expect(report.status).toBe('partial');
+  });
+  it('uses genuine offering text even when the extractor labels it as competitor identity',async()=>{
+    const report=await research(request,{config:config(),transport:transport({findings:[{...finding,kind:'competitor'}]})});
+    expect(report.findings[0].kind).toBe('offering');expect(report.impacts).toHaveLength(1);expect(report.assessment?.verdict).toBe('recommended');
+  });
+  it('repairs a rejected factual premise once and checks the revised judgment before displaying it',async()=>{
+    const report=await research(request,{config:config(),transport:transport({assessmentRejected:true,repair:true})});
+    expect(report.assessment?.verdict).toBe('recommended');expect(report.assessment?.reasoning).toContain('Worth exploring');expect(report.impacts).toHaveLength(1);expect(report.agentRuns.filter(r=>r.task==='revise opening judgment')).toHaveLength(1);expect(report.agentRuns.some(r=>r.task==='opening judgment fact check')).toBe(true);
   });
   it('does not substitute city-wide web results when local candidates are unavailable', async () => {
     const osmRequest: AnalysisRequest = { schemaVersion: '1', registryVersion: '2', scope: request.scope, categoryId: 'cafe', adjacentCategoryIds: [] };
@@ -181,7 +192,7 @@ describe('bounded evidence research', () => {
     try {
       const upstream = transport();
       const fetch = vi.fn<typeof globalThis.fetch>((input, init) => {
-        if (String(input).includes('nvidia.com') && String(init?.body).includes('web and review extraction agent')) vi.advanceTimersByTime(60000);
+        if (String(input).includes('nvidia.com') && String(init?.body).includes('web and review extraction agent')) vi.advanceTimersByTime(85000);
         return upstream(input, init);
       });
       const report = await research(request, { config: config(), transport: fetch });

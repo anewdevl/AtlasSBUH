@@ -1,7 +1,7 @@
 import {reportSchema,type ResearchReport} from './research-contracts';
 import {cities} from './cities';
 import {categories} from './categories';
-import {impactExplanation} from './business-impact';
+import {impactExplanation,openingDecision} from './business-impact';
 export type ExportSection={title:string;paragraphs:string[]};
 export type ExportBrief={report:ResearchReport;locationLabel:string;scope:string;date:string;sections:ExportSection[];slides:ExportSection[]};
 export const exportLimits='Mapped coverage is unknown. Rent, footfall, customer demand, zoning and profitability have not been established. Any opening verdict is a provisional LLM judgment, not an established business outcome.';
@@ -11,8 +11,8 @@ export function buildExportBrief(raw:unknown,locationLabel:string):ExportBrief{
  const date=new Date(report.startedAt).toISOString();
  const refs=(ids:string[])=>[...new Set(ids)].map(id=>`S${report.evidence.findIndex(e=>e.id===id)+1}`).join(', ');
  const findingRefs=(ids:string[])=>refs(report.findings.filter(f=>ids.includes(f.id)).flatMap(f=>f.evidence.map(e=>e.sourceId)));
- const verdict=report.assessment?.verdict==='recommended'?'Recommended':report.assessment?.verdict==='not-recommended'?'Not recommended':'Insufficient evidence';
- const summary=[`LLM opening assessment: ${verdict}`,report.assessment?.reasoning??'Insufficient supported business-effect evidence.',...(report.assessment?.risks??[]).map(r=>`Risk/unknown: ${r}`),...(report.assessment?[`Assessment sources: ${findingRefs(report.assessment.findingIds)}`]:[]),`Business: ${r.description}`,`Selected location: ${locationLabel.trim().slice(0,1000)||'Selected map pin'}`,scope,`Research started: ${date}`,`Run status: ${report.status}. This describes the bounded run, not exhaustive market coverage.`,`${report.shortlist.length} named mapped features | ${report.findings.length} supported observations | ${report.insights.length} proposed next steps | ${report.evidence.length} retrieved sources`,exportLimits];
+ const decision=openingDecision(report.assessment),verdict=decision.label;
+ const summary=[`Location recommendation: ${verdict}`,decision.reasoning,...(report.assessment?.risks??[]).map(r=>`Risk/unknown: ${r}`),...(report.assessment?[`Assessment sources: ${findingRefs(report.assessment.findingIds)}`]:[]),`Business: ${r.description}`,`Selected location: ${locationLabel.trim().slice(0,1000)||'Selected map pin'}`,scope,`Research started: ${date}`,`Run status: ${report.status}. This describes the bounded run, not exhaustive market coverage.`,`${report.shortlist.length} named mapped features | ${report.findings.length} supported observations | ${report.insights.length} proposed next steps | ${report.evidence.length} retrieved sources`,exportLimits];
  const context=report.osmContext?[`Mapped context retrieved: ${report.osmContext.fetchedAt} | ${report.osmContext.status}`,`Mapped category features (specialty unverified): ${report.osmContext.directMappedCount??'Unavailable'} | Adjacent mapped features: ${report.osmContext.adjacentMappedCount??'Unavailable'}`]:['No separate aggregate OSM context is available in this report.'];
  const shortlist=report.shortlist.slice(0,10).map((b,i)=>`${i+1}. ${b.name} | ${categories[b.categoryId].label} | ${Math.round(b.distanceMeters)} m straight-line distance\n${b.matchReason}\n${b.positionKind==='representative-center'?'Representative mapped center; entrance unverified.':'Mapped point; entrance unverified.'}\n${b.sourceUrl}`);
  const observations=report.findings.flatMap((f,i)=>[
@@ -38,7 +38,7 @@ export function buildExportBrief(raw:unknown,locationLabel:string):ExportBrief{
  ];
  const excerpt=(s:string,max=240)=>s.length>max?`${s.slice(0,max).trimEnd()}… [excerpt; full text in appendix]`:s;
  const slides:ExportSection[]=[
-  {title:'Business location brief',paragraphs:[r.description,scope,`Research started: ${date}`,`Run status: ${report.status}`, `LLM assessment: ${verdict}`,report.assessment?.reasoning??'Insufficient evidence to assess competitive effects.']},
+  {title:'Business location brief',paragraphs:[r.description,scope,`Research started: ${date}`,`Run status: ${report.status}`, `Location recommendation: ${verdict}`,decision.reasoning]},
   {title:'Evidence overview',paragraphs:[`${report.shortlist.length} named mapped features`,`${report.findings.length} supported observations from ${report.evidence.length} retrieved sources`,`${report.insights.length} proposed next steps`,...(report.osmContext?[`OSM: ${report.osmContext.status}; ${report.osmContext.directMappedCount??'Unavailable'} direct / ${report.osmContext.adjacentMappedCount??'Unavailable'} adjacent. Retrieved ${report.osmContext.fetchedAt}`]:['No separate aggregate OSM context.']),'Coverage is unknown; a completed run is not a complete market census.']},
   {title:'Nearby mapped businesses',paragraphs:report.shortlist.length?report.shortlist.slice(0,3).map(b=>`${excerpt(b.name,120)} | ${categories[b.categoryId].label} | ${Math.round(b.distanceMeters)} m\nMapped feature; exact web branch identity unconfirmed.`):['No named mapped shortlist is available. This does not prove there are no competitors.']},
   {title:'Supported observations',paragraphs:report.findings.length?[...report.findings.slice(0,3).map(f=>`${excerpt(f.claim,160)} [${refs(f.evidence.map(e=>e.sourceId))}]`),'Web name matches may refer to another branch or the whole brand. Full findings and limitations are in the appendix.']:['No verified findings available. Source availability and geographic support remain uncertain.']},

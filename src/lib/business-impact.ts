@@ -24,8 +24,14 @@ export function impactExplanation(i:BusinessImpact,request:ResearchRequest){
 /** A judgment may be subjective; new measurable facts cannot be introduced to justify it. */
 export function assessmentHasUnsupportedFacts(a:BusinessAssessment,findings:Finding[]){
  const support=a.findingIds.flatMap(id=>findings.find(f=>f.id===id)?.evidence.map(e=>e.quote)??[]).join(' ');
- const narrative=[a.reasoning,...a.risks].join(' ');
+ const narrative=a.reasoning;
  const numbers=narrative.match(/\d+(?:[.,]\d+)?/g)??[];
  if(numbers.some(n=>!support.includes(n)))return true;
  return /\b(?:guaranteed|proven demand|high demand|strong demand|high footfall|high foot traffic|only (?:one|two|three) (?:nearby |local )?competitors?|no (?:other |nearby |local )?(?:competitors|cafes|cafés)|low rent|affordable rent|underserved market|will succeed|will be profitable|will increase sales)\b/i.test(narrative);
+}
+
+/** Missing or rejected judgments mean hold off, not a claim that the site is unsuitable. */
+export function openingDecision(assessment:BusinessAssessment|null|undefined){
+ const supported=assessment?.verdict==='recommended'||assessment?.verdict==='not-recommended';
+ return {verdict:assessment?.verdict==='recommended'?'recommended':'not-recommended',label:assessment?.verdict==='recommended'?'Recommended':'Not recommended',reasoning:supported?assessment.reasoning:'Hold off until more evidence is available. This research could not support a location judgment.',basis:supported?'AI recommendation':'Hold-off recommendation'};
 }

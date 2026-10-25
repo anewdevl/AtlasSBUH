@@ -12,7 +12,7 @@ function report(){return {request:{description:'A café serving breakfast',scope
 describe('Report exports',()=>{
  it('uses existing evidence, caveats, status and original dates without creating a recommendation',()=>{
   const brief=buildExportBrief(report(),'Selected map pin'),text=JSON.stringify(brief.sections);
-  expect(text).toContain(quote);expect(text).toContain('2026-10-24T19:00:00.000Z');expect(text).toContain('Exact branch unconfirmed.');expect(text).toContain('Run status: partial');expect(text).toContain('https://fixture.example/menu');expect(text).toContain('Supporting sources: S1');expect(brief.slides).toHaveLength(6);expect(text).not.toContain('Recommended');expect(text).toContain('LLM opening assessment: Insufficient evidence');expect(text).not.toContain('80%');
+  expect(text).toContain(quote);expect(text).toContain('2026-10-24T19:00:00.000Z');expect(text).toContain('Exact branch unconfirmed.');expect(text).toContain('Run status: partial');expect(text).toContain('https://fixture.example/menu');expect(text).toContain('Supporting sources: S1');expect(brief.slides).toHaveLength(6);expect(text).not.toContain('Recommended');expect(text).toContain('Location recommendation: Not recommended');expect(text).not.toContain('80%');
   const invalid=report();invalid.findings[0].evidence[0].sourceId='invented';expect(()=>buildExportBrief(invalid,'Pin')).toThrow();
  });
  it('preserves long text and URLs while wrapping, including single long tokens',()=>{
@@ -27,7 +27,7 @@ describe('Report exports',()=>{
  it('generates editable slides and notes preserving citations, dates and uncertainty',async()=>{
   const brief=buildExportBrief(report(),'Washington Square'),bytes=await createReportDeck(brief),zip=await JSZip.loadAsync(bytes);
   const slides=Object.keys(zip.files).filter(p=>/^ppt\/slides\/slide\d+\.xml$/.test(p));expect(slides.length).toBeGreaterThanOrEqual(11);
-  const xml=(await Promise.all(slides.map(p=>zip.file(p)!.async('string')))).join('');expect(xml).toContain('partial');expect(xml).toContain('Sources and attribution');expect(xml).toContain('LLM assessment: Insufficient evidence');
+  const xml=(await Promise.all(slides.map(p=>zip.file(p)!.async('string')))).join('');expect(xml).toContain('partial');expect(xml).toContain('Sources and attribution');expect(xml).toContain('Location recommendation: Not recommended');
   const notes=(await Promise.all(Object.keys(zip.files).filter(p=>/^ppt\/notesSlides\/notesSlide\d+\.xml$/.test(p)).map(p=>zip.file(p)!.async('string')))).join('');expect(notes).toContain(quote);expect(notes).toContain('https://fixture.example/menu');expect(notes).toContain('2026-10-24T19:00:00.000Z');expect(notes).toContain('Demand is unmeasured.');
  },15000);
 });

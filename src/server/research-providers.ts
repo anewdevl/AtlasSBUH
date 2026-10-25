@@ -11,6 +11,7 @@ export function limit(value: string | undefined, fallback: number, max: number) 
 export function researchConfig(env: Record<string, string | undefined> = process.env) {
   return {
     nvidiaKey: env.NVIDIA_API_KEY, tavilyKey: env.TAVILY_API_KEY,
+    judgmentModel: env.ATLAS_RESEARCH_JUDGMENT_MODEL==='nvidia/nemotron-3.5-lightning-30b-a3b'?'nvidia/nemotron-3.5-lightning-30b-a3b':'openai/gpt-oss-20b',
     model: env.ATLAS_RESEARCH_MODEL === 'openai/gpt-oss-20b' ? 'openai/gpt-oss-20b' : 'nvidia/nemotron-3.5-lightning-30b-a3b',
     sources: limit(env.ATLAS_RESEARCH_SOURCES, 6, 8), tokens: limit(env.ATLAS_RESEARCH_TOKENS, 3000, 4000),
     timeoutMs: limit(env.ATLAS_RESEARCH_TIMEOUT_MS, 100000, 110000),
