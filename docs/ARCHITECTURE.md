@@ -2,7 +2,7 @@
 
 ## Optional research pipeline
 
-M5 runs separately through `POST /api/research` with NDJSON stage/report events. `src/lib/research-contracts.ts` owns strict runtime contracts. `src/server/research.ts` coordinates fixed bounded tasks, with provider adapters in `research-providers.ts`. The existing OSM request/response contract and pipeline remain unchanged. See [RESEARCH.md](RESEARCH.md) for bounds, credential behavior, verification and provider requirements.
+Business research runs separately through `POST /api/research` with NDJSON stage/report events. `src/lib/research-contracts.ts` owns strict runtime contracts. `src/server/research.ts` coordinates fixed bounded tasks, with provider adapters in `research-providers.ts`. The existing OSM request/response contract and pipeline remain unchanged. See [RESEARCH.md](RESEARCH.md) for bounds, credential behavior, verification and provider requirements.
 
 ## Request pipeline
 
