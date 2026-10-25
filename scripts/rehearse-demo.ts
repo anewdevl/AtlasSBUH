@@ -20,7 +20,7 @@ async function main(){
   await page.getByRole('button',{name:'Save in this browser'}).click();
   if(await page.locator('.feature').count()){await page.locator('.feature').first().click();await expect(page.getByRole('region',{name:'Competitor details',exact:true})).toBeVisible();await page.screenshot({path:'.atlas-local/demo-competitor.png'});await page.getByRole('button',{name:'Close competitor details'}).click();}
   await page.getByRole('button',{name:'Pin for comparison'}).click();await page.getByRole('button',{name:'Search',exact:true}).click();await page.getByLabel('City preset').selectOption('london');await page.getByRole('button',{name:'Analyze this area'}).click();await expect(page.getByRole('heading',{name:'Supermarket · London'})).toBeVisible({timeout:60000});
-  await page.getByRole('button',{name:/^Compare/}).click();await expect(page.getByLabel('Area comparison')).toContainText('CURRENT AREA');await page.screenshot({path:'.atlas-local/demo-comparison.png'});
+  await page.getByRole('navigation',{name:'Explorer views'}).getByRole('button',{name:/^Compare/}).click();await expect(page.getByLabel('Area comparison')).toContainText('CURRENT AREA');await page.screenshot({path:'.atlas-local/demo-comparison.png'});
   console.log(JSON.stringify({step:'live comparison',passed:true}));
  }finally{await browser.close();}
 }

@@ -13,7 +13,7 @@ npm run dev
 
 Open http://127.0.0.1:3000. Describe a business, choose an address or map pin and radius, then Analyze. The business is automatically classified into one of 30 mapped types; Advanced settings provides a manual override. Unsupported descriptions never silently select a café.
 
-Search, Competitors, Compare and Research share the chosen business and location. Inspect marker previews and temporary detail panels, filter the map/list, save one mapped analysis in the browser, or pin an analysis to compare with another location using matching settings. Both themes and mobile/keyboard controls are supported.
+Search, Competitors, Compare and Research share the chosen business and location. Inspect marker previews and temporary detail panels, filter the map/list, save one mapped analysis in the browser, or pin an analysis to compare with another location using matching settings. The first comparison pin stays fixed until Clear pin is selected. After analyzing a second location, choose Compare with pinned area. Both themes and mobile/keyboard controls are supported.
 
 Research runs only when requested. NVIDIA and Tavily enrich up to three distinct mapped business names with cited observations and insights. Supporting evidence expands underneath; exact branch matches and missing information remain explicit. Assess this location measures competition, potential complements and transit around the selected pin. It generates no alternative sites or suitability score. A final Recommended/Not Recommended verdict is not implemented. Generated reports offer Download PDF and Download slides (.pptx), with editable slides, sources, original dates and limitations. Exports run locally in the browser without new research calls.
 

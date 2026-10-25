@@ -4,13 +4,13 @@ import { type AnalysisResponse } from '../lib/contracts';
 import { cities } from '../lib/cities';
 import { categories } from '../lib/categories';
 import { competitorId,defaultCompetitorFilters,type Competitor,type CompetitorFilters } from '../lib/competitor-view';
-export default function ResultsPanel({result,onPin,onSave,selectedId,onSelect,competitors,filters,onFilters}:{result:AnalysisResponse;onPin:()=>void;onSave:()=>void;selectedId:string|null;onSelect:(id:string)=>void;competitors:Competitor[];filters:CompetitorFilters;onFilters:(filters:CompetitorFilters)=>void}){
+export default function ResultsPanel({result,onPin,hasPinnedArea,onSave,selectedId,onSelect,competitors,filters,onFilters}:{result:AnalysisResponse;onPin:()=>void;hasPinnedArea:boolean;onSave:()=>void;selectedId:string|null;onSelect:(id:string)=>void;competitors:Competitor[];filters:CompetitorFilters;onFilters:(filters:CompetitorFilters)=>void}){
  const p=result.provenance;
  const selectedRow=useRef<HTMLButtonElement>(null);
  useEffect(()=>{selectedRow.current?.scrollIntoView({block:'nearest'});},[selectedId]);
  return <section className="results" aria-label="Analysis results"><div className="section-heading"><div><div className="eyebrow">02 / MAPPED EVIDENCE</div><h2>{categories[result.request.categoryId].label} · {cities[result.request.scope.cityId].label}</h2></div><span className={`badge ${result.status==='partial'?'warning':''}`}>{result.status==='complete'?'Complete retrieval':'Partial retrieval'}</span></div>
   <div className="metrics"><div><strong>{result.directMappedCount??'—'}</strong><span>Direct mapped features</span></div><div><strong>{result.adjacentMappedCount??'—'}</strong><span>Adjacent mapped features</span></div><div><strong>{result.directMappedDensity?.toFixed(1)??'—'}</strong><span>Direct features / km²</span></div></div>
-  <div className="result-actions"><button className="secondary" onClick={onPin}>Pin for comparison</button><button className="secondary" onClick={onSave}>Save in this browser</button></div>
+  <div className="result-actions"><button className="secondary" onClick={onPin}>{hasPinnedArea?'Compare with pinned area':'Pin for comparison'}</button><button className="secondary" onClick={onSave}>Save in this browser</button></div>
   <p className="micro">Retrieved {new Date(p.fetchedAt).toLocaleString()} · {p.cacheState} · Coverage unknown</p>
   {result.warnings.map(w=><p className="notice" key={w}>{w}</p>)}
   {result.competitors.length===0&&<div className="empty-result">{result.status==='complete'?'No matching mapped features in this exact area. This is a valid empty result, not evidence that no businesses exist.':'No usable features in this partial result. Counts are unavailable.'}</div>}
