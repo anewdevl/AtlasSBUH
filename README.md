@@ -33,6 +33,12 @@ ATLAS uses OpenStreetMap and Overpass for mapped businesses, Leaflet for the map
 - AI research requires NVIDIA and Tavily API credentials. Their free tiers, quotas, pricing, and availability depend on each provider; research is unavailable without those services.
 - OpenStreetMap coverage is incomplete, and web findings may describe a brand rather than a confirmed local branch. The assessment does not verify demand, rent, foot traffic, zoning, or profitability. Review sources before making a location decision.
 
+## Future work
+
+- Integrate the Google Maps and Places APIs for broader business coverage and verified place details, subject to API costs and terms.
+- Add Google Reviews data to compare customer feedback across confirmed business locations.
+- Expand location coverage beyond the current city areas and incorporate more location signals, such as population density.
+
 ## Development
 
 ```sh
