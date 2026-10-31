@@ -2,7 +2,9 @@
 
 ATLAS helps people evaluate a potential business location. It combines mapped competitor data, area comparison, and source-linked research in one map-based workspace.
 
-**[Watch the demo](https://www.youtube.com/watch?v=KbZlJ5nXHnM)**
+**[Open the live app](https://atlas-sbuh.vercel.app)** · **[Watch the demo](https://www.youtube.com/watch?v=KbZlJ5nXHnM)**
+
+The live deployment currently supports map analysis and comparison. AI research requires provider credentials that are not configured on Vercel yet; the demo shows the full workflow.
 
 ## Features
 
@@ -21,7 +23,7 @@ npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Core map analysis works without API keys. For optional AI research, copy `.env.example` to `.env.local`, set `NVIDIA_API_KEY` and `TAVILY_API_KEY`, then restart the server. See [`.env.example`](.env.example) for other settings.
+Open the local address shown by the development server. Core map analysis works without API keys. For optional AI research, copy `.env.example` to `.env.local`, set `NVIDIA_API_KEY` and `TAVILY_API_KEY`, then restart the server. See [`.env.example`](.env.example) for other settings.
 
 ## How it works
 
