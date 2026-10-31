@@ -1,115 +1,42 @@
 # ATLAS
 
-A map-first workspace for exploring local competition and comparing business locations. Choose a business type and an area in New York, London, Dubai or Singapore, then inspect mapped competitors and their supporting evidence.
+ATLAS helps people explore local competition before choosing where to open a business. Select a business type and location, inspect nearby businesses on a map, compare areas, and generate an evidence-backed research report.
 
-Built with Next.js 16, React 19, TypeScript and Leaflet. No database is required. Map analysis works without API keys; optional AI interpretation and web research use server-side credentials.
+**[Watch the demo](https://www.youtube.com/watch?v=KbZlJ5nXHnM)**
 
-## Getting started
+## Features
 
-Use Node.js 24 and npm.
+- Search mapped competitors by business type with a 500 m, 1 km, or 2 km radius.
+- Inspect business cards with distance, source, and available contact details.
+- Compare two locations using the same category and search settings.
+- Generate AI-assisted research with cited web findings; export the report as PDF or editable PowerPoint.
+- Explore preset locations in New York, London, Dubai, and Singapore, or search for another address.
+
+## Run locally
+
+Requires Node.js 24 and npm.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). To enable optional providers, copy `.env.example` to `.env.local`, add your credentials and restart the server. In PowerShell:
+Open [http://localhost:3000](http://localhost:3000). Core map analysis works without API keys. For optional AI research, copy `.env.example` to `.env.local`, set `NVIDIA_API_KEY` and `TAVILY_API_KEY`, then restart the server. See [`.env.example`](.env.example) for other settings.
 
-```powershell
-Copy-Item .env.example .env.local
-```
+## How it works
 
-## Explore an area
+ATLAS uses OpenStreetMap and Overpass for mapped businesses, Leaflet for the map, and Next.js, React, and TypeScript for the application. Its research pipeline uses NVIDIA NIM for analysis and Tavily for web retrieval. A set of source-backed snapshots can support exact preset searches when live competitor retrieval is unavailable.
 
-1. Describe your business or select a supported type in Advanced settings. Choose a city, address or map pin and a radius of 500 m, 1 km or 2 km.
-2. Analyze the area. Inspect marker clusters, filter competitors and open business cards for source evidence, distance and available address, hours or website details.
-3. Pin an analysis, choose another location and compare results with matching business types, radius and adjacent categories. You can also save an analysis in your browser.
-4. Generate Research insights on demand for cited web observations about shortlisted businesses. Download the report as PDF or editable PowerPoint. Open a business mini map from competitor details or research cards. Optional location assessment examines competition, complements and transit around your selected pin.
+Mapped business counts depend on OpenStreetMap coverage. Research findings can refer to a brand rather than a confirmed local branch. ATLAS does not verify demand, rent, foot traffic, or profitability; review cited sources before making a location decision.
 
-There are 30 supported business types. Search and Compare use the selected category; Research interprets the shared business description for its own shortlist. All views use the selected location. Light/dark themes and mobile controls are included.
-
-## Configuration
-
-Provider settings and research limits are documented in [`.env.example`](.env.example). Keep credentials in ignored `.env.local` files.
-
-| Setting | Purpose |
-| --- | --- |
-| `NVIDIA_API_KEY` | Optional business interpretation and AI research |
-| `TAVILY_API_KEY` | Web search and extraction for research, alongside NVIDIA |
-| `ATLAS_OVERPASS_ENDPOINT` | Select an allowlisted competitor-data endpoint |
-| `ATLAS_OVERPASS_API_KEY` | Optional Overpass.ch credentials |
-| `ATLAS_GEOCODER_ENDPOINT` | Override the Photon-compatible address service |
-| `NEXT_PUBLIC_ATLAS_RESEARCH=0` | Hide the Research tab; visible by default |
-| `NEXT_PUBLIC_ATLAS_LOCATIONS=1` | Show location assessment; hidden by default |
-| `NEXT_PUBLIC_TILE_URL` | Override the basemap tile URL |
-
-`NEXT_PUBLIC_*` settings are public and embedded at build time; rebuild production after changing them. Never put secrets in these variables. For public hosting, review tile attribution, provider policies, quotas and rate limiting in the [deployment guide](docs/DEPLOYMENT.md).
-
-## Data and limitations
-
-Competitors come from OpenStreetMap through Overpass using explicit category rules. Counts represent mapped features with unknown coverage; they do not establish demand, profitability or a complete business census. Web observations may describe a brand rather than a confirmed local branch and never change mapped counts. Rent, footfall, available premises and zoning remain unverified.
-
-Bundled snapshots cover café, bakery, bubble tea, pharmacy and supermarket at the four exact city presets, with a 1 km radius and no adjacent categories. Fresh data lasts 24 hours; an exact compatible stale fallback can be used for up to 30 days from its original retrieval. Other scopes need live retrieval. Snapshot fallback does not provide offline basemap tiles, address lookup or research.
-
-Refresh all five bundled categories with:
-
-```sh
-npm run snapshots -- cafe bakery bubble-tea pharmacy supermarket
-```
-
-This contacts real providers and replaces successful captures without resetting source dates. Failed retrieval is distinct from a valid empty result; partial aggregates are withheld. Research has no automatic offline-report fallback.
-
-## Development and verification
+## Development
 
 ```sh
 npm run typecheck
 npm test
 npm run build
-npx playwright install chromium
-npm run test:e2e
 ```
 
-Vitest covers unit and API behavior. Playwright covers browser workflows and starts a development server by default. Automated tests mock upstream services and do not establish live availability. Synthetic fixtures stay under `tests/`.
+For browser tests, run `npx playwright install chromium` followed by `npm run test:e2e`. Technical details are in the [architecture](docs/ARCHITECTURE.md), [research](docs/RESEARCH.md), and [deployment](docs/DEPLOYMENT.md) guides.
 
-For an isolated production browser check after building, use PowerShell:
-
-```powershell
-$env:ATLAS_E2E_PRODUCTION='1'
-$env:ATLAS_E2E_PORT='3100'
-npm run test:e2e
-```
-
-Set `ATLAS_E2E_CHANNEL=msedge` to use installed Microsoft Edge instead of Playwright Chromium. Enable `NEXT_PUBLIC_ATLAS_LOCATIONS=1` during the production build when testing location assessment.
-
-To serve a production build locally:
-
-```sh
-npm run start -- --hostname 127.0.0.1 --port 3000
-```
-
-The following diagnostics contact real providers and may consume quota:
-
-```sh
-npx tsx scripts/check-local.ts http://127.0.0.1:3000
-npx tsx scripts/check-research.ts
-npx tsx scripts/check-location-assessment.ts
-npx tsx scripts/rehearse-demo.ts
-```
-
-The rehearsal requires a running app on port 3000 and exercises address lookup, supermarket analysis, evidence inspection, browser save and comparison. For a snapshot demonstration, use an exact city preset and matching snapshot settings. Research diagnostics save sanitized reports under ignored `.atlas-local/` and exit unsuccessfully for partial or unavailable reports. `--broad` exercises the broader research path instead of the default local shortlist. Inspect sources and stage outcomes before presenting results.
-
-## Project structure
-
-| Path | Contents |
-| --- | --- |
-| `src/app/` | App entry point and API routes |
-| `src/components/` | Map, search, comparison and research UI |
-| `src/lib/` | Shared contracts, category rules and analysis helpers |
-| `src/server/` | Retrieval, caching and bounded research pipeline |
-| `data/snapshots/` | Genuine source-backed fallback captures |
-| `scripts/` | Snapshot capture and live diagnostics |
-| `tests/` | Unit, integration and browser tests |
-
-See [architecture](docs/ARCHITECTURE.md), [taxonomy and evidence rules](docs/TAXONOMY.md), [research implementation](docs/RESEARCH.md) and [deployment](docs/DEPLOYMENT.md) for technical details.
-
-Map data © OpenStreetMap contributors, available under the [ODbL](https://www.openstreetmap.org/copyright).
+Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright).
