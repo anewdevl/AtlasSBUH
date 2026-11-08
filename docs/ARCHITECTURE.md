@@ -1,6 +1,6 @@
 # Technical architecture
 
-The default runtime now uses FastAPI for all five APIs. See [PYTHON_BACKEND.md](PYTHON_BACKEND.md) for current integration. The TypeScript internals below remain the migration behavior reference; their original limits/model choices do not describe the Python runtime.
+The combined local runtime uses FastAPI for all five APIs; Vercel retains the TypeScript handlers by default. See [PYTHON_BACKEND.md](PYTHON_BACKEND.md) for current integration. The TypeScript internals below remain the migration behavior reference; their original limits/model choices do not describe the Python runtime.
 
 ## Optional research pipeline
 
