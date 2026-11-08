@@ -13,3 +13,4 @@ python_backend/.venv/
 *.tsbuildinfo
 .env*
 !.env.example
+.vercel
