@@ -24,11 +24,12 @@ export default function Home(){
  const [description,setDescriptionText]=useState(''),[revision,setRevision]=useState(0);
  const [researchReport,setResearchReport]=useState<ResearchReport|null>(null);
  function setDescription(value:string){setDescriptionText(value);setRevision(v=>v+1);setResearchReport(null);}
- async function prepare(){
+ async function prepare(signal?:AbortSignal){
   if(!description.trim())return canonicalize(request);
   const local=classify(description).matches;
   let categoryId=local.length===1?local[0]:null;
-  try{const response=await fetch('/api/suggest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({description}),signal:AbortSignal.timeout(20000)});if(response.ok)categoryId=categorySuggestionSchema.parse(await response.json()).categoryId;}catch{}
+  try{const response=await fetch('/api/suggest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({description}),signal:AbortSignal.any([AbortSignal.timeout(20000),...(signal?[signal]:[])])});if(response.ok)categoryId=categorySuggestionSchema.parse(await response.json()).categoryId;}catch{}
+  signal?.throwIfAborted();
   if(!categoryId)throw new Error('No reliable mapped type for this description. Refine your business description before researching.');
   const confirmed=canonicalize(sanitizeCategorySelection({...request,categoryId,adjacentCategoryIds:categoryId===request.categoryId?request.adjacentCategoryIds:[]}));
   return confirmed;

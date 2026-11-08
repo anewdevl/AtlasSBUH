@@ -1,5 +1,7 @@
 # Local business research
 
+For the current Python workflow, correction budget, caches and results, see [PYTHON_BACKEND.md](PYTHON_BACKEND.md) and [MEASURED_RESULTS.md](MEASURED_RESULTS.md). The TypeScript workflow below remains the migration reference.
+
 The app now builds a ranked shortlist from validated OpenStreetMap features inside the selected radius. Research uses the shared business description and location, then interprets the description into a mapped type for its own shortlist. Search uses its selected category. Named features are retained separately with their source identity. Coverage, current operating status and duplicates remain uncertain. Representative centers are not guaranteed entrances.
 
 Shortlist ordering is a deterministic heuristic using mapped category, explicit specialty text and distance. Category aliases are not evidence of offerings. Requirements outside the category (for example, desi in desi clothing store) remain explicit and unverified unless supported by source records. No confidence-style match percentages are displayed. All named mapped candidates remain inspectable; only the top three distinct names receive web enrichment to bound quota use.

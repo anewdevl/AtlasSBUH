@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { canonicalize, type AnalysisRequest } from '../lib/contracts';
 import { categories } from '../lib/categories';
 import { checks, locationAdviceSchema, type LocationAdvice } from '../lib/location-advisor';
-export default function LocationAdvisor({request,description,prepare,revision}:{request:AnalysisRequest;description:string;prepare:()=>Promise<AnalysisRequest>;revision:number}) {
+export default function LocationAdvisor({request,description,prepare,revision}:{request:AnalysisRequest;description:string;prepare:(signal?:AbortSignal)=>Promise<AnalysisRequest>;revision:number}) {
  const [report,setReport]=useState<LocationAdvice|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState('');
  const control=useRef<AbortController|null>(null),generation=useRef(0);
  function clear(){generation.current++;control.current?.abort();setReport(null);setBusy(false);setError('');}
@@ -12,7 +12,7 @@ export default function LocationAdvisor({request,description,prepare,revision}:{
   clear();const id=generation.current,controller=new AbortController();control.current=controller;setBusy(true);
   const timer=setTimeout(()=>controller.abort(),85000);
   try{
-   const analysis=canonicalize(await prepare());if(id!==generation.current)return;
+   const analysis=canonicalize(await prepare(controller.signal));if(id!==generation.current)return;
    const response=await fetch('/api/location-advice',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({analysis,description}),signal:controller.signal});
    const data=await response.json();if(!response.ok)throw new Error(data.error||'Location assessment unavailable.');
    const valid=locationAdviceSchema.parse(data);if(JSON.stringify(valid.request.analysis)!==JSON.stringify(analysis)||valid.request.description!==description.trim())throw new Error('Location assessment scope mismatch.');

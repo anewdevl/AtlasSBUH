@@ -1,5 +1,7 @@
 # Technical architecture
 
+The default runtime now uses FastAPI for all five APIs. See [PYTHON_BACKEND.md](PYTHON_BACKEND.md) for current integration. The TypeScript internals below remain the migration behavior reference; their original limits/model choices do not describe the Python runtime.
+
 ## Optional research pipeline
 
 Business research runs separately through `POST /api/research` with NDJSON stage/report events. `src/lib/research-contracts.ts` owns strict runtime contracts. `src/server/research.ts` coordinates fixed bounded tasks, with provider adapters in `research-providers.ts`. The existing OSM request/response contract and pipeline remain unchanged. See [RESEARCH.md](RESEARCH.md) for bounds, credential behavior, verification and provider requirements.

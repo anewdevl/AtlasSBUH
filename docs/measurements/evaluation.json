@@ -1,0 +1,526 @@
+{
+  "measuredAt": "2026-11-08T19:41:17.870Z",
+  "type": "deterministic synthetic provider fixtures",
+  "cases": [
+    {
+      "case": "normal",
+      "status": "complete",
+      "findings": 1,
+      "impacts": 1,
+      "searches": 1,
+      "reviews": 1,
+      "metrics": {
+        "runId": "f46b1f528bc441878ba38961cd60a9e9",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.617Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "durationMs": 16
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "verification",
+            "status": "complete",
+            "durationMs": 0
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 0,
+        "failures": [],
+        "durationMs": 16,
+        "cancelled": false,
+        "status": "complete",
+        "evidence": 1,
+        "findings": 1,
+        "impacts": 1
+      }
+    },
+    {
+      "case": "specialty",
+      "status": "complete",
+      "findings": 1,
+      "impacts": 1,
+      "searches": 1,
+      "reviews": 1,
+      "metrics": {
+        "runId": "6fc350b17de04692b9bf41ebc29dafa0",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.642Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "durationMs": 15
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "verification",
+            "status": "complete",
+            "durationMs": 0
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 0,
+        "failures": [],
+        "durationMs": 15,
+        "cancelled": false,
+        "status": "complete",
+        "evidence": 1,
+        "findings": 1,
+        "impacts": 1
+      }
+    },
+    {
+      "case": "empty",
+      "status": "unavailable",
+      "findings": 0,
+      "impacts": 0,
+      "searches": 0,
+      "reviews": 0,
+      "metrics": {
+        "runId": "5d44f652b33541da93fb343c1d936368",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.655Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 0,
+        "failures": [],
+        "durationMs": 0,
+        "cancelled": false,
+        "status": "unavailable",
+        "evidence": 0,
+        "findings": 0,
+        "impacts": 0
+      }
+    },
+    {
+      "case": "ambiguous-branch",
+      "status": "complete",
+      "findings": 1,
+      "impacts": 1,
+      "searches": 1,
+      "reviews": 1,
+      "metrics": {
+        "runId": "48d471fb05104ea2803331972c8c05a2",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.656Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "durationMs": 16
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "verification",
+            "status": "complete",
+            "durationMs": 0
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 0,
+        "failures": [],
+        "durationMs": 16,
+        "cancelled": false,
+        "status": "complete",
+        "evidence": 1,
+        "findings": 1,
+        "impacts": 1
+      }
+    },
+    {
+      "case": "unsupported-quote",
+      "status": "partial",
+      "findings": 0,
+      "impacts": 0,
+      "searches": 2,
+      "reviews": 0,
+      "metrics": {
+        "runId": "aad275908e274dc9a5471b6813704081",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.670Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "durationMs": 16
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 2,
+        "failures": [],
+        "durationMs": 31,
+        "cancelled": false,
+        "status": "partial",
+        "evidence": 1,
+        "findings": 0,
+        "impacts": 0
+      }
+    },
+    {
+      "case": "unsupported-claim",
+      "status": "partial",
+      "findings": 0,
+      "impacts": 0,
+      "searches": 1,
+      "reviews": 1,
+      "metrics": {
+        "runId": "38846d3e423d4d7d8e22dbb71db3ecc0",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.702Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "durationMs": 16
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "verification",
+            "status": "partial",
+            "durationMs": 0
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 2,
+        "failures": [],
+        "durationMs": 16,
+        "cancelled": false,
+        "status": "partial",
+        "evidence": 1,
+        "findings": 0,
+        "impacts": 0
+      }
+    },
+    {
+      "case": "unsupported-conclusion",
+      "status": "partial",
+      "findings": 1,
+      "impacts": 1,
+      "searches": 1,
+      "reviews": 1,
+      "metrics": {
+        "runId": "b7acfdbca7c145bbb8ecb56c9e802b83",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.718Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "durationMs": 16
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "verification",
+            "status": "partial",
+            "durationMs": 0
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 1,
+        "failures": [],
+        "durationMs": 16,
+        "cancelled": false,
+        "status": "partial",
+        "evidence": 1,
+        "findings": 1,
+        "impacts": 1
+      }
+    },
+    {
+      "case": "provider-failure",
+      "status": "partial",
+      "findings": 0,
+      "impacts": 0,
+      "searches": 1,
+      "reviews": 0,
+      "metrics": {
+        "runId": "20d6ddcb3fdc45f2976c4a5a4c14d3c7",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.734Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "unavailable",
+            "durationMs": 15
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 0,
+        "failures": [
+          {
+            "stage": "web",
+            "reason": "tavily: HTTP 503"
+          }
+        ],
+        "durationMs": 15,
+        "cancelled": false,
+        "status": "partial",
+        "evidence": 0,
+        "findings": 0,
+        "impacts": 0
+      }
+    },
+    {
+      "case": "verifier-failure",
+      "status": "partial",
+      "findings": 0,
+      "impacts": 0,
+      "searches": 1,
+      "reviews": 0,
+      "metrics": {
+        "runId": "b451bafa085f494f8ee713f4bc9187ea",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.748Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "durationMs": 16
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "verification",
+            "status": "unavailable",
+            "durationMs": 0
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 0,
+        "failures": [
+          {
+            "stage": "verification",
+            "reason": "nvidia: HTTP 503"
+          }
+        ],
+        "durationMs": 16,
+        "cancelled": false,
+        "status": "partial",
+        "evidence": 1,
+        "findings": 0,
+        "impacts": 0
+      }
+    },
+    {
+      "case": "deadline",
+      "status": "partial",
+      "findings": 0,
+      "impacts": 0,
+      "searches": 1,
+      "reviews": 0,
+      "metrics": {
+        "runId": "98277cc458a24889ac7c3d4a1945444f",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.765Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "partial",
+            "durationMs": 15
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 0,
+        "failures": [
+          {
+            "stage": "verification",
+            "reason": "overall deadline exceeded"
+          }
+        ],
+        "durationMs": 15,
+        "cancelled": false,
+        "status": "partial",
+        "evidence": 0,
+        "findings": 0,
+        "impacts": 0
+      }
+    },
+    {
+      "case": "correction",
+      "status": "complete",
+      "findings": 1,
+      "impacts": 1,
+      "searches": 2,
+      "reviews": 2,
+      "metrics": {
+        "runId": "eeb20aaa5884482fb9d4f8644ab37f59",
+        "kind": "evaluation",
+        "startedAt": "2026-11-08T19:41:17.779Z",
+        "calls": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "durationMs": 16
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "verification",
+            "status": "partial",
+            "durationMs": 0
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "durationMs": 16
+          },
+          {
+            "stage": "extraction",
+            "durationMs": 0
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "durationMs": 0
+          },
+          {
+            "stage": "verification",
+            "status": "complete",
+            "durationMs": 0
+          }
+        ],
+        "cacheHits": 0,
+        "rejectedClaims": 2,
+        "failures": [],
+        "durationMs": 32,
+        "cancelled": false,
+        "status": "complete",
+        "evidence": 1,
+        "findings": 1,
+        "impacts": 1
+      }
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 # Deployment and operations
 
+Vercel keeps the existing TypeScript API routes by default. Merging the Python backend does not require a Python runtime or any environment-variable changes on the existing Vercel project. `npm run build` and `npm start` retain the Next.js deployment path; `npm run dev` starts the local Python-backed app.
+
+Python production hosting is a separate, explicit migration. Only after hosting FastAPI separately, set both `ATLAS_USE_PYTHON_BACKEND=1` and `ATLAS_BACKEND_URL=https://your-deployed-backend` in Vercel and rebuild. Localhost or insecure backend destinations are rejected when Python is explicitly enabled on Vercel. See [the Python guide](PYTHON_BACKEND.md#install-and-start). Until then, leave both variables unset on Vercel. `ATLAS_TYPESCRIPT_REFERENCE=1` also forces the existing routes.
+
+Before merging deployment-affecting changes, run the backend-routing tests and build with `VERCEL=1`. The generated `routes-manifest.json` must contain no API proxy rewrites for the default Vercel mode. `npx tsx scripts/check-deployment.ts https://atlas-sbuh.vercel.app` checks the public page, validates actual map results, and confirms all five TypeScript handlers respond without contacting a local Python service. Invalid-input checks for AI routes do not require AI credentials.
+
 The current app runs locally; hosting is optional. For Vercel, use a Next.js project with Node.js 24 and `npm run build`. Review each route's exported `maxDuration` against the target project's configured function limits before deployment. Map analysis does not require a key with a public Overpass endpoint; NVIDIA/Tavily credentials enable optional research. Configure all credentials server-side.
 
 `next.config.ts` includes `data/snapshots/**/*.json` in the analyze function trace. Confirm bundled snapshots exist and are within the 30-day window. Do not publish a claim of offline demo support without them.

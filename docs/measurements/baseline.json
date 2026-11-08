@@ -1,0 +1,910 @@
+{
+  "measuredAt": "2026-11-08T18:57:54.488Z",
+  "rows": [
+    {
+      "description": "Specialty coffee with fast morning pickup",
+      "cityId": "nyc",
+      "durationMs": 100636,
+      "mappingDurationMs": 616,
+      "researchDurationMs": 100020,
+      "mapStatus": "complete",
+      "mapCache": "live",
+      "calls": [
+        {
+          "provider": "api.overpass.ch",
+          "durationMs": 557,
+          "status": 200
+        },
+        {
+          "provider": "api.tavily.com",
+          "durationMs": 1067,
+          "status": 200
+        },
+        {
+          "provider": "api.tavily.com",
+          "durationMs": 1297,
+          "status": 200
+        },
+        {
+          "provider": "api.tavily.com",
+          "durationMs": 1382,
+          "status": 200
+        },
+        {
+          "provider": "integrate.api.nvidia.com",
+          "durationMs": 2345,
+          "status": 200,
+          "usage": {
+            "prompt_tokens": 5075,
+            "completion_tokens": 215,
+            "total_tokens": 5290,
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": null,
+              "audio_tokens": null,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": null
+            }
+          }
+        },
+        {
+          "provider": "api.tavily.com",
+          "durationMs": 70,
+          "status": 200
+        },
+        {
+          "provider": "integrate.api.nvidia.com",
+          "durationMs": 6803,
+          "status": 200,
+          "usage": {
+            "prompt_tokens": 6096,
+            "completion_tokens": 553,
+            "total_tokens": 6649,
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": null,
+              "audio_tokens": null,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": null
+            }
+          }
+        },
+        {
+          "provider": "integrate.api.nvidia.com",
+          "durationMs": 86956,
+          "failure": "TimeoutError"
+        },
+        {
+          "provider": "integrate.api.nvidia.com",
+          "durationMs": 0,
+          "failure": "TimeoutError"
+        }
+      ],
+      "report": {
+        "request": {
+          "description": "Specialty coffee with fast morning pickup",
+          "scope": {
+            "cityId": "nyc",
+            "center": {
+              "lat": 40.7308,
+              "lon": -73.9973
+            },
+            "radiusMeters": 1000
+          },
+          "osmRequest": {
+            "schemaVersion": "1",
+            "registryVersion": "2",
+            "scope": {
+              "cityId": "nyc",
+              "center": {
+                "lat": 40.7308,
+                "lon": -73.9973
+              },
+              "radiusMeters": 1000
+            },
+            "categoryId": "cafe",
+            "adjacentCategoryIds": []
+          },
+          "localOnly": true
+        },
+        "status": "partial",
+        "startedAt": "2026-11-08T18:54:33.866Z",
+        "impacts": [],
+        "assessment": null,
+        "evidence": [
+          {
+            "id": "web-8b336bab7b787c01",
+            "url": "https://www.starbucksreserve.com/menus/new-york-roastery-main-coffee-bar-menu",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:54:40.105Z",
+            "title": "Starbucks Reserve® Roastery New York City - Main Coffee Bar Menu | Starbucks Reserve®",
+            "excerpt": "New York\nStarbucks Reserve® Roastery\nMain Bar\nCoffee & Full Food Offerings\n\nlocation\nnyc Main\nproduct-data\n/product-data/holiday-2027-menu-data",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-8d3dc2a2c55d343a",
+            "url": "https://tavily.com/knowledge/company/72cLAhjfItEH",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:54:40.105Z",
+            "title": "irving farm",
+            "excerpt": "Irving Farm Coffee\n\nID: 72cLAhjfItEH\nWebsite: \nLegal name: Irving Farm New York\nHeadquarters: New York, NY, United States\nLinkedIn:  · 1,823 followers\nIndustry: Food & Beverages\nIndustry codes: SIC 20, 209, NAICS 31, 311\nCompany type: Privately Held\nFounded: 1996\nSocial profiles:     \nEmail: info@irvingfarm.com\nPhone: 1-212-352-9307, 53613878804846, +1 212-995-5252\nDescription: Irving Farm Coffee Roasters provides high-quality fresh roasted coffee in New York.\nProducts and services\nKeywords: food and beverage, fresh, coffee, subscribing, new york, roasted\nHeadcount\nNow: 54 · -2 yearly (-3.6%) · +2 quarterly · +1 monthly\nNorthern America: 30\nEastern Europe: 0\nLatin America: 0\nSouthern Europe: 0\nSub Saharan Africa: 0\nCentral Asia: 0\nAustralia New Zealand: 0\nNorthern Europe: 0\nSouth Eastern Asia: 0\nPolynesia: 0\nSouthern Asia: 0\nNorthern Africa: 0\nMelanesia: 0\nWestern Europe: 0\nWestern Asia: 0\nFinancials\nAnnual revenue: 15.31M USD\nTechnology\nDetected: 11\ncanva · last seen 2026-08-24\nadobe · last seen 2026-08-24\ntiktok · last seen 2026-08-24\nadobe creative suite · last seen 2026-08-24\nnetsuite · last seen 2025-01-13\nquickbooks · last seen 2025-01-13\nwell · last seen 2024-07-29\nhtml · last seen 2024-07-29\nWeb traffic\nMonthly visits: 6,380 (5.1% change)\nPages per visit: 1.92\nAverage visit duration: 48 seconds\nBounce rate: 37%\nGlobal rank: 3,006,033\nCountry rank: 895,809\nReputation\nOpen roles: 0",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-83de85d94eaf80d5",
+            "url": "https://tavily.com/knowledge/company/4wziV08ibCHo",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:54:40.105Z",
+            "title": "la colombe",
+            "excerpt": "La Colombe Coffee Workshop\n\nID: 4wziV08ibCHo\nWebsite: \nLegal name: LA COLOMBE COFFEE ROASTERS, INC.\nHeadquarters: Philadelphia, Pennsylvania, United States\nLinkedIn:  · 31,200 followers\nIndustry: Food and Beverage Services\nCompany type: Public Company\nParent company: Chobani Global Holdings, LLC (\nFounded: 1994\nSocial profiles:     \nEmail: help@lacolombe.net\nPhone: 1 800 563 0860\nDescription: La Colombe Coffee Workshop is an online coffee shop that offers a wide variety of products and brewing equipment. They provide free surprise gift with new subscriptions and offer bold, bright, and made for late summer.\nProducts and services\nKeywords: food & beverage, specialty coffee, coffee drinks, cafes, online, subscriptions, coffee, products, brewing equipment, food-beverage, retail, beverages\nHeadcount\nNow: 526 · +79 yearly (17.7%) · +526 quarterly · +526 monthly\nNorthern America: 334\nLatin America: 2\nWestern Europe: 1\nEastern Europe: 0\nSouthern Europe: 0\nSub Saharan Africa: 0\nCentral Asia: 0\nAustralia New Zealand: 0\nNorthern Europe: 0\nSouth Eastern Asia: 0\nPolynesia: 0\nSouthern Asia: 0\nNorthern Africa: 0\nMelanesia: 0\nWestern Asia: 0\nFinancials\nAnnual revenue: 94.00M USD\nM&A\nAcquired by: Chobani (2023-12-15): 900.00M USD\nTechnology\nDetected: 63\nsql · last seen 2026-08-24\nfacebook · last seen 2026-08-24\nlooker · last seen 2026-08-24\nhumanity · last seen 2026-08-24\nlinkedin · last seen 2026-08-24\nhubspot · last seen 2026-08-24\nharvest · last seen 2026-08-24\nworkfront · last seen 2026-08-24\nReputation\nOpen roles: 3\nSimilar companies\nsuper coffee\nblue bottle coffee\nwandering bear\nkohana coffee\ncraft coffee\nmalk organics\nphilz coffee\nbulletproof digital",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-551792949387bd00",
+            "url": "https://www.starbucks.com",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:54:34.954Z",
+            "title": "Starbucks Coffee Company",
+            "excerpt": "Skip to main content\nImage 1\n   Menu\n   Rewards\n   Gift Cards\n   Starbucks® Shop\nFind a café\nSign inJoin now\nIt's a great day for coffee Start an order\nImage 2: Four fall drinks on a table with hints of people gathered around them.\nFall is here. Cue the hits.\nThe fall menu is live, with all your favorites and a few delicious surprises. Pumpkin, pecan, banana bread and chaider, here we come.\nOrder now\nImage 3: Close-up of someone holding a mug filled with coffee.\nFree refills and fall vibes\nEnjoy your drink in the café and get refills of hot or iced brewed coffee or tea on us.\nOrder now\nFree refills of hot and iced brewed coffee and tea during same store visit. Excludes Cold Brew, Nitro Cold Brew, Iced Tea Lemonade, flavored Iced Tea and Starbucks Refreshers® base. At participating stores.​\nAbout Us\nCareers\nSocial Impact\nFor Business Partners\nWays to Shop\nAbout Us\n   Our Company\n   Our Coffee\n   About Starbucks\n   Starbucks Archive\n   Investor Relations\n   Customer Service\n   Contact Us\nCareers\n   Culture and Values\n   Belonging at Starbucks\n   College Achievement Plan\n   Alumni Community\n   U.S. Careers\n   International Careers\nSocial Impact\n   Communities\n   Starbucks Foundation\n   Sustainability\n   Environmental and Social Impact Reporting\nFor Business Partners\n   Landlord Support Center\n   Suppliers\n   Corporate Gift Card Sales\n   Office and Foodservice Coffee\nWays to Shop\n   Order on the App\n   Order on the Web\n   Delivery\n   Starbucks® Shop\n   Order and Pick Up Options\n   Explore and Find Coffee for Home\n  \n   Image 4: spotify\n   Image 5: facebook\n   Image 6: pinterest\n   Image 7: instagram\n   Image 8: youtube\n   Image 9: x\n   Privacy Notice\n   Consumer Health Privacy Notice\n   Terms of Use\n   Do Not Sell or Share My Personal Information\n   Starbucks Transparency in Supply Chains Statement\n   Accessibility\n   Cookie Preferences ## This site uses cookies, but not the kind you eat We use cookies to remember log in details, provide secure log in, improve site functionality, and deliver personalized content. By continuing to browse the site, you accept cookies.  Change cookie settings Agree Privacy Notice    \n© 2026 Starbucks Coffee Company. All rights reserved.",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-def8b73cfa75329b",
+            "url": "https://irvingfarmcoffee.com/pages/history",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:54:36.253Z",
+            "title": "History – Irving Farm New York",
+            "excerpt": "Skip to content\nFREE SHIPPING ON ORDERS OVER $30within the contiguous U.S.\n ## Featured\n+ Best Sellers\n+ Bundles\n+ Cold Brew\n+ Bulk\n+ Merch\n+ Instant Coffee\nCoffee by Type\n+ Blends\n+ Single Origin\n+ Decaf\n+ Organic\n+ Light Roast\n+ Medium Roast\n+ Dark Roast\n+ EspressoShop All Coffee\n ## Subscribe and Save\n+ Blends\n+ Single Origins\n+ Office Subscriptions\n+ Gift SubscriptionsShop All\n + Gramercy\n+ Millerton\n+ E 10th\n+ Olympic Tower\n+ Upper West Side\n+ Washington SquareSee All Locations\n ## The Company:\n+ History\n+ About Us\n+ Roastery\nThe Drip:\n+ Food Menu\n+ Drink Menu\nWholesale:\n+ Apply\n+ Login\n Log in\nLog in  Cart\nIrving Farm New York\nHistory\nHistory\nRoasted in New York, loved EVERYWHERE.\nTwo Men Shaking Hands\n‘96 NY Origins\nFounders Dave and Steve launched their first cafe at 52 Irving Place, specializing in a variety of 10 to 12 single-origin and house blend coffees. This was a novelty at a time when most New Yorkers grabbed their morning brew from delis or diners. Despite its modest size of just eight tables, Irving’s specialty coffee offerings quickly captivated the neighborhood, leading to overnight success.\nSacks of Coffee Beans\n‘98 Sourcing / Roasting:\nSteve and David shifted their focus to sourcing their own beans, working directly with farmers and managing wholesale and in house roasting. They purchased and converted a small carriage house in Millerton, New York, into a roastery. To this day, all coffee continues to be roasted in Millerton, NY.\nMan Standing by fence\n‘99 Online:\nIrvingfarm.com went online enabling customers to order their unique coffee blends online and learn about their direct partnerships with coffee farmers.\n‘01 Irving Place\nDave & Steve relocated their café to 71 Irving Place, establishing our flagship location—a trusted institution built on history, quality, and community.\nIndustrial Coffee Machine\n‘02 Best Coffee:\nIrving was recognized for its exceptional quality and was awarded “Best Coffee” by New York Magazine, cementing its reputation as a top destination for coffee enthusiasts in the city. This accolade highlighted Irving’s commitment to excellence in sourcing, roasting, and serving, drawing even more customers to their doors.\nIrving Coffee Sign\n‘03 Millerton Cafe\nIrving opens their first Upstate New York Cafe at 44 Main Street.\nMan On Dirt Road\n‘10 Single Origin\nThe company began experimenting with single-origin coffees and smaller batch roasting to highlight unique flavor profiles. We are proud to maintain these long-term, sustainable relationships with producer partners at origin.\nMan & Coffee Machine\n‘12 Toll Roasting\nIrving began toll roasting, also known as white-label production, for notable clients.\nMan in coffee leaves\n‘15 Education\nIrving Farm establishes a training lab in the Flatiron District to enhance barista skills and wholesale customer knowledge.\nIRving Coffee Shop\n‘25 Today\nWe now have six cafes in Manhattan, and one in Millerton, NY. Throughout our evolution, we’ve stayed true to our hometown roots and commitment to offer the perfect authentic New York coffee. Irving Farm Coffee continues to actively enhance our online offerings, expand our unique subscription program, and ensure every coffee lover can share in the story and quality of our coffee products.\nBORN IN NEW YORK, ROASTED IN THE HUDSON VALLEY, AND LOVED EVERYWHERE!\nShop Coffee\nAlways available at\nTartinery logo\nBlue Hill Logo\nZuckers logo\nBread Alone",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-eca70ebc9d65c85c",
+            "url": "https://en.wikipedia.org/wiki/La_Colombe_Coffee_Roasters",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:54:37.636Z",
+            "title": "La Colombe Coffee Roasters - Wikipedia",
+            "excerpt": "Jump to content\n  Wikipedia The Free Encyclopedia\nSearch\nContents\n (Top)\n 1 History\n 2 Locations\n 3 Retail products\n 4 Collaborations\n 5 See also\n 6 References\n 7 External links\nLa Colombe Coffee Roasters\n 日本語\nEdit links\n Article\n Talk\n Read\n Edit\n View history\nTools\nActions\n Read\n Edit\n View history\nGeneral\n What links here\n Related changes\n Upload file\n Permanent link\n Page information\n Cite this page\n Get shortened URL\n Switch to legacy parser\nPrint/export\n Download as PDF\n Printable version\nIn other projects\n Wikidata item\nAppearance\nFrom Wikipedia, the free encyclopedia\nCoffee roaster and retailer located in the United States\nLa Colombe Coffee Roasters\n| Type | Subsidiary |\n| Industry | Coffee |\n| Founded | 1994; 32 years ago (1994) |\n| Founder | JP Iberti   Todd Carmichael |\n| Headquarters | Philadelphia, Pennsylvania, United States |\n| Key people | Hamdi Ulukaya |\n| Products | Coffee |\n| Parent | Chobani |\n| Website | www.lacolombe.com |\nLa Colombe Coffee Roasters (originally La Colombe Torrefaction) is an American coffee roaster and retailer headquartered in Philadelphia. Founded in 1994, the company has cafés in locations including Philadelphia, New York City, Chicago, Austin, Los Angeles, San Diego, and Washington, D.C. In 2023, it was acquired by Chobani for $900 million.\nLa Colombe is representative of third-wave coffee. Its recognition includes a BevNet award for \"Rising Star\" in 2017.\nHistory\n[edit]\nTodd Carmichael, co-founder\nTodd Carmichael, co-founder\nHamdi Ulukaya, current owner\nHamdi Ulukaya, current owner\nLa Colombe was founded by Todd Carmichael and JP Iberti in 1994 in the Rittenhouse Square neighborhood of Philadelphia.\nIn 2015, Hamdi Ulukaya, founder of Chobani, purchased a share of the company. Ulukaya bought out private equity firm Goode Partners to gain his stake, and helped the company raise $28.5 million to fund plans for expansion. This purchase made La Colombe one of several small-scale coffee roasters that received large investments or were acquired outright in 2015.\nIn July 2023, Keurig Dr Pepper invested $300 million in La Colombe in exchange for 33% of the company.\nIn December 2023, Chobani fully acquired La Colombe for $900 million. As part of the deal, Keurig Dr Pepper had its 33% equity converted to a minority position in Chobani. Chobani took a $550 million loan to fund the acquisition.\nLocations\n[edit]\n\nLa Colombe's store in Fishtown, Philadelphia\nThe company's earliest stores included its original site in Rittenhouse Square as well as its New York City, Chicago, and Washington, D.C. locations. Locations in New York were opened in 2007 and 2009 in Tribeca and SoHo, respectively. The first location in Chicago was opened in 2011. The second Philadelphia location was opened in Dilworth Park (near Philadelphia City Hall) in 2011.\nIn 2013, the company operated three locations in Seoul, South Korea.\nHeadquarters moved to a new construction in Fishtown, Philadelphia in 2015. The construction had been voted on by residents in 2013. The same year, the company announced plans to expand to 150 new locations in the next three to four years. Expansion to Boston began in September 2015.\nExpansion to Los Angeles was announced in early 2016, with locations in Beverly Hills and Silver Lake. New locations in Chinatown, Washington, D.C. and Lincoln Park, Chicago,_Chicago \"Lincoln Park (community area), Chicago\") were announced in 2016. In San Diego, a new location opened in Westfield UTC in fall 2017.\nIn 2021, a location was announced in Austin, Texas inside a Whole Foods Market, the company's first Texas location.\nIn 2025, both locations in Boston closed (at 745 Atlantic Ave. in Leather District and at 29 Northern Ave. in the Seaport District), with the owners citing financial performance of the locations and other factors.\nAs of 2025( La Colombe advertises on its website 30 locations in the United States, in Philadelphia, New York City, Washington, D.C., Boston, Chicago, Austin, Los Angeles, and San Diego.\nCoop de Ville, a restaurant in the Strip District, Pittsburgh, features a walk-up window serving La Colombe coffee and espresso drinks. The restaurant opened in 2020.\nRetail products\n[edit]\nIn 2016, the company began offering a canned version of the Draft Latte, a cold-pressed espresso and frothed milk latte which was available on tap in stores. Draft Lattes were initially available in four flavors. The cans for the latte were designed by CEO Todd Carmichael and produced by Crown Holdings. The can employed a valve mechanism at the base for injection of nitrous oxide. Manufacturing of the cans moved from Pennsylvania to a new facility in Norton Shores, Michigan in 2016.\nA Nitro cold brew was also in the works around 2015.\nOther products include Different Drum, a coffee-infused rum, produced at a micro-distillery located in its Fishtown, Philadelphia cafe, and a line of La Colombe single-origin and blended roasted coffees, which are available for purchase in retail stores or via the company's website. The company also produces retail cold brew in larger 42oz bottles.\nIn 2020, the company announced a can of instant coffee with new self-heating technology.\nCollaborations\n[edit]\nIn 2013, La Colombe partnered with the Clinton Foundation to found the Haiti Coffee Academy. The organization's stated aim is to improve coffee growers’ livelihoods in Haiti through training programs for smallholder farmers, a demonstration farm and nursery, and efforts to strengthen the supply chain for both local and export markets for Haitian coffee.\nIn 2016, La Colombe collaborated with Yards Brewing Company, also in the Philadelphia area, to produce a coffee stout to be served in local Shake Shack branches.\nAlso in 2016, the company collaborated with the Icelandic brewer Einstök and again with Yards on Snorri's Awakening, a coffee pale ale.\nIn 2021, the company collaborated with Whole Foods Market to open new stores in New York City and Austin.\nSee also\n[edit]\n iconCoffee portal\n List of coffeehouse chains\n List of coffee companies\nReferences\n[edit]\n1. ↑ Wilder, Charlotte (February 4, 2016). \"This artisanal chain of coffee roasters will open a Boston location in the spring\". Boston.com. Archived from the original on February 6, 2016. Retrieved February 11, 2016.\n2. ↑ Hatic, Dana (February 2, 2016). \"La Colombe Locks Down Boston Location\". Eater. Retrieved February 11, 2016.\n3. ↑ LaBan, Craig (December 3, 2014). \"Creative cafes pour it on in Philadelphia's new coffee wave\". The Philadelphia Inquirer. Retrieved February 11, 2016.\n4. 1 2 Rainey, Clint (December 15, 2023). \"Chobani buys La Colombe for $900 million\". Fast Company. Retrieved December 15, 2023.\n5. 1 2 Parsons, Gretchen (December 15, 2023). \"Chobani buys coffee maker for $900 million\". BoiseDev. Retrieved December 18, 2023.\n6. ↑ Mattone, James (August 29, 2018). \"New York coffee wars: Starbucks vs. Third Wave shops mapped\". www.businessofbusiness.com. Retrieved December 16, 2023.\n7. ↑ \"La Colombe - BevNET's Best of 2017 Awards\". www.bevnet.com. Retrieved December 16, 2023.\n8. ↑ Strom, Stephanie (August 9, 2015). \"Chobani's Founder Sees Opportunity in a Coffee Insurgent\". The New York Times. Retrieved August 15, 2019.\n9. ↑ Tanenbaum, Michael (February 20, 2016). \"La Colombe headed to Boston, launching canned Draft Latte\". Philly Voice. Retrieved March 10, 2016.\n10. ↑ Rainey, Clint (January 7, 2015). \"Small Coffee Goes Venti\". Bloomberg. Retrieved January 10, 2016.\n11. ↑ Hilario, Kenneth (September 25, 2015). \"Philadelphia's La Colombe expanding to new states\". Philadelphia Business Journal. Retrieved January 10, 2016.\n12. ↑ Arthur, Rachel (July 24, 2023). \"Keurig Dr Pepper takes 33% stake in La Colombe coffee\". BeverageDaily. Retrieved December 20, 2023.\n13. 1 2 Tishgart, Sierra (August 12, 2015). \"Can Chobani's Founder Help La Colombe Become the Next Coffee Megachain?\". Grub Street. Retrieved August 15, 2019.\n14. ↑ Strand, Oliver (March 10, 2010). \"New York Is Finally Taking Its Coffee Seri",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          }
+        ],
+        "findings": [],
+        "insights": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "message": "Ranked 184 named mapped features: Ordered by mapped category, explicit specialty text and distance; this is not a confidence score. Researching the top 3 distinct business names."
+          },
+          {
+            "stage": "web",
+            "status": "partial",
+            "message": "Retrieved web evidence processed; coverage remains unknown."
+          },
+          {
+            "stage": "insights",
+            "status": "unavailable",
+            "message": "insights: deadline."
+          },
+          {
+            "stage": "verification",
+            "status": "unavailable",
+            "message": "verification: deadline."
+          },
+          {
+            "stage": "reporting",
+            "status": "complete",
+            "message": "Evidence-backed business effects and the reviewed judgment are ready."
+          }
+        ],
+        "warnings": [
+          "2 news, roundup or unrelated sources excluded from business research.",
+          "Unsupported excerpt selections, duplicate observations or contact/navigation text were rejected.",
+          "insights: deadline.",
+          "verification: deadline.",
+          "Unreviewed generated claims withheld. Retrieved sources remain inspectable."
+        ],
+        "unknowns": [
+          "Business specialty requirements (specialty, fast, morning, pickup) are not established by the broad mapped category. These features are potential alternatives, not verified specialty competitors.",
+          "Specific fast morning pickup locations within 1000m of center point (40.7308,-73.9973)",
+          "Product pricing for specialty coffee at researched businesses",
+          "Review counts and ratings for individual cafes",
+          "Exact geographic coordinates of each business location",
+          "Web search is not an exhaustive competitor census. Exact radius membership and duplicate identities require local validation.",
+          "Reviews reflect only accessible retrieved samples. Missing prices, review dates or sample sizes remain unknown.",
+          "OSM context retains its original date and mapped-feature meaning; external businesses never change these counts.",
+          "The shortlist includes named mapped features in the chosen category and radius. Coverage is unknown; duplicate OSM objects may represent one business. Only the top three distinct names receive web enrichment. Relevance uses category and text matches, not measured business quality."
+        ],
+        "agentRuns": [
+          {
+            "role": "researcher",
+            "task": "source qualification",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 2348,
+            "tools": [
+              "web_search"
+            ]
+          },
+          {
+            "role": "extractor",
+            "task": "web and review extraction",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 6807,
+            "tools": [
+              "read_discovered_pages",
+              "select_exact_quotes"
+            ]
+          },
+          {
+            "role": "analyst",
+            "task": "business impact assessment",
+            "model": "openai/gpt-oss-20b",
+            "status": "unavailable",
+            "durationMs": 86956,
+            "tools": [
+              "compare_sourced_offerings",
+              "assess_competitive_position"
+            ]
+          },
+          {
+            "role": "verifier",
+            "task": "evidence verification",
+            "model": "openai/gpt-oss-20b",
+            "status": "unavailable",
+            "durationMs": 1,
+            "tools": [
+              "check_citations",
+              "review_support"
+            ]
+          }
+        ],
+        "osmContext": {
+          "request": {
+            "schemaVersion": "1",
+            "registryVersion": "2",
+            "scope": {
+              "cityId": "nyc",
+              "center": {
+                "lat": 40.7308,
+                "lon": -73.9973
+              },
+              "radiusMeters": 1000
+            },
+            "categoryId": "cafe",
+            "adjacentCategoryIds": []
+          },
+          "fetchedAt": "2026-11-08T18:54:33.847Z",
+          "status": "complete",
+          "directMappedCount": 185,
+          "adjacentMappedCount": 0,
+          "coverage": "unknown"
+        },
+        "shortlist": [
+          {
+            "id": "node/10769253446",
+            "name": "Starbucks",
+            "coordinates": {
+              "lat": 40.7296098,
+              "lon": -73.9963468
+            },
+            "distanceMeters": 154.80996401134234,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.9,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/10769253446"
+          },
+          {
+            "id": "node/5849929497",
+            "name": "Irving Farm Coffee Roasters",
+            "coordinates": {
+              "lat": 40.7296596,
+              "lon": -73.9987543
+            },
+            "distanceMeters": 176.34252426172648,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.5,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/5849929497"
+          },
+          {
+            "id": "node/13507277200",
+            "name": "La Colombe Coffee Roasters",
+            "coordinates": {
+              "lat": 40.7306339,
+              "lon": -73.9951375
+            },
+            "distanceMeters": 183.14979972261673,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.3,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/13507277200"
+          },
+          {
+            "id": "node/2550551529",
+            "name": "Tartinery",
+            "coordinates": {
+              "lat": 40.7295546,
+              "lon": -73.9988437
+            },
+            "distanceMeters": 189.99230574992785,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.2,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/2550551529"
+          },
+          {
+            "id": "node/10717839773",
+            "name": "Carmela Coffee",
+            "coordinates": {
+              "lat": 40.7324116,
+              "lon": -73.9964639
+            },
+            "distanceMeters": 192.5526356926093,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.1,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/10717839773"
+          },
+          {
+            "id": "node/3233791134",
+            "name": "The Uncommons",
+            "coordinates": {
+              "lat": 40.729416,
+              "lon": -73.9987086
+            },
+            "distanceMeters": 194.34801051416974,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.1,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/3233791134"
+          },
+          {
+            "id": "node/7024106348",
+            "name": "Mille-Feuille",
+            "coordinates": {
+              "lat": 40.7291839,
+              "lon": -73.9982031
+            },
+            "distanceMeters": 195.1504729732463,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.1,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/7024106348"
+          },
+          {
+            "id": "node/10717839775",
+            "name": "Marlton Esprsso Bar",
+            "coordinates": {
+              "lat": 40.7325497,
+              "lon": -73.9967931
+            },
+            "distanceMeters": 199.19089353625236,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/10717839775"
+          },
+          {
+            "id": "node/4664765789",
+            "name": "Joe Coffee Company",
+            "coordinates": {
+              "lat": 40.7290876,
+              "lon": -73.9982833
+            },
+            "distanceMeters": 207.65618529041618,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 47.8,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/4664765789"
+          },
+          {
+            "id": "node/2550046897",
+            "name": "Third Rail Coffee",
+            "coordinates": {
+              "lat": 40.7299427,
+              "lon": -73.999592
+            },
+            "distanceMeters": 215.37444190053273,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 47.7,
+            "matchReason": "Mapped category: Café. Specialty requirements: specialty, fast, morning, pickup. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/2550046897"
+          }
+        ]
+      },
+      "shortlistTotal": 184
+    },
+    {
+      "description": "South Asian clothing boutique",
+      "cityId": "london",
+      "durationMs": 100602,
+      "mappingDurationMs": 590,
+      "researchDurationMs": 100012,
+      "mapStatus": "complete",
+      "mapCache": "live",
+      "calls": [
+        {
+          "provider": "api.overpass.ch",
+          "durationMs": 542,
+          "status": 200
+        },
+        {
+          "provider": "api.tavily.com",
+          "durationMs": 1194,
+          "status": 200
+        },
+        {
+          "provider": "api.tavily.com",
+          "durationMs": 1256,
+          "status": 200
+        },
+        {
+          "provider": "api.tavily.com",
+          "durationMs": 1442,
+          "status": 200
+        },
+        {
+          "provider": "integrate.api.nvidia.com",
+          "durationMs": 8303,
+          "status": 200,
+          "usage": {
+            "prompt_tokens": 5995,
+            "completion_tokens": 274,
+            "total_tokens": 6269,
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": null,
+              "audio_tokens": null,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": null
+            }
+          }
+        },
+        {
+          "provider": "api.tavily.com",
+          "durationMs": 121,
+          "status": 200
+        },
+        {
+          "provider": "integrate.api.nvidia.com",
+          "durationMs": 5487,
+          "status": 200,
+          "usage": {
+            "prompt_tokens": 4450,
+            "completion_tokens": 590,
+            "total_tokens": 5040,
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": null,
+              "audio_tokens": null,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": null
+            }
+          }
+        },
+        {
+          "provider": "integrate.api.nvidia.com",
+          "durationMs": 81994,
+          "failure": "TimeoutError"
+        },
+        {
+          "provider": "integrate.api.nvidia.com",
+          "durationMs": 1,
+          "failure": "TimeoutError"
+        }
+      ],
+      "report": {
+        "request": {
+          "description": "South Asian clothing boutique",
+          "scope": {
+            "cityId": "london",
+            "center": {
+              "lat": 51.5137,
+              "lon": -0.1365
+            },
+            "radiusMeters": 1000
+          },
+          "osmRequest": {
+            "schemaVersion": "1",
+            "registryVersion": "2",
+            "scope": {
+              "cityId": "london",
+              "center": {
+                "lat": 51.5137,
+                "lon": -0.1365
+              },
+              "radiusMeters": 1000
+            },
+            "categoryId": "clothing",
+            "adjacentCategoryIds": []
+          },
+          "localOnly": true
+        },
+        "status": "partial",
+        "startedAt": "2026-11-08T18:56:14.474Z",
+        "impacts": [],
+        "assessment": null,
+        "evidence": [
+          {
+            "id": "web-cd563abbc13376a7",
+            "url": "https://fr.linkedin.com/company/a-p-c-",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:56:26.992Z",
+            "title": "A.P.C.",
+            "excerpt": "A.P.C.\nDescription: Founded by Jean Touitou in 1987, A.P.C. is an authentic French label accessible by design, price and outlook. Initially the label was popular for a very classic, raw denim jean, but now includes a full collection of clothing and accessories for men and women, which embodies an effortless cool.\nLinkedIn:  · 56,174 followers\nIndustry: Textile Manufacturing\nType: Privately Held\nParent Company: L Catterton Management Limited (\nHeadquarters: Paris, France\nSocial Profiles:     \nEmployees\nNow: 1,003\nLeadership\nSusan Culpepper, Deputy CEO\nLoïc R., Chief Information Officer & IT Director\nRecent posts\n2025-12-09: A.P.C. Dubai Mall is now open. December 5th 2025 — Celebrating the opening of the first A.P.C. store in the UAE in The Dubai Mall, Fashion Avenue we hosted an intimate event surrounded by our Dubai-based family and friends last Friday. Guests joined us for screen-printing activities and explored the women’s and men’s c...\n2025-12-10: HOLIDAYS FINISHING TOUCHES Film meets digital in this accessories-led series by photographer Santiago Herranz Gómez-Arnau — reinterpreting our best sellers through real-life layering and composition. “I’d say film is probably not the most efficient, and can cost you a lot of headaches and money.” Santiago jokes on set....\n2025-12-10: HOLIDAYS FINISHING TOUCHES Film meets digital in this accessories-led series by photographer Santiago Herranz Gómez-Arnau — reinterpreting our best sellers through real-life layering and composition. “I’d say film is probably not the most efficient, and can cost you a lot of headaches and money.” Santiago jokes on set....\n2025-12-11: As the year ends, A.P.C. is proud to share its 2025 CSR report, shaped by the principle that has guided us since our founding: creating simple clothes that last. This principle naturally led to adopting circularity early on, from repurposing deadstock fabrics to giving garments a second life. Since 2023, A.P.C. has str...\n2025-12-11: As the year ends, A.P.C. is proud to share its 2025 CSR report, shaped by the principle that has guided us since our founding: creating simple clothes that last. This principle naturally led to adopting circularity early on, from repurposing deadstock fabrics to giving garments a second life. Since 2023, A.P.C. has str...\nProducts and services\nKeywords: fashion, lifestyle/fashion_and_apparel, free shipping, french fashion, women, online store, men, lingerie, textiles",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-5fd60825cfd8475c",
+            "url": "https://tavily.com/knowledge/company/DEuIlBXpD1NE",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:56:26.992Z",
+            "title": "vintage threads",
+            "excerpt": "Vintage Threads\n\nID: DEuIlBXpD1NE\nWebsite: \nHeadquarters: London, England, United Kingdom\nLinkedIn:  · 3,354 followers\nIndustry: Retail Apparel and Fashion\nCompany type: Public Company\nFounded: 2016\nSocial profiles:    \nEmail: team@vintage-threads.com\nDescription: Vintage Threads is a curated collection of handpicked vintage and designer pieces. Shop online or in Soho, Covent Garden, or Selfridges to explore one-of-one finds, reworked styles, and timeless streetwear.\nProducts and services\nKeywords: fashion, lifestyle/fashion_and_apparel, vintage clothing, pieces, streetwear, designer, vintage, online shop, e-commerce, shopping\nHeadcount\nNow: 34 · -1 yearly (-2.9%) · -1 quarterly · +1 monthly\nNorthern Europe: 19\nSub Saharan Africa: 1\nNorthern America: 1\nWestern Europe: 1\nEastern Europe: 0\nLatin America: 0\nSouthern Europe: 0\nCentral Asia: 0\nAustralia New Zealand: 0\nSouth Eastern Asia: 0\nPolynesia: 0\nSouthern Asia: 0\nNorthern Africa: 0\nMelanesia: 0\nWestern Asia: 0\nFunding\nRounds: 1\nTotal raised: 55.40K USD\nLast round: Equity Crowdfunding 2025-10-30 55.40K USD\nEquity Crowdfunding 2025-10-30 55.40K USD\nTechnology\nDetected: 14\nfacebook · last seen 2026-08-24\ntiktok · last seen 2026-08-24\nreact · last seen 2026-07-13\nspendesk · last seen 2026-04-06\nshopify · last seen 2026-04-06\namp · last seen 2025-08-11\nxero · last seen 2025-08-11\nimpact · last seen 2025-08-11\nWeb traffic\nMonthly visits: 22,434 (-19.1% change)\nPages per visit: 1.86\nAverage visit duration: 5 seconds\nBounce rate: 55%\nGlobal rank: 1,250,352\nCountry rank: 128,968\nCategory rank: 4,698\nReputation\nOpen roles: 0",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-2bc0f5c106342311",
+            "url": "https://www.apcstore.com",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:56:26.992Z",
+            "title": "A.P.C. | Official Store | A.P.C.",
+            "excerpt": "Skip to content\n# A.P.C. ParisBoutique en ligne A.P.C. : mode française pour femme et homme.\n MY ACCOUNT\n NEED HELP ?\nnew in\n + women\n+ men\ndenim\nbags\nbags new arrivals\nwoman\nbags new collection\nman\nnew collection\nlifestyle\n + eyewear\n+ quilts\n+ music\n+ books\n+ A.P.C. golf\n+ candles\n+ self-care\n+ A.P.C. toutou\nA.P.C. quilts eyewear\nsurplus\n + women\n+ men\nA.P.C. universe\n MY ACCOUNT\n NEED HELP ?\nnew in\n #EMPTY#\n women\n men\ndenim\n women\n view all\n raw & selvedge jeans\n bootcut-leg jeans\n straight-leg jeans\n wide-leg jeans\n denim fit guide\ndenim\n men\n view all\n raw & selvedge jeans\n straight-leg jeans\n wide-leg jeans\n tapered-leg jeans\n slim-leg jeans\n denim fit guide\ndenim\n raw since 1987\n A.P.C. denim\n craft: the art of raw denim\n the butler program\n the little indigo book\nbags\n WOMEN\n shoulder bags\n mini bags\n crossbody bags\n totes & shopping bags\n view all\nbags\n MEN\n tote & shopping bags\n crossbody bags\n backpacks\n view all\nbags\n ICONIC\n Simone\n Neige\n Drummer\n Vera\n Grace\n Virginie\n Demi-Lune\n Ninon\nwoman\n NEW ARRIVALS\n pre-fall 26' collection\n new in\n timeless\n surplus\nwoman\n READY-TO-WEAR\n outerwear & jackets\n jeans\n skirts & dresses\n blouses & shirts\n knitwear\n pants & shorts\n t-shirts\n sweatshirts\n view all\nwoman\n BAGS\n shoulder bags\n totes & shopping bags\n mini bags\n crossbody bags\n view all\nwoman\n ACCESSORIES\n glasses\n hats & caps\n scarves\n shoes\n leather goods\n belts\n jewelry\n view all\nman\n NEW ARRIVALS\n pre-fall 26' collection\n new in\n timeless\n surplus\nman\n READY-TO-WEAR\n outerwear & jackets\n jeans\n sweatshirts\n shirts\n t-shirts & polos\n knitwear\n pants & shorts\n view all\nman\n BAGS\n tote & shopping bags\n crossbody bags\n backpacks\n view all\nman\n ACCESSORIES\n glasses\n shoes\n leather goods\n scarves\n hats & caps\n jewelry\n belts\n view all\nlifestyle\n #EMPTY#\n eyewear\n quilts\n music\n books\n A.P.C. golf\n candles\n self-care\n A.P.C. toutou\nsurplus\n #EMPTY#\n women\n men\nA.P.C. universe\n ABOUT A.P.C.\n the brand\n our commitments\n A.P.C. leather\n jean génie\n selvedge denim\n A.P.C. magazine\nA.P.C. universe\n SERVICES\n A.P.C. loyalty\n recycling program\n butler program\nA.P.C. universe\n STORES\n our locations\n MY ACCOUNT\n NEED HELP ?\nThe item has been added to your cart.\nYour cart is empty\n\nBrown canvas workwear jacket - 0 \n### Brown canvas workwear jacket  Sale price390.00 €\nOff-white workwear trousers \n### Off-white workwear trousers  Sale price250.00 €\nBlue workwear overshirt - 0 \n### Blue workwear overshirt  Sale price280.00 €\nOff-white A.P.C. Autumn 26 t-shirt - 0 \n### Off-white A.P.C. Autumn 26 t-shirt  Sale price90.00 €\nBlue canvas carpenter trousers - 0 \n### Blue canvas carpenter trousers  Sale price280.00 €\nRecuperation gym bag - 0 \n### Recuperation gym bag  Sale price290.00 €\nBrown check wool jacket - 0 \n### Brown check wool jacket  Sale price520.00 €\nFlared check trousers - 0 \n### Flared check trousers  Sale price350.00 €\nShort brown leather jacket - 0 \n### Short brown leather jacket  Sale price1 200.00 €\nFitted ecru t-shirt with A.P.C. micro-logo - 0 \n### Fitted ecru t-shirt with A.P.C. micro-logo  Sale price160.00 €\nPleated navy blue skirt - 0 \n### Pleated navy blue skirt  Sale price290.00 €\nSimone Small bag \n### Simone Small bag  Sale price450.00 €\n \npre-fall 26'\n\ndenim\nA.P.C. Brain Dead\nbags\nstores\nsimone\nquilts\nA.P.C. magazine\nour commitments\npayment\n100% secure\nreturn\nfree free delivery\nfrom 250€ question?\ncontact us",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-fdb543cc3fc31dee",
+            "url": "https://vintage-threads.com/pages/about-us",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:56:16.987Z",
+            "title": "About Vintage Threads – London’s Curated Vintage Clothing Brand",
+            "excerpt": "Skip to content  \nYour cart is empty\nContinue shopping \nHave an account?\nLog in to check out faster.\nYour cart\nEstimated total\n£0.00 GBP\nTaxes included. Discounts and shipping calculated at checkout.\n1 of every itemFree UK & worldwide shipping7 day return100% authenticity guaranteedLeading UK vintage retailerEach item hand selected from around the worldFree UK & worldwide shipping\n1 of every itemFree UK & worldwide shipping7 day return100% authenticity guaranteedLeading UK vintage retailerEach item hand selected from around the worldFree UK & worldwide shipping\n Facebook\n Instagram\n TikTok\nVintage\nLog in  Cart\nOur Mission\nTo be the world’s leading luxury pre-loved brand for designer and streetwear clothing.\n\n1\nHow it started\nFounded by friends Charlie and Freddie, Vintage Threads began with weekends trawling charity shops for hidden gems. Today, we’ve grown into one of the UK’s fastest-moving destinations for vintage and reworked clothing — with stores in Soho, Covent Garden, and Selfridges.\n\n2\nLaunching VT Rework\nIn 2021, we launched our VT Rework collections, turning damaged and discarded pieces into one-of-one designs, all stitched in-house by our London team. Every item we sell is handpicked, authenticated, and ready for its next chapter.\n\n3\nGrowing in-person\nIn 2022, we pivoted our strategy to  \nfocus on in-person retail, launching our first flagship on Sevendials’ Neal St.\n\n4\nIn partnership with...\nIn 2023, we partnered with some incredible companies, including Adidas Predators and Adidas basketball. Alongside these, we've partnered with Schuh, transforming damaged trainers into a VT Rework capsule.\n\n5\n‘We want a store in every major city in the world’\nWe want Vintage Threads to be the first vintage company to have a store in every major city. Something that hasn’t been achieved by anyone yet.\n1\n2\n3\n4\n5\n   \nWaste Nothing. Wear Everything.\nFashion is drowning the planet in waste with over 92 million tonnes every year. Most of it ends up in landfills, polluting our air, land, and oceans. Vintage Threads flips the script: no new production, no excess waste, just quality pieces built to last. Every reworked or re-worn item keeps clothes in circulation and out of landfill - proving style can be circular.\nShop the latest\nOur values...\n \nCuration\nOnly the best. Handpicked, authenticated, never average.\n \nCommunity\nBuilt for the people who get it, and the ones who will.\n \nSelf-Expression\nWear what speaks for you: one-of-one, always.\nShop new in\n\nStep inside Vintage Threads\nSoho, Covent Garden, Selfridges - discover rare finds, try them on, and feel the vibe for yourself. The best vintage in London, all under one name.\nVisit us in-store\n\nRequest a Rework\nOur VT Rework team will design, stitch, and style it into something nobody else has. Fill out the form, share your idea, and let’s bring it to life.\nRequest a Rework Now\n Choosing a selection results in a full page refresh.\n Opens in a new window.",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          }
+        ],
+        "findings": [],
+        "insights": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "message": "Ranked 554 named mapped features: Ordered by mapped category, explicit specialty text and distance; this is not a confidence score. Researching the top 3 distinct business names."
+          },
+          {
+            "stage": "web",
+            "status": "partial",
+            "message": "Retrieved web evidence processed; coverage remains unknown."
+          },
+          {
+            "stage": "insights",
+            "status": "unavailable",
+            "message": "insights: deadline."
+          },
+          {
+            "stage": "verification",
+            "status": "unavailable",
+            "message": "verification: deadline."
+          },
+          {
+            "stage": "reporting",
+            "status": "complete",
+            "message": "Evidence-backed business effects and the reviewed judgment are ready."
+          }
+        ],
+        "warnings": [
+          "3 news, roundup or unrelated sources excluded from business research.",
+          "Unsupported excerpt selections, duplicate observations or contact/navigation text were rejected.",
+          "insights: deadline.",
+          "verification: deadline.",
+          "Unreviewed generated claims withheld. Retrieved sources remain inspectable."
+        ],
+        "unknowns": [
+          "Business specialty requirements (south, asian) are not established by the broad mapped category. These features are potential alternatives, not verified specialty competitors.",
+          "Exact product pricing for A.P.C. and Vintage Threads items",
+          "Specific London location coordinates for Vintage Threads stores",
+          "Current stock availability for raw & selvedge jeans, bootcut-leg jeans, straight-leg jeans",
+          "Detailed size ranges or reworked clothing categories for Vintage Threads",
+          "Opening hours for Vintage Threads Soho, Covent Garden, Selfridges locations",
+          "Any South Asian-specific clothing lines within the researched businesses",
+          "Web search is not an exhaustive competitor census. Exact radius membership and duplicate identities require local validation.",
+          "Reviews reflect only accessible retrieved samples. Missing prices, review dates or sample sizes remain unknown.",
+          "OSM context retains its original date and mapped-feature meaning; external businesses never change these counts.",
+          "The shortlist includes named mapped features in the chosen category and radius. Coverage is unknown; duplicate OSM objects may represent one business. Only the top three distinct names receive web enrichment. Relevance uses category and text matches, not measured business quality."
+        ],
+        "agentRuns": [
+          {
+            "role": "researcher",
+            "task": "source qualification",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 8304,
+            "tools": [
+              "web_search"
+            ]
+          },
+          {
+            "role": "extractor",
+            "task": "web and review extraction",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 5488,
+            "tools": [
+              "read_discovered_pages",
+              "select_exact_quotes"
+            ]
+          },
+          {
+            "role": "analyst",
+            "task": "business impact assessment",
+            "model": "openai/gpt-oss-20b",
+            "status": "unavailable",
+            "durationMs": 81995,
+            "tools": [
+              "compare_sourced_offerings",
+              "assess_competitive_position"
+            ]
+          },
+          {
+            "role": "verifier",
+            "task": "evidence verification",
+            "model": "openai/gpt-oss-20b",
+            "status": "unavailable",
+            "durationMs": 1,
+            "tools": [
+              "check_citations",
+              "review_support"
+            ]
+          }
+        ],
+        "osmContext": {
+          "request": {
+            "schemaVersion": "1",
+            "registryVersion": "2",
+            "scope": {
+              "cityId": "london",
+              "center": {
+                "lat": 51.5137,
+                "lon": -0.1365
+              },
+              "radiusMeters": 1000
+            },
+            "categoryId": "clothing",
+            "adjacentCategoryIds": []
+          },
+          "fetchedAt": "2026-11-08T18:56:14.453Z",
+          "status": "complete",
+          "directMappedCount": 558,
+          "adjacentMappedCount": 0,
+          "coverage": "unknown"
+        },
+        "shortlist": [
+          {
+            "id": "way/273697615",
+            "name": "A.P.C.",
+            "coordinates": {
+              "lat": 51.5131875,
+              "lon": -0.1361429
+            },
+            "distanceMeters": 62.11452282085348,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.8,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/273697615"
+          },
+          {
+            "id": "way/274002575",
+            "name": "Vintage Threads",
+            "coordinates": {
+              "lat": 51.5140861,
+              "lon": -0.1355308
+            },
+            "distanceMeters": 79.63232834703423,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.4,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/274002575"
+          },
+          {
+            "id": "node/13014408786",
+            "name": "Salomon",
+            "coordinates": {
+              "lat": 51.5138502,
+              "lon": -0.1353642
+            },
+            "distanceMeters": 80.35174676224449,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.4,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/13014408786"
+          },
+          {
+            "id": "way/273720742",
+            "name": "Patta",
+            "coordinates": {
+              "lat": 51.5130896,
+              "lon": -0.1358662
+            },
+            "distanceMeters": 80.81096070042435,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.4,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/273720742"
+          },
+          {
+            "id": "way/274002606",
+            "name": "Oliver Spencer",
+            "coordinates": {
+              "lat": 51.5141707,
+              "lon": -0.1356075
+            },
+            "distanceMeters": 80.95531115463854,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.4,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/274002606"
+          },
+          {
+            "id": "node/466926259",
+            "name": "Fred Perry",
+            "coordinates": {
+              "lat": 51.5129959,
+              "lon": -0.1361217
+            },
+            "distanceMeters": 82.5530260686958,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.3,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/466926259"
+          },
+          {
+            "id": "node/12817536857",
+            "name": "UL",
+            "coordinates": {
+              "lat": 51.513204,
+              "lon": -0.1374123
+            },
+            "distanceMeters": 83.82938655288181,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.3,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/12817536857"
+          },
+          {
+            "id": "way/477598135",
+            "name": "Mix Max",
+            "coordinates": {
+              "lat": 51.5142966,
+              "lon": -0.1357096
+            },
+            "distanceMeters": 85.97905295677559,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.3,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/477598135"
+          },
+          {
+            "id": "node/5535573168",
+            "name": "Officine Générale",
+            "coordinates": {
+              "lat": 51.5128893,
+              "lon": -0.1364304
+            },
+            "distanceMeters": 90.27429991340507,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.2,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/5535573168"
+          },
+          {
+            "id": "node/13009445024",
+            "name": "The Face",
+            "coordinates": {
+              "lat": 51.5144926,
+              "lon": -0.1361384
+            },
+            "distanceMeters": 91.61638813384782,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.2,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: south, asian. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/13009445024"
+          }
+        ]
+      },
+      "shortlistTotal": 554
+    }
+  ],
+  "recordingNote": "Shortlist limited to first ten entries for review. Original counts, sources, findings and available call metrics retained; full artifact is in ignored .atlas-local/baseline-full.json."
+}

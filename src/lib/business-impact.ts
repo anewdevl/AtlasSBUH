@@ -33,5 +33,6 @@ export function assessmentHasUnsupportedFacts(a:BusinessAssessment,findings:Find
 /** Missing or rejected judgments mean hold off, not a claim that the site is unsuitable. */
 export function openingDecision(assessment:BusinessAssessment|null|undefined){
  const supported=assessment?.verdict==='recommended'||assessment?.verdict==='not-recommended';
- return {verdict:assessment?.verdict==='recommended'?'recommended':'not-recommended',label:assessment?.verdict==='recommended'?'Recommended':'Not recommended',reasoning:supported?assessment.reasoning:'Hold off until more evidence is available. This research could not support a location judgment.',basis:supported?'AI recommendation':'Hold-off recommendation'};
+ const evidenceLimited=!supported||assessment?.verdict==='not-recommended'&&/\binsufficient evidence\b|\bevidence is insufficient\b|\bnot enough evidence\b/i.test(assessment.reasoning);
+ return {verdict:assessment?.verdict==='recommended'?'recommended':'not-recommended',label:assessment?.verdict==='recommended'?'Recommended':'Not recommended',note:evidenceLimited?'Insufficient evidence':null,reasoning:supported?assessment.reasoning:assessment?.reasoning||'Hold off until more evidence is available. This research could not support a location judgment.',basis:supported?'AI recommendation':'Hold-off recommendation'};
 }

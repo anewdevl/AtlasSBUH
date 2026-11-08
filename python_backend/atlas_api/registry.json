@@ -1,0 +1,491 @@
+{
+  "categories": {
+    "cafe": {
+      "label": "Café",
+      "aliases": [
+        "cafe",
+        "café",
+        "coffee",
+        "coffee shop"
+      ],
+      "predicates": [
+        "[\"amenity\"=\"cafe\"]"
+      ],
+      "adjacent": [
+        "bakery",
+        "bubble-tea"
+      ],
+      "qualifier": "amenity=cafe; excludes exact bubble_tea cuisine tokens",
+      "registryVersion": "2"
+    },
+    "bakery": {
+      "label": "Bakery",
+      "aliases": [
+        "bakery",
+        "bakeries",
+        "bake shop"
+      ],
+      "predicates": [
+        "[\"shop\"=\"bakery\"]"
+      ],
+      "adjacent": [
+        "cafe"
+      ],
+      "qualifier": "shop=bakery",
+      "registryVersion": "2"
+    },
+    "bubble-tea": {
+      "label": "Bubble tea",
+      "aliases": [
+        "bubble tea",
+        "boba",
+        "boba tea"
+      ],
+      "predicates": [
+        "[\"amenity\"~\"^(cafe|fast_food|restaurant)$\"][\"cuisine\"~\"(^|;)[ ]*bubble_tea[ ]*(;|$)\"]"
+      ],
+      "adjacent": [
+        "cafe"
+      ],
+      "qualifier": "active food amenity with exact bubble_tea cuisine token",
+      "registryVersion": "2"
+    },
+    "pharmacy": {
+      "label": "Pharmacy",
+      "aliases": [
+        "pharmacy",
+        "pharmacies",
+        "drugstore",
+        "drug store",
+        "apothecary"
+      ],
+      "predicates": [
+        "[\"amenity\"=\"pharmacy\"]",
+        "[\"healthcare\"=\"pharmacy\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "amenity=pharmacy or healthcare=pharmacy; excludes shop=chemist and deprecated shop=pharmacy",
+      "registryVersion": "2"
+    },
+    "supermarket": {
+      "label": "Supermarket",
+      "aliases": [
+        "supermarket",
+        "supermarkets"
+      ],
+      "predicates": [
+        "[\"shop\"=\"supermarket\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=supermarket; excludes convenience and grocery shops",
+      "registryVersion": "2"
+    },
+    "restaurant": {
+      "label": "Restaurant",
+      "aliases": [
+        "restaurant",
+        "dining",
+        "pizzeria",
+        "sushi"
+      ],
+      "predicates": [
+        "[\"amenity\"=\"restaurant\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "amenity=restaurant; active mapped features only",
+      "registryVersion": "2"
+    },
+    "fast-food": {
+      "label": "Fast food / takeaway",
+      "aliases": [
+        "fast food",
+        "takeaway",
+        "burger shop"
+      ],
+      "predicates": [
+        "[\"amenity\"=\"fast_food\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "amenity=fast_food; active mapped features only",
+      "registryVersion": "2"
+    },
+    "bar": {
+      "label": "Bar / pub",
+      "aliases": [
+        "bar",
+        "pub",
+        "cocktail bar"
+      ],
+      "predicates": [
+        "[\"amenity\"=\"bar\"]",
+        "[\"amenity\"=\"pub\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "amenity=bar|pub; active mapped features only",
+      "registryVersion": "2"
+    },
+    "ice-cream": {
+      "label": "Ice cream",
+      "aliases": [
+        "ice cream",
+        "gelato"
+      ],
+      "predicates": [
+        "[\"amenity\"=\"ice_cream\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "amenity=ice_cream; active mapped features only",
+      "registryVersion": "2"
+    },
+    "convenience": {
+      "label": "Convenience store",
+      "aliases": [
+        "convenience store",
+        "corner store"
+      ],
+      "predicates": [
+        "[\"shop\"=\"convenience\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=convenience; active mapped features only",
+      "registryVersion": "2"
+    },
+    "clothing": {
+      "label": "Clothing shop",
+      "aliases": [
+        "clothing",
+        "fashion store",
+        "boutique"
+      ],
+      "predicates": [
+        "[\"shop\"=\"clothes\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=clothes; active mapped features only",
+      "registryVersion": "2"
+    },
+    "shoes": {
+      "label": "Shoe shop",
+      "aliases": [
+        "shoe shop",
+        "footwear"
+      ],
+      "predicates": [
+        "[\"shop\"=\"shoes\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=shoes; active mapped features only",
+      "registryVersion": "2"
+    },
+    "electronics": {
+      "label": "Electronics shop",
+      "aliases": [
+        "electronics",
+        "computer shop"
+      ],
+      "predicates": [
+        "[\"shop\"=\"electronics\"]",
+        "[\"shop\"=\"computer\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=electronics|computer; active mapped features only",
+      "registryVersion": "2"
+    },
+    "books": {
+      "label": "Bookshop",
+      "aliases": [
+        "bookshop",
+        "bookstore"
+      ],
+      "predicates": [
+        "[\"shop\"=\"books\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=books; active mapped features only",
+      "registryVersion": "2"
+    },
+    "florist": {
+      "label": "Florist",
+      "aliases": [
+        "florist",
+        "flower shop"
+      ],
+      "predicates": [
+        "[\"shop\"=\"florist\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=florist; active mapped features only",
+      "registryVersion": "2"
+    },
+    "pet-shop": {
+      "label": "Pet shop",
+      "aliases": [
+        "pet shop",
+        "pet store"
+      ],
+      "predicates": [
+        "[\"shop\"=\"pet\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=pet; active mapped features only",
+      "registryVersion": "2"
+    },
+    "hairdresser": {
+      "label": "Hairdresser / barber",
+      "aliases": [
+        "hairdresser",
+        "hair salon",
+        "barber"
+      ],
+      "predicates": [
+        "[\"shop\"=\"hairdresser\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=hairdresser; active mapped features only",
+      "registryVersion": "2"
+    },
+    "beauty": {
+      "label": "Beauty / nail salon",
+      "aliases": [
+        "beauty salon",
+        "nail salon"
+      ],
+      "predicates": [
+        "[\"shop\"=\"beauty\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=beauty; active mapped features only",
+      "registryVersion": "2"
+    },
+    "laundry": {
+      "label": "Laundry / dry cleaner",
+      "aliases": [
+        "laundry",
+        "laundromat",
+        "dry cleaner"
+      ],
+      "predicates": [
+        "[\"shop\"=\"laundry\"]",
+        "[\"shop\"=\"dry_cleaning\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=laundry|dry_cleaning; active mapped features only",
+      "registryVersion": "2"
+    },
+    "gym": {
+      "label": "Gym / fitness centre",
+      "aliases": [
+        "gym",
+        "fitness",
+        "fitness centre",
+        "fitness center"
+      ],
+      "predicates": [
+        "[\"leisure\"=\"fitness_centre\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "leisure=fitness_centre; active mapped features only",
+      "registryVersion": "2"
+    },
+    "dentist": {
+      "label": "Dentist",
+      "aliases": [
+        "dentist",
+        "dental clinic"
+      ],
+      "predicates": [
+        "[\"amenity\"=\"dentist\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "amenity=dentist; active mapped features only",
+      "registryVersion": "2"
+    },
+    "clinic": {
+      "label": "Medical clinic",
+      "aliases": [
+        "medical clinic",
+        "doctors office"
+      ],
+      "predicates": [
+        "[\"amenity\"=\"clinic\"]",
+        "[\"amenity\"=\"doctors\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "amenity=clinic|doctors; active mapped features only",
+      "registryVersion": "2"
+    },
+    "veterinary": {
+      "label": "Veterinarian",
+      "aliases": [
+        "veterinarian",
+        "vet clinic"
+      ],
+      "predicates": [
+        "[\"amenity\"=\"veterinary\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "amenity=veterinary; active mapped features only",
+      "registryVersion": "2"
+    },
+    "car-repair": {
+      "label": "Car repair",
+      "aliases": [
+        "car repair",
+        "auto repair",
+        "mechanic"
+      ],
+      "predicates": [
+        "[\"shop\"=\"car_repair\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "shop=car_repair; active mapped features only",
+      "registryVersion": "2"
+    },
+    "hotel": {
+      "label": "Hotel / guest house",
+      "aliases": [
+        "hotel",
+        "guest house"
+      ],
+      "predicates": [
+        "[\"tourism\"=\"hotel\"]",
+        "[\"tourism\"=\"guest_house\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "tourism=hotel|guest_house; active mapped features only",
+      "registryVersion": "2"
+    },
+    "software": {
+      "label": "Software / IT office",
+      "aliases": [
+        "software company",
+        "software office",
+        "it company",
+        "tech company"
+      ],
+      "predicates": [
+        "[\"office\"=\"it\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "office=it; active mapped features only",
+      "registryVersion": "2"
+    },
+    "coworking": {
+      "label": "Coworking space",
+      "aliases": [
+        "coworking",
+        "co working"
+      ],
+      "predicates": [
+        "[\"office\"=\"coworking\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "office=coworking; active mapped features only",
+      "registryVersion": "2"
+    },
+    "estate-agent": {
+      "label": "Estate agent",
+      "aliases": [
+        "estate agent",
+        "real estate office"
+      ],
+      "predicates": [
+        "[\"office\"=\"estate_agent\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "office=estate_agent; active mapped features only",
+      "registryVersion": "2"
+    },
+    "accountant": {
+      "label": "Accountant",
+      "aliases": [
+        "accountant",
+        "accounting office"
+      ],
+      "predicates": [
+        "[\"office\"=\"accountant\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "office=accountant; active mapped features only",
+      "registryVersion": "2"
+    },
+    "lawyer": {
+      "label": "Law office",
+      "aliases": [
+        "lawyer",
+        "law firm",
+        "law office"
+      ],
+      "predicates": [
+        "[\"office\"=\"lawyer\"]"
+      ],
+      "adjacent": [],
+      "qualifier": "office=lawyer; active mapped features only",
+      "registryVersion": "2"
+    }
+  },
+  "cities": {
+    "nyc": {
+      "label": "New York",
+      "short": "NYC",
+      "center": {
+        "lat": 40.7308,
+        "lon": -73.9973
+      },
+      "envelope": [
+        40.49,
+        -74.27,
+        40.93,
+        -73.68
+      ]
+    },
+    "london": {
+      "label": "London",
+      "short": "LON",
+      "center": {
+        "lat": 51.5137,
+        "lon": -0.1365
+      },
+      "envelope": [
+        51.28,
+        -0.51,
+        51.7,
+        0.34
+      ]
+    },
+    "dubai": {
+      "label": "Dubai",
+      "short": "DXB",
+      "center": {
+        "lat": 25.2048,
+        "lon": 55.2708
+      },
+      "envelope": [
+        24.8,
+        54.85,
+        25.4,
+        55.6
+      ]
+    },
+    "singapore": {
+      "label": "Singapore",
+      "short": "SIN",
+      "center": {
+        "lat": 1.3,
+        "lon": 103.85
+      },
+      "envelope": [
+        1.15,
+        103.59,
+        1.48,
+        104.1
+      ]
+    }
+  },
+  "overpassEndpoints": [
+    "https://overpass.private.coffee/api/interpreter",
+    "https://overpass-api.de/api/interpreter",
+    "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+    "https://api.overpass.ch/v1/interpreter"
+  ]
+}

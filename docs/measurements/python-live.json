@@ -1,0 +1,1566 @@
+{
+  "measuredAt": "2026-11-08T18:54:06.768Z",
+  "origin": "http://127.0.0.1:3001",
+  "rows": [
+    {
+      "description": "Specialty coffee with fast morning pickup",
+      "cityId": "nyc",
+      "durationMs": 33497,
+      "researchDurationMs": 32762,
+      "mapStatus": 200,
+      "report": {
+        "request": {
+          "description": "Specialty coffee with fast morning pickup",
+          "scope": {
+            "cityId": "nyc",
+            "center": {
+              "lat": 40.7308,
+              "lon": -73.9973
+            },
+            "radiusMeters": 1000
+          },
+          "osmRequest": {
+            "schemaVersion": "1",
+            "registryVersion": "2",
+            "scope": {
+              "cityId": "nyc",
+              "center": {
+                "lat": 40.7308,
+                "lon": -73.9973
+              },
+              "radiusMeters": 1000
+            },
+            "categoryId": "cafe",
+            "adjacentCategoryIds": []
+          },
+          "localOnly": true
+        },
+        "status": "complete",
+        "startedAt": "2026-11-08T18:53:14.975Z",
+        "impacts": [
+          {
+            "id": "impact1",
+            "business": "Starbucks",
+            "effect": "limited-overlap",
+            "yourOffering": "Specialty coffee with fast morning pickup",
+            "competitorOffering": "a variety of breakfast options, including sandwiches, wraps, and baked goods",
+            "findingIds": [
+              "f1"
+            ]
+          },
+          {
+            "id": "impact2",
+            "business": "Irving Farm Coffee Roasters",
+            "effect": "limited-overlap",
+            "yourOffering": "Specialty coffee with fast morning pickup",
+            "competitorOffering": "house-roasted coffee, breakfast sandwiches, fresh bagels, and pastries",
+            "findingIds": [
+              "f2"
+            ]
+          },
+          {
+            "id": "impact3",
+            "business": "La Colombe Coffee Roasters",
+            "effect": "limited-overlap",
+            "yourOffering": "Specialty coffee with fast morning pickup",
+            "competitorOffering": "a variety of coffee products, including blends, single origins, and seasonal options",
+            "findingIds": [
+              "f3",
+              "f4"
+            ]
+          }
+        ],
+        "assessment": {
+          "verdict": "not-recommended",
+          "reasoning": "The retrieved sources describe breakfast food items and subscription services at three coffee‑shop competitors near the target location. None of the quotes directly confirm branch identity, current availability, or pricing, and the geographic relevance notes state that the mapped candidates are only a few hundred metres away without independent verification. Because the evidence is unverified and the competitor offerings are limited to food items or subscription bundles rather than a fast‑morning‑pickup specialty‑coffee proposition, there is insufficient evidence to assess competitive impact,市",
+          "findingIds": [
+            "f1",
+            "f2",
+            "f3",
+            "f4"
+          ],
+          "risks": [
+            "Unverified branch identity may lead to mis‑aligned positioning.",
+            "Competitor offerings described are food‑focused, not a direct fast‑morning‑pickup coffee model."
+          ]
+        },
+        "evidence": [
+          {
+            "id": "web-50f3c41fa7d6a8cb",
+            "url": "https://www.ubereats.com/store/starbucks-774-broadway/3Dh3V9WrQSSGOF5FX1sWsw",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:16.729Z",
+            "title": "Order Starbucks (774 Broadway) - Menu & Prices - New York Delivery | Uber Eats",
+            "excerpt": "Uber Eats Home\nStarbucks (774 Broadway)\nStarbucks (774 Broadway)\n4.5 x (4,000+) • $11.99 Delivery Fee • Coffee & Tea • Cafe • Breakfast and Brunch • Bakery • $\nx Delivery unavailable\n774 Broadway, Brooklyn, NY 11206\nSun 5:00 AM – 9:00 PM\nStarbucks (774 Broadway)\nStarbucks (774 Broadway)\n$11.99 Delivery Fee\nOther fees x\nto see delivery time\nFeatured items\n4.5\n4000+ Ratings\n\"Whoever made this tonight thank you so much I would love for you to always make it this is exactly what my taste buds needed\"\n\"Tasty coffee, juices, snacks and food items! Worth the prices. Order ready quickly.\"\n\"Delicious and refreshing using quality ingredients.\"\nTrending\nHoliday Classics\nProtein Beverages\nHot Coffee & Espresso\nCold Coffee & Espresso\nChai\nMatcha\nHot Tea\nIced Tea\nRefreshers\nEnergy Refreshers\nCoffee Frappuccino®\nCrème Frappuccino®\nHot Chocolate, Lemonade & More\nBottled Beverages\nBreakfast\nBakery\nTreats\nLunch\nSnacks\n4.5\n4000+ Ratings • \n33 Reviews\nTastes great\nGreat\nDeliciosos\nGreat coffee every time.\nIt’s great\nAmazing! Starbucks had EVERYTHING we ordered.\nYum\nThey have the best drinks\nNice!\nCoffee is a booster\ngreat coffee\nTasty coffee, juices, snacks and food items! Worth the prices. Order ready quickly.\ngreat\nNice\nDeliciously made!\nAlways fresh & delicious\nLove it\nAwesome\nGreat\nThank you!\nQuick\nGreat\nGreat\nAmazing !!!!!\nDelicious and refreshing using quality ingredients.\nAmazing and perfectly packaged\nI love starbucks\nFast\nWhoever made this tonight thank you so much I would love for you to always make it this is exactly what my taste buds needed\nThe cortado is on point :). BEC is good too!\nBarista friendly and fast\nHe came in a storm i really appreciated it omg\nDelivery guy is good more patience and respectful\nFrequently asked questions\nCan I order Starbucks (774 Broadway) delivery in New York with Uber Eats?\nYes. Starbucks (774 Broadway) delivery is available on Uber Eats in New York.\nIs Starbucks (774 Broadway) delivery available near me?\nEnter your address to see if Starbucks (774 Broadway) delivery is available to your location in New York.\nHow do I order Starbucks (774 Broadway) delivery online in New York?\nThere are 2 ways to place an order on Uber Eats: on the app or online using the Uber Eats website. After you’ve looked over the Starbucks (774 Broadway) menu, simply choose the items you’d like to order and add them to your cart. Next, you’ll be able to review, place, and track your order.\nWhere can I find Starbucks (774 Broadway) online menu prices?\nView upfront pricing information for the various items offered by Starbucks (774 Broadway) here on this page.\nHow do I get free delivery on my Starbucks (774 Broadway) order?\nTo save money on the delivery, consider getting an Uber One membership, if available in your area, as one of its perks is a $0 Delivery Fee on select orders.\nHow do I pay for my Starbucks (774 Broadway) order?\nPayment is handled via your Uber Eats account.\nWhat’s the best thing to order for Starbucks (774 Broadway) delivery in New York?\nIf you’re in need of some suggestions for your Starbucks (774 Broadway) order, check out the items showcased in “Picked for you” on this page.\nIs breakfast available at Starbucks?\nYes, breakfast is available at Starbucks. Starbucks (774 Broadway) offers a variety of breakfast options, including sandwiches, wraps, and baked goods. Popular breakfast items include the Bacon, Gouda & Egg Sandwich, the Spinach, Feta & Egg White Wrap, and the Double-Smoked Bacon, Cheddar & Egg Sandwich. Customers can also enjoy oatmeal, bagels, and pastries like croissants and muffins. Be sure to review the menu at Starbucks (774 Broadway) for the full selection of breakfast items.\nIs Starbucks halal?\nStarbucks does not specifically certify its food and beverages as halal. However, many of the drinks and some food items may align with halal dietary requirements. Customers are encouraged to review the menu at Starbucks (774 Broadway) and check ingredient details to determine if specific items meet their dietary needs.\nDoes Starbucks serve gluten free food?\nYes, Starbucks offers some gluten-free options. At Starbucks (774 Broadway), customers can find items like the Gluten-Free Marshmallow Dream Bar and certain packaged snacks that are labeled gluten-free. While Starbucks takes precautions to avoid cross-contamination, the kitchen environment is not certified gluten-free. Customers with severe gluten sensitivities should review the menu and ingredient details carefully.\nDoes Starbucks serve vegetarian items?\nYes, Starbucks serves a variety of vegetarian items. At Starbucks (774 Broadway), vegetarian options include the Impossible™ Breakfast Sandwich, the Spinach, Feta & Egg White Wrap, and the Tomato & Mozzarella on Focaccia. Additionally, there are vegetarian-friendly snacks, pastries, and beverages available. Customers can explore the menu at Starbucks (774 Broadway) for more vegetarian choices.\nDoes Starbucks serve vegan items?\nYes, Starbucks offers vegan items. At Starbucks (774 Broadway), customers can enjoy plant-based options like the Impossible™ Breakfast Sandwich (without cheese and egg), the Chickpea Bites & Avocado Protein Box, and oatmeal prepared with water or non-dairy milk. Starbucks also provides a variety of non-dairy milk alternatives, such as almond, oat, soy, and coconut milk, which can be used in beverages. Be sure to review the menu at Starbucks (774 Broadway) for additional vegan-friendly options.\nWhat are the different Starbucks® cup sizes available for drinks?\nStarbucks® offers a variety of cup sizes to cater to different preferences. The sizes include Short (8 oz), Tall (12 oz), Grande (16 oz), Venti® Hot (20 oz), Venti® Cold (24 oz), and Trenta® (31 oz). Each size allows you to enjoy your favorite Starbucks® beverages in the amount that suits your needs, whether you’re ordering from Starbucks (774 Broadway) for a quick pick-me-up or a leisurely sip.\nWhat are the Starbucks® Refreshers™ and do they contain caffeine?\nStarbucks® Refreshers™ are a line of cold beverages that combine fruit juice with green coffee extract, providing a refreshing and energizing drink. They do contain caffeine, although in a lower amount compared to traditional coffee. For example, the Strawberry Açaí Refresher™ is a popular choice that offers a fruity flavor with a caffeine boost, perfect for a refreshing order from Starbucks (774 Broadway).\nWhat is the Starbucks® Pink Drink?\nThe Starbucks® Pink Drink is a delightful and refreshing beverage that combines the Strawberry Açaí Refresher™ with coconut milk, resulting in a creamy and fruity drink. It’s a popular choice for those looking for a non-dairy, refreshing option with a hint of caffeine. You can easily order this Instagram-famous drink from Starbucks (774 Broadway) for a tasty treat.\nAre Starbucks® Frappuccino® drinks available for delivery?\nYes, Starbucks® Frappuccino® drinks are available for delivery. You can enjoy a variety of Frappuccino® flavors, such as the classic Coffee Frappuccino® or the indulgent Mocha Frappuccino®, delivered right to your doorstep from Starbucks (774 Broadway).\nDoes Starbucks® offer any low-calorie drink options?\nStarbucks® provides several low-calorie drink options for those mindful of their calorie intake. Some popular choices include the Iced Coffee with Sugar-Free Vanilla Syrup, the Cold Brew Coffee, and the Skinny Vanilla Latte. These options allow you to enjoy your favorite Starbucks® beverages without compromising on flavor or your dietary goals when ordering from Starbucks (774 Broadway).\nWhat are the Starbucks® egg bites?\nStarbucks® egg bites are a delicious and convenient breakfast option made with cage-free eggs and a variety of flavorful ingredients. For example, the Egg White & Roasted Red Pepper Egg Bites feature egg whites combined with Monterey Jack cheese, spinach, and fire-roasted red peppers, all cooked using the French sous vide technique. These protein-packed bites are perfect for a quick and satisfying meal from Starbuck",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-0096bc1c98744f58",
+            "url": "https://www.mapquest.com/us/new-york/irving-farm-coffee-roasters-421556962",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:16.650Z",
+            "title": "Irving Farm Coffee Roasters",
+            "excerpt": "___\nDirectionsSee map\n   \nHello, stranger\nLog in or sign up\n   Image 1 Plans\n   Image 2 Get directions\n   Image 3 My saved places\n   MapQuest Travel\n   Route Planner\n   Get help\n   Search the web\n   Send feedback\nLearn more about our mobile apps.\n   Image 4: Android app Google Play\n   Image 5: Download on the App Store\n   Merch\n   Claim your business\n   Developer resources\n   Jobs\n   Advertise with us\n   Terms of use\n   Privacy policy\n   Data and licenses\n   About our ads\n   Do not sell\nAdvertisement\nAdvertisement\n© 2026 MapQuestLegal\nImage 6CoffeeImage 7FoodImage 8GasImage 9GroceryImage 10ShoppingImage 11Hotels\nImage 12Live Radio\n500 ft\n[x] Traffic slowdowns - [x] Traffic incidents \nIrving Farm Coffee Roasters\n\nLog in\nSearch places or paste a link \nIrving Farm Coffee Roasters\nClosed\nImage 13: yelp logo\n(82)\n   Pet friendly\n   Wi-Fi\nImage 14SaveImage 15ShareView Menu Photos\nDirections\nAdvertisement\nAdvertisement\nPhotos\nImage 16: Breakfast sandwichYelp\nBreakfast sandwich\nImage 17: she is in term B and should be firedYelp\nshe is in term B and should be fired\nImage 18Yelp\nImage 19Yelp\nImage 20Yelp\nImage 21Yelp\nImage 22Yelp\nImage 23Yelp\nImage 24Yelp\nImage 25Yelp\nImage 26\nTop review\n“Iced oat latte was fair. Could have used more ice. $8 Blueberry muffin was pretty good and crusty. Not overly sugary but also not stale. $8 Overall satisfied for an airport roastery.”\nAlbert K.See all\nTerminal B, Gate 47, Queens, NY, 11371\nIrving Farm Coffee Roasters operates in Queens, New York, specifically at major airport transit hubs such as LaGuardia and JFK, offering a convenient option for travelers. The locations serve house-roasted coffee, breakfast sandwiches, fresh bagels, and pastries, making them ideal stops before flights.\nThis coffee roaster is notable for its focus on providing quality coffee and light fare in busy airport environments, distinguishing it from typical neighborhood cafes.\n_Generated using information from the web_\nMore\nHours\nClosed until 4:30 am\nSun\n4:30 am - 10 pm\nMon\n4:30 am - 10 pm\nTue\n4:30 am - 10 pm\nWed\n4:30 am - 10 pm\nThu\n4:30 am - 10 pm\nFri\n4:30 am - 10 pm\nSat\n4:30 am - 10 pm\nAdvertisement\nReviews Image 27: yelp logo (82)\nIced oat latte was fair. Could have used more ice. $8 Blueberry muffin was pretty good and crusty. Not overly sugary but also not stale. $8 Overall satisfied for an airport roastery.\n4 months ago\nImage 28\nAlbert K.\nRead more on Yelp\nI am not sure how this is even possible. My latte neither tastes like coffee or milk. It kinda just tastes like hot water. It is an expensive cup of hot water. Service is good. Please...\n1 year ago\nImage 29\nLeeza D.\nRead more on Yelp\nAbsolutely would not recommend this place. The service was horrible and slow, and genuinely I felt as through the staff would rather punch me than take an order. The coffee was ok and the...\n11 months ago\nImage 30\nKendra F.\nRead more on Yelp\nI paid about $8 for a latte and it was decent/solid. Gets the job done, gets the necessary caffeine in and there are milk options. LGA looks great these days and it's nice to have a real iced...\n7 months ago\nImage 31\nAleena A.\nRead more on Yelp\nthe person taking orders made a sandwich and waited for it for 5 min and refused to take orders. 3 flight attendants left- and she ignored us all two people just sat there. when asked she just...\n9 months ago\nSharon M.\nRead more on Yelp\nYes, MapQuest has an app No printouts. Just live voice directions. Get the free app Image 324.4\nFeatures\n   Pet friendly\n   Has Wi-Fi\n   Credit\nSee all\nTop Collections Near Queens\nImage 33: 7 Best Authentic Japanese Restaurant IN New York Ny 7 Best Authentic Japanese Restaurant IN New York Ny 7 places\nImage 34: Best Places to Eat with Kids in New York, NY Best Places to Eat with Kids in New York, NY 5 places\nImage 35: Best Places for Kids' Birthday Parties in New York, NY Best Places for Kids' Birthday Parties in New York, NY 3 places\nImage 36: Best Places to Stay in for Families in New York, NY Best Places to Stay in for Families in New York, NY 19 places\nImage 37: Best Places to Visit in New York, NY Best Places to Visit in New York, NY 20 places\nImage 38: Outdoor Activities Near New York, NY Outdoor Activities Near New York, NY 9 places\nImage 39: Fall Activities Near New York, NY Fall Activities Near New York, NY 19 places\nImage 40: Winter Activities Near New York, NY Winter Activities Near New York, NY 13 places\nAlso at this address\nImage 41: Chase Sapphire Lounge by The Club Chase Sapphire Lounge by The Club\nAdvertisement\nAdvertisement\nOwn this business?\nClaim it\nSee a problem?Let us know\nUnited States›New York›Queens County›Flushing›11371›Irving Farm Coffee Roasters\nSee more\nImage 42",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-04d411ca9bb0ca2a",
+            "url": "https://www.mapquest.com/us/new-york/la-colombe-soho-291762802",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:17.944Z",
+            "title": "La Colombe Coffee Roasters",
+            "excerpt": "DirectionsSee map\n   \nHello, stranger\nLog in or sign up\n   Image 1 Plans\n   Image 2 Get directions\n   Image 3 My saved places\n   MapQuest Travel\n   Route Planner\n   Get help\n   Search the web\n   Send feedback\nLearn more about our mobile apps.\n   Image 4: Android app Google Play\n   Image 5: Download on the App Store\n   Merch\n   Claim your business\n   Developer resources\n   Jobs\n   Advertise with us\n   Terms of use\n   Privacy policy\n   Data and licenses\n   About our ads\n   Do not sell\nAdvertisement\nAdvertisement\n© 2026 MapQuestLegal\nImage 6CoffeeImage 7FoodImage 8GasImage 9GroceryImage 10ShoppingImage 11Hotels\nImage 12Live Radio\n2000 ft\n[x] Traffic slowdowns - [x] Traffic incidents \nLa Colombe Coffee Roasters\n\nLog in\nSearch places or paste a link \nLa Colombe Coffee Roasters\nOpen\nImage 13SaveImage 14CallImage 15WebImage 16Share\nDirections\nAdvertisement\nAdvertisement\n270 Lafayette St, New York, NY, 10012-3311\nLa Colombe Coffee Roasters in New York, NY offers a variety of coffee products, including blends, single origins, and seasonal options. Notable items include the Salted Caramel Fridge Pack, the Monaco Medium Roast, and the Colombia Inga Red Honey Light Roast.\nThe place also features ready-to-drink beverages such as Draft Lattes and Cold Brew options. Subscriptions and gift bundles are available, making it a convenient stop for coffee enthusiasts seeking quality and variety.\n_Generated from the website_\nMore\nHours\nOpen until 6:30 pm\nSun\n7:30 am - 6:30 pm\nMon\n7:30 am - 6:30 pm\nTue\n7:30 am - 6:30 pm\nWed\n7:30 am - 6:30 pm\nThu\n7:30 am - 6:30 pm\nFri\n7:30 am - 6:30 pm\nSat\n7:30 am - 6:30 pm\nAdvertisement\nFind related places\nImage 17: Restaurants Restaurants\nYes, MapQuest has an app No printouts. Just live voice directions. Get the free app Image 184.4\nYou might also like\nImage 19: Peddler Peddler Coffee Shops \"On my way to get bad sushi, never going to that restaurant again, this gold cart peaked my interest. My first thoughts were this is a 007 Golden Eye movie prop. Passing by and seeing the overjoyed...\" Image 20Hong Kim L.(26)\nImage 21: Iconic Cafe Iconic Cafe Coffee Shops \"First time experience: Nice open environment with a great selection of unique and tasty pastries and treats. They have a nice selection of hot tea. I had a chai tea and an almond croissant, both...\" Image 22Stefan B.(40)\nImage 23: Think Coffee Think Coffee Coffee Shops \"So good! We had the blueberry muffin with streusel, the vegan chai muffin, avocado toast, and nomad sandwich. Honey lavender latte with almond milk and vanilla latte with almond milk. All were...\" Image 24Stef L.(319)\nImage 25: Starbucks Starbucks Coffee Shops \"Walking into this Starbucks I was greeted with a 'Welcome' by a barista behind the counter. Everyone was so friendly. Diana took my order promptly and was very pleasant to deal with .. asking if I...\" Image 26Eva E.(92)\nImage 27: Think Coffee Think Coffee Coffee Shops \"Popped in friday afternoon to meet a friend , and after just having had a matcha and a latte less than a full hour ago I needed to switch it up so I grabbed an iced chai latte and it hit the spot,...\" Image 28Semaj B.(761)\nImage 29: The Bean The Bean Restaurants \"I came here recently on a fall afternoon to sit and do some work on my laptop. It was a pleasant experience. The music and atmosphere was fairly relaxed and allowed for a productive time....\" Image 30Eugene C.(583)\nTop Collections Near New York\nImage 31: Best Places to Eat with Kids in New York, NY Best Places to Eat with Kids in New York, NY 5 places\nImage 32: Best Places for Kids' Birthday Parties in New York, NY Best Places for Kids' Birthday Parties in New York, NY 3 places\nImage 33: Best Places to Stay in for Families in New York, NY Best Places to Stay in for Families in New York, NY 19 places\nImage 34: Best Places to Visit in New York, NY Best Places to Visit in New York, NY 20 places\nImage 35: Outdoor Activities Near New York, NY Outdoor Activities Near New York, NY 9 places\nImage 36: Fall Activities Near New York, NY Fall Activities Near New York, NY 19 places\nImage 37: Winter Activities Near New York, NY Winter Activities Near New York, NY 13 places\nImage 38: Summer Activities Near New York, NY Summer Activities Near New York, NY 15 places\nAlso at this address\nMidway Lake Heather LLCGraf, Elizabeth P PHDTom Palmer Projects LLCImage 39: Tracey Mattingly LLC Tracey Mattingly LLCEagle Point Founders LLCMidway Investors Inc\nAdvertisement\nAdvertisement\nOwn this business?\nClaim it\nSee a problem?Let us know\nUnited States›New York›New York County›New York›10012›La Colombe Coffee Roasters\nPartial Data by Foursquare.\nPartial Data by Infogroup © 2026. All rights reserved.\nSee more\nImage 40: Peddler Similar places Peddler (26)Image 41: Iconic Cafe Similar places Iconic Cafe (40)Image 42: Think Coffee Similar places Think Coffee (319)\nImage 43",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-5319ca1f8a501efb",
+            "url": "https://weproudlyservestarbucks.com/my/beverages",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:16.729Z",
+            "title": "Our Starbucks Beverages Menu | We Proudly Serve Starbucks",
+            "excerpt": "Solutions\n+ All Solutions Coffee solutions for your business\n+ Served Bring the coffeehouse to your environment.\n+ Self-Serve Our premium-self serve beverage solution.\n+ Brewed Self-served freshly brewed filter coffee\n+ Single-Serve A streamlined offering of our most popular coffees.\n Featured Channels\n+ Channels Business coffee solutions, tailored to your needs\n+ Hotels Serve sought-after brands in lobbies, in-room & events.\n+ Workplace A premium experience for your offices, cafeterias, and meeting rooms.\n+ Healthcare Offer patients, visitors and staff great care and coffee.\n+ Universities & Colleges Bring the brand to your campus, libraries and recreation areas.\n Beverages\n Sustainability\nWe Proudly Serve Starbucks We Proudly Serve Starbucks\nAbout us\nGet in touch\nWe Proudly Serve Starbucks\n Solutions\n Featured Channels\n Beverages\n Sustainability\n About us\n Get in touch\n All Solutions Coffee solutions for your business\n Served Bring the coffeehouse to your environment.\n Self-Serve Our premium-self serve beverage solution.\n Brewed Self-served freshly brewed filter coffee\n Single-Serve A streamlined offering of our most popular coffees.\n Channels Business coffee solutions, tailored to your needs\n Hotels Serve sought-after brands in lobbies, in-room & events.\n Workplace A premium experience for your offices, cafeterias, and meeting rooms.\n Healthcare Offer patients, visitors and staff great care and coffee.\n Universities & Colleges Bring the brand to your campus, libraries and recreation areas.\nOther regions and countries\nEUROPE\n UK\n Spain\n Netherlands\n Turkey\n Portugal\n Italy\n France\n Belgium\n Switzerland\n Austria\n Germany\n Romania\n Slovakia\n Poland\n Hungary\n Bulgaria\n Denmark\n Norway\n Sweden\n Finland\n Czech Republic\n Ireland\nASIA & OCEANIA\n Australia\n New Zealand\n Thailand\n Vietnam\n Singapore\n China\n Taiwan\n Japan\n South Korea\nAMERICAS\n Canada\n Mexico\n United States\n Chile\n Costa Rica\n Brazil\n Caribbean\nMiddle East & Africa\n MENA\n South Africa\nA variety of coffee and other beverages arranged in two rows \nBEVERAGES\nIconic Starbucks® beverages for your business\nGet in touch\nWE PROUDLY SERVE STARBUCKS® BEVERAGE MENU\nA menu of hot and cold beverages that customers already know and love\nThe We Proudly Serve Starbucks® Coffee Programme offers a comprehensive menu of classic hot drinks, refreshing iced options and seasonal favourites. The programme provides customisable beverages using syrups to add exciting flavours and plant-based dairy alternatives and all drinks are created using the same Arabica coffee beans found in Starbucks® coffeehouses to help ensure the consistent quality that customers recognise.\nSTARBUCKS® BEVERAGE MENU Iconic Starbucks® beverages\nEspresso Drinks\nClassic espresso-based beverages offering familiar options that customers seek throughout the day.\nAn espresso in an espresso glass\nEspresso\nA shot of espresso with a rich flavour and caramel-like sweetness.\nAn americano in a glass mug\nAmericano\nEspresso shots are topped with hot water to produce a light layer of crema.\nA flat white in a glass cup\nFlat White\nExpertly steamed milk poured over two shots of espresso.\nA latte macchiato in a tall glass\nCaffè Latte\nStarbucks® dark, rich espresso is balanced with steamed milk and topped with a light layer of foam.\nA latte macchiato in a tall glass\nLatte Macchiato\nThis espresso classic has espresso shots slowly poured over lightly aerated milk for a bold and roasty new way to sip.\nA cappuccino in a glass mug\nCappuccino\nDark, rich espresso combined with steamed milk, topped with a deep layer of foam.\nA caramel macchiato in a glass mug\nCaramel Macchiato\nFreshly steamed milk with caramel-flavoured syrup, marked with espresso and finished with caramel sauce.\nA mocha in a glass mug\nMocha\nEspresso with bittersweet mocha sauce and steamed milk.\nA filter coffee in a glass mug\nFilter Coffee\nIconic Starbucks® coffee that's smooth, balanced and rich in flavour – perfect for every day.\nIced Coffees & Teas\nRefreshing cold coffee and tea options, from iced latte to iced tea, that appeal to customers year-round, particularly popular with younger demographics.\nAn iced americano in a tall glass\nIced Americano\nEspresso shots are topped with water to produce a light layer of crema, then served over ice.\nAn iced latte in a tall glass\nIced Latte\nStarbucks® dark, rich espresso is combined with milk and served over ice. A perfect milk-forward cool down.\nAn iced mocha in a tall glass\nIced Mocha\nA combination of rich, full-bodied espresso with mocha sauce, milk and ice which can be topped off with whipped cream.\nAn iced caramel macchiato in a tall glass\nIced Caramel Macchiato\nEspresso combined with caramel-flavoured syrup, milk and caramel sauce over ice.\nIced Shaken Black Tea in a tall glass\nIce Black Tea Lemonade\nRefreshing drink made with premium black tea that is sweetened and shaken with lemonade and ice.\nFrappuccino® Blended Beverages\nA consumer favourite and great footfall driver, creamy Frappuccino® Blended Beverages add fun and flavour to your menu.\nA Chocolate Cream Frappuccino® Blended Beverage in a tall glass\nChocolate Cream Frappuccino® Blended Beverage\nThe flavour of chocolate and more chocolate. It’s the rich, creamy taste of mocha-flavoured sauce blended with milk.\nA Caramel Frappuccino® Blended Beverage in a tall glass\nCaramel Frappuccino® Blended Beverage\nCoffee blended with caramel syrup, milk and ice, topped with whipped cream and caramel sauce.\nA Coffee Frappuccino® Blended Beverage in a tall glass\nCoffee Frappuccino® Blended Beverage\nCoffee meets milk and ice in a blender and then is topped with a swirl of whipped cream. An original Starbucks Frappuccino® beverage.\nHot Chocolates\nIndulgent hot chocolate beverages crafted with quality ingredients, offering comforting options that appeal to a wide range of customers.\nA classic hot chocolate in a glass mug\nClassic Hot Chocolate\nSteamed milk swirled with mocha-flavoured syrup. Can be topped with whipped cream.\nSeasonal Iconic Favourites\nLimited-time beverages that will depend on your market, such as the Pumpkin Spice Latte, that create excitement and can increase visits throughout the year.\nPumpkin spice latte selection in a variety of glasses\nPumpkin Spice Latte Range\nThe iconic Starbucks® Pumpkin Spice Latte is the perfect complement with hot, iced and Frappuccino® beverages on the menu.\nToffee nut latte selection in a variety of glasses\nToffee Nut Latte\nBring in the excitement of the holiday season across Served and Self-Serve solutions with this iconic seasonal favourite.\nStarbucks Espresso Roast\nRoasts and blends\nStarbucks® Espresso Roast:   \nRich and caramelly sweet, this coffee is at the heart of the Starbucks® everyday espresso drinks.  \nStarbucks® Pike Place™ Roast:   \nWell-rounded with subtle notes of cocoa and toasted nuts balancing the smooth mouthfeel.\nTwo people holding We Proudly Serve Starbucks beverages in a café\nSolutions\nThe We Proudly Serve Starbucks® Coffee Programme includes:\n Self-Serve automated coffee machines for consistent quality with minimal training\n Served options in your café, using your baristas, with training support for your team\n Simple Brewed solutions for meetings and events\n Convenient Single-Serve alternatives where a simple portioned solution is required, such as small offices and hotel rooms\nDiscover the coffee solutions\nGETTING TO KNOW YOU How many cups would you like to serve?\nNeed to talk about more than one solution? Speak to one of our experts for advice.\nProfiler-WPSS-Cup\nProfiler-WPSS-Cup\nGETTING TO KNOW YOU Will your drinks be served by a barista?     Profiler-Barista\nProfiler-Barista\nGETTING TO KNOW YOU Which beverages would you like to serve?\nChoose as many as you need.\nProfiler-ICMLatte       Profiler-ICMLatte\nProfiler-ICMLatte       Profiler-ICMLatte\nGET IN TOUCH\nStart a conversation\nThe We Proudly Serve Starbucks® Coffee Programme is offered by Nestlé, Starbucks® exclusive distributor of the program. Get in touch to find out more.\nNESTLE PROFES",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-373d42a1b5336448",
+            "url": "https://www.mapquest.com/us/new-york/irving-farm-coffee-roasters-450567929",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:16.650Z",
+            "title": "Irving Farm Coffee Roasters",
+            "excerpt": "___\nDirectionsSee map\n   \nHello, stranger\nLog in or sign up\n   Image 1 Plans\n   Image 2 Get directions\n   Image 3 My saved places\n   MapQuest Travel\n   Route Planner\n   Get help\n   Search the web\n   Send feedback\nLearn more about our mobile apps.\n   Image 4: Android app Google Play\n   Image 5: Download on the App Store\n   Merch\n   Claim your business\n   Developer resources\n   Jobs\n   Advertise with us\n   Terms of use\n   Privacy policy\n   Data and licenses\n   About our ads\n   Do not sell\nAdvertisement\nAdvertisement\n© 2026 MapQuestLegal\nImage 6CoffeeImage 7FoodImage 8GasImage 9GroceryImage 10ShoppingImage 11Hotels\nImage 12Live Radio\n500 ft\n[x] Traffic slowdowns - [x] Traffic incidents \nIrving Farm Coffee Roasters\n\nLog in\nSearch places or paste a link \nIrving Farm Coffee Roasters\n$$\nOpen\nImage 13: tripadvisor logo\n(40)\nImage 14SaveImage 15CallImage 16WebImage 17Share\nDirections\nAdvertisement\nAdvertisement\nPhotos\nImage 18: photo0.jpg\nphoto0.jpg\nImage 19: photo0.jpg\nphoto0.jpg\nImage 20: photo1.jpg\nphoto1.jpg\nImage 21: photo4.jpg\nphoto4.jpg\nImage 22: photo2.jpg\nphoto2.jpg\nImage 23: photo5.jpg\nphoto5.jpg\nImage 24\nImage 25\nImage 26\nImage 27\nImage 28\nTop review\n“We had breakfast at Irving Farm twice - they offered great freshly made options as well as their pas...”\n233nathanpSee all\n135 E 50th St, New York City, NY, 10022-7504\nIrving Farm Coffee Roasters, also known as Irving Farm New York, is a well-established coffee shop in New York City, operating since 1996. The business roasts sustainably sourced beans in the Hudson Valley and has multiple locations throughout Manhattan, including Gramercy, the Upper West Side, Greenwich Village, the East Village, and Midtown East.\nThe cafes offer a selection of craft coffee blends, light food options, and equipment for coffee enthusiasts. Each location features its own unique atmosphere, catering to the diverse neighborhoods they serve.\n_Generated using information from the internet_\nMore\nHours\nOpen until 7 pm\nSun\n8 am - 7 pm\nMon\n7 am - 8 pm\nTue\n7 am - 8 pm\nWed\n7 am - 8 pm\nThu\n7 am - 8 pm\nFri\n7 am - 8 pm\nSat\n8 am - 7 pm\nAdvertisement\nReviews Image 29: tripadvisor logo (40)\nThe Coffee Tastes average could have been better but it's okay. Their sandwiches can be a hit or mis...\n2 years ago\nImage 30\nNicholas W\nRead more on Tripadvisor\nI don’t know if the is the lga location but this is one of the worst interactions ever. Seeking cof...\n3 years ago\nImage 31\nALowblow\nRead more on Tripadvisor\nWe had breakfast at Irving Farm twice - they offered great freshly made options as well as their pas...\n6 years ago\nImage 32\n233nathanp\nRead more on Tripadvisor\nYes, MapQuest has an app No printouts. Just live voice directions. Get the free app Image 334.4\nTop Collections Near New York City\nImage 34: 7 Best Authentic Japanese Restaurant IN New York Ny 7 Best Authentic Japanese Restaurant IN New York Ny 7 places\nImage 35: Best Places to Eat with Kids in New York, NY Best Places to Eat with Kids in New York, NY 5 places\nImage 36: Best Places for Kids' Birthday Parties in New York, NY Best Places for Kids' Birthday Parties in New York, NY 3 places\nImage 37: Best Places to Stay in for Families in New York, NY Best Places to Stay in for Families in New York, NY 19 places\nImage 38: Best Places to Visit in New York, NY Best Places to Visit in New York, NY 20 places\nImage 39: Outdoor Activities Near New York, NY Outdoor Activities Near New York, NY 9 places\nImage 40: Fall Activities Near New York, NY Fall Activities Near New York, NY 19 places\nImage 41: Winter Activities Near New York, NY Winter Activities Near New York, NY 13 places\nAlso at this address\nJ KeeganRobin G London PhotographyCore Station Physical TherapySheila Berger ChazinHandler andImage 42: Chef Guo Chef Guo\nAdvertisement\nAdvertisement\nOwn this business?\nClaim it\nSee a problem?Let us know\nUnited States›New York›New York County›New York›10022›Irving Farm Coffee Roasters\nPartial Data by Foursquare.\nSee more\nImage 43",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-83de85d94eaf80d5",
+            "url": "https://tavily.com/knowledge/company/4wziV08ibCHo",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:17.944Z",
+            "title": "La Colombe Coffee Roasters",
+            "excerpt": "La Colombe Coffee Workshop\nID: 4wziV08ibCHo\nWebsite: www.lacolombe.com\nLegal name: LA COLOMBE COFFEE ROASTERS, INC.\nHeadquarters: Philadelphia, Pennsylvania, United States\nLinkedIn: www.linkedin.com/company/la-colombe-coffee-workshop · 31,200 followers\nIndustry: Food and Beverage Services\nCompany type: Public Company\nParent company: Chobani Global Holdings, LLC (www.chobani.com/)\nFounded: 1994\nSocial profiles: www.facebook.com/lacolombecoffee, www.twitter.com/lacolombecoffee, www.crunchbase.com/organization/la-colombe-coffee-roasters, www.instagram.com/lacolombecoffee, www.youtube.com/c/lacolombecoffeeroasters\nEmail: help@lacolombe.net\nPhone: 1 800 563 0860\nDescription: La Colombe Coffee Workshop is an online coffee shop that offers a wide variety of products and brewing equipment. They provide free surprise gift with new subscriptions and offer bold, bright, and made for late summer.\nProducts and services\nKeywords: food & beverage, specialty coffee, coffee drinks, cafes, online, subscriptions, coffee, products, brewing equipment, food-beverage, retail, beverages\nHeadcount\nNow: 526 · +79 yearly (17.7%) · +526 quarterly · +526 monthly\nNorthern America: 334\nLatin America: 2\nWestern Europe: 1\nEastern Europe: 0\nSouthern Europe: 0\nSub Saharan Africa: 0\nCentral Asia: 0\nAustralia New Zealand: 0\nNorthern Europe: 0\nSouth Eastern Asia: 0\nPolynesia: 0\nSouthern Asia: 0\nNorthern Africa: 0\nMelanesia: 0\nWestern Asia: 0\nFinancials\nAnnual revenue: 94.00M USD\nM&A\nAcquired by: Chobani (2023-12-15): 900.00M USD\nTechnology\nDetected: 63\nsql · last seen 2026-08-24\nfacebook · last seen 2026-08-24\nlooker · last seen 2026-08-24\nhumanity · last seen 2026-08-24\nlinkedin · last seen 2026-08-24\nhubspot · last seen 2026-08-24\nharvest · last seen 2026-08-24\nworkfront · last seen 2026-08-24\nReputation\nOpen roles: 3\nSimilar companies\nsuper coffee\nblue bottle coffee\nwandering bear\nkohana coffee\ncraft coffee\nmalk organics\nphilz coffee\nbulletproof digital",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          }
+        ],
+        "findings": [
+          {
+            "id": "f1",
+            "claim": "Retrieved source states: Starbucks (774 Broadway) offers a variety of breakfast options, including sandwiches, wraps, and baked goods.",
+            "kind": "offering",
+            "business": "Starbucks",
+            "relation": "direct",
+            "evidence": [
+              {
+                "sourceId": "web-50f3c41fa7d6a8cb",
+                "quote": "Starbucks (774 Broadway) offers a variety of breakfast options, including sandwiches, wraps, and baked goods."
+              }
+            ],
+            "geographicRelevance": "Mapped candidate is 155 m from the selected center; this source does not independently confirm branch identity.",
+            "limitations": [
+              "Source assertion, not independent verification.",
+              "Exact branch identity and current availability remain unverified."
+            ],
+            "reviewSampleSize": null,
+            "reviewDates": null
+          },
+          {
+            "id": "f2",
+            "claim": "Retrieved source states: The locations serve house-roasted coffee, breakfast sandwiches, fresh bagels, and pastries, making them ideal stops before flights.",
+            "kind": "offering",
+            "business": "Irving Farm Coffee Roasters",
+            "relation": "direct",
+            "evidence": [
+              {
+                "sourceId": "web-0096bc1c98744f58",
+                "quote": "The locations serve house-roasted coffee, breakfast sandwiches, fresh bagels, and pastries, making them ideal stops before flights."
+              }
+            ],
+            "geographicRelevance": "Mapped candidate is 176 m from the selected center; this source does not independently confirm branch identity.",
+            "limitations": [
+              "Source assertion, not independent verification.",
+              "Exact branch identity and current availability remain unverified."
+            ],
+            "reviewSampleSize": null,
+            "reviewDates": null
+          },
+          {
+            "id": "f3",
+            "claim": "Retrieved source states: La Colombe Coffee Roasters in New York, NY offers a variety of coffee products, including blends, single origins, and seasonal options.",
+            "kind": "offering",
+            "business": "La Colombe Coffee Roasters",
+            "relation": "direct",
+            "evidence": [
+              {
+                "sourceId": "web-04d411ca9bb0ca2a",
+                "quote": "La Colombe Coffee Roasters in New York, NY offers a variety of coffee products, including blends, single origins, and seasonal options."
+              }
+            ],
+            "geographicRelevance": "Mapped candidate is 183 m from the selected center; this source does not independently confirm branch identity.",
+            "limitations": [
+              "Source assertion, not independent verification.",
+              "Exact branch identity and current availability remain unverified."
+            ],
+            "reviewSampleSize": null,
+            "reviewDates": null
+          },
+          {
+            "id": "f4",
+            "claim": "Retrieved source states: Subscriptions and gift bundles are available, making it a convenient stop for coffee enthusiasts seeking quality and variety.",
+            "kind": "offering",
+            "business": "La Colombe Coffee Roasters",
+            "relation": "direct",
+            "evidence": [
+              {
+                "sourceId": "web-04d411ca9bb0ca2a",
+                "quote": "Subscriptions and gift bundles are available, making it a convenient stop for coffee enthusiasts seeking quality and variety."
+              }
+            ],
+            "geographicRelevance": "Mapped candidate is 183 m from the selected center; this source does not independently confirm branch identity.",
+            "limitations": [
+              "Source assertion, not independent verification.",
+              "Exact branch identity and current availability remain unverified."
+            ],
+            "reviewSampleSize": null,
+            "reviewDates": null
+          }
+        ],
+        "insights": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "message": "184 named mapped candidates; researching 3 distinct names."
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "message": "Business-specific sources retrieved; only compact numbered quotes go to reasoning models."
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "message": "Offering comparisons checked against source text and finding identities."
+          },
+          {
+            "stage": "verification",
+            "status": "complete",
+            "message": "Exact quotes checked in code; model review removed 0 unsupported observations/conclusions."
+          },
+          {
+            "stage": "reporting",
+            "status": "complete",
+            "message": "Validated evidence and available partial results are ready."
+          }
+        ],
+        "warnings": [
+          "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+          "Way and relation centers are representative positions, not guaranteed entrances."
+        ],
+        "unknowns": [
+          "Mapped coverage is unknown; distinct OSM objects can represent the same business. Only up to three distinct named candidates receive web enrichment.",
+          "A brand page does not confirm offerings at the mapped branch. Branch identity and current opening status require local verification.",
+          "Broad category matches do not establish specialty overlap. Missing prices, review dates and sample sizes remain unknown.",
+          "This bounded sample cannot establish market coverage, customer demand, rent, footfall, revenue or profitability."
+        ],
+        "agentRuns": [
+          {
+            "role": "researcher",
+            "task": "Choose search/refine for a supplied candidate, inspect a discovered source, or stop when evidence is",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 985,
+            "tools": [
+              "search_candidate",
+              "inspect_discovered_source",
+              "refine_query",
+              "stop"
+            ]
+          },
+          {
+            "role": "extractor",
+            "task": "Select exact sourceId and quoteId observations for supplied candidate names only. Copy business exac",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 7875,
+            "tools": [
+              "select_exact_quotes"
+            ]
+          },
+          {
+            "role": "analyst",
+            "task": "Compare actual quoted offerings to the proposal. yourOffering must be an exact substring of the prop",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 10937,
+            "tools": [
+              "compare_sourced_offerings"
+            ]
+          },
+          {
+            "role": "verifier",
+            "task": "Return exactly one decision per finding and impact ID, copying IDs exactly. Evaluate quoted source a",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 9938,
+            "tools": [
+              "check_findings_and_conclusions"
+            ]
+          }
+        ],
+        "osmContext": {
+          "request": {
+            "schemaVersion": "1",
+            "registryVersion": "2",
+            "scope": {
+              "cityId": "nyc",
+              "center": {
+                "lat": 40.7308,
+                "lon": -73.9973
+              },
+              "radiusMeters": 1000
+            },
+            "categoryId": "cafe",
+            "adjacentCategoryIds": []
+          },
+          "fetchedAt": "2026-11-08T18:53:14.928Z",
+          "status": "complete",
+          "directMappedCount": 185,
+          "adjacentMappedCount": 0,
+          "coverage": "unknown"
+        },
+        "shortlist": [
+          {
+            "id": "node/10769253446",
+            "name": "Starbucks",
+            "coordinates": {
+              "lat": 40.7296098,
+              "lon": -73.9963468
+            },
+            "distanceMeters": 154.80996401134234,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.9,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/10769253446"
+          },
+          {
+            "id": "node/5849929497",
+            "name": "Irving Farm Coffee Roasters",
+            "coordinates": {
+              "lat": 40.7296596,
+              "lon": -73.9987543
+            },
+            "distanceMeters": 176.34252426172648,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.5,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/5849929497"
+          },
+          {
+            "id": "node/13507277200",
+            "name": "La Colombe Coffee Roasters",
+            "coordinates": {
+              "lat": 40.7306339,
+              "lon": -73.9951375
+            },
+            "distanceMeters": 183.14979972261673,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.3,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/13507277200"
+          },
+          {
+            "id": "node/2550551529",
+            "name": "Tartinery",
+            "coordinates": {
+              "lat": 40.7295546,
+              "lon": -73.9988437
+            },
+            "distanceMeters": 189.99230574992785,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.2,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/2550551529"
+          },
+          {
+            "id": "node/10717839773",
+            "name": "Carmela Coffee",
+            "coordinates": {
+              "lat": 40.7324116,
+              "lon": -73.9964639
+            },
+            "distanceMeters": 192.5526356926093,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.1,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/10717839773"
+          },
+          {
+            "id": "node/3233791134",
+            "name": "The Uncommons",
+            "coordinates": {
+              "lat": 40.729416,
+              "lon": -73.9987086
+            },
+            "distanceMeters": 194.34801051416974,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.1,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/3233791134"
+          },
+          {
+            "id": "node/7024106348",
+            "name": "Mille-Feuille",
+            "coordinates": {
+              "lat": 40.7291839,
+              "lon": -73.9982031
+            },
+            "distanceMeters": 195.1504729732463,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48.1,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/7024106348"
+          },
+          {
+            "id": "node/10717839775",
+            "name": "Marlton Esprsso Bar",
+            "coordinates": {
+              "lat": 40.7325497,
+              "lon": -73.9967931
+            },
+            "distanceMeters": 199.19089353625236,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 48,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/10717839775"
+          },
+          {
+            "id": "node/4664765789",
+            "name": "Joe Coffee Company",
+            "coordinates": {
+              "lat": 40.7290876,
+              "lon": -73.9982833
+            },
+            "distanceMeters": 207.65618529041618,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 47.8,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/4664765789"
+          },
+          {
+            "id": "node/2550046897",
+            "name": "Third Rail Coffee",
+            "coordinates": {
+              "lat": 40.7299427,
+              "lon": -73.999592
+            },
+            "distanceMeters": 215.37444190053273,
+            "positionKind": "node",
+            "categoryId": "cafe",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 47.7,
+            "matchReason": "Mapped category: Café. Specialty requirements: fast, morning, pickup, specialty. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/2550046897"
+          }
+        ]
+      },
+      "mapSummary": {
+        "request": {
+          "schemaVersion": "1",
+          "registryVersion": "2",
+          "scope": {
+            "cityId": "nyc",
+            "center": {
+              "lat": 40.7308,
+              "lon": -73.9973
+            },
+            "radiusMeters": 1000
+          },
+          "categoryId": "cafe",
+          "adjacentCategoryIds": []
+        },
+        "status": "complete",
+        "directMappedCount": 185,
+        "adjacentMappedCount": 0,
+        "provenance": {
+          "provider": "OpenStreetMap / Overpass",
+          "fetchedAt": "2026-11-08T18:53:14.928Z",
+          "osmBaseTimestamp": "2026-11-08T18:51:21Z",
+          "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+          "queryHash": "0549226c7579ccdb8d83aaf8a0b9ef673eac809a907e7d896bc997c0ba099bf5",
+          "cacheState": "live",
+          "attribution": "© OpenStreetMap contributors",
+          "licenseLink": "https://www.openstreetmap.org/copyright",
+          "coverage": "unknown",
+          "excludedRecordCount": 12
+        },
+        "competitorCount": 185
+      },
+      "shortlistTotal": 184
+    },
+    {
+      "description": "South Asian clothing boutique",
+      "cityId": "london",
+      "durationMs": 16191,
+      "researchDurationMs": 15566,
+      "mapStatus": 200,
+      "report": {
+        "request": {
+          "description": "South Asian clothing boutique",
+          "scope": {
+            "cityId": "london",
+            "center": {
+              "lat": 51.5137,
+              "lon": -0.1365
+            },
+            "radiusMeters": 1000
+          },
+          "osmRequest": {
+            "schemaVersion": "1",
+            "registryVersion": "2",
+            "scope": {
+              "cityId": "london",
+              "center": {
+                "lat": 51.5137,
+                "lon": -0.1365
+              },
+              "radiusMeters": 1000
+            },
+            "categoryId": "clothing",
+            "adjacentCategoryIds": []
+          },
+          "localOnly": true
+        },
+        "status": "partial",
+        "startedAt": "2026-11-08T18:53:48.361Z",
+        "impacts": [],
+        "assessment": null,
+        "evidence": [
+          {
+            "id": "web-67c870004a882d99",
+            "url": "https://www.apcstore.com/pages/store-locator",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:49.759Z",
+            "title": "Store Locator | A.P.C.",
+            "excerpt": "Skip to content\nA.P.C. ParisBoutique en ligne A.P.C. : mode française pour femme et homme. \n MY ACCOUNT\n NEED HELP ?\ngifts\n + gifts for her\n+ gifts for him\n+ gifts lifestyle\n+ small gifts\nA.P.C. Barbour\n + women\n+ men\nA.P.C. Barbour A.P.C. Barbour\ndenim\nbags\nbags new arrivals\nwoman\nA.P.C. Barbour Outerwear\nman\nOuterwear A.P.C. Barbour\nlifestyle\n + gifts lifestyle\n+ A.P.C. golf\n+ eyewear\n+ quilts\n+ music\n+ books\n+ candles\n+ A.P.C. toutou\nA.P.C. quilts A.P.C. golf\nA.P.C. universe\n MY ACCOUNT\n NEED HELP ?\ngifts\n #EMPTY#\n gifts for her\n gifts for him\n gifts lifestyle\n small gifts\nA.P.C. Barbour\n #EMPTY#\n women\n men\ndenim\n women\n all denim\n all jeans\n raw & selvedge jeans\n bootcut-leg jeans\n straight-leg jeans\n wide-leg jeans\n denim fit guide\ndenim\n men\n all denim\n all jeans\n raw & selvedge jeans\n straight-leg jeans\n wide-leg jeans\n tapered-leg jeans\n slim-leg jeans\n denim fit guide\ndenim\n raw since 1987\n A.P.C. denim\n craft: the art of raw denim\n washing recipes\n the butler program\n the little indigo book\nbags\n WOMEN\n shoulder bags\n mini bags\n crossbody bags\n totes & shopping bags\n view all\nbags\n MEN\n tote & shopping bags\n crossbody bags\n backpacks\n view all\nbags\n ICONIC\n Simone\n Neige\n Drummer\n Vera\n Grace\n Virginie\n Demi-Lune\n Ninon\nwoman\n NEW ARRIVALS\n A.P.C. Barbour\n A.P.C. x Clarks Originals\n gifts for her\n new in\n timeless\nwoman\n READY-TO-WEAR\n outerwear & jackets\n knitwear\n jeans\n skirts & dresses\n blouses & shirts\n pants & shorts\n t-shirts\n sweatshirts\n view all\nwoman\n BAGS\n shoulder bags\n totes & shopping bags\n mini bags\n crossbody bags\n view all\nwoman\n ACCESSORIES\n small gifts\n shoes\n glasses\n beanies & caps\n scarves & gloves\n leather goods\n belts\n view all\nman\n NEW ARRIVALS\n A.P.C. Barbour\n A.P.C. x Clarks Originals\n gifts for him\n new in\n timeless\nman\n READY-TO-WEAR\n outerwear & jackets\n knitwear\n jeans\n sweatshirts\n shirts\n t-shirts & polos\n pants & shorts\n view all\nman\n BAGS\n tote & shopping bags\n crossbody bags\n backpacks\n view all\nman\n ACCESSORIES\n small gifts\n shoes\n glasses\n leather goods\n scarves & gloves\n beanies & caps\n belts\n view all\nlifestyle\n #EMPTY#\n gifts lifestyle\n A.P.C. golf\n eyewear\n quilts\n music\n books\n candles\n A.P.C. toutou\nA.P.C. universe\n ABOUT A.P.C.\n the brand\n our commitments\n A.P.C. leather\n jean génie\n selvedge denim\n A.P.C. magazine\nA.P.C. universe\n SERVICES\n A.P.C. loyalty\n Take-back Program\n butler program\nA.P.C. universe\n STORES\n our locations\n MY ACCOUNT\n NEED HELP ?\nThe item has been added to your cart.\nYour cart is empty\nLoading store locator from Stockist store locator...\npayment\n100% secure return\nfree free delivery\nfrom 250€ question?\ncontact us",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-5fd60825cfd8475c",
+            "url": "https://tavily.com/knowledge/company/DEuIlBXpD1NE",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:49.706Z",
+            "title": "Vintage Threads",
+            "excerpt": "Vintage Threads\nID: DEuIlBXpD1NE\nWebsite: www.vintage-threads.com\nHeadquarters: London, England, United Kingdom\nLinkedIn: www.linkedin.com/company/vintage-threads · 3,354 followers\nIndustry: Retail Apparel and Fashion\nCompany type: Public Company\nFounded: 2016\nSocial profiles: www.facebook.com/vintagethreads.ldn, www.facebook.com/vintagethreads.ldn/?locale=en_gb, www.crunchbase.com/organization/vintage-threads, www.instagram.com/vintagethreads_ldn\nEmail: team@vintage-threads.com\nDescription: Vintage Threads is a curated collection of handpicked vintage and designer pieces. Shop online or in Soho, Covent Garden, or Selfridges to explore one-of-one finds, reworked styles, and timeless streetwear.\nProducts and services\nKeywords: fashion, lifestyle/fashion_and_apparel, vintage clothing, pieces, streetwear, designer, vintage, online shop, e-commerce, shopping\nHeadcount\nNow: 34 · -1 yearly (-2.9%) · -1 quarterly · +1 monthly\nNorthern Europe: 19\nSub Saharan Africa: 1\nNorthern America: 1\nWestern Europe: 1\nEastern Europe: 0\nLatin America: 0\nSouthern Europe: 0\nCentral Asia: 0\nAustralia New Zealand: 0\nSouth Eastern Asia: 0\nPolynesia: 0\nSouthern Asia: 0\nNorthern Africa: 0\nMelanesia: 0\nWestern Asia: 0\nFunding\nRounds: 1\nTotal raised: 55.40K USD\nLast round: Equity Crowdfunding 2025-10-30 55.40K USD\nEquity Crowdfunding 2025-10-30 55.40K USD\nTechnology\nDetected: 14\nfacebook · last seen 2026-08-24\ntiktok · last seen 2026-08-24\nreact · last seen 2026-07-13\nspendesk · last seen 2026-04-06\nshopify · last seen 2026-04-06\namp · last seen 2025-08-11\nxero · last seen 2025-08-11\nimpact · last seen 2025-08-11\nWeb traffic\nMonthly visits: 22,434 (-19.1% change)\nPages per visit: 1.86\nAverage visit duration: 5 seconds\nBounce rate: 55%\nGlobal rank: 1,250,352\nCountry rank: 128,968\nCategory rank: 4,698\nReputation\nOpen roles: 0",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-89a67e1caeac4ef3",
+            "url": "https://tavily.com/knowledge/company/Je3pFGnWOpXh",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:50.982Z",
+            "title": "Salomon",
+            "excerpt": "Salomon\nID: Je3pFGnWOpXh\nWebsite: www.salomon.com\nHeadquarters: ANNECY CEDEX 9  FRANCE\nLinkedIn: www.linkedin.com/company/salomon · 434,732 followers\nIndustry: Sporting Goods\nCompany type: Privately Held\nParent company: Amer Sports Corporation (www.amersports.com/)\nFounded: 1947\nSocial profiles: www.facebook.com/salomon, www.twitter.com/salomonsports\nPhone: 33-4-50-65-41-41, 833-986-0382\nDescription: Salomon is a company that offers premium gear for men, women, and children, including running shoes, clothing, trail running, hiking, ski, and snowboard. They provide a wide range of products for various adventures.\nProducts and services\nKeywords: sports and recreation, freeski & ski touring, nordic skiing, on-piste & alpine racing, hiking & mountaineering, running & trail running, snowboarding, ski and snowboard, running shoes, clothing, trail running, hiking\nHeadcount\nNow: 2,854 · +389 yearly (15.8%) · +73 quarterly · +22 monthly\nWestern Europe: 1,080\nNorthern America: 228\nSouthern Europe: 128\nNorthern Europe: 94\nLatin America: 68\nAustralia New Zealand: 49\nEastern Asia: 34\nSub Saharan Africa: 24\nSouth Eastern Asia: 19\nWestern Asia: 19\nEastern Europe: 12\nSouthern Asia: 5\nCentral Asia: 1\nNorthern Africa: 1\nPolynesia: 0\nFinancials\nAnnual revenue: 1.11B USD\nTechnology\nDetected: 238\ncontentsquare · last seen 2026-08-24\nvercel · last seen 2026-08-24\nyoobic · last seen 2026-08-24\nanaplan · last seen 2026-08-24\ncim · last seen 2026-08-24\njda · last seen 2026-08-24\nlinkedin · last seen 2026-08-24\nmicrosoft 365 · last seen 2026-08-24\nReputation\nOpen roles: 39\nSimilar companies\ngymshark\nle coq sportif\npetzl\nnorth face\npatagonia\nburton snowboards\nasics\nsignal snowboards",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-d186bd46facfafa2",
+            "url": "https://www.apc-us.com/",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:56.717Z",
+            "title": "Designer Clothes, Fashion Clothes & Luxury Clothing | A.P.C.",
+            "excerpt": "Promo banner\nA.P.C.\nSite navigation\nSearch   Account   Toggle cart  Translation missing: en.general.site\\_header.wishlist\nThis item was added to your bag.\nThis item was added to your bag.\nYou haven't added any items yet\n A.P.C. Outerwear - woman wearing fall coat\n A.P.C. Outerwear - man in fall coat\n‎\nA.P.C. Bags - bag on top a lamp \nA.P.C. Bags\nwomen men\nTAKE 10% OFF YOUR FIRST ORDER\nEnjoy 10% off your first A.P.C. order when you sign up for sms.   \nExclusions apply.\nsign up\n\nsecure payment\nssl encryption technology\n\nfree shipping\non orders $350+\n\neasy returns and exchanges\nwithin 14 days\n\nany questions?\ncontact us",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-ce7da596a084380e",
+            "url": "https://www.coventgarden.london/brand-directory/vintage-threads",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:49.706Z",
+            "title": "Vintage Threads | Covent Garden",
+            "excerpt": "iconGetting to CG\niconInteractive Map\niconBrand Directory\nlogo\n ExperienceExperience\n Eat & DrinkEat & Drink\n ShopShop\n Live & WorkLive & Work\nstarChristmassearchSearch\nLight mode\nOpen Menu\nHome\n/\nDirectory\n/\nVintage Threads\nBack Arrow\nBack to Directory\nCovent Garden Lights Switch On\n00Days\n00Hours\n00Minutes\nSet reminder\nbrand-banner-image\nbrand-banner-image\nVintage Threads\n5-7 Short's Gardens, London WC2H 9AZ\nView WebsiteView Website\nSocial\nInstagram\nAbout\nVintage Threads was created when founders Charlie and Freddie identified a gap in the market when it came to vintage clothes with a lack of affordable but refined clothing on offer. Their aim is to provide the most unique hand-picked vintage clothing and they specialise in a combination of old school sportswear and 80s & 90s designer pieces.\nNot only do they have amazing vintage pieces, but they also release VT Rework collections where the clothes are made entirely from damaged clothing items and discarded material so you look good whilst doing good for the planet.\nOpening Times\n|  |  |\n --- |\n| Monday | 10:30- 19:00 |\n| Tuesday | 10:30- 19:00 |\n| Wednesday | 10:30- 19:00 |\n| Thursday | 10:30- 19:00 |\n| Friday | 10:30- 19:30 |\n| Saturday | 10:30- 19:30 |\n| Sunday | 11:00- 18:30 |\nContact\n07795389292",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-18290839bdaf9ccb",
+            "url": "https://www.cbinsights.com/company/salomon",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:50.982Z",
+            "title": "Salomon - Products, Competitors, Financials, Employees, Headquarters Locations",
+            "excerpt": "Technology Vendors\n Recent Research\n Newsletter\n Media Support\n Login\nCB Insights\nSalomon company logo\nSalomon\nsalomon.com\nFounded Year\n1947\nStage\nAcquired | Acquired\nRevenue\n$0000\nAbout Salomon\nSalomon specializes in providing sportswear for men, women, and children. It offers ski boots and clothing, snowboarding, trail running, and hiking clothes and shoes. It was founded in 1947 and is based in Annecy, France. In January 2005, Salomon was acquired by Amer Sports.\nHeadquarters Location\n14 chemin des Croiselets, ZA des Croiselets\nEpagny Metz-Tessy, 74370,\nFrance\n18332300292\nLoading...\nLoading...\nSalomon Patents\nSalomon has filed 359 patents.\nThe 3 most popular patent topics include:\n cuttlefish\n graphical projections\n shoes\npatents chart\n| Application Date | Grant Date | Title | Related Topics | Status |\n ---  --- \n| 3/9/2025 | 5/5/2026 | Footwear article | Grant |\n|  |  |\n --- |\n| Application Date | 3/9/2025 |\n| Grant Date | 5/5/2026 |\n| Title | Footwear article |\n| Related Topics |\n| Status | Grant |\nLatestSalomon News\n萨洛蒙携手传奇越野跑者Courtney Dauwalter, Dawn to Dusk系列正式发售\nOct 12, 2026\n法国专业户外品牌Salomon萨洛蒙正式推出Dawn to Dusk限定系列，携手传奇越野跑者 Courtney Dauwalter 深度共创，以“从晨曦到日暮”为灵感，诠释超长距离越野的耐力美学，致敬越野跑者从破晓到日暮的坚持与探索。系列核心重磅之作S/LAB Ultra Glide 2 Courtney联名限量款跑鞋同步亮相。作为 UTMB、Hardrock 100、西部 100及多场国际知名超长距离越野赛事的冠军，Courtney 将自己在赛场上积累的经验与洞察，融入这双鞋的每处细节。这双专为长时间越野奔跑打造的限量之作，陪伴跑者从清晨迈出的第一步直至日暮收尾的最后一程，持续带来稳定、舒适与自信的穿着体验。 谈及本次联名的创作初衷，Salomon 萨洛蒙运动员Courtney这样说道：“「Dawn to Dusk」这个想法，和大多数好点子一样，诞生于一场越野跑之中。它既致敬那些宏大的时刻与壮阔的冒险，也珍视无数微小的瞬间与日复一日的坚持。我由衷敬畏这项运动，也敬畏我们在追逐远大目标时，身体与大脑所激发出的潜能。从晨曦奔跑到日暮，再从日暮跑回晨曦，能以一整天的时间沉浸在自己热爱的事情里，何其美妙！同样动人的，还有沿途那些微小而平凡的每一步。一段再熟悉不过的日常奔跑，会因时间、天气、季节、心境、思绪和状态的不同，而呈现出完全不同的感受。即便这条路线已经跑过千百次，但每一次依旧如新。” 这一理念也贯穿于整个联名系列的视觉设计之中。以超长距离越野跑中不断变化的自然环境为灵感，系列运用由暗至亮的渐变色彩，呼应从晨曦到日暮的光影流转；倒置山脉图案则象征山野探索中的未知与变化，将Courtney对自然、冒险与自我突破的独特理解转化为鲜明的设计语言。 除了山野意象，系列亦融入承载Courtney个人记忆的标志性元素。在她首次完成100英里越野赛之前，母亲曾送给她一张附有和平标志硬币的卡片，上面写着：“You're stronger than you think!（你比自己想象的更强大！）”。此后，这枚硬币便成为陪伴她征战赛场的幸运护身符。如今，这一和平标志被巧妙融入Courtney姓名首字母的设计中，并与这句意义非凡的鼓励话语一同呈现于产品上，将珍贵的个人记忆转化为独特的设计语言，传递出相信自我、勇于面对挑战的精神力量。 作为本次联名系列的核心鞋款，S/LAB Ultra Glide 2 Courtney 联名限量越野跑鞋采用双层中底结构，将 optiFOAM+ 嵌入 optiFOAM 之中，兼顾柔软缓震、灵敏回弹与稳定支撑。这套中底系统能自然适应每一步落地，为长距离奔跑提供灵动、高效的脚感。 鞋底搭载 relieveSPHERE 几何结构，通过独特的波浪形设计帮助分散足底压力，缓解长时间奔跑中反复落地带来的冲击；配合 All Terrain contaGRIP® 外底技术，在多种越野路面提供可靠抓地力，让步伐过渡更加顺畅，助力跑者在长距离奔跑中保持状态。外观设计上，S/LAB Ultra Glide 2 Courtney 联名限量越野跑鞋延续该系列 Dawn to Dusk 的视觉语言，鞋面采用全新 Matryx® Micro 构造，在提升透气性的同时，进一步强化耐用性与稳固包裹。轻量而强韧的面料能有效锁定双脚，让跑者更从容地应对快速下坡与复杂地形；随着环境与距离的不断变化，依然保持舒适的穿着体验。该限定鞋款专为追求稳定与出色缓震表现的越野跑者打造，是跑者从晨曦到日暮、长时间驰骋越野的可靠之选。 整个系列通过统一的晨暮色盘、倒置山脉图案与渐变处理，将 Courtney 从晨曦到日暮的越野理念延伸至全套装备，为不同场景与距离的越野跑者提供一站式装备：标志性的Shortney Limited Courtney Edition 10英寸短裤采用柔软速干的Aerotech 面料，搭配宽松版型与内置安全收纳设计。作为Courtney极具辨识度的标志性造型，经典Shortney短裤此次以限量版本焕新呈现；S/LAB Sense 6 Limited Courtney Edition 越野跑背心配备两个 500ml 软水壶仓，采用轻量弹性面料，搭载sensiFIT设计，带来稳定贴合的穿着体验，专为长距离越野赛事打造，在分秒必争、每一克都至关重要的赛场上，为跑者提供轻量高效的补给支持；Sense Aero Limited Courtney Edition T 恤采用柔软、透气、速干面料，并融合大胆色彩与全新 Dawn to Dusk 图形，体现 Courtney 的真实性与不断探索的渴望，无论是从黎明前的出发到跑后恢复，都为跑者带来舒适穿着体验；SHKout Core Limited Courtney Edition 4 英寸短裤采用速干面料，配备拉链口袋系统与轻量可收纳设计，灵活适应多样地形与不同环境。\nOct 12, 2026\nSalomon überträgt Katharina Bahde die Leitung von Strategie und Transformation\nOct 9, 2026\n一年16起官宣，凯乐石、HOKA、萨洛蒙为什么都在抢女明星？\nOct 9, 2026\nSalomon places its strategy and transformation in the hands of Katharina Bahde\nOct 9, 2026\nSalomon confie sa stratégie et sa transformation à Katharina Bahde\nSalomonFrequently Asked Questions (FAQ)\n When was Salomon founded?\nSalomon was founded in 1947.\n Where is Salomon's headquarters?\nSalomon's headquarters is located at 14 chemin des Croiselets, ZA des Croiselets, Epagny Metz-Tessy.\n What is Salomon's latest funding round?\nSalomon's latest funding round is Acquired.\n Who are the investors of Salomon?\nInvestors of Salomon include Amer Sports.\n Who are Salomon's competitors?\nCompetitors of Salomon include Louis Garneau, Reebok, Rossignol Group, 361 Degrees, Brooks Running and 7 more.\nLoading...\nCompare Salomon to Competitors\nK-Swiss Logo\nK-Swiss\nK-Swiss is a company that focuses on footwear and apparel for tennis, pickleball, and training in the sportswear industry. The company provides shoes and clothing for athletes, and it features sportstyle collections. It is based in Westlake Village, California.\nM\nMacron\nMacron is a brand that produces sportswear and teamwear across various sports, such as football, rugby, padel, volleyball, basketball, cricket, baseball, motorsport, athletics, handball, netball and American football. The company offers products including sports apparel, equipment, and collections designed for match days and leisure, catering to teams from professional to amateur levels. Macron also features athleisure and activewear lines, as well as a lifestyle collection. It was founded in 1971 and is based in Italy.\nPONY Logo\nPONY\nPONY is a company that provides footwear, apparel, and accessories within the sports and lifestyle sectors. The company has products including high-top and low-top sneakers, athletic and casual clothing, and various accessories. PONY primarily serves the sneaker and sportswear market, with a focus on urban culture. It was founded in 1972 and is based in New York, New York.\nGymshark Logo\nGymshark\nGymshark operates as a fitness apparel brand specializing in workout clothing and activewear. The company offers various gym shirts, tank tops, shorts, sweatpants, leggings, and sports bras for use during physical activities. Gymshark primarily caters to the fitness and bodybuilding community. It was founded in 2012 and is based in Dover, Delaware.\nH\nHOKA ONE ONE\nHOKA ONE ONE specializes in running footwear, focusing on cushioning and weight for running performance. The company's offerings include various running shoes for runners of different levels and preferences. It is based in Goleta, California.\nStrauss Sport\nStrauss Sport is a brand focused on providing sports and fitness equipment across various sectors. The company offers a range of products including exercise and fitness gear, yoga accessories, cricket equipment, and camping gear. Strauss Sport caters to a broad audience, from fitness enthusiasts to sports players, by providing equipment. It was founded in 2016 and is based in India.\nLoading...\nCBI websites generally use certain cookies to enable better interactions with our sites and services. Use of these cookies, which may be stored on your device, permits us to improve and customize your experience. You can read more about your cookie choices at our privacy policy. By continuing to use this site you are consenting to these choices.",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          },
+          {
+            "id": "web-b689eca1cb5edd59",
+            "url": "https://www.apc-us.com/collections/men-all-collection",
+            "provider": "tavily",
+            "retrievedAt": "2026-11-08T18:53:56.717Z",
+            "title": "A.P.C. Men's Clothing and Accessories | Quality & Style | Ready-to-Wear & Accessories",
+            "excerpt": "This item was added to your bag.\nYou haven't added any items yet\nBeaufort Wax Jacket A.P.C. X Barbour\n$895\nnew\nBeaufort Wax Jacket A.P.C. X Barbour\n$895\nnew\nQuilted Crossbody Bag A.P.C. X Barbour\n$170\nnew\nJohn Jacket - Gray shirt jacket\n$650\nDenim Trucker Jacket A.P.C. X Barbour\n$525\nnew\nBrest Jacket - Simple dark brown wool jacket\n$570\nMartin Jeans\n$370\nJean Standard A.P.C. X Barbour\n$390\nnew\nClogs A.P.C. X Barbour\n$185\nnew\nNinon Tote Bag\n$350\nDude Jeans\n$380\nZip-In Quilt Liner A.P.C. X Barbour\n$345\nnew\nBasile Overshirt - Loose-fit overshirt in faded indigo denim\n$390\nMarcel Jacket - Thick heather navy blue wool jacket\n$710\nWindbreaker\n$430\nnew\nZip-Up Jacket\n$610\nnew\nMarcel Jacket - Thick heather brown wool jacket\n$710\nDude Jeans\n$380\nNinon Tote Bag\n$350\nJardin Shopper Tote\n$350\nDon jeans\n$390\nGaspard Jacket - Classic gray jacket in a cotton-wool blend\n$690\nBasile Overshirt - Loose-fit green overshirt\n$360\nStandard Rue Madame T-shirt\n$185\nMen's All\nThis collection brings together A.P.C.'s full men's range — clothing, bags, and accessories — in one place, spanning the brand's core categories from denim and shirting to leather goods and jewelry.\nBecause it spans such different product types, fit, sizing, and materials all vary considerably by item, so the product description on each item is the reliable source for details before ordering.\nBrowse by type: clothing, bags, and and accessories.\n\nsecure payment\n\nfree shipping\n\neasy returns and exchanges\n\nany questions?\nA.P.C.\nNewsletter\nSign up for our newsletter and get exclusive access to new arrivals, events, and sales previews.\nLoading\nLoading\nLoading\nLoading\nLoading\nLoading\nLoading\nNEED HELP?\nINFORMATION\nA.P.C.\nwww.apc-us.com\n© copyright 2026",
+            "contentKind": "page",
+            "placeId": null,
+            "coordinates": null
+          }
+        ],
+        "findings": [
+          {
+            "id": "f1",
+            "claim": "Retrieved source states: Description: Salomon is a company that offers premium gear for men, women, and children, including running shoes, clothing, trail running, hiking, ski, and snowboard.",
+            "kind": "offering",
+            "business": "Salomon",
+            "relation": "direct",
+            "evidence": [
+              {
+                "sourceId": "web-89a67e1caeac4ef3",
+                "quote": "Description: Salomon is a company that offers premium gear for men, women, and children, including running shoes, clothing, trail running, hiking, ski, and snowboard."
+              }
+            ],
+            "geographicRelevance": "Mapped candidate is 80 m from the selected center; this source does not independently confirm branch identity.",
+            "limitations": [
+              "Source assertion, not independent verification.",
+              "Exact branch identity and current availability remain unverified."
+            ],
+            "reviewSampleSize": null,
+            "reviewDates": null
+          }
+        ],
+        "insights": [],
+        "stages": [
+          {
+            "stage": "planning",
+            "status": "complete",
+            "message": "554 named mapped candidates; researching 3 distinct names."
+          },
+          {
+            "stage": "web",
+            "status": "complete",
+            "message": "Business-specific sources retrieved; only compact numbered quotes go to reasoning models."
+          },
+          {
+            "stage": "insights",
+            "status": "complete",
+            "message": "Offering comparisons checked against source text and finding identities."
+          },
+          {
+            "stage": "verification",
+            "status": "partial",
+            "message": "Exact quotes checked in code; model review removed 0 unsupported observations/conclusions."
+          },
+          {
+            "stage": "reporting",
+            "status": "complete",
+            "message": "Validated evidence and available partial results are ready."
+          }
+        ],
+        "warnings": [
+          "Coverage is unknown. Counts describe mapped features, not all businesses. Distinct OSM objects may represent the same business.",
+          "Way and relation centers are representative positions, not guaranteed entrances.",
+          "1 unrelated or editorial sources excluded for a mapped candidate.",
+          "Initial extraction produced no usable observations; attempting one targeted offering retrieval within the remaining budget."
+        ],
+        "unknowns": [
+          "Mapped coverage is unknown; distinct OSM objects can represent the same business. Only up to three distinct named candidates receive web enrichment.",
+          "A brand page does not confirm offerings at the mapped branch. Branch identity and current opening status require local verification.",
+          "Broad category matches do not establish specialty overlap. Missing prices, review dates and sample sizes remain unknown.",
+          "This bounded sample cannot establish market coverage, customer demand, rent, footfall, revenue or profitability."
+        ],
+        "agentRuns": [
+          {
+            "role": "researcher",
+            "task": "Choose search/refine for a supplied candidate, inspect a discovered source, or stop when evidence is",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 562,
+            "tools": [
+              "search_candidate",
+              "inspect_discovered_source",
+              "refine_query",
+              "stop"
+            ]
+          },
+          {
+            "role": "extractor",
+            "task": "Select exact sourceId and quoteId observations for supplied candidate names only. Copy business exac",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 3672,
+            "tools": [
+              "select_exact_quotes"
+            ]
+          },
+          {
+            "role": "extractor",
+            "task": "Select exact sourceId and quoteId observations for supplied candidate names only. Copy business exac",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 2953,
+            "tools": [
+              "select_exact_quotes"
+            ]
+          },
+          {
+            "role": "analyst",
+            "task": "Compare actual quoted offerings to the proposal. yourOffering must be an exact substring of the prop",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 2859,
+            "tools": [
+              "compare_sourced_offerings"
+            ]
+          },
+          {
+            "role": "verifier",
+            "task": "Return exactly one decision per finding and impact ID, copying IDs exactly. Evaluate quoted source a",
+            "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+            "status": "complete",
+            "durationMs": 1359,
+            "tools": [
+              "check_findings_and_conclusions"
+            ]
+          }
+        ],
+        "osmContext": {
+          "request": {
+            "schemaVersion": "1",
+            "registryVersion": "2",
+            "scope": {
+              "cityId": "london",
+              "center": {
+                "lat": 51.5137,
+                "lon": -0.1365
+              },
+              "radiusMeters": 1000
+            },
+            "categoryId": "clothing",
+            "adjacentCategoryIds": []
+          },
+          "fetchedAt": "2026-11-08T18:53:48.299Z",
+          "status": "complete",
+          "directMappedCount": 558,
+          "adjacentMappedCount": 0,
+          "coverage": "unknown"
+        },
+        "shortlist": [
+          {
+            "id": "way/273697615",
+            "name": "A.P.C.",
+            "coordinates": {
+              "lat": 51.5131875,
+              "lon": -0.1361429
+            },
+            "distanceMeters": 62.11452282085348,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.8,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/273697615"
+          },
+          {
+            "id": "way/274002575",
+            "name": "Vintage Threads",
+            "coordinates": {
+              "lat": 51.5140861,
+              "lon": -0.1355308
+            },
+            "distanceMeters": 79.63232834703423,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.4,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/274002575"
+          },
+          {
+            "id": "node/13014408786",
+            "name": "Salomon",
+            "coordinates": {
+              "lat": 51.5138502,
+              "lon": -0.1353642
+            },
+            "distanceMeters": 80.35174676224449,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.4,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/13014408786"
+          },
+          {
+            "id": "way/273720742",
+            "name": "Patta",
+            "coordinates": {
+              "lat": 51.5130896,
+              "lon": -0.1358662
+            },
+            "distanceMeters": 80.81096070042435,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.4,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/273720742"
+          },
+          {
+            "id": "way/274002606",
+            "name": "Oliver Spencer",
+            "coordinates": {
+              "lat": 51.5141707,
+              "lon": -0.1356075
+            },
+            "distanceMeters": 80.95531115463854,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.4,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/274002606"
+          },
+          {
+            "id": "node/466926259",
+            "name": "Fred Perry",
+            "coordinates": {
+              "lat": 51.5129959,
+              "lon": -0.1361217
+            },
+            "distanceMeters": 82.5530260686958,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.3,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/466926259"
+          },
+          {
+            "id": "node/12817536857",
+            "name": "UL",
+            "coordinates": {
+              "lat": 51.513204,
+              "lon": -0.1374123
+            },
+            "distanceMeters": 83.82938655288181,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.3,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/12817536857"
+          },
+          {
+            "id": "way/477598135",
+            "name": "Mix Max",
+            "coordinates": {
+              "lat": 51.5142966,
+              "lon": -0.1357096
+            },
+            "distanceMeters": 85.97905295677559,
+            "positionKind": "representative-center",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.3,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/way/477598135"
+          },
+          {
+            "id": "node/5535573168",
+            "name": "Officine Générale",
+            "coordinates": {
+              "lat": 51.5128893,
+              "lon": -0.1364304
+            },
+            "distanceMeters": 90.27429991340507,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.2,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/5535573168"
+          },
+          {
+            "id": "node/13009445024",
+            "name": "The Face",
+            "coordinates": {
+              "lat": 51.5144926,
+              "lon": -0.1361384
+            },
+            "distanceMeters": 91.61638813384782,
+            "positionKind": "node",
+            "categoryId": "clothing",
+            "relation": "direct",
+            "relevanceScore": 40,
+            "rankScore": 50.2,
+            "matchReason": "Mapped category: Clothing shop. Specialty requirements: asian, south. No specialty evidence in this mapped record.",
+            "sourceUrl": "https://www.openstreetmap.org/node/13009445024"
+          }
+        ]
+      },
+      "mapSummary": {
+        "request": {
+          "schemaVersion": "1",
+          "registryVersion": "2",
+          "scope": {
+            "cityId": "london",
+            "center": {
+              "lat": 51.5137,
+              "lon": -0.1365
+            },
+            "radiusMeters": 1000
+          },
+          "categoryId": "clothing",
+          "adjacentCategoryIds": []
+        },
+        "status": "complete",
+        "directMappedCount": 558,
+        "adjacentMappedCount": 0,
+        "provenance": {
+          "provider": "OpenStreetMap / Overpass",
+          "fetchedAt": "2026-11-08T18:53:48.299Z",
+          "osmBaseTimestamp": "2026-11-08T18:52:23Z",
+          "upstreamEndpoint": "https://api.overpass.ch/v1/interpreter",
+          "queryHash": "10b479ae85d414c8c5252d23010dcc3fcbf3c49e98bb398089a7d6311ac9a4da",
+          "cacheState": "live",
+          "attribution": "© OpenStreetMap contributors",
+          "licenseLink": "https://www.openstreetmap.org/copyright",
+          "coverage": "unknown",
+          "excludedRecordCount": 5
+        },
+        "competitorCount": 558
+      },
+      "shortlistTotal": 554
+    }
+  ],
+  "suggestion": {
+    "httpStatus": 200,
+    "body": {
+      "categoryId": "cafe",
+      "explanation": "Coffee shop matches the cafe category label and its aliases (cafe, coffee, coffee shop)."
+    }
+  },
+  "locations": {
+    "httpStatus": 200,
+    "body": {
+      "results": [
+        {
+          "id": "W-22899302",
+          "label": "Washington Square Park, Manhattan, New York",
+          "coordinates": {
+            "lat": 40.7309,
+            "lon": -73.9976
+          }
+        },
+        {
+          "id": "W-1232833559",
+          "label": "Washington Square North, Manhattan, New York",
+          "coordinates": {
+            "lat": 40.7314,
+            "lon": -73.9969
+          }
+        },
+        {
+          "id": "W-248166269",
+          "label": "Washington Square Arch, Washington Square North, Manhattan, New York",
+          "coordinates": {
+            "lat": 40.7312,
+            "lon": -73.9971
+          }
+        },
+        {
+          "id": "W-1243061342",
+          "label": "Washington Square Village, Manhattan, New York",
+          "coordinates": {
+            "lat": 40.7281,
+            "lon": -73.9978
+          }
+        },
+        {
+          "id": "W-248163396",
+          "label": "Washington Square Church, West 4th Street, Manhattan, New York",
+          "coordinates": {
+            "lat": 40.7315,
+            "lon": -74
+          }
+        },
+        {
+          "id": "N-597928309",
+          "label": "West 4th Street–Washington Square, 6th Avenue, Manhattan, New York",
+          "coordinates": {
+            "lat": 40.7316,
+            "lon": -74.001
+          }
+        },
+        {
+          "id": "W-1202638288",
+          "label": "Washington Street, Manhattan, New York",
+          "coordinates": {
+            "lat": 40.7296,
+            "lon": -74.0092
+          }
+        },
+        {
+          "id": "W-1314051836",
+          "label": "Washington Street, Manhattan, New York",
+          "coordinates": {
+            "lat": 40.7249,
+            "lon": -74.0101
+          }
+        }
+      ]
+    }
+  },
+  "advice": {
+    "httpStatus": 200,
+    "body": {
+      "request": {
+        "analysis": {
+          "schemaVersion": "1",
+          "registryVersion": "2",
+          "scope": {
+            "cityId": "nyc",
+            "center": {
+              "lat": 40.7308,
+              "lon": -73.9973
+            },
+            "radiusMeters": 1000
+          },
+          "categoryId": "cafe",
+          "adjacentCategoryIds": []
+        },
+        "description": "Specialty coffee with fast morning pickup"
+      },
+      "candidates": [
+        {
+          "id": "current",
+          "label": "Selected location",
+          "center": {
+            "lat": 40.7308,
+            "lon": -73.9973
+          },
+          "competition": 185,
+          "complements": 265,
+          "transit": 127,
+          "score": null,
+          "sources": [
+            {
+              "id": "node/368053310",
+              "name": "Barnes & Noble",
+              "metric": "complements"
+            },
+            {
+              "id": "node/544355596",
+              "name": "14th Street–Union Square",
+              "metric": "transit"
+            },
+            {
+              "id": "node/591995518",
+              "name": "Broadway–Lafayette Street",
+              "metric": "transit"
+            },
+            {
+              "id": "node/597928309",
+              "name": "West 4th Street–Washington Square",
+              "metric": "transit"
+            },
+            {
+              "id": "node/597928328",
+              "name": "Prince Street",
+              "metric": "transit"
+            },
+            {
+              "id": "node/886175538",
+              "name": "Think Coffee",
+              "metric": "competition"
+            },
+            {
+              "id": "node/886392347",
+              "name": "NYU Bookstore",
+              "metric": "complements"
+            },
+            {
+              "id": "node/886395953",
+              "name": "Buffalo Exchange",
+              "metric": "complements"
+            },
+            {
+              "id": "node/886530248",
+              "name": "Rumble",
+              "metric": "complements"
+            },
+            {
+              "id": "node/886702490",
+              "name": "Starbucks",
+              "metric": "competition"
+            },
+            {
+              "id": "node/1754412984",
+              "name": "Think Coffee",
+              "metric": "competition"
+            },
+            {
+              "id": "node/1868984359",
+              "name": "Starbucks",
+              "metric": "competition"
+            }
+          ]
+        }
+      ],
+      "status": "provisional",
+      "recommendation": {
+        "recommendedId": null,
+        "priorities": [
+          "complements",
+          "transit",
+          "competition"
+        ],
+        "checks": [
+          "rent",
+          "footfall",
+          "competitors"
+        ]
+      },
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "fetchedAt": "2026-11-08T18:54:06.079Z",
+      "osmBaseTimestamp": "2026-11-08T18:52:23Z",
+      "query": "[out:json][timeout:20][maxsize:16777216];(nwr[\"amenity\"=\"cafe\"](around:1000,40.7308,-73.9973);nwr[\"office\"=\"coworking\"](around:1000,40.7308,-73.9973);nwr[\"tourism\"=\"hotel\"](around:1000,40.7308,-73.9973);nwr[\"tourism\"=\"guest_house\"](around:1000,40.7308,-73.9973);nwr[\"shop\"=\"books\"](around:1000,40.7308,-73.9973);nwr[\"shop\"=\"clothes\"](around:1000,40.7308,-73.9973);nwr[\"highway\"=\"bus_stop\"](around:1000,40.7308,-73.9973);nwr[\"railway\"=\"station\"](around:1000,40.7308,-73.9973);nwr[\"railway\"=\"tram_stop\"](around:1000,40.7308,-73.9973););out center 5001;",
+      "queryHash": "0145d77ef41a82d144c75fadf8a7d9dc2e571e2e3019476fcd96a60696ff0bf3",
+      "complementCategories": [
+        "Coworking space",
+        "Hotel / guest house",
+        "Bookshop",
+        "Clothing shop"
+      ],
+      "warnings": [
+        "This assesses only the selected area, not premises, entrance, zoning or available property.",
+        "OSM coverage is unknown. Counts describe mapped features, not unique businesses, stations or ridership; centers may be representative.",
+        "Complementary activity is a hypothesis, not measured demand. Broad categories do not verify specialty competition.",
+        "Rent, footfall, demographics, current business status and profitability require independent verification."
+      ]
+    }
+  },
+  "metrics": [
+    {
+      "runId": "c07571104164492c99655f619396b173",
+      "kind": "analysis",
+      "startedAt": "2026-11-08T18:53:14.275Z",
+      "calls": [
+        {
+          "provider": "overpass",
+          "stage": "mapping",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 625
+        }
+      ],
+      "stages": [],
+      "cacheHits": 0,
+      "rejectedClaims": 0,
+      "failures": [],
+      "durationMs": 672,
+      "cancelled": false,
+      "status": "complete",
+      "evidence": 0,
+      "findings": 0,
+      "impacts": 0
+    },
+    {
+      "runId": "f0c73d49adfa48f18ed2fba301a4723d",
+      "kind": "research",
+      "startedAt": "2026-11-08T18:53:14.975Z",
+      "calls": [
+        {
+          "provider": "tavily",
+          "stage": "search",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 1734
+        },
+        {
+          "provider": "tavily",
+          "stage": "search",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 1656
+        },
+        {
+          "provider": "tavily",
+          "stage": "search",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 1282
+        },
+        {
+          "provider": "nvidia",
+          "stage": "researcher",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 2166,
+            "completion_tokens": 49,
+            "total_tokens": 2215
+          },
+          "durationMs": 985
+        },
+        {
+          "provider": "nvidia",
+          "stage": "extractor",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 6367,
+            "completion_tokens": 460,
+            "total_tokens": 6827
+          },
+          "durationMs": 7875
+        },
+        {
+          "provider": "nvidia",
+          "stage": "analyst",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 1740,
+            "completion_tokens": 455,
+            "total_tokens": 2195
+          },
+          "durationMs": 10937
+        },
+        {
+          "provider": "nvidia",
+          "stage": "verifier",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 3186,
+            "completion_tokens": 568,
+            "total_tokens": 3754
+          },
+          "durationMs": 9938
+        }
+      ],
+      "stages": [
+        {
+          "stage": "planning",
+          "status": "complete",
+          "durationMs": 16
+        },
+        {
+          "stage": "web",
+          "status": "complete",
+          "durationMs": 3953
+        },
+        {
+          "stage": "extraction",
+          "durationMs": 7875
+        },
+        {
+          "stage": "insights",
+          "status": "complete",
+          "durationMs": 10937
+        },
+        {
+          "stage": "verification",
+          "status": "complete",
+          "durationMs": 9938
+        }
+      ],
+      "cacheHits": 2,
+      "rejectedClaims": 3,
+      "failures": [],
+      "durationMs": 32750,
+      "cancelled": false,
+      "status": "complete",
+      "evidence": 6,
+      "findings": 4,
+      "impacts": 3
+    },
+    {
+      "runId": "f2f164e9f7714fbdb98ac65edd1c721e",
+      "kind": "analysis",
+      "startedAt": "2026-11-08T18:53:47.737Z",
+      "calls": [
+        {
+          "provider": "overpass",
+          "stage": "mapping",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 547
+        }
+      ],
+      "stages": [],
+      "cacheHits": 0,
+      "rejectedClaims": 0,
+      "failures": [],
+      "durationMs": 593,
+      "cancelled": false,
+      "status": "complete",
+      "evidence": 0,
+      "findings": 0,
+      "impacts": 0
+    },
+    {
+      "runId": "794b548daabc496382eb8d889f74c935",
+      "kind": "research",
+      "startedAt": "2026-11-08T18:53:48.361Z",
+      "calls": [
+        {
+          "provider": "tavily",
+          "stage": "search",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 1359
+        },
+        {
+          "provider": "tavily",
+          "stage": "search",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 1312
+        },
+        {
+          "provider": "tavily",
+          "stage": "search",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 1282
+        },
+        {
+          "provider": "nvidia",
+          "stage": "researcher",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 1998,
+            "completion_tokens": 50,
+            "total_tokens": 2048
+          },
+          "durationMs": 562
+        },
+        {
+          "provider": "nvidia",
+          "stage": "extractor",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 5449,
+            "completion_tokens": 225,
+            "total_tokens": 5674
+          },
+          "durationMs": 3672
+        },
+        {
+          "provider": "tavily",
+          "stage": "search",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 1469
+        },
+        {
+          "provider": "nvidia",
+          "stage": "extractor",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 6209,
+            "completion_tokens": 228,
+            "total_tokens": 6437
+          },
+          "durationMs": 2953
+        },
+        {
+          "provider": "nvidia",
+          "stage": "analyst",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 1176,
+            "completion_tokens": 214,
+            "total_tokens": 1390
+          },
+          "durationMs": 2859
+        },
+        {
+          "provider": "nvidia",
+          "stage": "verifier",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 2138,
+            "completion_tokens": 135,
+            "total_tokens": 2273
+          },
+          "durationMs": 1359
+        }
+      ],
+      "stages": [
+        {
+          "stage": "planning",
+          "status": "complete",
+          "durationMs": 31
+        },
+        {
+          "stage": "web",
+          "status": "complete",
+          "durationMs": 3172
+        },
+        {
+          "stage": "extraction",
+          "durationMs": 3672
+        },
+        {
+          "stage": "extraction",
+          "durationMs": 2953
+        },
+        {
+          "stage": "insights",
+          "status": "complete",
+          "durationMs": 2859
+        },
+        {
+          "stage": "verification",
+          "status": "partial",
+          "durationMs": 1359
+        }
+      ],
+      "cacheHits": 2,
+      "rejectedClaims": 7,
+      "failures": [],
+      "durationMs": 15546,
+      "cancelled": false,
+      "status": "partial",
+      "evidence": 7,
+      "findings": 1,
+      "impacts": 0
+    },
+    {
+      "runId": "8d7ee79b8c154db2abc0214f31fdca69",
+      "kind": "suggestion",
+      "startedAt": "2026-11-08T18:54:03.928Z",
+      "calls": [
+        {
+          "provider": "nvidia",
+          "stage": "researcher",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 2776,
+            "completion_tokens": 40,
+            "total_tokens": 2816
+          },
+          "durationMs": 906
+        }
+      ],
+      "stages": [],
+      "cacheHits": 0,
+      "rejectedClaims": 0,
+      "failures": [],
+      "durationMs": 906,
+      "cancelled": false
+    },
+    {
+      "runId": "8383545b4aa147c48db0d22c6cdc13b4",
+      "kind": "location-search",
+      "startedAt": "2026-11-08T18:54:04.845Z",
+      "calls": [],
+      "stages": [],
+      "cacheHits": 0,
+      "rejectedClaims": 0,
+      "failures": [],
+      "durationMs": 609,
+      "cancelled": false
+    },
+    {
+      "runId": "e8c6f87d187a4c3b890f4494381cf447",
+      "kind": "location-advice",
+      "startedAt": "2026-11-08T18:54:05.467Z",
+      "calls": [
+        {
+          "provider": "overpass",
+          "stage": "mapping",
+          "status": "complete",
+          "httpStatus": 200,
+          "durationMs": 609
+        },
+        {
+          "provider": "nvidia",
+          "stage": "analyst",
+          "status": "complete",
+          "httpStatus": 200,
+          "usage": {
+            "prompt_tokens": 1127,
+            "completion_tokens": 41,
+            "total_tokens": 1168
+          },
+          "durationMs": 656
+        }
+      ],
+      "stages": [],
+      "cacheHits": 0,
+      "rejectedClaims": 0,
+      "failures": [],
+      "durationMs": 1281,
+      "cancelled": false,
+      "status": "provisional",
+      "evidence": 0,
+      "findings": 0,
+      "impacts": 0
+    }
+  ],
+  "recordingNote": "Map records omitted and shortlist limited to first ten entries for review. Original counts, source excerpts, findings and available metrics are retained."
+}

@@ -12,7 +12,7 @@ function report(){return {request:{description:'A café serving breakfast',scope
 describe('Report exports',()=>{
  it('uses existing evidence, caveats, status and original dates without creating a recommendation',()=>{
   const brief=buildExportBrief(report(),'Selected map pin'),text=JSON.stringify(brief.sections);
-  expect(text).toContain(quote);expect(text).toContain('2026-10-24T19:00:00.000Z');expect(text).toContain('Exact branch unconfirmed.');expect(text).toContain('Run status: partial');expect(text).toContain('https://fixture.example/menu');expect(text).toContain('Supporting sources: S1');expect(brief.slides).toHaveLength(6);expect(text).not.toContain('Recommended');expect(text).toContain('Location recommendation: Not recommended');expect(text).not.toContain('80%');
+  expect(text).toContain(quote);expect(text).toContain('2026-10-24T19:00:00.000Z');expect(text).toContain('Exact branch unconfirmed.');expect(text).toContain('Run status: partial');expect(text).toContain('https://fixture.example/menu');expect(text).toContain('Supporting sources: S1');expect(brief.slides).toHaveLength(6);expect(text).not.toContain('Recommended');expect(text).toContain('Location recommendation: Not recommended');expect(text).toContain('Insufficient evidence');expect(text).not.toContain('80%');
   const invalid=report();invalid.findings[0].evidence[0].sourceId='invented';expect(()=>buildExportBrief(invalid,'Pin')).toThrow();
  });
  it('preserves long text and URLs while wrapping, including single long tokens',()=>{

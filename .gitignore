@@ -1,8 +1,15 @@
 node_modules/
 .next/
+.next-python/
+.next-verify/
+.next-vercel-check/
 test-results/
 playwright-report/
 .atlas-local/
+__pycache__/
+*.pyc
+python_backend/.venv/
+*.egg-info/
 *.tsbuildinfo
 .env*
 !.env.example

@@ -2,21 +2,22 @@
 
 A map-first workspace for exploring local competition and comparing business locations. Choose a business type and an area in New York, London, Dubai or Singapore, then inspect mapped competitors and their supporting evidence.
 
-Built with Next.js 16, React 19, TypeScript and Leaflet. No database is required. Map analysis works without API keys; optional AI interpretation and web research use server-side credentials.
+Built with Python FastAPI, Next.js 16, React 19, TypeScript and Leaflet. No database is required. All five application APIs run through Python by default. Map analysis works without API keys; optional AI research uses server-side credentials.
 
 ## Getting started
 
-Use Node.js 24 and npm.
+Use Node.js 24, npm and Python 3.11 or newer.
 
 ```sh
 npm ci
+python -m pip install -e ./python_backend
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). To enable optional providers, copy `.env.example` to `.env.local`, add your credentials and restart the server. In PowerShell:
+Open [localhost:3000](http://localhost:3000). `npm run dev` starts both services. Reuse the existing root `.env`. For a new checkout without that file:
 
 ```powershell
-Copy-Item .env.example .env.local
+Copy-Item .env.example .env
 ```
 
 ## Explore an area
@@ -30,7 +31,7 @@ There are 30 supported business types. Search and Compare use the selected categ
 
 ## Configuration
 
-Provider settings and research limits are documented in [`.env.example`](.env.example). Keep credentials in ignored `.env.local` files.
+Provider settings are documented in [`.env.example`](.env.example). Keep credentials in the ignored root `.env`. See the [Python integration guide](docs/PYTHON_BACKEND.md) for startup and architecture and [measured results](docs/MEASURED_RESULTS.md) for the evaluation.
 
 | Setting | Purpose |
 | --- | --- |
@@ -40,7 +41,7 @@ Provider settings and research limits are documented in [`.env.example`](.env.ex
 | `ATLAS_OVERPASS_API_KEY` | Optional Overpass.ch credentials |
 | `ATLAS_GEOCODER_ENDPOINT` | Override the Photon-compatible address service |
 | `NEXT_PUBLIC_ATLAS_RESEARCH=0` | Hide the Research tab; visible by default |
-| `NEXT_PUBLIC_ATLAS_LOCATIONS=1` | Show location assessment; hidden by default |
+| `NEXT_PUBLIC_ATLAS_LOCATIONS=0` | Hide location assessment; enabled by the combined launcher |
 | `NEXT_PUBLIC_TILE_URL` | Override the basemap tile URL |
 
 `NEXT_PUBLIC_*` settings are public and embedded at build time; rebuild production after changing them. Never put secrets in these variables. For public hosting, review tile attribution, provider policies, quotas and rate limiting in the [deployment guide](docs/DEPLOYMENT.md).
@@ -64,6 +65,8 @@ This contacts real providers and replaces successful captures without resetting 
 ```sh
 npm run typecheck
 npm test
+npm run test:python
+npm run check:contracts
 npm run build
 npx playwright install chromium
 npm run test:e2e
